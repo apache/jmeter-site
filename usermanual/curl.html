@@ -1,0 +1,474 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+<title>Apache JMeter
+          -
+          User's Manual: Curl</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400normal" rel="stylesheet" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../css/new-style.css">
+<link rel="apple-touch-icon-precomposed" href="../images/apple-touch-icon.png">
+<link rel="icon" href="../images/favicon.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="../images/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body role="document">
+<a href="#content" class="hidden">Main content</a>
+<div class="header">
+<!--
+            APACHE LOGO
+          -->
+<div>
+<a href="https://www.apache.org"><img title="Apache Software Foundation" class="asf-logo logo" src="../images/asf-logo.svg" alt="Logo ASF"></a>
+</div>
+<!--
+              PROJECT LOGO
+            -->
+<div>
+<a href="https://jmeter.apache.org/"><img class="logo" src="../images/logo.svg" alt="Apache JMeter"></a>
+</div>
+<div class="banner">
+<a href="https://www.apache.org/events/current-event.html"><img src="https://www.apache.org/events/current-event-234x60.png" alt="Current Apache event teaser"></a>
+<div class="clear"></div>
+</div>
+</div>
+<div class="nav">
+<ul class="menu">
+<li onClick="return true">
+<div class="menu-title">About</div>
+<ul>
+<li>
+<a href="../index.html">Overview</a>
+</li>
+<li>
+<a href="https://www.apache.org/licenses/">License</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="menu">
+<li onClick="return true">
+<div class="menu-title">Download</div>
+<ul>
+<li>
+<a href="../download_jmeter.cgi">Download Releases</a>
+</li>
+<li>
+<a href="../changes.html">Release Notes</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="menu">
+<li onClick="return true">
+<div class="menu-title">Documentation</div>
+<ul>
+<li>
+<a href="../usermanual/get-started.html">Get Started</a>
+</li>
+<li>
+<a href="../usermanual/index.html">User Manual</a>
+</li>
+<li>
+<a href="../usermanual/best-practices.html">Best Practices</a>
+</li>
+<li>
+<a href="../usermanual/component_reference.html">Component Reference</a>
+</li>
+<li>
+<a href="../usermanual/functions.html">Functions Reference</a>
+</li>
+<li>
+<a href="../usermanual/properties_reference.html">Properties Reference</a>
+</li>
+<li>
+<a href="../changes_history.html">Change History</a>
+</li>
+<li>
+<a href="../api/index.html">Javadocs</a>
+</li>
+<li>
+<a href="https://cwiki.apache.org/confluence/display/JMETER/Home">JMeter Wiki</a>
+</li>
+<li>
+<a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterFAQ">FAQ (Wiki)</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="menu">
+<li onClick="return true">
+<div class="menu-title">Tutorials</div>
+<ul>
+<li>
+<a href="../usermanual/jmeter_distributed_testing_step_by_step.html">Distributed Testing</a>
+</li>
+<li>
+<a href="../usermanual/jmeter_proxy_step_by_step.html">Recording Tests</a>
+</li>
+<li>
+<a href="../usermanual/junitsampler_tutorial.html">JUnit Sampler</a>
+</li>
+<li>
+<a href="../usermanual/jmeter_accesslog_sampler_step_by_step.html">Access Log Sampler</a>
+</li>
+<li>
+<a href="../usermanual/jmeter_tutorial.html">Extending JMeter</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="menu">
+<li onClick="return true">
+<div class="menu-title">Community</div>
+<ul>
+<li>
+<a href="../issues.html">Issue Tracking</a>
+</li>
+<li>
+<a href="https://www.apache.org/security/">Security</a>
+</li>
+<li>
+<a href="../mail.html">Mailing Lists</a>
+</li>
+<li>
+<a href="../svnindex.html">Source Repositories</a>
+</li>
+<li>
+<a href="../building.html">Building and Contributing</a>
+</li>
+<li>
+<a href="https://projects.apache.org/project.html?jmeter">Project info at Apache</a>
+</li>
+<li>
+<a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterCommitters">Contributors</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="menu">
+<li onClick="return true">
+<div class="menu-title">Foundation</div>
+<ul>
+<li>
+<a href="https://www.apache.org/">The Apache Software Foundation (ASF)</a>
+</li>
+<li>
+<a href="https://www.apache.org/foundation/getinvolved.html">Get Involved in the ASF</a>
+</li>
+<li>
+<a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a>
+</li>
+<li>
+<a href="https://www.apache.org/foundation/thanks.html">Thanks</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="main" id="content">
+<div class="social-media">
+<ul class="social-media-links">
+<li class="twitter">
+<a href="https://twitter.com/ApacheJMeter" title="Follow us on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
+</li>
+<li class="github">
+<a href="https://github.com/apache/jmeter" title="Fork us on github"><i class="fa fa-github" aria-hidden="true"></i>github</a>
+</li>
+</ul>
+</div>
+<ul class="pagelinks">
+<li>
+<a href="glossary.html">&lt; Prev</a>
+</li>
+<li>
+<a href="../index.html">Index</a>
+</li>
+<li>
+<a href="history_future.html">Next &gt;</a>
+</li>
+</ul>
+<div class="section">
+<h1 id="hints">24. Curl<a class="sectionlink" href="#hints" title="Link to here">&para;</a>
+</h1>
+
+<p>This method is to create http requests from curl command. If you want to know more about curl, please click the <a href="https://curl.haxx.se/">
+Curl document</a>. 
+</p>
+
+<div class="subsection">
+<h2 id="enter_command">24.1 How to enter (a) command(s)<a class="sectionlink" href="#enter_command" title="Link to here">&para;</a>
+</h2>
+
+<p>
+Create a Test Plan From a cURL Command
+</p>
+1. To create an import from a cURL, open the &lsquo;Tools&rsquo; menu and click &lsquo;Import from cURL&rsquo;.
+<figure>
+<a href="../images/screenshots/curl/choose_curl.png"><img src="../images/screenshots/curl/choose_curl.png" width="768" height="339" alt="Figure 1 - The menu where curl is located"></a>
+<figcaption>Figure 1 - The menu where curl is located</figcaption>
+</figure>
+2.There are two ways to enter the curl command line. Firstly, we can enter it manually. Secondly, we can import a file containing the curl command line. 
+This tool supports input of multiple curl command lines at the same time.
+<figure>
+<a href="../images/screenshots/curl/enter_command.png"><img src="../images/screenshots/curl/enter_command.png" width="767" height="316" alt="Figure 2.1 - Enter curl command in text panel"></a>
+<figcaption>Figure 2.1 - Enter curl command in text panel</figcaption>
+</figure>
+
+<figure>
+<a href="../images/screenshots/curl/enter_command_from_file.png"><img src="../images/screenshots/curl/enter_command_from_file.png" width="767" height="316" alt="Figure 2.2 - Enter curl command from file"></a>
+<figcaption>Figure 2.2 - Enter curl command from file</figcaption>
+</figure>
+3.Then, click &lsquo;Create HTTP Request&rsquo; button and a new HTTP Sample will be added to the Test Plan.
+<figure>
+<a href="../images/screenshots/curl/result.png"><img src="../images/screenshots/curl/result.png" width="767" height="316" alt="Figure 3 - result of Test Plan"></a>
+<figcaption>Figure 3 - result of Test Plan</figcaption>
+</figure>
+
+</div>
+
+
+<div class="subsection">
+<h2 id="curl_options">24.2 Curl options supported<a class="sectionlink" href="#curl_options" title="Link to here">&para;</a>
+</h2>
+
+
+<p>
+<b>-H, --header&lt;header&gt;</b>:Extra header to use when getting a&nbsp;web page.</p>
+
+<p>
+<b>-X, --request &lt;command&gt;</b>:Specifies a custom request method to use when communicating with the HTTP server.</p>
+
+<p>
+<b>--compressed</b>:Request a&nbsp;compressed&nbsp;response using one of the&nbsp;algorithms&nbsp;curl&nbsp;supports, and return the uncompressed document.</p>
+
+<p>
+<b>-A, --user-agent &lt;agent string&nbsp;&gt;</b>:Specify the User-Agent string to send to the HTTP server.</p>
+
+<p>
+<b>-b, --cookie &lt;name=data&gt;</b>:Pass the data to the HTTP server as a cookie.</p>
+
+
+<b>Sends the specified data in a POST request to the HTTP server. If this option is used more than
+ once on the same command line, the data pieces specified will be merged together with a 
+separating "&amp;" character. Thus, using '-d name=daniel -d skill=lousy' would generate a POST
+ chunk that looks like 'name=daniel&amp;skill=lousy'.</b>
+
+<ul>
+<li>-d,--data &lt;data&gt;  --data-ascii &lt;data&gt;  :use @ to upload the file</li>
+
+<li> --data-binary &lt;data&gt;  </li>
+<li>--data-raw &lt;data&gt; : This posts data exactly as specified with no extra processing whatsoever.
+If you start the data with the character @, the rest should be a filename. </li>
+
+<li> --data-urlencode &lt;data&gt; :This posts data, similar to the other --data options with the exception that this performs
+ URL-encoding.</li>
+ 
+<li> --data-raw &lt;data&gt; :This  posts data similarly to --data but without the special interpretation
+of the @ character. </li>
+
+</ul>
+
+
+<b>This lets curl emulate a filled-in form in which a user has pressed the submit button.</b>
+
+<ul>
+<li>-F, --form &lt;name=content&gt; :use @ to upload the file</li>
+
+<li>--form-string  &lt;name=content&gt;</li>
+
+</ul>
+
+<p>
+<b>-u, --user &lt;user:password &gt;</b>:Specify user and password to use for server authentication.</p>
+
+<p>
+<b>--basic,--digest</b>:Tells curl to use HTTP authentication.</p>
+
+
+<b>Tells curl to use the specified client certificate file when getting a file with HTTPS</b>
+
+<ul>
+
+<li>--cacert &lt;CA certificate&gt;</li>
+
+<li>--capath  &lt;CA certificate directory&gt;</li>
+
+<li>--ciphers &lt;list of ciphers&gt; </li>
+
+<li>--cert-status</li>
+
+<li>--cert-type &lt;type&gt;</li>
+
+</ul>
+
+<p>
+<b>-G, --get</b>:put the post data in the url and use get to replace post.</p>
+
+<p>
+<b>--no-keepalive</b>:Disables the use of keepalive messages on the TCP connection.</p>
+
+<p>
+<b>-e, --referer &lt;URL&gt;</b>:Sends the "Referer Page" information to the HTTP server.</p>
+
+<p>
+<b>-L, --location</b>:If the server reports that the requested page has moved to a different location 
+this option will make curl redo the request on the new place.</p>
+
+<p>
+<b>-i, --include</b>:Include the HTTP-header in the output.</p>
+
+<p>
+<b>--connect-timeout &lt;seconds&gt;</b>:Maximum time in seconds that the connection to the server may take.</p>
+
+<p>
+<b>--keepalive-time &lt;seconds&gt;</b>:This option sets the time a connection needs to remain idle before sending keepalive probes and the time between individual keepalive probes.</p> 
+
+<p>
+<b>-m, --max-time  &lt;seconds&gt;</b>:Maximum time in seconds that you allow the whole operation to take.</p>
+
+<p>
+<b>-x, --proxy &lt;[protocol://] [user:password@] proxyhost[:port]&gt;&nbsp;</b>:Use the specified HTTP proxy. If the port number is not specified, it is assumed at port 1080. </p>
+
+<p>
+<b>-U, --proxy-user  &lt;user:password&gt;</b>:Specify user and password to use for proxy authentication. </p>
+
+<p>
+<b>-k, --insecure</b>:This option explicitly allows curl to perform "insecure" SSL connections and transfers.</p>
+
+<p>
+<b>--raw</b>:When used, it disables all internal HTTP decoding of content or transfer encodings and instead makes them passed on unaltered,raw.</p>
+
+<p>
+<b>-I, --head</b>:Fetch the HTTP-header only. HTTP-servers feature the command HEAD which this uses to get nothing but the header of a document.</p>
+
+<p>
+<b>--interface &lt;name&gt;</b>:Perform an operation using a specified interface. You can enter interface name, IP address or host name.</p>
+
+<p>
+<b>--proxy-ntlm/--proxy-negotiate</b>:Tells curl to use HTTP basic/ntlm/Digest authentication when communicating with the given proxy.</p>
+
+<p>
+<b>--dns-servers &lt;addresses&gt;</b>:Resolve host name over DOH.</p>
+
+<p>
+<b>--resolve &lt;host:port:address&gt;</b>:Provide a custom address for a specific host and port pair.</p>
+
+<p>
+<b>--limit-rate &lt;speed&gt;</b>:Specify the maximum transfer rate you want curl to use.</p>
+
+<p>
+<b>--max-redirs &lt;num&gt;</b>:Set maximum number of redirections which may be followed.</p>
+
+<p>
+<b>--noproxy &lt;no-proxy-list&gt;</b>:Comma-separated list of hosts which do not use a proxy, if one is specified.</p>
+
+</div>
+
+
+<div class="subsection">
+<h2 id="warning">24.3 Warning<a class="sectionlink" href="#warning" title="Link to here">&para;</a>
+</h2>
+
+<p>
+When the command you entered is ignored or contains warning content, we will display warning in the comment section of Http Request.
+</p>
+
+<figure>
+<a href="../images/screenshots/curl/http_request_warning.png"><img src="../images/screenshots/curl/http_request_warning.png" width="768" height="339" alt="Figure 1 -Warning"></a>
+<figcaption>Figure 1 -Warning</figcaption>
+</figure>
+
+
+</div>
+
+<div class="subsection">
+<h2 id="example">24.4 Examples<a class="sectionlink" href="#example" title="Link to here">&para;</a>
+</h2>
+
+<p>
+<b>Use cookie :</b>curl -X POST  "https://xxx.com" -b 'username=Tom;password=123456'</p>
+
+<p>
+<b>Use data :</b>curl -X POST  "https://xxx.com" --data 'fname=a&amp;lname=b'</p>
+
+<p>
+<b>Use form :</b>curl -X POST  "https://xxx.com" -F 'lname=a'  -F 'fname=b' -F 'c=@C:\Test\test.txt'  </p>
+
+<p>
+<b>Use proxy :</b>curl 'http://jmeter.apache.org/' -x 'https://aa:bb@example.com:8042'</p>
+
+<p>
+<b>Use autorization :</b>curl "https://xxx.com" -u 'user:passwd' --basic</p>
+
+<p>
+<b>Use DNS :</b>curl "https://xxx.com" --dns-servers '0.0.0.0,1.1.1.1'</p>
+
+</div>
+
+</div>
+<ul class="pagelinks">
+<li>
+<a href="glossary.html">&lt; Prev</a>
+</li>
+<li>
+<a href="../index.html">Index</a>
+</li>
+<li>
+<a href="history_future.html">Next &gt;</a>
+</li>
+</ul>
+<div class="share-links">
+      Share this page:
+      <ul>
+<li class="fb">
+<a data-social-url="https://facebook.com/sharer/sharer.php?u=" title="Share on facebook"><i class="fa fa-facebook" aria-hidden="true"></i>share</a>
+</li>
+<li class="twitter">
+<a data-social-url="https://twitter.com/intent/tweet?url=" title="Tweet on twitter"><i class="fa fa-twitter" aria-hidden="true"></i>tweet</a>
+</li>
+</ul>
+</div>
+<a href="#top" id="topButton">Go to top</a>
+</div>
+<div class="footer">
+<div class="copyright">
+            Copyright &copy;
+            1999 &ndash;
+            2019
+            , Apache Software Foundation
+          </div>
+<div class="trademarks">Apache, Apache JMeter, JMeter, the Apache
+            feather, and the Apache JMeter logo are
+            trademarks of the
+            Apache Software Foundation.
+          </div>
+</div>
+<script>(function(){
+            "use strict";
+            // enable 'go to top' button functionality
+            document.addEventListener('scroll', function() {
+                if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                    document.getElementById("topButton").style.display = "block";
+                } else {
+                    document.getElementById("topButton").style.display = "none";
+                }
+            });
+            // fill in the current location into social links on this page.
+            var as = document.getElementsByTagName('a');
+            var loc = document.location.href;
+            if (!loc.toLowerCase().startsWith('http')) {
+                return;
+            }
+            for (var i=0; i<as.length; i++) {
+                var href = as[i].getAttribute('data-social-url');
+                if (href !== null) {
+                    as[i].href = href + encodeURIComponent(loc);
+                }
+            }
+        })();</script>
+</body>
+</html>
