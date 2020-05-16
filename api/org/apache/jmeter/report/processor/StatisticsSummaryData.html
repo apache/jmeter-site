@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -135,9 +135,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#StatisticsSummaryData-long-long-long-">StatisticsSummaryData</a></span>(long&nbsp;percentileIndex1,
-                     long&nbsp;percentileIndex2,
-                     long&nbsp;percentileIndex3)</code>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#StatisticsSummaryData-double-double-double-">StatisticsSummaryData</a></span>(double&nbsp;percentileIndex1,
+                     double&nbsp;percentileIndex2,
+                     double&nbsp;percentileIndex3)</code>
 <div class="block">Instantiates a new statistics info.</div>
 </td>
 </tr>
@@ -203,102 +203,106 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#getMean--">getMean</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/jmeter/report/processor/PercentileAggregator.html" title="class in org.apache.jmeter.report.processor">PercentileAggregator</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#getMedian--">getMedian</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#getMin--">getMin</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/apache/jmeter/report/processor/PercentileAggregator.html" title="class in org.apache.jmeter.report.processor">PercentileAggregator</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#getPercentile1--">getPercentile1</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/apache/jmeter/report/processor/PercentileAggregator.html" title="class in org.apache.jmeter.report.processor">PercentileAggregator</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#getPercentile2--">getPercentile2</a></span>()</code>
 <div class="block">Gets the percentile2.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/apache/jmeter/report/processor/PercentileAggregator.html" title="class in org.apache.jmeter.report.processor">PercentileAggregator</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#getPercentile3--">getPercentile3</a></span>()</code>
 <div class="block">Gets the percentile3.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#getSentBytes--">getSentBytes</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#getSentBytesPerSecond--">getSentBytesPerSecond</a></span>()</code>
 <div class="block">Gets the sent bytes per second.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#getSentKBytesPerSecond--">getSentKBytesPerSecond</a></span>()</code>
 <div class="block">Gets the sent kilo bytes per second.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#getThroughput--">getThroughput</a></span>()</code>
 <div class="block">Gets the throughput.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#getTotal--">getTotal</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#incBytes-long-">incBytes</a></span>(long&nbsp;value)</code>
 <div class="block">Increment received bytes</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#incErrors--">incErrors</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#incSentBytes-long-">incSentBytes</a></span>(long&nbsp;value)</code>
 <div class="block">Increment sent bytes</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#incTotal--">incTotal</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#setBytes-long-">setBytes</a></span>(long&nbsp;bytes)</code>
 <div class="block">Sets the bytes.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#setEndTime-long-">setEndTime</a></span>(long&nbsp;endTime)</code>
 <div class="block">Sets the end time.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#setErrors-long-">setErrors</a></span>(long&nbsp;errors)</code>&nbsp;</td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#setFirstTime-long-">setFirstTime</a></span>(long&nbsp;firstTime)</code>
 <div class="block">Sets the first time.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#setMax-long-">setMax</a></span>(long&nbsp;max)</code>&nbsp;</td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#setMin-long-">setMin</a></span>(long&nbsp;min)</code>&nbsp;</td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/report/processor/StatisticsSummaryData.html#setTotal-long-">setTotal</a></span>(long&nbsp;total)</code>&nbsp;</td>
 </tr>
@@ -324,15 +328,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="StatisticsSummaryData-long-long-long-">
+<a name="StatisticsSummaryData-double-double-double-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>StatisticsSummaryData</h4>
-<pre>public&nbsp;StatisticsSummaryData(long&nbsp;percentileIndex1,
-                             long&nbsp;percentileIndex2,
-                             long&nbsp;percentileIndex3)</pre>
+<pre>public&nbsp;StatisticsSummaryData(double&nbsp;percentileIndex1,
+                             double&nbsp;percentileIndex2,
+                             double&nbsp;percentileIndex3)</pre>
 <div class="block">Instantiates a new statistics info.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -689,6 +693,19 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </dl>
 </li>
 </ul>
+<a name="getMedian--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMedian</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/jmeter/report/processor/PercentileAggregator.html" title="class in org.apache.jmeter.report.processor">PercentileAggregator</a>&nbsp;getMedian()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the median response times</dd>
+</dl>
+</li>
+</ul>
 <a name="getSentBytes--">
 <!--   -->
 </a>
@@ -799,6 +816,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright © 1998-2019 Apache Software Foundation. All Rights Reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 1998-2020 Apache Software Foundation. All Rights Reserved.</small></p>
 </body>
 </html>

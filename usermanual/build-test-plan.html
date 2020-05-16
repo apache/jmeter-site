@@ -324,7 +324,7 @@ If Shutdown is taking too long. Close the Shutdown dialog box and select <span c
 <p>
 When running JMeter in CLI mode, there is no Menu, and JMeter does not react to keystrokes such as <span class="keycombo"><span class="keysym">Control</span>&nbsp;+&nbsp;<span class="keysym">.</span></span>.
 So JMeter CLI mode will listen for commands on a specific port (default <span class="code">4445</span>, see the JMeter property <span class="code">jmeterengine.nongui.port</span>).
-JMeter supports automatic choice of an alternate port if the default port is being used 
+JMeter supports automatic choice of an alternate port if the default port is being used
 (for example by another JMeter instance). In this case, JMeter will try the next higher port, continuing until
 it reaches the JMeter property <span class="code">jmeterengine.nongui.maxport</span>) which defaults to <span class="code">4455</span>.
 If <span class="code">maxport</span> is less than or equal to <span class="code">port</span>, port scanning will not take place.
@@ -355,14 +355,14 @@ The commands will only be accepted if the script is run from the same host.
 
 <p>
 JMeter reports warnings and errors to the <span class="code">jmeter.log</span> file, as well as some information on the test run itself.
-JMeter shows the number of warnings/errors found in <span class="code">jmeter.log</span> file next to the warning icon (triangle) at the right hand end of its window. 
+JMeter shows the number of warnings/errors found in <span class="code">jmeter.log</span> file next to the warning icon (triangle) at the right hand end of its window.
 Click on the warning icon to show the <span class="code">jmeter.log</span> file at the bottom of JMeter's window.
 Just occasionally there may be some errors that JMeter is unable to trap and log; these will appear on the command console.
 If a test is not behaving as you expect, please check the log file in case any errors have been reported (e.g. perhaps a syntax error in a function call).
 </p>
 
 <p>
-Sampling errors (e.g. HTTP 404 - file not found) are not normally reported in the log file. 
+Sampling errors (e.g. HTTP 404 - file not found) are not normally reported in the log file.
 Instead these are stored as attributes of the sample result.
 The status of a sample result can be seen in the various different Listeners.
 </p>
@@ -399,7 +399,7 @@ The status of a sample result can be seen in the various different Listeners.
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2019
+            2020
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

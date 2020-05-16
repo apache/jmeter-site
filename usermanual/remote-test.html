@@ -277,16 +277,12 @@ the <span class="code">JMETER_HOME/bin/jmeter-server</span> (unix) or <span clas
 
 <p>Note that there can only be one JMeter server on each node unless different RMI ports are used.</p>
 
-<p>Since JMeter 2.3.1, the JMeter server application starts the RMI registry itself;
-there is no need to start RMI registry separately.
-To revert to the previous behaviour, define the JMeter property <pre class="source">server.rmi.create=false</pre> on the server host systems.
-</p>
+<p>The JMeter server application starts the RMI registry itself; there is no need to start RMI registry separately.</p>
 
 <p>
-By default, RMI uses dynamic ports for the JMeter server engine. This can cause problems for firewalls,
-so you can define the JMeter property <span class="code">server.rmi.localport</span>
-to control this port numbers.
-If this is non-zero, it will be used as the base for local port numbers for the server engine. At the moment JMeter will open up to three ports beginning with the port defined in <span class="code">server.rmi.localport</span>.
+By default, RMI uses a dynamic port for the JMeter server engine. This can cause problems for firewalls,
+so you can define the JMeter property <span class="code">server.rmi.localport</span> to control this port number.
+it will be used as the local port number for the server engine.
 </p>
 
 <p>
@@ -466,8 +462,10 @@ Use the "<span class="code">-s</span>" option with the jmeter startup script ("<
 <p>
 JMeter/RMI requires a connection from the client to the server. This will use the port you chose, default <span class="code">1099</span>.<br>
 JMeter/RMI also requires a reverse connection in order to return sample results from the server to the client.<br>
-This will use a high-numbered port. <br>
-This port can be controlled by jmeter property called <span class="code">client.rmi.localport</span> in <span class="code">jmeter.properties</span>.<br>
+These will use high-numbered ports. <br>
+These ports can be controlled by jmeter property called <span class="code">client.rmi.localport</span> in <span class="code">jmeter.properties</span>.<br>
+If this is non-zero, it will be used as the base for local port numbers for the client engine. At the moment JMeter will open
+up to three ports beginning with the port defined in <span class="code">client.rmi.localport</span>.
 If there are any firewalls or other network filters between JMeter client and server,
 you will need to make sure that they are set up to allow the connections through.
 If necessary, use monitoring software to show what traffic is being generated.
@@ -892,7 +890,7 @@ grant {
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2019
+            2020
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

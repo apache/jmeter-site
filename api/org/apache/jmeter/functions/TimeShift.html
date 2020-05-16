@@ -121,16 +121,21 @@ var activeTableTab = "activeTableTab";
 <pre>public class <span class="typeNameLabel">TimeShift</span>
 extends <a href="../../../../org/apache/jmeter/functions/AbstractFunction.html" title="class in org.apache.jmeter.functions">AbstractFunction</a></pre>
 <div class="block">timeShifting Function permit to shift a date
-
- Parameters: - format date @see
+ <p>
+ Parameters:
+ <ul>
+ <li>format date @see
  https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
- (optional - defaults to epoch time in millisecond) - date to shift formatted
- as first param (optional - defaults now) - amount of (seconds, minutes,
- hours, days ) to add (optional - default nothing is add ) - a string of the locale for the format
- ( optional ) - variable name ( optional )
-
- Returns: a formatted date with the specified number of (seconds, minutes,
- hours, days or months ) added. - value is also saved in the variable for
+ (optional - defaults to epoch time in millisecond)</li>
+ <li>date to shift formatted
+ as first param (optional - defaults now)</li>
+ <li>amount of (seconds, minutes, hours, days ) to add (optional - default nothing is add)</li>
+ <li>a string of the locale for the format ( optional )</li>
+ <li>variable name ( optional )</li>
+ </ul>
+ Returns:
+ <p>a formatted date with the specified number of (seconds, minutes,
+ hours, days or months ) added. Value is also saved in the variable for
  later re-use.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
@@ -412,6 +417,6 @@ extends <a href="../../../../org/apache/jmeter/functions/AbstractFunction.html" 
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright © 1998-2019 Apache Software Foundation. All Rights Reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 1998-2020 Apache Software Foundation. All Rights Reserved.</small></p>
 </body>
 </html>

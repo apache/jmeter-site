@@ -203,19 +203,19 @@
 JMeter includes the pattern matching software <a href="http://attic.apache.org/projects/jakarta-oro.html">Apache Jakarta ORO</a>
 
 <br>
-There is some documentation for this on the Jakarta web-site, for example 
+There is some documentation for this on the Jakarta web-site, for example
 <a href="http://archimedes.fas.harvard.edu/scrapbook/jakarta-oro-2.0.6/docs/api/org/apache/oro/text/regex/package-summary.html">
 a summary of the pattern matching characters</a>
 
 </p>
 
 <p>
-There is also documentation on an older incarnation of the product at 
-<a href="http://www.savarese.org/oro/docs/OROMatcher/index.html">OROMatcher User's guide</a>, which might prove useful. 
+There is also documentation on an older incarnation of the product at
+<a href="http://www.savarese.org/oro/docs/OROMatcher/index.html">OROMatcher User's guide</a>, which might prove useful.
 </p>
 
 <p>
-The pattern matching is very similar to the pattern matching in Perl. 
+The pattern matching is very similar to the pattern matching in Perl.
 A full installation of Perl will include plenty of documentation on regular expressions - look for <span class="code">perlrequick</span>,
 <span class="code">perlretut</span>, <span class="code">perlre</span> and <span class="code">perlreref</span>.
 </p>
@@ -227,22 +227,22 @@ It is worth stressing the difference between "<em>contains</em>" and "<em>matche
 <dl>
 
 <dt>"<em>contains</em>"</dt>
-<dd> means that the regular expression matched at least some part of the target, 
+<dd> means that the regular expression matched at least some part of the target,
 so '<span class="code">alphabet</span>' "<em>contains</em>" '<span class="code">ph.b.</span>' because the regular expression matches the substring '<span class="code">phabe</span>'.
 </dd>
 
 <dt>
 "<em>matches</em>"</dt>
-<dd> means that the regular expression matched the whole target. 
-So '<span class="code">alphabet</span>' is "<em>matched</em>" by '<span class="code">al.*t</span>'. 
+<dd> means that the regular expression matched the whole target.
+So '<span class="code">alphabet</span>' is "<em>matched</em>" by '<span class="code">al.*t</span>'.
 </dd>
 
 </dl>
 
-<p>In this case, it is equivalent to wrapping the regular expression in <span class="code">^</span> and <span class="code">$</span>, viz '<span class="code">^al.*t$</span>'. 
+<p>In this case, it is equivalent to wrapping the regular expression in <span class="code">^</span> and <span class="code">$</span>, viz '<span class="code">^al.*t$</span>'.
 </p>
 
-<p>However, this is not always the case. 
+<p>However, this is not always the case.
 For example, the regular expression '<span class="code">alp|.lp.*</span>' is "<em>contained</em>" in '<span class="code">alphabet</span>',
 but does not "<em>match</em>" '<span class="code">alphabet</span>'.
 </p>
@@ -258,7 +258,7 @@ Unlike Perl, there is no need to (i.e. do not) enclose the regular expression in
 <div class="clear"></div>
 
 <p>
-So how does one use the modifiers <span class="code">ismx</span> etc. if there is no trailing <span class="code">/</span>? 
+So how does one use the modifiers <span class="code">ismx</span> etc. if there is no trailing <span class="code">/</span>?
 The solution is to use <i>extended regular expressions</i>, i.e. <span class="code">/abc/i</span> becomes <span class="code">(?i)abc</span>.
 See also <a href="#placement">Placement of modifiers</a> below.
 </p>
@@ -272,7 +272,7 @@ See also <a href="#placement">Placement of modifiers</a> below.
 <h3>Extract single string</h3>
 
 <p>
-Suppose you want to match the following portion of a web-page: 
+Suppose you want to match the following portion of a web-page:
 <br>
 
 <span class="code">name="file" value="readme.txt"&gt;</span>
@@ -304,7 +304,7 @@ The special characters above are:
 <dt>
 <span class="code">+</span>
 </dt>
-<dd>one or more times</dd> 
+<dd>one or more times</dd>
 
 <dt>
 <span class="code">?</span>
@@ -327,7 +327,7 @@ where<br>
 
 <span class="code">[^"]</span> - means match anything except <span class="code">"</span>
 <br>
-In this case, the matching engine can stop looking as soon as it sees the first <span class="code">"</span>, 
+In this case, the matching engine can stop looking as soon as it sees the first <span class="code">"</span>,
 whereas in the previous case the engine has to check that it has found <span class="code">"&gt;</span> rather than say <span class="code">" &gt;</span>.
 </p>
 
@@ -336,7 +336,7 @@ whereas in the previous case the engine has to check that it has found <span cla
 <p>
 Suppose you want to match the following portion of a web-page:<br>
 
-<span class="code">name="file.name" value="readme.txt"</span> 
+<span class="code">name="file.name" value="readme.txt"</span>
 and you want to extract both <span class="code">file.name</span> and <span class="code">readme.txt</span>.
 <br>
 A suitable regular expression would be:
@@ -409,7 +409,7 @@ The following variables would be set:
 </dd>
 
 </dl>
-These variables can be referred to later on in the JMeter test plan, as <span class="code">${MYREF}</span>, <span class="code">${MYREF_g1}</span> etc. 
+These variables can be referred to later on in the JMeter test plan, as <span class="code">${MYREF}</span>, <span class="code">${MYREF_g1}</span> etc.
 </p>
 
 </div>
@@ -418,7 +418,7 @@ These variables can be referred to later on in the JMeter test plan, as <span cl
 <h2 id="line_mode">21.3 Line mode<a class="sectionlink" href="#line_mode" title="Link to here">&para;</a>
 </h2>
 
-<p>The pattern matching behaves in various slightly different ways, 
+<p>The pattern matching behaves in various slightly different ways,
 depending on the setting of the multi-line and single-line modifiers.
 Note that the single-line and multi-line operators have nothing to do with each other;
 they can be specified independently.
@@ -431,7 +431,7 @@ Single-line mode only affects how the '<span class="code">.</span>' meta-charact
 </p>
 
 <p>
-Default behaviour is that '<span class="code">.</span>' matches any character except newline. 
+Default behaviour is that '<span class="code">.</span>' matches any character except newline.
 In single-line mode, '<span class="code">.</span>' also matches newline.
 </p>
 
@@ -443,7 +443,7 @@ Multi-line mode only affects how the meta-characters '<span class="code">^</span
 </p>
 
 <p>
-Default behaviour is that '<span class="code">^</span>' and '<span class="code">$</span>' only match at the very beginning and end of the string. 
+Default behaviour is that '<span class="code">^</span>' and '<span class="code">$</span>' only match at the very beginning and end of the string.
 When Multi-line mode is used, the '<span class="code">^</span>' metacharacter matches at the beginning of every line,
 and the '<span class="code">$</span>' metacharacter matches at the end of every line.</p>
 
@@ -593,7 +593,7 @@ would match <span class="code">Match ExAct case or arbitrary case</span> as well
 
 <p>
 Since JMeter 2.4, the listener <a href="component_reference.html#View_Results_Tree">View Results Tree</a>
-include a RegExp Tester to test regular expressions directly on sampler response data. 
+include a RegExp Tester to test regular expressions directly on sampler response data.
 </p>
 
 <p>
@@ -604,7 +604,7 @@ There is a <a href="http://www.regexplanet.com/advanced/java/index.html">Website
 Another approach is to use a simple test plan to test the regular expressions.
 The Java Request sampler can be used to generate a sample, or the HTTP Sampler can be used to load a file.
 Add a Debug Sampler and a Tree View Listener and changes to the regular expression can be tested quickly,
-without needing to access any external servers. 
+without needing to access any external servers.
 </p>
 
 </div>
@@ -636,7 +636,7 @@ without needing to access any external servers.
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2019
+            2020
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

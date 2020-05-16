@@ -214,7 +214,7 @@ You should absolutely avoid using versions that are older than 3 versions before
 run with JMeter.  The number will also depend on how fast your server is (a faster server
  makes JMeter work harder since it returns a response quicker).  As with any Load Testing tool, if you don't correctly size
  the number of threads, you will face the "Coordinated Omission" problem which can give you wrong or inaccurate results.
- If you need large-scale load testing, consider running multiple CLI JMeter instances on multiple machines 
+ If you need large-scale load testing, consider running multiple CLI JMeter instances on multiple machines
  using distributed mode (or not). When using distributed mode the result file is combined on the Controller node, if
  using multiple autonomous instances, the sample result files can be combined for subsequent analysis.
 For testing how JMeter performs on a given platform, the JavaTest sampler can be used.
@@ -307,7 +307,7 @@ JMeter Proxy server certificate.
 </h1>
 
 <p>
-Some test plans need to use different values for different users/threads. 
+Some test plans need to use different values for different users/threads.
 For example, you might want to test a sequence that requires a unique login for each user.
 This is easy to achieve with the facilities provided by JMeter.
 </p>
@@ -486,7 +486,7 @@ java -jar ../lib/bshclient.jar localhost 9000 throughput.bsh 70 5 100 60
 </h1>
 
 <div class="clear"></div>
-<div class="note">Since JMeter 3.1, we advise switching from BeanShell to JSR223 Test Elements (see JSR223 section below for more details), and switching from <span class="code"><a href="functions.html#__BeanShell">__Beanshell</a></span> function 
+<div class="note">Since JMeter 3.1, we advise switching from BeanShell to JSR223 Test Elements (see JSR223 section below for more details), and switching from <span class="code"><a href="functions.html#__BeanShell">__Beanshell</a></span> function
 to <a href="functions.html#__groovy">__groovy</a> function.</div>
 <div class="clear"></div>
 
@@ -572,7 +572,7 @@ defined by the JMeter property "<span class="code">beanshell.init.file</span>". 
 
 <p>
 It's quite hard to write and test scripts as functions.
-However, JMeter has the JSR223 samplers which can be used instead with any language supporting it. 
+However, JMeter has the JSR223 samplers which can be used instead with any language supporting it.
 We advise using <a href="http://www.groovy-lang.org/">Apache Groovy</a> or any language that supports the <span class="code"><a href="https://docs.oracle.com/javase/8/docs/api/javax/script/Compilable.html">Compilable</a></span> interface of JSR223.
 </p>
 
@@ -653,8 +653,8 @@ You can also pass them as Parameters to the script and use them this way.
 
 <p>
 Variables are local to a thread; a variable set in one thread cannot be read in another.
-This is by design. For variables that can be determined before a test starts, see 
-<a href="#parameterising_tests">Parameterising Tests</a> (above). 
+This is by design. For variables that can be determined before a test starts, see
+<a href="#parameterising_tests">Parameterising Tests</a> (above).
 If the value is not known until the test starts, there are various options:
 <ul>
 
@@ -693,9 +693,9 @@ Note that in the documentation <span class="code">jmeter.properties</span> is fr
 <h1 id="deprecation">16.15 Deprecated elements<a class="sectionlink" href="#deprecation" title="Link to here">&para;</a>
 </h1>
 
-<p>It is advised not to use deprecated elements (marked as such in <a href="../changes.html">changes list</a> and in <a href="./component_reference.html">component reference</a>) 
+<p>It is advised not to use deprecated elements (marked as such in <a href="../changes.html">changes list</a> and in <a href="./component_reference.html">component reference</a>)
 and to migrate to new advised elements if available or new way of doing the same thing. <br>
-Deprecated elements are removed from the menu in version N but can be enabled for migration by modifying <span class="code">not_in_menu</span> property in <span class="code">user.properties</span> file and removing the full class name 
+Deprecated elements are removed from the menu in version N but can be enabled for migration by modifying <span class="code">not_in_menu</span> property in <span class="code">user.properties</span> file and removing the full class name
 of the element from there.<br>
 </p>
 
@@ -732,7 +732,7 @@ of the element from there.<br>
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2019
+            2020
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

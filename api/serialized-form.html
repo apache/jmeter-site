@@ -89,14 +89,6 @@
 <li class="blockList">
 <h3>Serialized Fields</h3>
 <ul class="blockList">
-<li class="blockList">
-<h4>borderLayout</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/awt/BorderLayout.html?is-external=true" title="class or interface in java.awt">BorderLayout</a> borderLayout</pre>
-</li>
-<li class="blockList">
-<h4>imageLabel</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> imageLabel</pre>
-</li>
 <li class="blockListLast">
 <h4>progressBar</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JProgressBar.html?is-external=true" title="class or interface in javax.swing">JProgressBar</a> progressBar</pre>
@@ -1677,9 +1669,13 @@
 <h4>noFailingSamples</h4>
 <pre>int noFailingSamples</pre>
 </li>
-<li class="blockListLast">
+<li class="blockList">
 <h4>totalTime</h4>
 <pre>long totalTime</pre>
+</li>
+<li class="blockListLast">
+<h4>totalConnectTime</h4>
+<pre>long totalConnectTime</pre>
 </li>
 </ul>
 </li>
@@ -1831,12 +1827,16 @@
 <h4>evaluateAll</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JCheckBox.html?is-external=true" title="class or interface in javax.swing">JCheckBox</a> evaluateAll</pre>
 </li>
-<li class="blockListLast">
+<li class="blockList">
 <h4>displayName</h4>
 <pre>boolean displayName</pre>
 <div class="block">Boolean indicating whether or not this component should display its name.
  If true, this is a standalone component. If false, this component is
  intended to be used as a subpanel for another component.</div>
+</li>
+<li class="blockListLast">
+<h4>useLastSampleStatusButton</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JButton.html?is-external=true" title="class or interface in javax.swing">JButton</a> useLastSampleStatusButton</pre>
 </li>
 </ul>
 </li>
@@ -2155,10 +2155,6 @@
 <li class="blockList">
 <h4>BYPERCENT_LABEL</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> BYPERCENT_LABEL</pre>
-</li>
-<li class="blockList">
-<h4>THROUGHPUT_LABEL</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> THROUGHPUT_LABEL</pre>
 </li>
 <li class="blockListLast">
 <h4>PERTHREAD_LABEL</h4>
@@ -2646,19 +2642,19 @@
 <ul class="blockList">
 <li class="blockList">
 <h4>defaultField</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> defaultField</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> defaultField</pre>
 </li>
 <li class="blockList">
 <h4>xpathQueryField</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> xpathQueryField</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> xpathQueryField</pre>
 </li>
 <li class="blockList">
 <h4>matchNumberField</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> matchNumberField</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> matchNumberField</pre>
 </li>
 <li class="blockList">
 <h4>refNameField</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> refNameField</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> refNameField</pre>
 </li>
 <li class="blockList">
 <h4>getFragment</h4>
@@ -3363,11 +3359,11 @@
 </li>
 <li class="blockList">
 <h4>searchTF</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> searchTF</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> searchTF</pre>
 </li>
 <li class="blockList">
 <h4>replaceTF</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> replaceTF</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> replaceTF</pre>
 </li>
 <li class="blockList">
 <h4>statusLabel</h4>
@@ -4169,23 +4165,23 @@
 <ul class="blockList">
 <li class="blockList">
 <h4>startField</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> startField</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> startField</pre>
 </li>
 <li class="blockList">
 <h4>incrField</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> incrField</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> incrField</pre>
 </li>
 <li class="blockList">
 <h4>endField</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> endField</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> endField</pre>
 </li>
 <li class="blockList">
 <h4>varNameField</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> varNameField</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> varNameField</pre>
 </li>
 <li class="blockList">
 <h4>formatField</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> formatField</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> formatField</pre>
 </li>
 <li class="blockList">
 <h4>resetCounterOnEachThreadGroupIteration</h4>
@@ -5530,9 +5526,17 @@
 <h4>keyPassword</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> keyPassword</pre>
 </li>
-<li class="blockListLast">
+<li class="blockList">
 <h4>nonGuiTreeModel</h4>
 <pre><a href="org/apache/jmeter/gui/tree/JMeterTreeModel.html" title="class in org.apache.jmeter.gui.tree">JMeterTreeModel</a> nonGuiTreeModel</pre>
+</li>
+<li class="blockList">
+<h4>sampleQueue</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html?is-external=true" title="class or interface in java.util">ArrayDeque</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html?is-external=true" title="class or interface in java.util">E</a>&gt; sampleQueue</pre>
+</li>
+<li class="blockListLast">
+<h4>oldPrefix</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> oldPrefix</pre>
 </li>
 </ul>
 </li>
@@ -6188,35 +6192,31 @@
 <ul class="blockList">
 <li class="blockList">
 <h4>constructorLabel</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> constructorLabel</pre>
-</li>
-<li class="blockList">
-<h4>methodLabel</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> methodLabel</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> constructorLabel</pre>
 </li>
 <li class="blockList">
 <h4>successMsg</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> successMsg</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> successMsg</pre>
 </li>
 <li class="blockList">
 <h4>failureMsg</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> failureMsg</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> failureMsg</pre>
 </li>
 <li class="blockList">
 <h4>errorMsg</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> errorMsg</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> errorMsg</pre>
 </li>
 <li class="blockList">
 <h4>successCode</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> successCode</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> successCode</pre>
 </li>
 <li class="blockList">
 <h4>failureCode</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> failureCode</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> failureCode</pre>
 </li>
 <li class="blockList">
 <h4>errorCode</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> errorCode</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> errorCode</pre>
 </li>
 <li class="blockList">
 <h4>filterpkg</h4>
@@ -6597,19 +6597,19 @@
 </li>
 <li class="blockList">
 <h4>jndiICF</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jndiICF</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jndiICF</pre>
 </li>
 <li class="blockList">
 <h4>urlField</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> urlField</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> urlField</pre>
 </li>
 <li class="blockList">
 <h4>jndiConnFac</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jndiConnFac</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jndiConnFac</pre>
 </li>
 <li class="blockList">
 <h4>jmsDestination</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jmsDestination</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jmsDestination</pre>
 </li>
 <li class="blockList">
 <h4>expiration</h4>
@@ -6617,7 +6617,7 @@
 </li>
 <li class="blockList">
 <h4>jmsErrorReconnectOnCodes</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jmsErrorReconnectOnCodes</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jmsErrorReconnectOnCodes</pre>
 </li>
 <li class="blockList">
 <h4>priority</h4>
@@ -6637,7 +6637,7 @@
 </li>
 <li class="blockList">
 <h4>iterations</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> iterations</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> iterations</pre>
 </li>
 <li class="blockList">
 <h4>messageFile</h4>
@@ -6657,7 +6657,7 @@
 </li>
 <li class="blockList">
 <h4>fileEncoding</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledChoice.html" title="class in org.apache.jorphan.gui">JLabeledChoice</a> fileEncoding</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html?is-external=true" title="class or interface in javax.swing">JComboBox</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html?is-external=true" title="class or interface in javax.swing">E</a>&gt; fileEncoding</pre>
 </li>
 <li class="blockList">
 <h4>useNonPersistentDelivery</h4>
@@ -6777,31 +6777,35 @@
 </li>
 <li class="blockList">
 <h4>jndiICF</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jndiICF</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jndiICF</pre>
 </li>
 <li class="blockList">
 <h4>urlField</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> urlField</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> urlField</pre>
 </li>
 <li class="blockList">
 <h4>jndiConnFac</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jndiConnFac</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jndiConnFac</pre>
 </li>
 <li class="blockList">
 <h4>jmsDestination</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jmsDestination</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jmsDestination</pre>
 </li>
 <li class="blockList">
 <h4>jmsDurableSubscriptionId</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jmsDurableSubscriptionId</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jmsDurableSubscriptionId</pre>
 </li>
 <li class="blockList">
 <h4>jmsClientId</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jmsClientId</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jmsClientId</pre>
 </li>
 <li class="blockList">
 <h4>jmsSelector</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jmsSelector</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jmsSelector</pre>
+</li>
+<li class="blockList">
+<h4>useAuth</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JCheckBox.html?is-external=true" title="class or interface in javax.swing">JCheckBox</a> useAuth</pre>
 </li>
 <li class="blockList">
 <h4>jmsUser</h4>
@@ -6813,11 +6817,7 @@
 </li>
 <li class="blockList">
 <h4>samplesToAggregate</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> samplesToAggregate</pre>
-</li>
-<li class="blockList">
-<h4>useAuth</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JCheckBox.html?is-external=true" title="class or interface in javax.swing">JCheckBox</a> useAuth</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> samplesToAggregate</pre>
 </li>
 <li class="blockList">
 <h4>storeResponse</h4>
@@ -6825,19 +6825,19 @@
 </li>
 <li class="blockList">
 <h4>timeout</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> timeout</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> timeout</pre>
 </li>
 <li class="blockList">
 <h4>jmsErrorPauseBetween</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jmsErrorPauseBetween</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jmsErrorPauseBetween</pre>
 </li>
 <li class="blockList">
 <h4>jmsErrorReconnectOnCodes</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> jmsErrorReconnectOnCodes</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> jmsErrorReconnectOnCodes</pre>
 </li>
 <li class="blockList">
 <h4>separator</h4>
-<pre><a href="org/apache/jorphan/gui/JLabeledTextField.html" title="class in org.apache.jorphan.gui">JLabeledTextField</a> separator</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html?is-external=true" title="class or interface in javax.swing">JTextField</a> separator</pre>
 </li>
 <li class="blockList">
 <h4>clientChoice</h4>
@@ -9493,10 +9493,15 @@
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">V</a>&gt; propertyMap</pre>
 <div class="block">The property name to value map that the active customizer edits:</div>
 </li>
-<li class="blockListLast">
+<li class="blockList">
 <h4>initialized</h4>
 <pre>boolean initialized</pre>
 <div class="block">Whether the GUI components have been created.</div>
+</li>
+<li class="blockListLast">
+<h4>menuCategories</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">E</a>&gt; menuCategories</pre>
+<div class="block">The list of categories this UI participates in</div>
 </li>
 </ul>
 </li>
@@ -10430,7 +10435,7 @@
 <h3>Class <a href="org/apache/jmeter/timers/poissonarrivals/PreciseThroughputTimer.html" title="class in org.apache.jmeter.timers.poissonarrivals">org.apache.jmeter.timers.poissonarrivals.PreciseThroughputTimer</a> extends <a href="org/apache/jmeter/testelement/AbstractTestElement.html" title="class in org.apache.jmeter.testelement">AbstractTestElement</a> implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
-<dd>3L</dd>
+<dd>4L</dd>
 </dl>
 <ul class="blockList">
 <li class="blockList">
@@ -12851,6 +12856,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright © 1998-2019 Apache Software Foundation. All Rights Reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 1998-2020 Apache Software Foundation. All Rights Reserved.</small></p>
 </body>
 </html>

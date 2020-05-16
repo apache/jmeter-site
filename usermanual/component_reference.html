@@ -921,7 +921,7 @@ Latency is set to the time it takes to login.
 <p>If the request requires server or proxy login authorization (i.e. where a browser would create a pop-up dialog box),
          you will also have to add an <a href="../usermanual/component_reference.html#HTTP_Authorization_Manager">HTTP Authorization Manager</a> Configuration Element.
          For normal logins (i.e. where the user enters login information in a form), you will need to work out what the form submit button does,
-         and create an HTTP request with the appropriate method (usually <span class="code">POST</span>) 
+         and create an HTTP request with the appropriate method (usually <span class="code">POST</span>)
          and the appropriate parameters from the form definition.
          If the page uses HTTP, you can use the JMeter Proxy to capture the login sequence.
         </p>
@@ -1226,9 +1226,9 @@ so unsafe characters may need to be encoded to avoid errors such as <span class=
         does not send a file, if filled in, JMeter automatically sends the request as
         a multipart form request.
         <p>
-        If it is a <span class="code">POST</span> or <span class="code">PUT</span> or <span class="code">PATCH</span> request and there is a single file whose 'Parameter name' attribute (below) is omitted, 
+        If it is a <span class="code">POST</span> or <span class="code">PUT</span> or <span class="code">PATCH</span> request and there is a single file whose 'Parameter name' attribute (below) is omitted,
         then the file is sent as the entire body
-        of the request, i.e. no wrappers are added. This allows arbitrary bodies to be sent. This functionality is present for <span class="code">POST</span> requests, 
+        of the request, i.e. no wrappers are added. This allows arbitrary bodies to be sent. This functionality is present for <span class="code">POST</span> requests,
         and also for <span class="code">PUT</span> requests.
         <b>See below for some further information on parameter handling.</b>
         
@@ -1467,7 +1467,7 @@ so the value may be greater than the number of bytes in the response content.
 
 <b>Retry handling</b>
 <br>
-By default retry has been set to 0 for both HttpClient4 and Java implementations, meaning no retry is attempted.<br>  
+By default retry has been set to 0 for both HttpClient4 and Java implementations, meaning no retry is attempted.<br>
 For HttpClient4, the retry count can be overridden by setting the relevant JMeter property, for example:
 
 <pre class="source">
@@ -1739,7 +1739,7 @@ the additional variables for rows four, five and six will be removed.
         
 <div class="property">
 <div class="name req-false">Variable Names</div>
-<div class="description req-false">Comma-separated list of variable names to hold values returned by Select statements, Prepared Select Statements or CallableStatement. 
+<div class="description req-false">Comma-separated list of variable names to hold values returned by Select statements, Prepared Select Statements or CallableStatement.
         Note that when used with CallableStatement, list of variables must be in the same sequence as the <span class="code">OUT</span> parameters returned by the call.
         If there are less variable names than <span class="code">OUT</span> parameters only as many results shall be stored in the thread-context variables as variable names were supplied.
         If more variable names than <span class="code">OUT</span> parameters exist, the additional variables will be ignored</div>
@@ -2603,7 +2603,7 @@ This will not have any impact on existing Test plans.
          
 <div class="property">
 <div class="name req-true">Entry name</div>
-<div class="description req-true">Distinguished name of the object you want to modify, relative 
+<div class="description req-true">Distinguished name of the object you want to modify, relative
            to the given DN in the thread bind operation</div>
 <div class="required req-true">Yes</div>
 </div>
@@ -2749,7 +2749,7 @@ The required methods in <span class="code">LogParser</span> are:
 
 <li>
 <span class="code">parse(int)</span>
-</li> 
+</li>
 
 </ul>
 
@@ -2825,11 +2825,11 @@ for all the methods. For an example of how to implement either interface, refer 
 </div>
 <p>
 The <span class="code">TCLogParser</span> processes the access log independently for each thread.
-The <span class="code">SharedTCLogParser</span> and <span class="code">OrderPreservingLogParser</span> share access to the file, 
+The <span class="code">SharedTCLogParser</span> and <span class="code">OrderPreservingLogParser</span> share access to the file,
 i.e. each thread gets the next entry in the log.
 </p>
 <p>
-The <span class="code">SessionFilter</span> is intended to handle Cookies across threads. 
+The <span class="code">SessionFilter</span> is intended to handle Cookies across threads.
 It does not filter out any entries, but modifies the cookie manager so that the cookies for a given IP are
 processed by a single thread at a time. If two threads try to process samples from the same client IP address,
 then one will be forced to wait until the other has completed.
@@ -2901,8 +2901,8 @@ The <span class="code">interrupt()</span> method can be defined in the script or
 <div class="name req-true">Reset bsh.Interpreter before each call</div>
 <div class="description req-true">
     If this option is selected, then the interpreter will be recreated for each sample.
-    This may be necessary for some long running scripts. 
-    For further information, see <a href="best-practices#bsh_scripting">Best Practices - BeanShell scripting</a>.
+    This may be necessary for some long running scripts.
+    For further information, see <a href="best-practices.html#bsh_scripting">Best Practices - BeanShell scripting</a>.
     </div>
 <div class="required req-true">Yes</div>
 </div>
@@ -2940,7 +2940,7 @@ The <span class="code">interrupt()</span> method can be defined in the script or
     
 <div class="property">
 <div class="name req-true">Script</div>
-<div class="description req-true">The BeanShell script to run. 
+<div class="description req-true">The BeanShell script to run.
     The return value (if not <span class="code">null</span>) is stored as the sampler result.</div>
 <div class="required req-true">Yes (unless script file is provided)</div>
 </div>
@@ -2955,7 +2955,7 @@ and Samplers are only called from a single thread
 <p>
 If the property "<span class="code">beanshell.sampler.init</span>" is defined, it is passed to the Interpreter
 as the name of a sourced file.
-This can be used to define common methods and variables. 
+This can be used to define common methods and variables.
 There is a sample init file in the bin directory: <span class="code">BeanShellSampler.bshrc</span>.
 </p>
 <p>
@@ -2997,7 +2997,7 @@ BeanShell does not currently support Java 5 syntax such as generics and the enha
 <span class="code">bsh.args</span> - the parameters, split as described above</li>
         
 <li>
-<span class="code">SampleResult</span> - pointer to the current <a href="../api/org/apache/jmeter/samplers/SampleResult.html"><span class="code">SampleResult</span></a>
+<span class="code">SampleResult</span> - pointer to the current <a href="../api/org/apache/jmeter/samplers/SampleResult.html">SampleResult</a>
 </li>
             
 <li>
@@ -3016,7 +3016,7 @@ BeanShell does not currently support Java 5 syntax such as generics and the enha
 </li>
             
 <li>
-<span class="code">vars</span> - <a href="../api/org/apache/jmeter/threads/JMeterVariables.html">JMeterVariables</a>  - e.g. 
+<span class="code">vars</span> - <a href="../api/org/apache/jmeter/threads/JMeterVariables.html">JMeterVariables</a>  - e.g.
                <pre class="source">vars.get("VAR1");
 vars.put("VAR2","value");
 vars.remove("VAR3");
@@ -3031,7 +3031,7 @@ props.put("PROP1","1234");</pre>
         
 </ul>
 <p>When the script completes, control is returned to the Sampler, and it copies the contents
-            of the following script variables into the corresponding variables in the <a href="../api/org/apache/jmeter/samplers/SampleResult.html"><span class="code">SampleResult</span></a>:</p>
+            of the following script variables into the corresponding variables in the <a href="../api/org/apache/jmeter/samplers/SampleResult.html">SampleResult</a>:</p>
 <ul>
             
 <li>
@@ -3047,7 +3047,7 @@ props.put("PROP1","1234");</pre>
             
 </ul>
 <p>The SampleResult ResponseData is set from the return value of the script.
-            If the script returns null, it can set the response directly, by using the method 
+            If the script returns null, it can set the response directly, by using the method
             <span class="code">SampleResult.setResponseData(data)</span>, where data is either a String or a byte array.
             The data type defaults to "<span class="code">text</span>", but can be set to binary by using the method
             <span class="code">SampleResult.setDataType(SampleResult.BINARY)</span>.
@@ -3067,14 +3067,14 @@ return "Data from sample with Label "+Label;
 SampleResult.setResponseData("My data");
 return null;
 </pre>
-<p>Another example:<br> ensure that the property <span class="code">beanshell.sampler.init=BeanShellSampler.bshrc</span> is defined in <span class="code">jmeter.properties</span>. 
+<p>Another example:<br> ensure that the property <span class="code">beanshell.sampler.init=BeanShellSampler.bshrc</span> is defined in <span class="code">jmeter.properties</span>.
 The following script will show the values of all the variables in the <span class="code">ResponseData</span> field:
 </p>
 <pre class="source">
 return getVariables();
 </pre>
 <p>
-For details on the methods available for the various classes (<a href="../api/org/apache/jmeter/threads/JMeterVariables.html"><span class="code">JMeterVariables</span></a>, <a href="../api/org/apache/jmeter/samplers/SampleResult.html"><span class="code">SampleResult</span></a> etc.) please check the Javadoc or the source code.
+For details on the methods available for the various classes (<a href="../api/org/apache/jmeter/threads/JMeterVariables.html">JMeterVariables</a>, <a href="../api/org/apache/jmeter/samplers/SampleResult.html">SampleResult</a> etc.) please check the Javadoc or the source code.
 Beware however that misuse of any methods can cause subtle faults that may be difficult to find.
 </p>
 <div class="go-top">
@@ -3111,7 +3111,7 @@ To benefit from this feature:
     
 <li>Or Use Script Text and check <span class="code">Cache compiled script if available</span> property.
     <div class="clear"></div>
-<div class="note">When using this feature, ensure your script code does not use JMeter variables directly in script code as caching would only cache first replacement. Instead use script parameters.</div>
+<div class="note">When using this feature, ensure your script code does not use JMeter variables or JMeter function calls directly in script code as caching would only cache first replacement. Instead use script parameters.</div>
 <div class="clear"></div>
     
 <div class="clear"></div>
@@ -3135,7 +3135,7 @@ To benefit from this feature:
 <a href="https://bugs.openjdk.java.net/browse/JDK-8136353">JDK-8136353</a>
 </li>
         
-</ul> 
+</ul>
     
 </div>
 <div class="clear"></div>
@@ -3268,7 +3268,7 @@ Note that these are JSR223 variables - i.e. they can be used directly in the scr
 </li>
 
 <li>
-<span class="code">vars</span> - <a href="../api/org/apache/jmeter/threads/JMeterVariables.html">JMeterVariables</a>  - e.g. 
+<span class="code">vars</span> - <a href="../api/org/apache/jmeter/threads/JMeterVariables.html">JMeterVariables</a>  - e.g.
   <pre class="source">vars.get("VAR1");
 vars.put("VAR2","value");
 vars.remove("VAR3");
@@ -3276,7 +3276,7 @@ vars.putObject("OBJ1",new Object());</pre>
 </li>
 
 <li>
-<span class="code">props</span> - JMeterProperties  (class <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html"><span class="code">java.util.Properties</span></a>) - e.g. 
+<span class="code">props</span> - JMeterProperties  (class <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html"><span class="code">java.util.Properties</span></a>) - e.g.
   <pre class="source">props.get("START.HMS");
 props.put("PROP1","1234");</pre>
 </li>
@@ -3288,7 +3288,7 @@ props.put("PROP1","1234");</pre>
 </ul>
 <p>
 The <a href="../api/org/apache/jmeter/samplers/SampleResult.html">SampleResult</a> ResponseData is set from the return value of the script.
-If the script returns <span class="code">null</span>, it can set the response directly, by using the method 
+If the script returns <span class="code">null</span>, it can set the response directly, by using the method
 <span class="code">SampleResult.setResponseData(data)</span>, where data is either a String or a byte array.
 The data type defaults to "<span class="code">text</span>", but can be set to binary by using the method
 <span class="code">SampleResult.setDataType(SampleResult.BINARY)</span>.
@@ -3334,9 +3334,9 @@ Currently the only way to changes these is via the <a href="../api/org/apache/jm
         </p>
 <p>
         If "<span class="code">Re-use connection</span>" is selected, connections are shared between Samplers in the same thread,
-        provided that the exact same host name string and port are used. 
-        Different hosts/port combinations will use different connections, as will different threads. 
-        If both of "<span class="code">Re-use connection</span>" and "<span class="code">Close connection</span>" are selected, the socket will be closed after running the sampler. 
+        provided that the exact same host name string and port are used.
+        Different hosts/port combinations will use different connections, as will different threads.
+        If both of "<span class="code">Re-use connection</span>" and "<span class="code">Close connection</span>" are selected, the socket will be closed after running the sampler.
         On the next sampler, another socket will be created. You may want to close a socket at the end of each thread loop.
         </p>
 <p>
@@ -3436,7 +3436,7 @@ Currently the only way to changes these is via the <a href="../api/org/apache/jm
 </dt>
         
 <dd>
-        If the timeout is set, the read will be terminated when this expires. 
+        If the timeout is set, the read will be terminated when this expires.
         So if you are using an <span class="code">eolByte</span>/<span class="code">eomByte</span>, make sure the timeout is sufficiently long,
         otherwise the read will be terminated early.
         </dd>
@@ -3621,7 +3621,7 @@ Currently the only way to changes these is via the <a href="../api/org/apache/jm
   
 <div class="property">
 <div class="name req-true">use JNDI properties file</div>
-<div class="description req-true">use <span class="code">jndi.properties</span>. 
+<div class="description req-true">use <span class="code">jndi.properties</span>.
   Note that the file must be on the classpath - e.g. by updating the <span class="code">user.classpath</span> JMeter property.
   If this option is not selected, JMeter uses the "<span class="code">JNDI Initial Context Factory</span>" and "<span class="code">Provider URL</span>" fields
   to create the connection.
@@ -3675,7 +3675,7 @@ Currently the only way to changes these is via the <a href="../api/org/apache/jm
 <div class="name req-false">Expiration</div>
 <div class="description req-false">
       The expiration time (in milliseconds) of the message before it becomes obsolete.
-      If you do not specify an expiration time, the default value is <span class="code">0</span> (never expires). 
+      If you do not specify an expiration time, the default value is <span class="code">0</span> (never expires).
   </div>
 <div class="required req-false">No</div>
 </div>
@@ -3683,8 +3683,8 @@ Currently the only way to changes these is via the <a href="../api/org/apache/jm
 <div class="property">
 <div class="name req-false">Priority</div>
 <div class="description req-false">
-      The priority level of the message. There are ten priority levels from <span class="code">0</span> (lowest) to <span class="code">9</span> (highest). 
-      If you do not specify a priority level, the default level is <span class="code">4</span>. 
+      The priority level of the message. There are ten priority levels from <span class="code">0</span> (lowest) to <span class="code">9</span> (highest).
+      If you do not specify a priority level, the default level is <span class="code">4</span>.
   </div>
 <div class="required req-false">No</div>
 </div>
@@ -3736,7 +3736,7 @@ Currently the only way to changes these is via the <a href="../api/org/apache/jm
 <div class="property">
 <div class="name req-true">Content encoding</div>
 <div class="description req-true">Specify the encoding for reading the message source file:
-  <dl> 
+  <dl>
     
 <dt>
 <span class="code">RAW</span>:</dt>
@@ -3796,7 +3796,7 @@ name,String,Example
 size,Integer,1234
 </pre>
 <div class="clear"></div>
-<div class="note"> 
+<div class="note">
 The Object message is implemented and works as follow:
 <ul>
 
@@ -3804,7 +3804,7 @@ The Object message is implemented and works as follow:
 
 <li>Serialize your object as XML using XStream</li>
 
-<li>Either put result in a file suffixed with <span class="code">.txt</span> or <span class="code">.obj</span> or put XML content directly in Text Area</li>  
+<li>Either put result in a file suffixed with <span class="code">.txt</span> or <span class="code">.obj</span> or put XML content directly in Text Area</li>
 
 </ul>
 Note that if message is in a file, replacement of properties will not occur while it will if you use Text Area.
@@ -3896,7 +3896,7 @@ The following table shows some values which may be useful when configuring JMS:
   
 <div class="property">
 <div class="name req-true">use JNDI properties file</div>
-<div class="description req-true">use <span class="code">jndi.properties</span>. 
+<div class="description req-true">use <span class="code">jndi.properties</span>.
   Note that the file must be on the classpath - e.g. by updating the <span class="code">user.classpath</span> JMeter property.
   If this option is not selected, JMeter uses the "<span class="code">JNDI Initial Context Factory</span>" and "<span class="code">Provider URL</span>" fields
   to create the connection.
@@ -3924,21 +3924,21 @@ The following table shows some values which may be useful when configuring JMS:
   
 <div class="property">
 <div class="name req-false">Durable Subscription ID</div>
-<div class="description req-false">The ID to use for a durable subscription. On first 
+<div class="description req-false">The ID to use for a durable subscription. On first
   use the respective queue will automatically be generated by the JMS provider if it does not exist yet.</div>
 <div class="required req-false">No</div>
 </div>
   
 <div class="property">
 <div class="name req-false">Client ID</div>
-<div class="description req-false">The Client ID to use when you use a durable subscription. 
+<div class="description req-false">The Client ID to use when you use a durable subscription.
   Be sure to add a variable like <span class="code">${__threadNum}</span> when you have more than one Thread.</div>
 <div class="required req-false">No</div>
 </div>
   
 <div class="property">
 <div class="name req-false">JMS Selector</div>
-<div class="description req-false">Message Selector as defined by JMS specification to extract only 
+<div class="description req-false">Message Selector as defined by JMS specification to extract only
   messages that respect the Selector condition. Syntax uses subpart of SQL 92.</div>
 <div class="required req-false">No</div>
 </div>
@@ -3981,7 +3981,7 @@ The following table shows some values which may be useful when configuring JMS:
   
 <div class="property">
 <div class="name req-true">Timeout</div>
-<div class="description req-true">Specify the timeout to be applied, in milliseconds. <span class="code">0</span>=none. 
+<div class="description req-true">Specify the timeout to be applied, in milliseconds. <span class="code">0</span>=none.
   This is the overall aggregate timeout, not per sample.</div>
 <div class="required req-true">Yes</div>
 </div>
@@ -3995,15 +3995,15 @@ The following table shows some values which may be useful when configuring JMS:
 <dt>
 <span class="code">MessageConsumer.receive()</span>
 </dt>
-<dd>calls <span class="code">receive()</span> for every requested message. 
+<dd>calls <span class="code">receive()</span> for every requested message.
   Retains the connection between samples, but does not fetch messages unless the sampler is active.
-  This is best suited to Queue subscriptions. 
+  This is best suited to Queue subscriptions.
   </dd>
   
 <dt>
 <span class="code">MessageListener.onMessage()</span>
 </dt>
-<dd>establishes a Listener that stores all incoming messages on a queue. 
+<dd>establishes a Listener that stores all incoming messages on a queue.
   The listener remains active after the sampler completes.
   This is best suited to Topic subscriptions.</dd>
   
@@ -4146,7 +4146,7 @@ The following table shows some values which may be useful when configuring JMS:
 <div class="property">
 <div class="name req-false">JMS Selector</div>
 <div class="description req-false">
-    Message Selector as defined by JMS specification to extract only 
+    Message Selector as defined by JMS specification to extract only
     messages that respect the Selector condition. Syntax uses subpart of SQL 92.
   </div>
 <div class="required req-false">No</div>
@@ -4172,7 +4172,7 @@ The following table shows some values which may be useful when configuring JMS:
     the message id of the request and the correlation id of the reply. If the JNDI Name Reply Queue is empty, then
     temporary queues will be used for the communication between the requestor and the server.
     This is very different from the fixed reply queue. With temporary queues the sending thread will block until the reply message has been received.
-    With <span class="code">Request Response</span> mode, you need to have a Server that listens to messages sent to Request Queue and sends replies to 
+    With <span class="code">Request Response</span> mode, you need to have a Server that listens to messages sent to Request Queue and sends replies to
     queue referenced by <span class="code">message.getJMSReplyTo()</span>.</dd>
     
 <dt>
@@ -4207,14 +4207,14 @@ The following table shows some values which may be useful when configuring JMS:
 <dt>
 <span class="code">Use Request Message Id</span>
 </dt>
-<dd>if selected, the request JMSMessageID will be used, 
-    otherwise the request JMSCorrelationID will be used. 
+<dd>if selected, the request JMSMessageID will be used,
+    otherwise the request JMSCorrelationID will be used.
     In the latter case the correlation id must be specified in the request.</dd>
     
 <dt>
 <span class="code">Use Response Message Id</span>
 </dt>
-<dd>if selected, the response JMSMessageID will be used, 
+<dd>if selected, the response JMSMessageID will be used,
     otherwise the response JMSCorrelationID will be used.
     </dd>
     
@@ -4236,7 +4236,7 @@ The following table shows some values which may be useful when configuring JMS:
 </dl>
     In both cases the JMS application is responsible for populating the correlation ID as necessary.
     <div class="clear"></div>
-<div class="note">if the same queue is used to send and receive messages, 
+<div class="note">if the same queue is used to send and receive messages,
     then the response message will be the same as the request message.
     In which case, either provide a correlation id and clear both checkboxes;
     or select both checkboxes to use the message Id for correlation.
@@ -4261,7 +4261,7 @@ The following table shows some values which may be useful when configuring JMS:
 <div class="name req-false">Expiration</div>
 <div class="description req-false">
       The expiration time (in milliseconds) of the message before it becomes obsolete.
-      If you do not specify an expiration time, the default value is <span class="code">0</span> (never expires). 
+      If you do not specify an expiration time, the default value is <span class="code">0</span> (never expires).
   </div>
 <div class="required req-false">No</div>
 </div>
@@ -4269,8 +4269,8 @@ The following table shows some values which may be useful when configuring JMS:
 <div class="property">
 <div class="name req-false">Priority</div>
 <div class="description req-false">
-      The priority level of the message. There are ten priority levels from <span class="code">0</span> (lowest) to <span class="code">9</span> (highest). 
-      If you do not specify a priority level, the default level is <span class="code">4</span>. 
+      The priority level of the message. There are ten priority levels from <span class="code">0</span> (lowest) to <span class="code">9</span> (highest).
+      If you do not specify a priority level, the default level is <span class="code">4</span>.
   </div>
 <div class="required req-false">No</div>
 </div>
@@ -4661,9 +4661,9 @@ The actual provider names for POP3 and IMAP are <span class="code">pop3</span> a
 
 <div class="property">
 <div class="name req-true">Store the message using MIME</div>
-<div class="description req-true">Whether to store the message as MIME. 
-If so, then the entire raw message is stored in the Response Data; the headers are not stored as they are available in the data. 
-If not, the message headers are stored as Response Headers. 
+<div class="description req-true">Whether to store the message as MIME.
+If so, then the entire raw message is stored in the Response Data; the headers are not stored as they are available in the data.
+If not, the message headers are stored as Response Headers.
 A few headers are stored (<span class="code">Date</span>, <span class="code">To</span>, <span class="code">From</span>, <span class="code">Subject</span>) in the body.
 </div>
 <div class="required req-true">Yes</div>
@@ -4731,7 +4731,7 @@ The <span class="code">server</span> field is used to specify the path to the pa
 Individual message files should be stored with the name <span class="code">n.msg</span>,
 where <span class="code">n</span> is the message number.
 Alternatively, the <span class="code">server</span> field can be the name of a file which contains a single message.
-The current implementation is quite basic, and is mainly intended for debugging purposes. 
+The current implementation is quite basic, and is mainly intended for debugging purposes.
 </p>
 <div class="go-top">
 <a href="#">^</a>
@@ -4750,7 +4750,7 @@ The current implementation is quite basic, and is mainly intended for debugging 
 The Flow Control Action sampler is a sampler that is intended for use in a conditional controller.
 Rather than generate a sample, the test element either pauses or stops the selected target.
 <p>This sampler can also be useful in conjunction with the Transaction Controller, as it allows
-pauses to be included without needing to generate a sample. 
+pauses to be included without needing to generate a sample.
 For variable delays, set the pause time to zero, and add a Timer as a child.</p>
 
 <p>
@@ -4824,8 +4824,8 @@ In CLI mode, JMeter will exit if some threads fail to stop within the 5 second t
 <div class="description">
 
 <p>
-The SMTP Sampler can send mail messages using SMTP/SMTPS protocol. 
-It is possible to set security protocols for the connection (SSL and TLS), as well as user authentication. 
+The SMTP Sampler can send mail messages using SMTP/SMTPS protocol.
+It is possible to set security protocols for the connection (SSL and TLS), as well as user authentication.
 If a security protocol is used a verification on the server certificate will occur. <br>
 Two alternatives to handle this verification are available:<br>
 
@@ -4996,7 +4996,7 @@ Relative paths are resolved against the current directory.
 
 <div class="property">
 <div class="name req-true">Suppress Subject Header</div>
-<div class="description req-true">If selected, the "<span class="code">Subject:</span>" header is omitted from the mail that is sent. 
+<div class="description req-true">If selected, the "<span class="code">Subject:</span>" header is omitted from the mail that is sent.
 This is different from sending an empty "<span class="code">Subject:</span>" header, though some e-mail clients may display it identically.</div>
 <div class="required req-true"></div>
 </div>
@@ -5080,7 +5080,7 @@ Validation of the return code can be enabled, and the expected return code can b
 </p>
 
 <p>
-Note that OS shells generally provide command-line parsing. 
+Note that OS shells generally provide command-line parsing.
 This varies between OSes, but generally the shell will split parameters on white-space.
 Some shells expand wild-card file names; some don't.
 The quoting mechanism also varies between OSes.
@@ -5090,7 +5090,7 @@ This means that the sampler settings will not be portable between OSes.
 </p>
 
 <p>
-Many OSes have some built-in commands which are not provided as separate executables. 
+Many OSes have some built-in commands which are not provided as separate executables.
 For example the Windows <span class="code">DIR</span> command is part of the command interpreter (<span class="code">CMD.EXE</span>).
 These built-ins cannot be run as independent programs, but have to be provided as arguments to the appropriate command interpreter.
 </p>
@@ -5173,14 +5173,14 @@ For example, the Windows command-line: <span class="code">DIR C:\TEMP</span> nee
 
 <div class="property">
 <div class="name req-false">Standard output (stdout</div>
-<div class="description req-false">Name of output file for standard output (<span class="code">STDOUT</span>). 
+<div class="description req-false">Name of output file for standard output (<span class="code">STDOUT</span>).
 If omitted, output is captured and returned as the response data.</div>
 <div class="required req-false">No</div>
 </div>
 
 <div class="property">
 <div class="name req-false">Standard error (stderr)</div>
-<div class="description req-false">Name of output file for standard error (<span class="code">STDERR</span>). 
+<div class="description req-false">Name of output file for standard error (<span class="code">STDERR</span>).
 If omitted, output is captured and returned as the response data.</div>
 <div class="required req-false">No</div>
 </div>
@@ -5282,7 +5282,7 @@ MongoDB Script is more suitable for functional testing or test setup (setup/tear
         
 </div>
 <div class="required req-false">No</div>
-</div>        
+</div>
         
 <div class="property">
 <div class="name req-true">Script</div>
@@ -5290,7 +5290,7 @@ MongoDB Script is more suitable for functional testing or test setup (setup/tear
         Mongo script as it would be used in MongoDB shell
         </div>
 <div class="required req-true">Yes</div>
-</div>        
+</div>
 
 </div>
 <div class="links">
@@ -5588,12 +5588,12 @@ is configured to store the results in a file named "<span class="code">loop-test
 during further iterations through the test plan.</p>
 
 
-<p>The Once Only Controller will now execute always during the first iteration of any looping parent controller.  
-Thus, if the Once Only Controller is placed under a Loop Controller specified to loop 5 times, then the Once Only Controller will execute only on the first iteration through the Loop Controller 
+<p>The Once Only Controller will now execute always during the first iteration of any looping parent controller.
+Thus, if the Once Only Controller is placed under a Loop Controller specified to loop 5 times, then the Once Only Controller will execute only on the first iteration through the Loop Controller
 (i.e. every 5 times).</p>
 
 <p>
-Note this means the Once Only Controller will still behave as previously expected if put under a Thread Group (runs only once per test per Thread), 
+Note this means the Once Only Controller will still behave as previously expected if put under a Thread Group (runs only once per test per Thread),
 but now the user has more flexibility in the use of the Once Only Controller.</p>
 
 
@@ -5693,7 +5693,7 @@ other controllers for each loop iteration. </p>
         
 <div class="property">
 <div class="name req-false">Interleave across threads</div>
-<div class="description req-false">If checked, the interleave controller will alternate among each of its children controllers for each loop iteration but across all threads, for example in a 
+<div class="description req-false">If checked, the interleave controller will alternate among each of its children controllers for each loop iteration but across all threads, for example in a
         configuration with 4 threads and 3 child controllers, on first iteration
         thread 1 will run first child, thread 2 second child, thread 3 third child, thread 4 first child, on next iteration each thread will run the following child controller</div>
 <div class="required req-false">No</div>
@@ -5916,7 +5916,7 @@ what results any given interaction will give</div>
 </h2>
 <div class="description">
 
-<p>The Throughput Controller allows the user to control how often it is executed.  
+<p>The Throughput Controller allows the user to control how often it is executed.
 There are two modes:
 <ul>
 
@@ -6005,8 +6005,8 @@ Please refer to the <a href="../usermanual/component_reference.html#Constant_Thr
 </h2>
 <div class="description">
         
-<p>The Runtime Controller controls how long its children how long its children will run. 
-        Controller will run its children until configured <span class="code">Runtime(s)</span> is exceeded. 
+<p>The Runtime Controller controls how long its children how long its children will run.
+        Controller will run its children until configured <span class="code">Runtime(s)</span> is exceeded.
         </p>
     
 </div>
@@ -6101,7 +6101,7 @@ Please refer to the <a href="../usermanual/component_reference.html#Constant_Thr
         to test if a variable is defined and is not null.
         </div>
 <div class="clear"></div>
-        If you uncheck <span class="code">Interpret Condition as Variable Expression?</span>, <span class="code">If Controller</span> will internally use javascript to evaluate the condition 
+        If you uncheck <span class="code">Interpret Condition as Variable Expression?</span>, <span class="code">If Controller</span> will internally use javascript to evaluate the condition
         which has a performance penalty that can be very big and make your test less scalable.
         <figure>
 <a href="../images/screenshots/if_controller_javascript.png"><img src="../images/screenshots/if_controller_javascript.png" width="819" height="265" alt="If Controller using javascript"></a>
@@ -6335,7 +6335,7 @@ For example:
 <div class="description">
 
 <p>
-The Switch Controller acts like the <a href="../usermanual/component_reference.html#Interleave_Controller">Interleave Controller</a> 
+The Switch Controller acts like the <a href="../usermanual/component_reference.html#Interleave_Controller">Interleave Controller</a>
 in that it runs one of the subordinate elements on each iteration, but rather than
 run them in sequence, the controller runs the element defined by the switch value.
 </p>
@@ -6346,7 +6346,7 @@ The switch value can also be a name.
 </div>
 <div class="clear"></div>
 
-<p>If the switch value is out of range, it will run the zeroth element, 
+<p>If the switch value is out of range, it will run the zeroth element,
 which therefore acts as the default for the numeric case.
 It also runs the zeroth element if the value is the empty string.</p>
 
@@ -6398,7 +6398,7 @@ If there is no default, then no element is selected, and the controller will not
 <h2 id="ForEach_Controller">ForEach Controller<a class="sectionlink" href="#ForEach_Controller" title="Link to here">&para;</a>
 </h2>
 <div class="description">
-<p>A ForEach controller loops through the values of a set of related variables. 
+<p>A ForEach controller loops through the values of a set of related variables.
 When you add samplers (or controllers) to a ForEach controller, every sample (or controller)
 is executed one or more times, where during every loop the variable has a new value.
 The input should consist of several variables, each extended with an underscore and a number.
@@ -6441,7 +6441,7 @@ Index starts at 0</div>
 </p>
 
 <p>
-It is especially suited for running with the regular expression post-processor. 
+It is especially suited for running with the regular expression post-processor.
 This can "create" the necessary input variables out of the result data of a previous request.
 By omitting the "<span class="code">_</span>" separator, the ForEach Controller can be used to loop through the groups by using
 the input variable <span class="code">refName_g</span>, and can also loop through all the groups in all the matches
@@ -6540,9 +6540,9 @@ out of the return page and puts them in the <span class="code">inputVar</span> v
 <div class="title">ForEach Example<a class="sectionlink" href="#foreach_example2" title="Link to here">&para;</a>
 </div>
 
-<p>Here is <a href="../demos/ForEachTest2.jmx">another example</a> you can download. 
+<p>Here is <a href="../demos/ForEachTest2.jmx">another example</a> you can download.
 This has two Regular Expressions and ForEach Controllers.
-The first RE matches, but the second does not match, 
+The first RE matches, but the second does not match,
 so no samples are run by the second ForEach Controller</p>
 
 <figure>
@@ -6586,11 +6586,11 @@ The Module Controller provides a mechanism for substituting test plan fragments 
 </p>
 
 <p>
-A test plan fragment consists of a Controller and all the test elements (samplers etc.) contained in it. 
+A test plan fragment consists of a Controller and all the test elements (samplers etc.) contained in it.
 The fragment can be located in any Thread Group.
 If the fragment is located in a Thread Group, then its Controller can be disabled to prevent the fragment being run
-except by the Module Controller. 
-Or you can store the fragments in a dummy Thread Group, and disable the entire Thread Group. 
+except by the Module Controller.
+Or you can store the fragments in a dummy Thread Group, and disable the entire Thread Group.
 </p>
 
 <p>
@@ -6613,7 +6613,7 @@ Any <b>fragments used by the Module Controller must have a unique name</b>,
 as the name is used to find the target controller when a test plan is reloaded.
 For this reason it is best to ensure that the Controller name is changed from the default
 - as shown in the example above -
-otherwise a duplicate may be accidentally created when new elements are added to the test plan. 
+otherwise a duplicate may be accidentally created when new elements are added to the test plan.
 </p>
 
 </div>
@@ -6660,14 +6660,14 @@ otherwise a duplicate may be accidentally created when new elements are added to
 <div class="description">
 
 <p>
-The include controller is designed to use an external JMX file. To use it, create a Test Fragment 
+The include controller is designed to use an external JMX file. To use it, create a Test Fragment
 underneath the Test Plan and add any desired samplers, controllers etc. below it.
 Then save the Test Plan.  The file is now ready to be included as part of other Test Plans.
 </p>
 
 <p>
 For convenience, a <a href="../usermanual/component_reference.html#Thread_Group">Thread Group</a> can also be added in the external JMX file for debugging purposes.
-A <a href="../usermanual/component_reference.html#Module_Controller">Module Controller</a> can be used to reference the Test Fragment.  The <a href="../usermanual/component_reference.html#Thread_Group">Thread Group</a> will be ignored during the 
+A <a href="../usermanual/component_reference.html#Module_Controller">Module Controller</a> can be used to reference the Test Fragment.  The <a href="../usermanual/component_reference.html#Thread_Group">Thread Group</a> will be ignored during the
 include process.
 </p>
 
@@ -6679,7 +6679,7 @@ test plan, not the included file, otherwise they are not guaranteed to work.
 <div class="clear"></div>
 <div class="note">
 This element does not support variables/functions in the filename field.<br>
-However, if the property <span class="code">includecontroller.prefix</span> is defined, 
+However, if the property <span class="code">includecontroller.prefix</span> is defined,
 the contents are used to prefix the pathname.
 </div>
 <div class="clear"></div>
@@ -6758,7 +6758,7 @@ attempts to open the <span class="code">Filename</span> relative to the JMX laun
 </ul>
         
 <p>
-        The generated sample time includes all the times for the nested samplers excluding by default (since 2.11) timers and processing time of pre/post processors 
+        The generated sample time includes all the times for the nested samplers excluding by default (since 2.11) timers and processing time of pre/post processors
         unless checkbox "<span class="code">Include duration of timer and pre-post processors in generated sample</span>" is checked.
         Depending on the clock resolution, it may be slightly longer than the sum of the individual samplers plus timers.
         The clock might tick after the controller recorded the start time but before the first sample starts.
@@ -6948,7 +6948,7 @@ Critical Section Controller takes locks only within one JVM, so if using Distrib
     
 <br>
 Most of the listeners perform several roles in addition to "listening"
-to the test results.  
+to the test results.
 They also provide means to view, save, and read saved test results.
 <p>Note that Listeners are processed at the end of the scope in which they are found.</p>
 
@@ -6993,12 +6993,12 @@ When reading from CSV results files, the header (if present) is used to determin
 
 <div class="clear"></div>
 <div class="note">
-XML files written by JMeter have version 1.0 declared in header while actual file is serialized with 1.1 rules. 
+XML files written by JMeter have version 1.0 declared in header while actual file is serialized with 1.1 rules.
 (This is done for historical compatibility reasons; see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59973">
       Bug
       59973</a> and <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=58679">
       Bug
-      58679</a>) 
+      58679</a>)
 This causes strict XML parsers to fail. Consider using non-strict XML parsers to read JTL files.
 </div>
 <div class="clear"></div>
@@ -7063,9 +7063,9 @@ the <a href="listeners.html#xmlformat2.1">XML log</a> format.
 </p>
 
 <div class="clear"></div>
-<div class="note">The entries in <span class="code">jmeter.properties</span> are used to define the defaults; 
+<div class="note">The entries in <span class="code">jmeter.properties</span> are used to define the defaults;
 these can be overridden for individual listeners by using the Configure button,
-as shown below. 
+as shown below.
 The settings in <span class="code">jmeter.properties</span> also apply to the listener that is added
 by using the <span class="code">-l</span> command-line flag.
 </div>
@@ -7097,7 +7097,7 @@ by using the <span class="code">-l</span> command-line flag.
         Relative paths are resolved relative to the current working directory (which defaults to the <span class="code">bin/</span> directory).
         JMeter also support paths relative to the directory containing the current test plan (JMX file).
         If the path name begins with "<span class="code">~/</span>" (or whatever is in the <span class="code">jmeter.save.saveservice.base_prefix</span> JMeter property),
-        then the path is assumed to be relative to the JMX file location. 
+        then the path is assumed to be relative to the JMX file location.
         </div>
 <div class="required req-false">No</div>
 </div>
@@ -7168,7 +7168,7 @@ Note that cookies, method and the query string are saved as part of the "<span c
 
 <div class="clear"></div>
 <div class="note">
-Graph Results MUST NOT BE USED during load test as it consumes a lot of resources (memory and CPU). Use it only for either functional testing or 
+Graph Results MUST NOT BE USED during load test as it consumes a lot of resources (memory and CPU). Use it only for either functional testing or
 during Test Plan debugging and Validation.
 </div>
 <div class="clear"></div>
@@ -7191,7 +7191,7 @@ number.</p>
 <figcaption>Screenshot of Control-Panel of Graph Results</figcaption>
 </figure>
 </div>
-<p>The following table briefly describes the items on the graph. 
+<p>The following table briefly describes the items on the graph.
 Further details on the precise meaning of the statistical terms can be found on the web
  - e.g. Wikipedia - or by consulting a book on statistics.
  </p>
@@ -7213,7 +7213,7 @@ Further details on the precise meaning of the statistical terms can be found on 
 <span class="code">Throughput</span> - plot the number of samples per unit of time</li>
  
 </ul>
-<p>The individual figures at the bottom of the display are the current values. 
+<p>The individual figures at the bottom of the display are the current values.
  "<span class="code">Latest Sample</span>" is the current elapsed sample time, shown on the graph as "<span class="code">Data</span>".</p>
 <p>The value displayed on the top left of graph is the max of 90<sup>th</sup> percentile of response time.</p>
 <div class="go-top">
@@ -7229,7 +7229,7 @@ Further details on the precise meaning of the statistical terms can be found on 
 
 <div class="clear"></div>
 <div class="note">
-Assertion Results MUST NOT BE USED during load test as it consumes a lot of resources (memory and CPU). Use it only for either functional testing or 
+Assertion Results MUST NOT BE USED during load test as it consumes a lot of resources (memory and CPU). Use it only for either functional testing or
 during Test Plan debugging and Validation.
 </div>
 <div class="clear"></div>
@@ -7315,7 +7315,7 @@ Match[9]=#__counter
 <td><span class="code">Document</span></td>
 <td>The <i>Document view</i> will show the extract text from various type of documents like Microsoft Office
 (Word, Excel, PowerPoint 97-2003, 2007-2010 (openxml), Apache OpenOffice (writer, calc, impress), HTML,
-gzip, jar/zip files (list of content), and some meta-data on "multimedia" files like mp3, mp4, flv, etc. The complete list of 
+gzip, jar/zip files (list of content), and some meta-data on "multimedia" files like mp3, mp4, flv, etc. The complete list of
 support format is available on <a href="http://tika.apache.org/1.2/formats.html">Apache Tika format page.</a>
 
 <div class="clear"></div>
@@ -7335,7 +7335,7 @@ To change this limit, set the JMeter property <span class="code">document.max_si
 HTML.  The rendered HTML is likely to compare poorly to the view one
 would get in any web browser; however, it does provide a quick
 approximation that is helpful for initial result evaluation.<br>
-Images, style-sheets, etc. aren't downloaded. 
+Images, style-sheets, etc. aren't downloaded.
 <br>
 </td>
 </tr>
@@ -7343,14 +7343,14 @@ Images, style-sheets, etc. aren't downloaded.
 <tr>
 <td><span class="code">HTML (download resources)</span></td>
 <td>If the <i>HTML (download resources) view</i> option is selected, the renderer
-may download images, style-sheets, etc. referenced by the HTML code. 
+may download images, style-sheets, etc. referenced by the HTML code.
 <br>
 </td>
 </tr>
 
 <tr>
 <td><span class="code">HTML Source formatted</span></td>
-<td>If the <em>HTML Source formatted view</em> option is selected, the renderer will display the HTML source code formatted and cleaned by <a href="https://jsoup.org/">Jsoup</a>. 
+<td>If the <em>HTML Source formatted view</em> option is selected, the renderer will display the HTML source code formatted and cleaned by <a href="https://jsoup.org/">Jsoup</a>.
 <br>
 </td>
 </tr>
@@ -7397,7 +7397,7 @@ Match[3][1]=JMeterCommitters
 </pre>
 
 <br>
-The first number in <span class="code">[]</span> is the match number; the second number is the group. 
+The first number in <span class="code">[]</span> is the match number; the second number is the group.
 Group <span class="code">[0]</span> is whatever matched the whole RE.
 Group <span class="code">[1]</span> is whatever matched the 1<sup>st</sup> group, i.e. <span class="code">(JMeter\w*)</span> in this case.
 See Figure 9b (below).
@@ -7408,7 +7408,7 @@ See Figure 9b (below).
 <tr>
 <td><span class="code">Text</span></td>
 <td>
-The default <i>Text view</i> shows all of the text contained in the response. 
+The default <i>Text view</i> shows all of the text contained in the response.
 Note that this will only work if the response <span class="code">content-type</span> is considered to be text.
 If the <span class="code">content-type</span> begins with any of the following, it is considered as binary,
 otherwise it is considered to be text.
@@ -7536,11 +7536,11 @@ test.  For each request, it totals the response information and provides request
 average, error rate, approximate throughput (request/second) and Kilobytes per second throughput.
 Once the test is done, the throughput is the actual through for the duration of the entire test.
 <p>
-The throughput is calculated from the point of view of the sampler target 
+The throughput is calculated from the point of view of the sampler target
 (e.g. the remote server in the case of HTTP samples).
 JMeter takes into account the total time over which the requests have been generated.
 If other samplers and timers are in the same thread, these will increase the total time,
-and therefore reduce the throughput value. 
+and therefore reduce the throughput value.
 So two identical samplers with different names will have half the throughput of two samplers with the same name.
 It is important to choose the sampler names correctly to get the best results from
 the Aggregate Report.
@@ -7660,12 +7660,12 @@ i.e. 30.0 requests/minute is saved as 0.5.
 <div class="component">
 <h2 id="View_Results_in_Table">View Results in Table<a class="sectionlink" href="#View_Results_in_Table" title="Link to here">&para;</a>
 </h2>
-<div class="description">This visualizer creates a row for every sample result.  
+<div class="description">This visualizer creates a row for every sample result.
 Like the <a href="../usermanual/component_reference.html#View_Results_Tree">View Results Tree</a>, this visualizer uses a lot of memory.
 <p>
 By default, it only displays the main (parent) samples; it does not display the sub-samples (child samples).
 JMeter has a "<span class="code">Child Samples?</span>" check-box.
-If this is selected, then the sub-samples are displayed instead of the main samples.  
+If this is selected, then the sub-samples are displayed instead of the main samples.
 </p>
 
 </div>
@@ -7781,7 +7781,7 @@ the graph as a PNG file.</div>
         
 <div class="property">
 <div class="name req-false">Title</div>
-<div class="description req-false">Define the graph's title on the head of chart. Empty value is the default value : "<span class="code">Aggregate Graph</span>". 
+<div class="description req-false">Define the graph's title on the head of chart. Empty value is the default value : "<span class="code">Aggregate Graph</span>".
         The button <span class="code">Synchronize with name</span> define the title with the label of the listener. And define font settings for graph title</div>
 <div class="required req-false">No</div>
 </div>
@@ -7822,7 +7822,7 @@ the graph as a PNG file.</div>
 <h2 id="Response_Time_Graph">Response Time Graph<a class="sectionlink" href="#Response_Time_Graph" title="Link to here">&para;</a>
 </h2>
 <div class="description">
-The Response Time Graph draws a line chart showing the evolution of response time during the test, for each labelled request. 
+The Response Time Graph draws a line chart showing the evolution of response time during the test, for each labelled request.
 If many samples exist for the same timestamp, the mean value is displayed.
 </div>
 <div class="screenshot">
@@ -7866,14 +7866,14 @@ If many samples exist for the same timestamp, the mean value is displayed.
         
 <div class="property">
 <div class="name req-false">Sampler label selection</div>
-<div class="description req-false">Filter by result label. A regular expression can be used, ex. <span class="code">.*Transaction.*</span>. 
+<div class="description req-false">Filter by result label. A regular expression can be used, ex. <span class="code">.*Transaction.*</span>.
         Before display the graph, click on <span class="code">Apply filter</span> button to refresh internal data.</div>
 <div class="required req-false">No</div>
 </div>
         
 <div class="property">
 <div class="name req-false">Title</div>
-<div class="description req-false">Define the graph's title on the head of chart. Empty value is the default value : "<span class="code">Response Time Graph</span>". 
+<div class="description req-false">Define the graph's title on the head of chart. Empty value is the default value : "<span class="code">Response Time Graph</span>".
         The button <span class="code">Synchronize with name</span> define the title with the label of the listener. And define font settings for graph title</div>
 <div class="required req-false">No</div>
 </div>
@@ -8093,8 +8093,8 @@ See the file <span class="code">BeanShellListeners.bshrc</span> for example defi
 <div class="name req-true">Reset bsh.Interpreter before each call</div>
 <div class="description req-true">
     If this option is selected, then the interpreter will be recreated for each sample.
-    This may be necessary for some long running scripts. 
-    For further information, see <a href="best-practices#bsh_scripting">Best Practices - BeanShell scripting</a>.
+    This may be necessary for some long running scripts.
+    For further information, see <a href="best-practices.html#bsh_scripting">Best Practices - BeanShell scripting</a>.
     </div>
 <div class="required req-true">Yes</div>
 </div>
@@ -8177,11 +8177,11 @@ vars.putObject("OBJ1",new Object());
 <div class="description">The summary report creates a table row for each differently named request in your
 test. This is similar to the <a href="../usermanual/component_reference.html#Aggregate_Report">Aggregate Report</a> , except that it uses less memory.
 <p>
-The throughput is calculated from the point of view of the sampler target 
+The throughput is calculated from the point of view of the sampler target
 (e.g. the remote server in the case of HTTP samples).
 JMeter takes into account the total time over which the requests have been generated.
 If other samplers and timers are in the same thread, these will increase the total time,
-and therefore reduce the throughput value. 
+and therefore reduce the throughput value.
 So two identical samplers with different names will have half the throughput of two samplers with the same name.
 It is important to choose the sampler labels correctly to get the best results from
 the Report.
@@ -8267,7 +8267,7 @@ i.e. 30.0 requests/minute is saved as <span class="code">0.5</span>.
         This test element can be placed anywhere in the test plan.
         For each sample in its scope, it will create a file of the response Data.
         The primary use for this is in creating functional tests, but it can also
-        be useful where the response is too large to be displayed in the 
+        be useful where the response is too large to be displayed in the
         <a href="../usermanual/component_reference.html#View_Results_Tree">View Results Tree</a> Listener.
         The file name is created from the specified prefix, plus a number (unless this is disabled, see below).
         The file extension is created from the document type, if known.
@@ -8281,7 +8281,7 @@ i.e. 30.0 requests/minute is saved as <span class="code">0.5</span>.
 <p>
         The current sample is saved first, followed by any sub-samples (child samples).
         If a variable name is provided, then the names of the files are saved in the order
-        that the sub-samples appear. See below. 
+        that the sub-samples appear. See below.
         </p>
     
 </div>
@@ -8329,7 +8329,7 @@ i.e. 30.0 requests/minute is saved as <span class="code">0.5</span>.
 <div class="description req-false">
  Name of a variable in which to save the generated file name (so it can be used later in the test plan).
  If there are sub-samples then a numeric suffix is added to the variable name.
- E.g. if the variable name is <span class="code">FILENAME</span>, then the parent sample file name is saved in the variable <span class="code">FILENAME</span>, 
+ E.g. if the variable name is <span class="code">FILENAME</span>, then the parent sample file name is saved in the variable <span class="code">FILENAME</span>,
  and the filenames for the child samplers are saved in <span class="code">FILENAME1</span>, <span class="code">FILENAME2</span> etc.
  </div>
 <div class="required req-false">No</div>
@@ -8548,7 +8548,7 @@ vars.getObject("OBJ2");</pre>
 <h2 id="Generate_Summary_Results">Generate Summary Results<a class="sectionlink" href="#Generate_Summary_Results" title="Link to here">&para;</a>
 </h2>
 <div class="description">This test element can be placed anywhere in the test plan.
-Generates a summary of the test run so far to the log file and/or 
+Generates a summary of the test run so far to the log file and/or
 standard output. Both running and differential totals are shown.
 Output is generated every <span class="code">n</span> seconds (default 30 seconds) on the appropriate
 time boundary, so that multiple test runs on the same time will be synchronised.
@@ -8606,7 +8606,7 @@ Note that the initial and final deltas may be for less than the interval (in the
 The first delta will generally be lower, as JMeter synchronizes to the interval boundary.
 The last delta will be lower, as the test will generally not finish on an exact interval boundary.
 <p>
-The label is used to group sample results together. 
+The label is used to group sample results together.
 So if you have multiple Thread Groups and want to summarize across them all, then use the same label
  - or add the summariser to the Test Plan (so all thread groups are in scope).
 Different summary groupings can be implemented
@@ -8615,7 +8615,7 @@ by using suitable labels and adding the summarisers to appropriate parts of the 
 
 <div class="clear"></div>
 <div class="note">
-In CLI mode by default a Generate Summary Results listener named "<span class="code">summariser</span>" is configured, if you have already added one to your Test Plan, ensure you name it differently 
+In CLI mode by default a Generate Summary Results listener named "<span class="code">summariser</span>" is configured, if you have already added one to your Test Plan, ensure you name it differently
 otherwise results will be accumulated under this label (summary) leading to wrong results (sum of total samples + samples located under the Parent of Generate Summary Results listener).<br>
 This is not a bug but a design choice allowing to summarize across thread groups.
 </div>
@@ -8787,7 +8787,7 @@ By default, a Graphite implementation is provided.
         
 <div class="property">
 <div class="name req-true">samplersList</div>
-<div class="description req-true">Defines the names (labels) of sample results to be sent to the back end. 
+<div class="description req-true">Defines the names (labels) of sample results to be sent to the back end.
         If <span class="code">useRegexpForSamplersList=false</span> this is a list of semi-colon separated names.
         If <span class="code">useRegexpForSamplersList=true</span> this is a regular expression which will be matched against the names.</div>
 <div class="required req-true">Yes</div>
@@ -8814,8 +8814,8 @@ By default, a Graphite implementation is provided.
 <a href="../images/screenshots/grafana_dashboard.png"><img src="../images/screenshots/grafana_dashboard.png" width="1265" height="581" alt="Grafana dashboard"></a>
 <figcaption>Grafana dashboard</figcaption>
 </figure>
-<p>Since JMeter 3.2, a new implementation has been added that allows writing directly in InfluxDB with a custom schema, it is called <span class="code">InfluxdbBackendListenerClient</span> 
-      The following parameters apply to the <a href="../api/org/apache/jmeter/visualizers/backend/influxdb/InfluxdbBackendListenerClient.html">InfluxdbBackendListenerClient</a> implementation:</p>
+<p>Since JMeter 3.2, a new implementation has been added that allows writing directly in InfluxDB with a custom schema, it is called <span class="code">InfluxdbBackendListenerClient</span>. Since JMeter 5.2, <span class="code">InfluxdbBackendListenerClient</span> supports both InfluxDB v1 and v2.</p>
+<p>The following parameters apply to the <a href="../api/org/apache/jmeter/visualizers/backend/influxdb/InfluxdbBackendListenerClient.html">InfluxdbBackendListenerClient</a> implementation:</p>
 <div class="properties">
 <h3 id="Backend_Listener_parms3">
         Parameters
@@ -8837,25 +8837,25 @@ By default, a Graphite implementation is provided.
         
 <div class="property">
 <div class="name req-true">influxdbUrl</div>
-<div class="description req-true">Influx URL (example : http://influxHost:8086/write?db=jmeter)</div>
+<div class="description req-true">Influx URL (example: <span class="code">http://influxHost:8086/write?db=jmeter</span>)</div>
 <div class="required req-true">Yes</div>
 </div>
         
 <div class="property">
 <div class="name req-false">influxdbToken</div>
-<div class="description req-false">InfluxDB 2 <a href="https://v2.docs.influxdata.com/v2.0/security/">authentication token</a> (example : HE9yIdAPzWJDspH_tCc2UvdKZpX==); since 5.2.</div>
+<div class="description req-false">InfluxDB 2 <a href="https://v2.docs.influxdata.com/v2.0/security/">authentication token</a> (example: <span class="code">HE9yIdAPzWJDspH_tCc2UvdKZpX==</span>); since 5.2.</div>
 <div class="required req-false">No</div>
 </div>
         
 <div class="property">
 <div class="name req-true">application</div>
-<div class="description req-true">Name of tested application. This value is stored in the 'events' measurement too as a tag named 'application' </div>
+<div class="description req-true">Name of tested application. This value is stored in the '<span class="code">events</span>' measurement as a tag named '<span class="code">application</span>' </div>
 <div class="required req-true">Yes</div>
 </div>
         
 <div class="property">
 <div class="name req-true">measurement</div>
-<div class="description req-true">Measurement as per <a href="https://docs.influxdata.com/influxdb/v1.1/write_protocols/line_protocol_reference/">Influx Line Protocol Reference</a>. Defaults to "<span class="code">jmeter</span>."</div>
+<div class="description req-true">Measurement as per <a href="https://docs.influxdata.com/influxdb/v1.1/write_protocols/line_protocol_reference/">Influx Line Protocol Reference</a>. Defaults to "<span class="code">jmeter</span>".</div>
 <div class="required req-true">Yes</div>
 </div>
         
@@ -8873,33 +8873,35 @@ By default, a Graphite implementation is provided.
         
 <div class="property">
 <div class="name req-true">testTitle</div>
-<div class="description req-true">Test name. Defaults to <span class="code">Test name</span>. This value is stored in the 'events' measurement as a field named 'text'. JMeter generate automatically at the start and the end of the test an annotation with this value ending with ' started' and ' ended'</div>
+<div class="description req-true">Test name. Defaults to <span class="code">Test name</span>. This value is stored in the '<span class="code">events</span>' measurement as a field named '<span class="code">text</span>'. JMeter generate automatically at the start and the end of the test an annotation with this value ending with ' started' and ' ended'</div>
 <div class="required req-true">Yes</div>
 </div>
         
 <div class="property">
 <div class="name req-false">eventTags</div>
-<div class="description req-false">Grafana allow to display tag for each annotation. You can fill them here. This value is stored in the 'events' measurement as a tag named 'tags'.</div>
+<div class="description req-false">Grafana allow to display tag for each annotation. You can fill them here. This value is stored in the '<span class="code">events</span>' measurement as a tag named '<span class="code">tags</span>'.</div>
 <div class="required req-false">No</div>
 </div>
         
 <div class="property">
 <div class="name req-true">percentiles</div>
 <div class="description req-true">The percentiles you want to send to the backend.
-        A percentile may contain a fractional part, for example <span class="code">12.5</span>.
-        (The separator is always ".")
-        List must be semicolon separated. Generally 3 or 4 values should be sufficient.</div>
+        A percentile may contain a fractional part, for example <span class="code">12.5</span>
+        (The separator is always "<span class="code">.</span>").
+        List must be semicolon separated. Generally three or four values should be sufficient.</div>
 <div class="required req-true">Yes</div>
 </div>
         
 <div class="property">
 <div class="name req-false">TAG_WhatEverYouWant</div>
-<div class="description req-false">You can add as many custom tags as you want. For each of them, just create a new line and prefix its name by "<span class="code">TAG_</span>"</div>
+<div class="description req-false">You can add as many custom tags as you want. For each of them, create a new line and prefix its name by "<span class="code">TAG_</span>"</div>
 <div class="required req-false">No</div>
 </div>
     
 </div>
-<p>See also <a href="realtime-results.html">Real-time results</a> and <a href="http://docs.grafana.org/reference/annotations/#influxdb-annotations">Influxdb annotations in Grafana</a> for more details.</p>
+<p>See also <a href="realtime-results.html">Real-time results</a> and <a href="http://docs.grafana.org/reference/annotations/#influxdb-annotations">Influxdb annotations in Grafana</a> for more details.
+        There is also a <a href="realtime-results.html#influxdb_v2">subsection on configuring the listener for InfluxDB v2</a>.
+    </p>
 <div class="go-top">
 <a href="#">^</a>
 </div>
@@ -8918,7 +8920,7 @@ By default, a Graphite implementation is provided.
     
 <br>
     Configuration elements can be used to set up defaults and variables for later use by samplers.
-    Note that these elements are processed at the start of the scope in which they are found, 
+    Note that these elements are processed at the start of the scope in which they are found,
     i.e. before any samplers in the same scope.
     <br>
 
@@ -8976,14 +8978,14 @@ By default, a Graphite implementation is provided.
 <p>
     See the description of the Share mode below for additional options.
     If you want each thread to have its own set of values, then you will need to create a set of files,
-    one for each thread. For example <span class="code">test1.csv</span>, <span class="code">test2.csv</span>, &hellip;, <span class="code">test<em>n</em>.csv</span>. Use the filename 
+    one for each thread. For example <span class="code">test1.csv</span>, <span class="code">test2.csv</span>, &hellip;, <span class="code">test<em>n</em>.csv</span>. Use the filename
     <span class="code">test${__threadNum}.csv</span> and set the "<span class="code">Sharing mode</span>" to "<span class="code">Current thread</span>".
     </p>
     
 <div class="clear"></div>
 <div class="note">CSV Dataset variables are defined at the start of each test iteration.
     As this is after configuration processing is completed,
-    they cannot be used for some configuration items - such as JDBC Config - 
+    they cannot be used for some configuration items - such as JDBC Config -
     that process their contents at configuration time (see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=40394">
       Bug
       40394</a>)
@@ -9034,14 +9036,14 @@ By default, a Graphite implementation is provided.
   
 <div class="property">
 <div class="name req-true">Filename</div>
-<div class="description req-true">Name of the file to be read. 
+<div class="description req-true">Name of the file to be read.
   <b>Relative file names are resolved with respect to the path of the active test plan.</b>
   <b>For distributed testing, the CSV file must be stored on the server host system in the correct relative directory to where the JMeter server is started.</b>
-  Absolute file names are also supported, but note that they are unlikely to work in remote mode, 
+  Absolute file names are also supported, but note that they are unlikely to work in remote mode,
   unless the remote server has the same directory structure.
   If the same physical file is referenced in two different ways - e.g. <span class="code">csvdata.txt</span> and <span class="code">./csvdata.txt</span> -
   then these are treated as different files.
-  If the OS does not distinguish between upper and lower case, <span class="code">csvData.TXT</span> would also be opened separately. 
+  If the OS does not distinguish between upper and lower case, <span class="code">csvData.TXT</span> would also be opened separately.
   </div>
 <div class="required req-true">Yes</div>
 </div>
@@ -9153,7 +9155,7 @@ By default, a Graphite implementation is provided.
 <h2 id="DNS_Cache_Manager">DNS Cache Manager<a class="sectionlink" href="#DNS_Cache_Manager" title="Link to here">&para;</a>
 </h2>
 <div class="description">
-<p>The DNS Cache Manager element allows to test applications, which have several servers behind load balancers (CDN, etc.), 
+<p>The DNS Cache Manager element allows to test applications, which have several servers behind load balancers (CDN, etc.),
     when user receives content from different IP's. By default JMeter uses JVM DNS cache. That's why
     only one server from the cluster receives load. DNS Cache Manager resolves names for each thread separately each iteration and
     saves results of resolving to its internal DNS Cache, which is independent from both JVM and OS DNS caches.
@@ -9233,7 +9235,7 @@ By default, a Graphite implementation is provided.
 <div class="property">
 <div class="name req-false">Use system DNS resolver</div>
 <div class="description req-false">System DNS resolver will be used. For correct work edit
-       <span class="code">$JAVA_HOME/jre/lib/security/java.security</span> and add <span class="code">networkaddress.cache.ttl=0</span> 
+       <span class="code">$JAVA_HOME/jre/lib/security/java.security</span> and add <span class="code">networkaddress.cache.ttl=0</span>
     
 </div>
 <div class="required req-false">N/A</div>
@@ -9533,13 +9535,13 @@ be able to run it.  However, you can use it as a reference in constructing your 
 
 <p>
 The HTTP Cache Manager is used to add caching functionality to HTTP requests within its scope to simulate browser cache feature.
-Each Virtual User thread has its own Cache. By default, Cache Manager will store up to 5000 items in cache per Virtual User thread, using LRU algorithm. 
+Each Virtual User thread has its own Cache. By default, Cache Manager will store up to 5000 items in cache per Virtual User thread, using LRU algorithm.
 Use property "<span class="code">maxSize</span>" to modify this value. Note that the more you increase this value the more HTTP Cache Manager will consume memory, so be sure to adapt the <span class="code">-Xmx</span> JVM option accordingly.
 </p>
 
 <p>
 If a sample is successful (i.e. has response code <span class="code">2xx</span>) then the <span class="code">Last-Modified</span> and <span class="code">Etag</span> (and <span class="code">Expired</span> if relevant) values are saved for the URL.
-Before executing the next sample, the sampler checks to see if there is an entry in the cache, 
+Before executing the next sample, the sampler checks to see if there is an entry in the cache,
 and if so, the <span class="code">If-Last-Modified</span> and <span class="code">If-None-Match</span> conditional headers are set for the request.
 </p>
 
@@ -9549,8 +9551,8 @@ If the request is a <span class="code">GET</span> request, and the timestamp is 
 without requesting the URL from the remote server. This is intended to emulate browser behaviour.
 Note that if <span class="code">Cache-Control</span> header is "<span class="code">no-cache</span>", the response will be stored in cache as pre-expired,
 so will generate a conditional <span class="code">GET</span> request.
-If <span class="code">Cache-Control</span> has any other value, 
-the "<span class="code">max-age</span>" expiry option is processed to compute entry lifetime, if missing then expire header will be used, if also missing entry will be cached 
+If <span class="code">Cache-Control</span> has any other value,
+the "<span class="code">max-age</span>" expiry option is processed to compute entry lifetime, if missing then expire header will be used, if also missing entry will be cached
 as specified in <a href="https://tools.ietf.org/html/2616#section-13.2.4">RFC 2616 section 13.2.4</a> using <span class="code">Last-Modified</span> time and response Date.
 </p>
 
@@ -9692,9 +9694,9 @@ so use multiple Cookie Managers with care.</div>
   
 <div class="property">
 <div class="name req-true">Cookie Policy</div>
-<div class="description req-true">The cookie policy that will be used to manage the cookies. 
-  "<span class="code">standard</span>" is the default since 3.0, and should work in most cases. 
-  See <a href="https://hc.apache.org/httpcomponents-client-ga/tutorial/html/statemgmt.html#d5e515">Cookie specifications</a> and 
+<div class="description req-true">The cookie policy that will be used to manage the cookies.
+  "<span class="code">standard</span>" is the default since 3.0, and should work in most cases.
+  See <a href="https://hc.apache.org/httpcomponents-client-ga/tutorial/html/statemgmt.html#d5e515">Cookie specifications</a> and
   <a href="http://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/cookie/CookieSpec.html">CookieSpec implementations</a>
   [Note: "<span class="code">ignoreCookies</span>" is equivalent to omitting the CookieManager.]
  </div>
@@ -9704,7 +9706,7 @@ so use multiple Cookie Managers with care.</div>
 <div class="property">
 <div class="name req-true">Implementation</div>
 <div class="description req-true">
-<span class="code">HC4CookieHandler</span> (HttpClient 4.5.X API). 
+<span class="code">HC4CookieHandler</span> (HttpClient 4.5.X API).
   Default is <span class="code">HC4CookieHandler</span> since 3.0.
   <br>
   
@@ -9828,7 +9830,7 @@ All port values are treated equally; a sampler that does not specify a port will
 <div class="property">
 <div class="name req-false">Implementation</div>
 <div class="description req-false">
-<span class="code">Java</span>, <span class="code">HttpClient4</span>. 
+<span class="code">Java</span>, <span class="code">HttpClient4</span>.
         If not specified the default depends on the value of the JMeter property
         <span class="code">jmeter.httpsampler</span>, failing that, the <span class="code">Java</span> implementation is used.</div>
 <div class="required req-false">No</div>
@@ -10103,7 +10105,7 @@ instead. (see figures 12 and 13).</p>
         
 <div class="property">
 <div class="name req-true">Variable Name for created pool</div>
-<div class="description req-true">The name of the variable the connection is tied to.  
+<div class="description req-true">The name of the variable the connection is tied to.
         Multiple connections can be used, each tied to a different variable, allowing JDBC Samplers
         to select the appropriate connection.
         <div class="clear"></div>
@@ -10131,7 +10133,7 @@ instead. (see figures 12 and 13).</p>
         
 <div class="property">
 <div class="name req-true">Max Wait (ms)</div>
-<div class="description req-true">Pool throws an error if the timeout period is exceeded in the 
+<div class="description req-true">Pool throws an error if the timeout period is exceeded in the
         process of trying to retrieve a connection, see <a href="https://commons.apache.org/proper/commons-dbcp/api-2.1.1/org/apache/commons/dbcp2/BasicDataSource.html#getMaxWaitMillis--">BasicDataSource.html#getMaxWaitMillis</a>
 </div>
 <div class="required req-true">Yes</div>
@@ -10159,7 +10161,7 @@ instead. (see figures 12 and 13).</p>
         
 <div class="property">
 <div class="name req-false">Preinit Pool</div>
-<div class="description req-false">The connection pool can be intialized instantly. If set to <span class="code">False</span> (default), the JDBC request samplers using this pool might measure higher response times for the first queries &ndash; as the connection establishment time for the whole pool is included.</div>
+<div class="description req-false">The connection pool can be initialized instantly. If set to <span class="code">False</span> (default), the JDBC request samplers using this pool might measure higher response times for the first queries &ndash; as the connection establishment time for the whole pool is included.</div>
 <div class="required req-false">No</div>
 </div>
         
@@ -10171,7 +10173,7 @@ instead. (see figures 12 and 13).</p>
         
 <div class="property">
 <div class="name req-true">Test While Idle</div>
-<div class="description req-true">Test idle connections of the pool, see <a href="https://commons.apache.org/proper/commons-dbcp/api-2.1.1/org/apache/commons/dbcp2/BasicDataSource.html#getTestWhileIdle--">BasicDataSource.html#getTestWhileIdle</a>. 
+<div class="description req-true">Test idle connections of the pool, see <a href="https://commons.apache.org/proper/commons-dbcp/api-2.1.1/org/apache/commons/dbcp2/BasicDataSource.html#getTestWhileIdle--">BasicDataSource.html#getTestWhileIdle</a>.
         Validation Query will be used to test it.</div>
 <div class="required req-true">Yes</div>
 </div>
@@ -10348,7 +10350,7 @@ instead. (see figures 12 and 13).</p>
 </div>
     
 </div>
-<p>Different databases and JDBC drivers require different JDBC settings. 
+<p>Different databases and JDBC drivers require different JDBC settings.
 The Database URL and JDBC Driver class are defined by the provider of the JDBC implementation.</p>
 <p>Some possible settings are shown below. Please check the exact details in the JDBC driver documentation.</p>
 <p>
@@ -10617,7 +10619,7 @@ and <span class="code">javax.net.ssl.keyStore</span> to <span class="code">NONE<
   
 <div class="property">
 <div class="name req-true">Preload</div>
-<div class="description req-true">Wether or not to preload Keystore. Setting it to <span class="code">true</span> is usually the best option.</div>
+<div class="description req-true">Whether or not to preload Keystore. Setting it to <span class="code">true</span> is usually the best option.</div>
 <div class="required req-true">Yes</div>
 </div>
   
@@ -10810,7 +10812,7 @@ To make JMeter use more than one certificate you need to ensure that:
 <div class="name req-true">Close connection</div>
 <div class="description req-true">If selected, the connection will be closed after running the sampler.</div>
 <div class="required req-true">Yes</div>
-</div>  
+</div>
   
 <div class="property">
 <div class="name req-false">SO_LINGER</div>
@@ -10872,13 +10874,13 @@ So you cannot reference variables which are defined as part of a test run, e.g. 
 
 <b>
 UDVs should not be used with functions that generate different results each time they are called.
-Only the result of the first function call will be saved in the variable. 
+Only the result of the first function call will be saved in the variable.
 </b>
 However, UDVs can be used with functions such as <span class="code"><a href="../usermanual/functions.html#__P">__P()</a></span>, for example:
 </p>
 
 <pre class="source">
-HOST      ${__P(host,localhost)} 
+HOST      ${__P(host,localhost)}
 </pre>
 
 <p>
@@ -10916,9 +10918,9 @@ elements in the thread will see the updated value.
 <div class="clear"></div>
 <div class="note">
 If you have more than one Thread Group, make sure you use different names for different values, as UDVs are shared between Thread Groups.
-Also, the variables are not available for use until after the element has been processed, 
+Also, the variables are not available for use until after the element has been processed,
 so you cannot reference variables that are defined in the same element.
-You can reference variables defined in earlier UDVs or on the Test Plan. 
+You can reference variables defined in earlier UDVs or on the Test Plan.
 </div>
 <div class="clear"></div>
 <div class="properties">
@@ -11009,9 +11011,9 @@ to use a variable other than a property as a value for the minimum or maximum. I
   
 <div class="property">
 <div class="name req-false">Format String</div>
-<div class="description req-false">The <span class="code">java.text.DecimalFormat</span> format string to be used. 
-  For example "<span class="code">000</span>" which will generate numbers with at least 3 digits, 
-  or "<span class="code">USER_000</span>" which will generate output of the form <span class="code">USER_nnn</span>. 
+<div class="description req-false">The <span class="code">java.text.DecimalFormat</span> format string to be used.
+  For example "<span class="code">000</span>" which will generate numbers with at least 3 digits,
+  or "<span class="code">USER_000</span>" which will generate output of the form <span class="code">USER_nnn</span>.
   If not specified, the default is to generate the number using <span class="code">Long.toString()</span>
 </div>
 <div class="required req-false">No</div>
@@ -11031,8 +11033,8 @@ to use a variable other than a property as a value for the minimum or maximum. I
   
 <div class="property">
 <div class="name req-false">Random Seed</div>
-<div class="description req-false">The seed for the random number generator. 
-  If you use the same seed value with Per Thread set to <span class="code">true</span>, you will get the same value for each Thread as per 
+<div class="description req-false">The seed for the random number generator.
+  If you use the same seed value with Per Thread set to <span class="code">true</span>, you will get the same value for each Thread as per
   <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Random.html">Random</a> class.
   If no seed is set, Default constructor of Random will be used.
   </div>
@@ -11113,7 +11115,7 @@ with the start, continuing on like that until the test is ended.  </p>
         
 <div class="property">
 <div class="name req-false">Format</div>
-<div class="description req-false">Optional format, e.g. <span class="code">000</span> will format as <span class="code">001</span>, <span class="code">002</span>, etc. 
+<div class="description req-false">Optional format, e.g. <span class="code">000</span> will format as <span class="code">001</span>, <span class="code">002</span>, etc.
         This is passed to <span class="code">DecimalFormat</span>, so any valid formats can be used.
         If there is a problem interpreting the format, then it is ignored.
     [The default format is generated using <span class="code">Long.toString()</span>]
@@ -11123,8 +11125,8 @@ with the start, continuing on like that until the test is ended.  </p>
         
 <div class="property">
 <div class="name req-false">Exported Variable Name</div>
-<div class="description req-false">This will be the variable name under which the counter value is available.  
-        If you name it <span class="code">counterA</span>, you can then access it using <span class="code">${counterA}</span> 
+<div class="description req-false">This will be the variable name under which the counter value is available.
+        If you name it <span class="code">counterA</span>, you can then access it using <span class="code">${counterA}</span>
         as explained in <a href="functions.html">user-defined values</a> (By default, it creates an empty string variable that can be accessed using <span class="code">${}</span> but this is highly discouraged)</div>
 <div class="required req-false">No</div>
 </div>
@@ -11139,7 +11141,7 @@ with the start, continuing on like that until the test is ended.  </p>
         
 <div class="property">
 <div class="name req-false">Reset counter on each Thread Group Iteration</div>
-<div class="description req-false">This option is only available when counter is tracked per User, if checked, 
+<div class="description req-false">This option is only available when counter is tracked per User, if checked,
         counter will be reset to <span class="code">Start</span> value on each Thread Group iteration. This can be useful when Counter is inside a Loop Controller.</div>
 <div class="required req-false">No</div>
 </div>
@@ -11212,9 +11214,9 @@ GUI that they can use while developing new JMeter components.</p>
      The connection configuration name is used by the JDBC Sampler to select the appropriate
      connection.
      <p>
-     You can then access <span class="code">com.mongodb.DB</span> object in Beanshell or JSR223 Test Elements through the element <a href="../api/org/apache/jmeter/protocol/mongodb/config/MongoDBHolder.html">MongoDBHolder</a> 
+     You can then access <span class="code">com.mongodb.DB</span> object in Beanshell or JSR223 Test Elements through the element <a href="../api/org/apache/jmeter/protocol/mongodb/config/MongoDBHolder.html">MongoDBHolder</a>
      using this code</p>
-     
+
     
 <pre class="source">
 import com.mongodb.DB;
@@ -11256,7 +11258,7 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
         
 <div class="property">
 <div class="name req-true">MongoDB Source</div>
-<div class="description req-true">The name of the variable the connection is tied to.  
+<div class="description req-true">The name of the variable the connection is tied to.
         <div class="clear"></div>
 <div class="note">Each name must be different. If there are two configuration elements using the same name, only one will be saved.</div>
 <div class="clear"></div>
@@ -11264,7 +11266,7 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
 </div>
 <div class="required req-true">Yes</div>
 </div>
-        
+
         
 <div class="property">
 <div class="name req-false">Keep Trying</div>
@@ -11500,7 +11502,7 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
 <div class="clear"></div>
     
 <p>
-    Assertions can be applied to either the main sample, the sub-samples or both. 
+    Assertions can be applied to either the main sample, the sub-samples or both.
     The default is to apply the assertion to the main sample only.
     If the Assertion supports this option, then there will be an entry on the GUI which looks like the following:
     </p>
@@ -11559,13 +11561,13 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
 to <b>match</b> the entire response, or if the response is only expected to <b>contain</b> the
 pattern. You can attach multiple assertions to any controller for additional flexibility.</p>
 
-<p>Note that the pattern string should not include the enclosing delimiters, 
+<p>Note that the pattern string should not include the enclosing delimiters,
     i.e. use <span class="code">Price: \d+</span> not <span class="code">/Price: \d+/</span>.
     </p>
     
 <p>
     By default, the pattern is in multi-line mode, which means that the "<span class="code">.</span>" meta-character does not match newline.
-    In multi-line mode, "<span class="code">^</span>" and "<span class="code">$</span>" match the start or end of any line anywhere within the string 
+    In multi-line mode, "<span class="code">^</span>" and "<span class="code">$</span>" match the start or end of any line anywhere within the string
     - not just the start and end of the entire string. Note that <span class="code">\s</span> does match new-line.
     Case is also significant. To override these settings, one can use the <i>extended regular expression</i> syntax.
     For example:
@@ -11637,7 +11639,7 @@ These can be used anywhere within the expression and remain in effect until over
 <div class="property">
 <div class="name req-true">Apply to:</div>
 <div class="description req-true">
-        This is for use with samplers that can generate sub-samples, 
+        This is for use with samplers that can generate sub-samples,
         e.g. HTTP Sampler with embedded resources, Mail Reader or samples generated by the Transaction Controller.
         <ul>
         
@@ -11700,7 +11702,7 @@ These can be used anywhere within the expression and remain in effect until over
         
 <div class="property">
 <div class="name req-true">Ignore status</div>
-<div class="description req-true">Instructs JMeter to set the status to success initially. 
+<div class="description req-true">Instructs JMeter to set the status to success initially.
                 <p>
                 The overall success of the sample is determined by combining the result of the
                 assertion with the existing Response status.
@@ -11708,7 +11710,7 @@ These can be used anywhere within the expression and remain in effect until over
                 to successful before evaluating the Assertion.
                 </p>
                 HTTP Responses with statuses in the <span class="code">4xx</span> and <span class="code">5xx</span> ranges are normally
-                regarded as unsuccessful. 
+                regarded as unsuccessful.
                 The "<span class="code">Ignore status</span>" checkbox can be used to set the status successful before performing further checks.
                 Note that this will have the effect of clearing any previous assertion failures,
                 so make sure that this is only set on the first assertion.
@@ -11745,8 +11747,8 @@ These can be used anywhere within the expression and remain in effect until over
 <div class="property">
 <div class="name req-true">Patterns to Test</div>
 <div class="description req-true">A list of patterns to
-        be tested.  
-        Each pattern is tested separately. 
+        be tested.
+        Each pattern is tested separately.
         If a pattern fails, then further patterns are not checked.
         There is no difference between setting up
         one Assertion with multiple patterns and setting up multiple Assertions with one
@@ -11890,7 +11892,7 @@ the size be equal to, greater than, less than, or not equal to a given number of
 <div class="property">
 <div class="name req-true">Apply to:</div>
 <div class="description req-true">
-        This is for use with samplers that can generate sub-samples, 
+        This is for use with samplers that can generate sub-samples,
         e.g. HTTP Sampler with embedded resources, Mail Reader or samples generated by the Transaction Controller.
         <ul>
         
@@ -12040,8 +12042,8 @@ See the file <span class="code">BeanShellListeners.bshrc</span> for example defi
 <div class="name req-true">Reset bsh.Interpreter before each call</div>
 <div class="description req-true">
     If this option is selected, then the interpreter will be recreated for each sample.
-    This may be necessary for some long running scripts. 
-    For further information, see <a href="best-practices#bsh_scripting">Best Practices - BeanShell scripting</a>.
+    This may be necessary for some long running scripts.
+    For further information, see <a href="best-practices.html#bsh_scripting">Best Practices - BeanShell scripting</a>.
     </div>
 <div class="required req-true">Yes</div>
 </div>
@@ -12130,7 +12132,7 @@ These are strings unless otherwise noted:
 </li>
   
 <li>
-<span class="code">vars</span> - <a href="../api/org/apache/jmeter/threads/JMeterVariables.html">JMeterVariables</a>  - e.g. 
+<span class="code">vars</span> - <a href="../api/org/apache/jmeter/threads/JMeterVariables.html">JMeterVariables</a>  - e.g.
     <pre class="source">vars.get("VAR1");
 vars.put("VAR2","value");
 vars.putObject("OBJ1",new Object());</pre>
@@ -12295,7 +12297,7 @@ props.put("PROP1","1234");</pre>
 <p>The XPath Assertion tests a document for well formedness, has the option
 of validating against a DTD, or putting the document through JTidy and testing for an
 XPath.  If that XPath exists, the Assertion is true.  Using "<span class="code">/</span>" will match any well-formed
-document, and is the default XPath Expression. 
+document, and is the default XPath Expression.
 The assertion also supports boolean expressions, such as "<span class="code">count(//*error)=2</span>".
 See <a href="http://www.w3.org/TR/xpath">http://www.w3.org/TR/xpath</a> for more information
 on XPath.
@@ -12409,7 +12411,7 @@ The non-tolerant parser can be quite slow, as it may need to download the DTD et
 As a work-round for namespace limitations of the Xalan XPath parser (implementation on which JMeter is based) you need to:
 <ul>
 
-<li>provide a Properties file (if for example your file is named namespaces.properties) which contains mappings for the namespace prefixes: 
+<li>provide a Properties file (if for example your file is named namespaces.properties) which contains mappings for the namespace prefixes:
 <pre class="source">
 prefix1=http\://foo.apache.org
 prefix2=http\://toto.apache.org
@@ -12437,7 +12439,7 @@ prefix2=http\://toto.apache.org
 </h2>
 <div class="description">
 <p>The XPath2 Assertion tests a document for well formedness.  Using "<span class="code">/</span>" will match any well-formed
-document, and is the default XPath2 Expression. 
+document, and is the default XPath2 Expression.
 The assertion also supports boolean expressions, such as "<span class="code">count(//*error)=2</span>".
 </p>
 Some sample expressions:
@@ -12690,7 +12692,7 @@ If an error is detected, the script should use <span class="code">AssertionResul
 
 <div class="clear"></div>
 <div class="note">
-Compare Assertion <b>must not be used</b> during load test as it consumes a lot of resources (memory and CPU). Use it only for either functional testing or 
+Compare Assertion <b>must not be used</b> during load test as it consumes a lot of resources (memory and CPU). Use it only for either functional testing or
 during Test Plan debugging and Validation.
 </div>
 <div class="clear"></div>
@@ -12756,7 +12758,7 @@ The assertion comparisons can be seen in the <a href="../usermanual/component_re
 <div class="description">
 The SMIME Assertion can be used to evaluate the sample results from the Mail Reader Sampler.
 This assertion verifies if the body of a mime message is signed or not. The signature can also be verified against a specific signer certificate.
-As this is a functionality that is not necessarily needed by most users, additional jars need to be downloaded and added to <span class="code">JMETER_HOME/lib</span>:<br> 
+As this is a functionality that is not necessarily needed by most users, additional jars need to be downloaded and added to <span class="code">JMETER_HOME/lib</span>:<br>
 
 <ul>
 
@@ -12770,7 +12772,7 @@ As this is a functionality that is not necessarily needed by most users, additio
 These need to be <a href="http://www.bouncycastle.org/latest_releases.html">downloaded from BouncyCastle.</a>
 
 <p>
-If using the <a href="../usermanual/component_reference.html#Mail_Reader_Sampler">Mail Reader Sampler</a>, 
+If using the <a href="../usermanual/component_reference.html#Mail_Reader_Sampler">Mail Reader Sampler</a>,
 please ensure that you select "<span class="code">Store the message using MIME (raw)</span>" otherwise the Assertion won't be able to process the message correctly.
 </p>
 
@@ -12916,9 +12918,9 @@ please ensure that you select "<span class="code">Store the message using MIME (
             First, it will parse the JSON and fail if the data is not JSON. <br>
             Second, it will search for specified path, using JMESPath syntax. <br>
             If the path is not found, it will fail. <br>
-            Third, if JMES path was found in the document, and validation against expected value was requested, it will perform this additional check. 
+            Third, if JMES path was found in the document, and validation against expected value was requested, it will perform this additional check.
             If you want to check for nullity, use the <span class="code">Expect null</span> checkbox. <br>
-            Note that the path cannot be null as the expression JMESPath will not be compiled and an error will occur. 
+            Note that the path cannot be null as the expression JMESPath will not be compiled and an error will occur.
             Even if you expect an empty or null response, you must put a valid JMESPath expression.
         </p>
     
@@ -12997,7 +12999,7 @@ please ensure that you select "<span class="code">Store the message using MIME (
     Since version 3.1, a new feature (in Beta mode as of JMeter 3.1 and subject to changes) has been implemented which provides the following feature.<br>
     You can apply a multiplication factor on the sleep delays computed by Random timer by setting property <span class="code">timer.factor=float number</span> where float number is a decimal positive number.<br>
     JMeter will multiply this factor by the computed sleep delay. This feature can be used by:
-    <ul> 
+    <ul>
         
 <li>
 <a href="../usermanual/component_reference.html#Gaussian_Random_Timer">Gaussian Random Timer</a>
@@ -13011,7 +13013,7 @@ please ensure that you select "<span class="code">Store the message using MIME (
 <a href="../usermanual/component_reference.html#Uniform_Random_Timer">Uniform Random Timer</a>
 </li>
     
-</ul> 
+</ul>
     
 </div>
 <div class="clear"></div>
@@ -13083,10 +13085,10 @@ requests, use this timer.</p>
 </h2>
 <div class="description">
 <p>This timer pauses each thread request for a random amount of time, with most
-of the time intervals occurring near a particular value.  
+of the time intervals occurring near a particular value.
 The total delay is the sum of the Gaussian distributed value (with mean <span class="code">0.0</span> and standard deviation <span class="code">1.0</span>) times
 the deviation value you specify, and the offset value.
-Another way to explain it, in Gaussian Random Timer, the variation around constant offset has a Gaussian curve distribution. 
+Another way to explain it, in Gaussian Random Timer, the variation around constant offset has a Gaussian curve distribution.
 
 </p>
 </div>
@@ -13257,7 +13259,7 @@ Note that the throughput value should not be changed too often during a test
 <span class="code">this thread only</span> - each thread will try to maintain the target throughput. The overall throughput will be proportional to the number of active threads.</li>
     
 <li>
-<span class="code">all active threads in current thread group</span> - the target throughput is divided amongst all the active threads in the group. 
+<span class="code">all active threads in current thread group</span> - the target throughput is divided amongst all the active threads in the group.
     Each thread will delay as needed, based on when it last ran.</li>
     
 <li>
@@ -13332,8 +13334,8 @@ the required load.</p>
 
 <h4>Multiple thread groups starting at the same time</h4>
 
-<p>A variation of <span class="code">Ramp-up</span> issue might appear when <a href="../usermanual/component_reference.html#Test_Plan">Test Plan</a> includes multiple <a href="../usermanual/component_reference.html#Thead_Group">Thead Group</a>s. To mitigate that issue
-    one typically adds "random" delay to each <a href="../usermanual/component_reference.html#Thead_Group">Thead Group</a> so threads start at different times.</p>
+<p>A variation of <span class="code">Ramp-up</span> issue might appear when <a href="../usermanual/component_reference.html#Test_Plan">Test Plan</a> includes multiple <a href="../usermanual/component_reference.html#Thread_Group">Thread Group</a>s. To mitigate that issue
+    one typically adds "random" delay to each <a href="../usermanual/component_reference.html#Thread_Group">Thread Group</a> so threads start at different times.</p>
 
 <p>
 <span class="code">Precise Throughput Timer</span> avoids that issue since it schedules executions in a random way. You do not need to add extra random delays to mitigate startup spike</p>
@@ -13405,14 +13407,21 @@ the required load.</p>
 
 <h4>Testing high rates and/or long test durations</h4>
 
-<p>When the number of samples is high (e.g. it exceeds 10'000), schedule generation might take noticeable time (e.g. seconds) as <span class="code">Precise Throughput Timer</span> tries
-    to produce the exact number of samples. There's memory consumption as well, however it should not matter much as every item in the schedule consumes 8 bytes.
-    In order to reduce schedule generation overhead, <span class="code">Precise Throughput Timer</span> allows some slack when generating long schedules. It is controlled by
-    <span class="code">Accuracy of generated delays</span> properties. By default, inexact schedules are allowed when number of samples exceeds 10'000.</p>
+<p>
+<span class="code">Precise Throughput Timer</span> generates the schedule and keeps it in memory. In most cases it should not be a problem,
+    however, remember that you might want to keep the schedule shorter than 1'000'000 samples.
+    It takes ~200ms to generate a schedule for 1'000'000 samples, and the schedule consumes 8 megabytes in the heap.
+    Schedule for 10 million entries takes 1-2 second to build and it consumes 80 megabytes in the heap.
+</p>
 
-<p>If you want to perform 2-week long test with 5'000 per hour rate, you do not need to create a schedule for that 2 weeks.
-    You can set <span class="code">Test duration (seconds)</span> property of the timer to 1 hour. The timer would create a schedule of 5'000 samples for an hour, and when the schedule is exhausted, the timer would generate
+<p>For instance, if you want to perform 2-week long test with 5'000 per hour rate, then you probably want to have exactly 5'000 samples
+    for each hour. You can set <span class="code">Test duration (seconds)</span> property of the timer of the timer to 1 hour.
+    Then the timer would create a schedule of 5'000 samples for an hour, and when the schedule is exhausted, the timer would generate
     a schedule for the next hour.</p>
+
+<p>At the same time, you can set <span class="code">Test duration (seconds)</span> to 2 weeks, and the timer would generate a schedule with
+    <span class="code">168'000 samples = 2 weeks * 5'000 samples/hour = 2*7*24*500</span>. The schedule would take ~30ms to generate, and it would
+    consume a little more than 1 megabyte.</p>
 
 
 <h4>Bursty load</h4>
@@ -13442,7 +13451,7 @@ the required load.</p>
 
 <p>As next schedule is generated, <span class="code">Precise Throughput Timer</span> logs a message to <span class="code">jmeter.log</span>:
     <span class="code">2018-01-04 17:34:03,635 INFO o.a.j.t.ConstantPoissonProcessGenerator: Generated 21 timings (... 20 required, rate 1.0, duration 20, exact lim 20000,
-    i21) in 0 ms, restart was issued 3 times. First 15 events will be fired at: 1.1869653574244292 (+1.1869653574244292), 1.4691340403043207 (+0.2821686828798915),
+    i21) in 0 ms. First 15 events will be fired at: 1.1869653574244292 (+1.1869653574244292), 1.4691340403043207 (+0.2821686828798915),
     3.638151706179226 (+2.169017665874905), 3.836357090410566 (+0.19820538423134026), 4.709330071408575 (+0.8729729809980085), 5.61330076999953 (+0.903970698590955),
         ...</span>
 This shows that schedule generation took 0ms, and it shows absolute timestamps in seconds. In the case above, the rate was set to be 1 per second, and the actual timestamps
@@ -13451,7 +13460,7 @@ This shows that schedule generation took 0ms, and it shows absolute timestamps i
 </div>
 <div class="screenshot">
 <figure>
-<a href="../images/screenshots/timers/precise_throughput_timer.png"><img src="../images/screenshots/timers/precise_throughput_timer.png" width="523" height="318" alt="Screenshot for Control-Panel of Precise Throughput Timer"></a>
+<a href="../images/screenshots/timers/precise_throughput_timer.png"><img src="../images/screenshots/timers/precise_throughput_timer.png" width="573" height="407" alt="Screenshot for Control-Panel of Precise Throughput Timer"></a>
 <figcaption>Screenshot of Control-Panel of Precise Throughput Timer</figcaption>
 </figure>
 </div>
@@ -13499,18 +13508,6 @@ This shows that schedule generation took 0ms, and it shows absolute timestamps i
 <div class="property">
 <div class="name req-true">Delay between threads in the batch (ms)</div>
 <div class="description req-true">For instance, if set to 42, and the batch size is 3, then threads will depart at x, x+42ms, x+84ms.</div>
-<div class="required req-true">Yes</div>
-</div>
-    
-<div class="property">
-<div class="name req-true">Use approximate throughput when sequence length exceeds (samples)</div>
-<div class="description req-true">When the required number of samples is less than this limit, timer will generate exact number of samples.</div>
-<div class="required req-true">Yes</div>
-</div>
-    
-<div class="property">
-<div class="name req-true">Allowed throughput surplus (percents)</div>
-<div class="description req-true">When more than "max exact samples" samples is required, timer might generate slightly more events than specified by throughput.</div>
 <div class="required req-true">Yes</div>
 </div>
     
@@ -13649,8 +13646,8 @@ See the file <span class="code">BeanShellListeners.bshrc</span> for example defi
 <div class="name req-true">Reset bsh.Interpreter before each call</div>
 <div class="description req-true">
     If this option is selected, then the interpreter will be recreated for each sample.
-    This may be necessary for some long running scripts. 
-    For further information, see <a href="best-practices#bsh_scripting">Best Practices - BeanShell scripting</a>.
+    This may be necessary for some long running scripts.
+    For further information, see <a href="best-practices.html#bsh_scripting">Best Practices - BeanShell scripting</a>.
     </div>
 <div class="required req-true">Yes</div>
 </div>
@@ -14151,11 +14148,11 @@ To add a new value to the series, click the '<span class="code">Add User</span>'
 <div class="description req-true">A flag to indicate whether the User Parameters element
         should update its variables only once per iteration.  if you embed functions into the UP, then you may need greater
         control over how often the values of the variables are updated.  Keep this box checked to ensure the values are
-        updated each time through the UP's parent controller.  Uncheck the box, and the UP will update the parameters for 
+        updated each time through the UP's parent controller.  Uncheck the box, and the UP will update the parameters for
         every sample request made within its <a href="test_plan.html#scoping_rules">scope</a>.</div>
 <div class="required req-true">Yes</div>
 </div>
-        
+
 
 </div>
 <div class="go-top">
@@ -14219,8 +14216,8 @@ See the file <span class="code">BeanShellListeners.bshrc</span> for example defi
 <div class="name req-true">Reset bsh.Interpreter before each call</div>
 <div class="description req-true">
     If this option is selected, then the interpreter will be recreated for each sample.
-    This may be necessary for some long running scripts. 
-    For further information, see <a href="best-practices#bsh_scripting">Best Practices - BeanShell scripting</a>.
+    This may be necessary for some long running scripts.
+    For further information, see <a href="best-practices.html#bsh_scripting">Best Practices - BeanShell scripting</a>.
     </div>
 <div class="required req-true">Yes</div>
 </div>
@@ -14461,7 +14458,7 @@ this one will be used by "<span class="code">Calculate Price cut off</span>".
 <p>Allows to specify dynamic values for HTTP parameters extracted from another HTTP Request using regular expressions.
             RegEx User Parameters are specific to individual threads.</p>
         
-<p>This component allows you to specify reference name of a regular expression that extracts names and values of HTTP request parameters. 
+<p>This component allows you to specify reference name of a regular expression that extracts names and values of HTTP request parameters.
             Regular expression group numbers must be specified for parameter's name and also for parameter's value.
             Replacement will only occur for parameters in the Sampler that uses this RegEx User Parameters which name matches </p>
     
@@ -14580,7 +14577,7 @@ this one will be used by "<span class="code">Calculate Price cut off</span>".
 
 <p>This Pre-Processor schedules a timer task to interrupt a sample if it takes too long to complete.
 The timeout is ignored if it is zero or negative.
-For this to work, the sampler must implement Interruptible. 
+For this to work, the sampler must implement Interruptible.
 The following samplers are known to do so:<br>
 AJP, BeanShell, FTP, HTTP, Soap, AccessLog, MailReader, JMS Subscriber, TCPSampler, TestAction, JavaSampler
 </p>
@@ -14594,7 +14591,7 @@ that are stuck.
 
 <p>
 [By default, JMeter uses a Callable to interrupt the sampler.
-This executes in the same thread as the timer, so if the interrupt takes a long while, 
+This executes in the same thread as the timer, so if the interrupt takes a long while,
 it may delay the processing of subsequent timeouts.
 This is not expected to be a problem, but if necessary the property <span class="code">InterruptTimer.useRunnable</span>
 can be set to <span class="code">true</span> to use a separate Runnable thread instead of the Callable.]
@@ -14706,7 +14703,7 @@ generate the template string, and store the result into the given variable name.
 <div class="property">
 <div class="name req-true">Apply to:</div>
 <div class="description req-true">
-        This is for use with samplers that can generate sub-samples, 
+        This is for use with samplers that can generate sub-samples,
         e.g. HTTP Sampler with embedded resources, Mail Reader or samples generated by the Transaction Controller.
         <ul>
         
@@ -14793,7 +14790,7 @@ generate the template string, and store the result into the given variable name.
         
 <div class="property">
 <div class="name req-true">Regular Expression</div>
-<div class="description req-true">The regular expression used to parse the response data. 
+<div class="description req-true">The regular expression used to parse the response data.
         This must contain at least one set of parentheses "<span class="code">()</span>" to capture a portion of the string, unless using the group <span class="code">$0$</span>.
         Do not enclose the expression in <span class="code">/ /</span> - unless of course you want to match these characters as well.
         </div>
@@ -14810,7 +14807,7 @@ generate the template string, and store the result into the given variable name.
         
 <div class="property">
 <div class="name req-true">Match No. (0 for Random)</div>
-<div class="description req-true">Indicates which match to use.  The regular expression may match multiple times.  
+<div class="description req-true">Indicates which match to use.  The regular expression may match multiple times.
             <ul>
                 
 <li>Use a value of zero to indicate JMeter should choose a match at random.</li>
@@ -14833,10 +14830,10 @@ generate the template string, and store the result into the given variable name.
         whether the regular expression did not match, or the RE element was not processed or maybe the wrong variable
         is being used.
         <p>
-        However, if you have several test elements that set the same variable, 
+        However, if you have several test elements that set the same variable,
         you may wish to leave the variable unchanged if the expression does not match.
         In this case, remove the default value once debugging is complete.
-        </p> 
+        </p>
         
 </div>
 <div class="required req-false">No, but recommended</div>
@@ -14846,7 +14843,7 @@ generate the template string, and store the result into the given variable name.
 <div class="name req-false">Use empty default value</div>
 <div class="description req-false">
         If the checkbox is checked and <span class="code">Default Value</span> is empty, then JMeter will set the variable to empty string instead of not setting it.
-        Thus when you will for example use <span class="code">${var}</span> (if <span class="code">Reference Name</span> is var) in your Test Plan, if the extracted value is not found then 
+        Thus when you will for example use <span class="code">${var}</span> (if <span class="code">Reference Name</span> is var) in your Test Plan, if the extracted value is not found then
         <span class="code">${var}</span> will be equal to empty string instead of containing <span class="code">${var}</span> which may be useful if extracted value is optional.
         </div>
 <div class="required req-false">No</div>
@@ -14869,7 +14866,7 @@ generate the template string, and store the result into the given variable name.
     
 </ul>
 <p>
-    If no match occurs, then the <span class="code">refName</span> variable is set to the default (unless this is absent). 
+    If no match occurs, then the <span class="code">refName</span> variable is set to the default (unless this is absent).
     Also, the following variables are removed:
 </p>
 <ul>
@@ -14912,7 +14909,7 @@ generate the template string, and store the result into the given variable name.
     
 </ul>
 <p>
-    Note that the <span class="code">refName</span> variable is always set to the default value in this case, 
+    Note that the <span class="code">refName</span> variable is always set to the default value in this case,
     and the associated group variables are not set.
 </p>
 <p>See also <a href="../usermanual/component_reference.html#Response_Assertion">Response Assertion</a> for some examples of how to specify modifiers,
@@ -14962,7 +14959,7 @@ extracting the node as text or attribute value and store the result into the giv
 <div class="property">
 <div class="name req-true">Apply to:</div>
 <div class="description req-true">
-        This is for use with samplers that can generate sub-samples, 
+        This is for use with samplers that can generate sub-samples,
         e.g. HTTP Sampler with embedded resources, Mail Reader or samples generated by the Transaction Controller.
         <ul>
         
@@ -15018,7 +15015,7 @@ extracting the node as text or attribute value and store the result into the giv
         
 <div class="property">
 <div class="name req-true">CSS/JQuery expression</div>
-<div class="description req-true">The CSS/JQuery selector used to select nodes from the response data. 
+<div class="description req-true">The CSS/JQuery selector used to select nodes from the response data.
         Selector, selectors combination and pseudo-selectors are supported, examples:
         <ul>
             
@@ -15079,7 +15076,7 @@ extracting the node as text or attribute value and store the result into the giv
         
 <div class="property">
 <div class="name req-true">Match No. (0 for Random)</div>
-<div class="description req-true">Indicates which match to use.  The CSS/JQuery selector may match multiple times.  
+<div class="description req-true">Indicates which match to use.  The CSS/JQuery selector may match multiple times.
             <ul>
                 
 <li>Use a value of zero to indicate JMeter should choose a match at random.</li>
@@ -15102,10 +15099,10 @@ extracting the node as text or attribute value and store the result into the giv
         whether the expression did not match, or the CSS/JQuery element was not processed or maybe the wrong variable
         is being used.
         <p>
-        However, if you have several test elements that set the same variable, 
+        However, if you have several test elements that set the same variable,
         you may wish to leave the variable unchanged if the expression does not match.
         In this case, remove the default value once debugging is complete.
-        </p> 
+        </p>
         
 </div>
 <div class="required req-false">No, but recommended</div>
@@ -15115,7 +15112,7 @@ extracting the node as text or attribute value and store the result into the giv
 <div class="name req-false">Use empty default value</div>
 <div class="description req-false">
         If the checkbox is checked and <span class="code">Default Value</span> is empty, then JMeter will set the variable to empty string instead of not setting it.
-        Thus when you will for example use <span class="code">${var}</span> (if <span class="code">Reference Name</span> is var) in your Test Plan, if the extracted value is not found then 
+        Thus when you will for example use <span class="code">${var}</span> (if <span class="code">Reference Name</span> is var) in your Test Plan, if the extracted value is not found then
         <span class="code">${var}</span> will be equal to empty string instead of containing <span class="code">${var}</span> which may be useful if extracted value is optional.
         </div>
 <div class="required req-false">No</div>
@@ -15132,7 +15129,7 @@ extracting the node as text or attribute value and store the result into the giv
     
 </ul>
 <p>
-    If no match occurs, then the <span class="code">refName</span> variable is set to the default (unless this is absent). 
+    If no match occurs, then the <span class="code">refName</span> variable is set to the default (unless this is absent).
 </p>
 <p>
     If the match number is set to a negative number, then all the possible matches in the sampler data are processed.
@@ -15163,7 +15160,7 @@ extracting the node as text or attribute value and store the result into the giv
 <div class="component">
 <h2 id="XPath2_Extractor">XPath2 Extractor<a class="sectionlink" href="#XPath2_Extractor" title="Link to here">&para;</a>
 </h2>
-<div class="description">This test element allows the user to extract value(s) from structured response - XML or (X)HTML - 
+<div class="description">This test element allows the user to extract value(s) from structured response - XML or (X)HTML -
     using XPath2 query language.
    </div>
 <div class="screenshot">
@@ -15192,7 +15189,7 @@ extracting the node as text or attribute value and store the result into the giv
 <div class="property">
 <div class="name req-true">Apply to:</div>
 <div class="description req-true">
-        This is for use with samplers that can generate sub-samples, 
+        This is for use with samplers that can generate sub-samples,
         e.g. HTTP Sampler with embedded resources, Mail Reader or samples generated by the Transaction Controller.
         <ul>
         
@@ -15258,7 +15255,7 @@ extracting the node as text or attribute value and store the result into the giv
     
 <div class="property">
 <div class="name req-true">Default Value</div>
-<div class="description req-true">Default value returned when no match found. 
+<div class="description req-true">Default value returned when no match found.
     It is also returned if the node has no value and the fragment option is not selected.</div>
 <div class="required req-true">yes</div>
 </div>
@@ -15275,7 +15272,7 @@ extracting the node as text or attribute value and store the result into the giv
 <p>To allow for use in a <a href="../usermanual/component_reference.html#ForEach_Controller">ForEach Controller</a>, it works exactly the same as the above XPath Extractor</p>
 <p>XPath2 Extractor provides some interestings tools such as an improved syntax and much more functions than in it's first version.</p>
 <p>Here are some exemples : </p>
-<dl> 
+<dl>
    
 <dt>
 <span class="code">abs(/book/page[2])</span>
@@ -15307,7 +15304,7 @@ extracting the node as text or attribute value and store the result into the giv
 <div class="component">
 <h2 id="XPath_Extractor">XPath Extractor<a class="sectionlink" href="#XPath_Extractor" title="Link to here">&para;</a>
 </h2>
-<div class="description">This test element allows the user to extract value(s) from 
+<div class="description">This test element allows the user to extract value(s) from
         structured response - XML or (X)HTML - using XPath
         query language.
         <div class="clear"></div>
@@ -15341,7 +15338,7 @@ extracting the node as text or attribute value and store the result into the giv
 <div class="property">
 <div class="name req-true">Apply to:</div>
 <div class="description req-true">
-        This is for use with samplers that can generate sub-samples, 
+        This is for use with samplers that can generate sub-samples,
         e.g. HTTP Sampler with embedded resources, Mail Reader or samples generated by the Transaction Controller.
         <ul>
         
@@ -15405,7 +15402,7 @@ extracting the node as text or attribute value and store the result into the giv
 <div class="description req-false">
         If checked, then the XML parser will use namespace resolution.(see note below on NAMESPACES)
         Note that currently only namespaces declared on the root element will be recognised.
-        See below for user-definition of additional workspace names.        
+        See below for user-definition of additional workspace names.
 </div>
 <div class="required req-false">If Tidy is not selected</div>
 </div>
@@ -15472,7 +15469,7 @@ extracting the node as text or attribute value and store the result into the giv
     
 <div class="property">
 <div class="name req-true">Default Value</div>
-<div class="description req-true">Default value returned when no match found. 
+<div class="description req-true">Default value returned when no match found.
     It is also returned if the node has no value and the fragment option is not selected.</div>
 <div class="required req-true"></div>
 </div>
@@ -15488,7 +15485,7 @@ extracting the node as text or attribute value and store the result into the giv
 <span class="code">refName_matchNr</span> - set to number of matches (may be <span class="code">0</span>)</li>
    
 <li>
-<span class="code">refName_n</span> - <span class="code">n</span>=<span class="code">1</span>, <span class="code">2</span>, <span class="code">3</span>, etc. Set to the 1<sup>st</sup>, 2<sup>nd</sup> 3<sup>rd</sup> match etc. 
+<span class="code">refName_n</span> - <span class="code">n</span>=<span class="code">1</span>, <span class="code">2</span>, <span class="code">3</span>, etc. Set to the 1<sup>st</sup>, 2<sup>nd</sup> 3<sup>rd</sup> match etc.
    </li>
    
 </ul>
@@ -15497,10 +15494,10 @@ extracting the node as text or attribute value and store the result into the giv
    and if there are no matches, then <span class="code">refName_1</span> is set to <span class="code">null</span>.
    </div>
 <div class="clear"></div>
-<p>XPath is query language targeted primarily for XSLT transformations. However it is useful as generic query language for structured data too. See 
+<p>XPath is query language targeted primarily for XSLT transformations. However it is useful as generic query language for structured data too. See
        <a href="http://www.topxml.com/xsl/xpathref.asp">XPath Reference</a> or <a href="http://www.w3.org/TR/xpath">XPath specification</a> for more information. Here are few examples:
    </p>
-<dl> 
+<dl>
    
 <dt>
 <span class="code">/html/head/title</span>
@@ -15550,7 +15547,7 @@ extracting the node as text or attribute value and store the result into the giv
 As a work-round for namespace limitations of the Xalan XPath parser (implementation on which JMeter is based) you need to:
 <ul>
 
-<li>provide a Properties file (if for example your file is named namespaces.properties) which contains mappings for the namespace prefixes: 
+<li>provide a Properties file (if for example your file is named namespaces.properties) which contains mappings for the namespace prefixes:
 <pre class="source">
 prefix1=http\://foo.apache.org
 prefix2=http\://toto.apache.org
@@ -15580,7 +15577,7 @@ prefix2=http\://toto.apache.org
 <div class="component">
 <h2 id="JSON_JMESPath_Extractor">JSON JMESPath Extractor<a class="sectionlink" href="#JSON_JMESPath_Extractor" title="Link to here">&para;</a>
 </h2>
-<div class="description">This test element allows the user to extract value(s) from 
+<div class="description">This test element allows the user to extract value(s) from
         structured response - XML or (X)HTML - using JMESPath
         query language.
    </div>
@@ -15591,7 +15588,7 @@ prefix2=http\://toto.apache.org
 </figure>
 </div>
 <div class="clear"></div>
-<div class="note">In the XPATH Extractor we support to extract multiple xpaths at the same time, but in JMES Extractor only 
+<div class="note">In the XPATH Extractor we support to extract multiple xpaths at the same time, but in JMES Extractor only
    one JMES Expression can be entered at a time.
    </div>
 <div class="clear"></div>
@@ -15615,7 +15612,7 @@ prefix2=http\://toto.apache.org
 <div class="property">
 <div class="name req-true">Apply to:</div>
 <div class="description req-true">
-        This is for use with samplers that can generate sub-samples, 
+        This is for use with samplers that can generate sub-samples,
         e.g. HTTP Sampler with embedded resources, Mail Reader or samples generated by the Transaction Controller.
         <ul>
         
@@ -15671,13 +15668,13 @@ prefix2=http\://toto.apache.org
     
 <div class="property">
 <div class="name req-true">Default Value</div>
-<div class="description req-true">Default value returned when no match found. 
+<div class="description req-true">Default value returned when no match found.
     It is also returned if the node has no value and the fragment option is not selected.</div>
 <div class="required req-true"></div>
 </div>
    
 </div>
-<p>JMESPath is a query language for JSON. It is described in an ABNF grammar with a complete specification. This ensures that the language syntax is precisely defined. 
+<p>JMESPath is a query language for JSON. It is described in an ABNF grammar with a complete specification. This ensures that the language syntax is precisely defined.
     See <a href="http://jmespath.org/">JMESPath Reference</a> for more information. Here are also some examples <a href="http://jmespath.org/tutorial.html">JMESPath Example</a>.
    </p>
 <div class="go-top">
@@ -15808,8 +15805,8 @@ See the file <span class="code">BeanShellListeners.bshrc</span> for example defi
 <div class="name req-true">Reset bsh.Interpreter before each call</div>
 <div class="description req-true">
     If this option is selected, then the interpreter will be recreated for each sample.
-    This may be necessary for some long running scripts. 
-    For further information, see <a href="best-practices#bsh_scripting">Best Practices - BeanShell scripting</a>.
+    This may be necessary for some long running scripts.
+    For further information, see <a href="best-practices.html#bsh_scripting">Best Practices - BeanShell scripting</a>.
     </div>
 <div class="required req-true">Yes</div>
 </div>
@@ -16158,7 +16155,7 @@ generate the template string, and store the result into the given variable name.
 <div class="property">
 <div class="name req-true">Apply to:</div>
 <div class="description req-true">
-        This is for use with samplers that can generate sub-samples, 
+        This is for use with samplers that can generate sub-samples,
         e.g. HTTP Sampler with embedded resources, Mail Reader or samples generated by the Transaction Controller.
         <ul>
         
@@ -16257,7 +16254,7 @@ generate the template string, and store the result into the given variable name.
         
 <div class="property">
 <div class="name req-true">Match No. (0 for Random)</div>
-<div class="description req-true">Indicates which match to use.  The boundaries may match multiple times.  
+<div class="description req-true">Indicates which match to use.  The boundaries may match multiple times.
             <ul>
                 
 <li>Use a value of zero to indicate JMeter should choose a match at random.</li>
@@ -16280,10 +16277,10 @@ generate the template string, and store the result into the given variable name.
         whether the boundaries did not match, or maybe the wrong variable
         is being used.
         <p>
-        However, if you have several test elements that set the same variable, 
+        However, if you have several test elements that set the same variable,
         you may wish to leave the variable unchanged if the expression does not match.
         In this case, remove the default value once debugging is complete.
-        </p> 
+        </p>
         
 </div>
 <div class="required req-false">No, but recommended</div>
@@ -16300,7 +16297,7 @@ generate the template string, and store the result into the given variable name.
     
 </ul>
 <p>
-    If no match occurs, then the <span class="code">refName</span> variable is set to the default (unless this is absent). 
+    If no match occurs, then the <span class="code">refName</span> variable is set to the default (unless this is absent).
 </p>
 <p>
     If the match number is set to a negative number, then all the possible matches in the sampler data are processed.
@@ -16324,7 +16321,7 @@ generate the template string, and store the result into the given variable name.
     
 </ul>
 <p>
-    Note that the <span class="code">refName</span> variable is always set to the default value in this case, 
+    Note that the <span class="code">refName</span> variable is always set to the default value in this case,
     and the associated group variables are not set.
 </p>
 <div class="clear"></div>
@@ -16365,7 +16362,7 @@ could refer to it as <span class="code">${SERVER}</span>. This simplifies changi
 If the same variable name is reused on one of more
 <a href="../usermanual/component_reference.html#User_Defined_Variables">User Defined Variables</a> Configuration elements,
 the value is set to the last definition in the test plan (reading from top to bottom).
-Such variables should be used for items that may change between test runs, 
+Such variables should be used for items that may change between test runs,
 but which remain the same during a test run.
 </p>
 
@@ -16373,8 +16370,8 @@ but which remain the same during a test run.
 
 <div class="clear"></div>
 <div class="note">Note that the Test Plan cannot refer to variables it defines.</div>
-<div class="clear"></div> 
-If you need to construct other variables from the Test Plan variables, 
+<div class="clear"></div>
+If you need to construct other variables from the Test Plan variables,
 use a <a href="../usermanual/component_reference.html#User_Defined_Variables">User Defined Variables</a> test element.
 </p>
 
@@ -16391,13 +16388,13 @@ If more data is required for a particular sampler only, then add a Listener to i
 
 <p>Also, an option exists here to instruct JMeter to run the <a href="../usermanual/component_reference.html#Thread_Group">Thread Group</a> serially rather than in parallel.</p>
 
-<p>Run tearDown Thread Groups after shutdown of main threads: 
+<p>Run tearDown Thread Groups after shutdown of main threads:
 if selected, the tearDown groups (if any) will be run after graceful shutdown of the main threads.
 The tearDown threads won't be run if the test is forcibly stopped.
 </p>
 
 <p>
-Test plan now provides an easy way to add classpath setting to a specific test plan. 
+Test plan now provides an easy way to add classpath setting to a specific test plan.
 The feature is additive, meaning that you can add jar files or directories,
 but removing an entry requires restarting JMeter.
 <div class="clear"></div>
@@ -16468,7 +16465,7 @@ Since JMeter 3.0, you can run a selection of Thread Group by selecting them and 
 
 <li>Validate : Start the selected thread groups only using validation mode. Per default this runs the Thread Group in validation mode (see below)</li>
 
-</ul> 
+</ul>
 
 
 <b>Validation Mode:</b>
@@ -16487,9 +16484,9 @@ Behaviour can be modified with some properties by setting in user.properties:
 <span class="code">testplan_validation.number_iterations</span> : Number of iterations to use to validate a Thread Group</li>
 
 <li>
-<span class="code">testplan_validation.tpc_force_100_pct</span> : Wether to force Throughput Controller in percentage mode to run as if percentage was 100%. Defaults to false</li>
+<span class="code">testplan_validation.tpc_force_100_pct</span> : Whether to force Throughput Controller in percentage mode to run as if percentage was 100%. Defaults to false</li>
 
-</ul> 
+</ul>
 
 </p>
 <div class="properties">
@@ -16579,7 +16576,7 @@ Behaviour can be modified with some properties by setting in user.properties:
 <div class="property">
 <div class="name req-false">Duration (seconds)</div>
 <div class="description req-false">
-            If the scheduler checkbox is selected, one can choose a relative end time. 
+            If the scheduler checkbox is selected, one can choose a relative end time.
             JMeter will use this to calculate the End Time.
         </div>
 <div class="required req-false">No</div>
@@ -16714,7 +16711,7 @@ by a Certificate Authority (CA) that is linked to one of its in-built root CAs.
 <div class="clear"></div>
 <div class="note">Browsers also check that the certificate is for the correct host or domain, and that it is valid and not expired.</div>
 <div class="clear"></div>
-If any of the browser checks fail, it will prompt the user who can then decide whether to allow the connection to proceed.  
+If any of the browser checks fail, it will prompt the user who can then decide whether to allow the connection to proceed.
 </p>
 
 <p>
@@ -16738,7 +16735,7 @@ This has the advantage that even embedded HTTPS resources can be intercepted, an
 </p>
 
 <p>Unless a keystore is provided (and you define the property <span class="code">proxy.cert.alias</span>),
-JMeter needs to use the keytool application to create the keystore entries. 
+JMeter needs to use the keytool application to create the keystore entries.
 JMeter includes code to check that keytool is available by looking in various standard places.
 If JMeter is unable to find the keytool application, it will report an error.
 If necessary, the system property <span class="code">keytool.directory</span> can be used to tell JMeter where to find keytool.
@@ -16762,7 +16759,7 @@ If necessary, you can force JMeter to regenerate the keystore (and the exported 
 <p>
 This certificate is not one of the certificates that browsers normally trust, and will not be for the
 correct host.<br>
-As a consequence: 
+As a consequence:
 </p>
 
 <ul>
@@ -16777,8 +16774,8 @@ As a consequence:
 You will need to accept the certificate in order to allow the JMeter Proxy to intercept the SSL traffic in order to
 record it.
 However, do not accept this certificate permanently; it should only be accepted temporarily.
-Browsers only prompt this dialogue for the certificate of the main URL, not for the resources loaded in the page, such as images, CSS or JavaScript files hosted on a secured external CDN. 
-If you have such resources (gmail has for example), you'll have to first browse manually to these other domains in order to accept JMeter's certificate for them. 
+Browsers only prompt this dialogue for the certificate of the main URL, not for the resources loaded in the page, such as images, CSS or JavaScript files hosted on a secured external CDN.
+If you have such resources (gmail has for example), you'll have to first browse manually to these other domains in order to accept JMeter's certificate for them.
 Check in <span class="code">jmeter.log</span> for secure domains that you need to register certificate for.
 </li>
 
@@ -16824,7 +16821,7 @@ The following properties can be used to change the certificate that is used:
 <div class="clear"></div>
 <div class="note">
 If your browser currently uses a proxy (e.g. a company intranet may route all external requests via a proxy),
-then you need to <a href="get-started.html#proxy_server">tell JMeter to use that proxy</a> before starting JMeter, 
+then you need to <a href="get-started.html#proxy_server">tell JMeter to use that proxy</a> before starting JMeter,
 using the <a href="get-started.html#options">command-line options</a> <span class="code">-H</span> and <span class="code">-P</span>.
 This setting will also be needed when running the generated test plan.
 </div>
@@ -16837,7 +16834,7 @@ This setting will also be needed when running the generated test plan.
 <p>
 As mentioned above, when run under Java 8, JMeter can generate certificates for each server.
 For this to work smoothly, the root CA signing certificate used by JMeter needs to be trusted by the browser.
-The first time that the recorder is started, it will generate the certificates if necessary. 
+The first time that the recorder is started, it will generate the certificates if necessary.
 The root CA certificate is exported into a file with the name <span class="code">ApacheJMeterTemporaryRootCA</span> in the current launch directory.
 When the certificates have been set up, JMeter will show a dialog with the current certificate details.
 At this point, the certificate can be imported into the browser, as per the instructions below.
@@ -17172,7 +17169,7 @@ The generated samples have "<span class="code">Follow Redirects</span>" selected
 
 </p>
 <p>
-Now if JMeter is set to follow the redirect during replay, it will issue the original request, 
+Now if JMeter is set to follow the redirect during replay, it will issue the original request,
 and then replay the redirect request that was recorded.
 To avoid this duplicate replay, JMeter tries to detect when a sample is the result of a previous
 redirect. If the current response is a redirect, JMeter will save the redirect URL.
@@ -17185,12 +17182,12 @@ To disable the redirect detection, set the property <span class="code">proxy.red
 <h4>Includes and Excludes</h4>
 <p>The <b>include and exclude patterns</b> are treated as regular expressions (using Jakarta ORO).
 They will be matched against the host name, port (actual or implied), path and query (if any) of each browser request.
-If the URL you are browsing is <br> 
-"<span class="code">http://localhost/jmeter/index.html?username=xxxx</span>",<br> 
-then the regular expression will be tested against the string:<br> 
-"<span class="code">localhost:80/jmeter/index.html?username=xxxx</span>".<br>   
-Thus, if you want to include all <span class="code">.html</span> files, your regular expression might look like: <br> 
-"<span class="code">.*\.html(\?.*)?</span>" - or "<span class="code">.*\.html</span> 
+If the URL you are browsing is <br>
+"<span class="code">http://localhost/jmeter/index.html?username=xxxx</span>",<br>
+then the regular expression will be tested against the string:<br>
+"<span class="code">localhost:80/jmeter/index.html?username=xxxx</span>".<br>
+Thus, if you want to include all <span class="code">.html</span> files, your regular expression might look like: <br>
+"<span class="code">.*\.html(\?.*)?</span>" - or "<span class="code">.*\.html</span>
 if you know that there is no query string or you only want html pages without query strings.
 </p>
 <p>
@@ -17243,7 +17240,7 @@ sure to add a Recording Controller before you start recording).</p>
 If the Proxy does not seem to record any samples, this could be because the browser is not actually using the proxy.
 To check if this is the case, try stopping the proxy.
 If the browser still downloads pages, then it was not sending requests via the proxy.
-Double-check the browser options. 
+Double-check the browser options.
 If you are trying to record from a server running on the same host,
 then check that the browser is not set to "<span class="code">Bypass proxy server for local addresses</span>"
 (this example is from IE7, but there will be similar options for other browsers).
@@ -17266,7 +17263,7 @@ place User Defined Variables directly within the HTTP(S) Test Script Recorder to
 <div class="clear"></div>
 <div class="note">Please note that matching is case-sensitive.</div>
 <div class="clear"></div>
-<p>Replacement by Variables: by default, the Proxy server looks for all occurrences of UDV values. 
+<p>Replacement by Variables: by default, the Proxy server looks for all occurrences of UDV values.
 If you define the variable <span class="code">WEB</span> with the value <span class="code">www</span>, for example,
 the string <span class="code">www</span> will be replaced by <span class="code">${WEB}</span> wherever it is found.
 To avoid this happening everywhere, set the "<span class="code">Regex Matching</span>" check-box.
@@ -17307,15 +17304,15 @@ so be sure to check this if UDVs are not working as expected.</p>
 your browser's proxy settings.  Now, you may want to sort and re-order the test script, add timers, listeners, a
 cookie manager, etc.</p>
 <h4>How can I record the server's responses too?</h4>
-<p>Just place a <a href="../usermanual/component_reference.html#View_Results_Tree">View Results Tree</a> listener as a child of the HTTP(S) Test Script Recorder and the responses will be displayed. 
+<p>Just place a <a href="../usermanual/component_reference.html#View_Results_Tree">View Results Tree</a> listener as a child of the HTTP(S) Test Script Recorder and the responses will be displayed.
 You can also add a <a href="../usermanual/component_reference.html#Save_Responses_to_a_file">Save Responses to a file</a> Post-Processor which will save the responses to files.
 </p>
 <h4>Associating requests with responses</h4>
 <p>
-If you define the property <span class="code">proxy.number.requests=true</span> 
+If you define the property <span class="code">proxy.number.requests=true</span>
 JMeter will add a number to each sampler and each response.
 Note that there may be more responses than samplers if excludes or includes have been used.
-Responses that have been excluded will have labels enclosed in <span class="code">[</span> and <span class="code">],</span> for example <span class="code">[23 /favicon.ico]</span> 
+Responses that have been excluded will have labels enclosed in <span class="code">[</span> and <span class="code">],</span> for example <span class="code">[23 /favicon.ico]</span>
 
 </p>
 <h4>Cookie Manager</h4>
@@ -17396,7 +17393,7 @@ It uses default port <span class="code">8081</span>.
         
 <div class="property">
 <div class="name req-false">Max Number of threads</div>
-<div class="description req-false">If set to a value &gt; <span class="code">0</span>, number of threads serving requests will be limited to the configured number, if set to a value &le; <span class="code">0</span> 
+<div class="description req-false">If set to a value &gt; <span class="code">0</span>, number of threads serving requests will be limited to the configured number, if set to a value &le; <span class="code">0</span>
         a new thread will be created to serve each incoming request. Defaults to <span class="code">0</span>
 </div>
 <div class="required req-false">No</div>
@@ -17453,7 +17450,7 @@ Note that you can get more control over the responses by adding an HTTP Header M
         
 <div class="property">
 <div class="name req-false">X-SetHeaders</div>
-<div class="description req-false">Pipe separated list of headers, example:<br> 
+<div class="description req-false">Pipe separated list of headers, example:<br>
         
 <span class="code">headerA=valueA|headerB=valueB</span> would set <span class="code">headerA</span> to <span class="code">valueA</span> and <span class="code">headerB</span> to <span class="code">valueB</span>.
         </div>
@@ -17613,7 +17610,7 @@ The values can be seen in the <a href="../usermanual/component_reference.html#Vi
 <div class="description">
 
 <p>
-The Debug PostProcessor creates a subSample with the details of the previous Sampler properties, 
+The Debug PostProcessor creates a subSample with the details of the previous Sampler properties,
 JMeter variables, properties and/or System Properties.
 </p>
 
@@ -17729,7 +17726,7 @@ This is done by default since JMeter 2.13.
     
 <p>
     A special type of ThreadGroup that can be utilized to perform Pre-Test Actions.  The behavior of these threads
-    is exactly like a normal <a href="../usermanual/component_reference.html#Thread_Group">Thread Group</a> element.  The difference is that these type of threads 
+    is exactly like a normal <a href="../usermanual/component_reference.html#Thread_Group">Thread Group</a> element.  The difference is that these type of threads
     execute before the test proceeds to the executing of regular Thread Groups.
     </p>
 
@@ -17753,7 +17750,7 @@ This is done by default since JMeter 2.13.
     
 <p>
     A special type of ThreadGroup that can be utilized to perform Post-Test Actions.  The behavior of these threads
-    is exactly like a normal <a href="../usermanual/component_reference.html#Thread_Group">Thread Group</a> element.  The difference is that these type of threads 
+    is exactly like a normal <a href="../usermanual/component_reference.html#Thread_Group">Thread Group</a> element.  The difference is that these type of threads
     execute after the test has finished executing its regular Thread Groups.
     </p>
 
@@ -17766,7 +17763,7 @@ This is done by default since JMeter 2.13.
 </div>
 <div class="clear"></div>
 <div class="note">
-Note that by default it won't run if Test is gracefully shutdown, if you want to make it run in this case, 
+Note that by default it won't run if Test is gracefully shutdown, if you want to make it run in this case,
 ensure you check option "<span class="code">Run tearDown Thread Groups after shutdown of main threads</span>" on Test Plan element.
 If Test Plan is stopped, tearDown will not run even if option is checked.
 </div>
@@ -17813,7 +17810,7 @@ If Test Plan is stopped, tearDown will not run even if option is checked.
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2019
+            2020
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

@@ -1700,11 +1700,11 @@ This leads to creation of match number variable called <span class="code">varNam
 
 </div>
 <p>Examples:
-<pre class="source">${__RandomFromMultipleVars(val)}</pre> will return a random string based on content of variable val taking into account wether they are multi-value or not<br>
+<pre class="source">${__RandomFromMultipleVars(val)}</pre> will return a random string based on content of variable val taking into account whether they are multi-value or not<br>
 
-<pre class="source">${__RandomFromMultipleVars(val1|val2)}</pre> will return a random string based on content of variables val1 and val2 taking into account wether they are multi-value or not<br>
+<pre class="source">${__RandomFromMultipleVars(val1|val2)}</pre> will return a random string based on content of variables val1 and val2 taking into account whether they are multi-value or not<br>
 
-<pre class="source">${__RandomFromMultipleVars(val1|val2, MYVAR)}</pre> will return a random string based on content of variables val1 and val2 taking into account wether they are multi-value or not and store the result in <span class="code">MYVAR</span>
+<pre class="source">${__RandomFromMultipleVars(val1|val2, MYVAR)}</pre> will return a random string based on content of variables val1 and val2 taking into account whether they are multi-value or not and store the result in <span class="code">MYVAR</span>
 <br>
 
 </p>
@@ -4013,7 +4013,7 @@ returns:
 <div class="name req-false">Append to file?</div>
 <div class="description req-false">
     The way to write the string, <span class="code">true</span> means append, <span class="code">false</span>
-    means overwrite.
+    means overwrite. If not specified, the default append is <span class="code">true</span>.
     </div>
 <div class="required req-false">No</div>
 </div>
@@ -4131,7 +4131,7 @@ They are mainly intended for use in file names etc.
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2019
+            2020
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

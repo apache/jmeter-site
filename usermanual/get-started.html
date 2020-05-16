@@ -252,9 +252,9 @@ The first step is to configure the injectors that will run JMeter, this as for a
 <li>
 <b>Increase the Java Heap size</b>. By default JMeter runs with a heap of 1 GB, this might not be enough for your test and depends on your test plan and number of threads you want to run</li>
 
-</ul> 
+</ul>
 
-Once everything is ready, you will use CLI mode (Command-line mode previously called <a href="#non_gui">Non-GUI mode</a>) to run it for the Load Test. 
+Once everything is ready, you will use CLI mode (Command-line mode previously called <a href="#non_gui">Non-GUI mode</a>) to run it for the Load Test.
 <div class="clear"></div>
 <div class="note">Don't run load test using GUI mode !</div>
 <div class="clear"></div>
@@ -365,7 +365,7 @@ over your Test Plans.</p>
 
 <div class="clear"></div>
 <div class="note">JMeter is compatible with Java 8 or higher.
-We highly advise you to install latest minor version of your major version for security and performance reasons. 
+We highly advise you to install latest minor version of your major version for security and performance reasons.
 </div>
 <div class="clear"></div>
 
@@ -428,7 +428,7 @@ implementation.</p>
 <h2 id="opt_email">1.2.3 Email Support<a class="sectionlink" href="#opt_email" title="Link to here">&para;</a>
 </h2>
 
-<p>JMeter has extensive Email capabilities. 
+<p>JMeter has extensive Email capabilities.
 It can send email based on test results, and has a POP3(S)/IMAP(S) sampler.
 It also has an SMTP(S) sampler.
 </p>
@@ -443,11 +443,11 @@ It also has an SMTP(S) sampler.
 <p>To test a web server using SSL encryption (HTTPS), JMeter requires that an
 implementation of SSL be provided, as is the case with Sun Java 1.4 and above.
 If your version of Java does not include SSL support, then it is possible to add an external implementation.
-Include the necessary encryption packages in JMeter's <a href="#classpath">classpath</a>.  
+Include the necessary encryption packages in JMeter's <a href="#classpath">classpath</a>.
 Also, update <a href="#configuring_jmeter"><span class="code">system.properties</span></a> to register the SSL Provider.</p>
 
 <p>
-JMeter HTTP defaults to protocol level TLS. This can be changed by editing the JMeter property 
+JMeter HTTP defaults to protocol level TLS. This can be changed by editing the JMeter property
 <span class="code">https.default.protocol</span> in <span class="code">jmeter.properties</span> or <span class="code">user.properties</span>.
 </p>
 
@@ -1040,7 +1040,7 @@ If a nonproxy host list is provided, then JMeter sets the following System prope
 </ul>
 
 <p>
-So if you don't wish to set both http and https proxies, 
+So if you don't wish to set both http and https proxies,
 you can define the relevant properties in <span class="code">system.properties</span> instead of using the command-line parameters.
 </p>
 
@@ -1438,17 +1438,29 @@ LoggerFactory.getLogger(Foo.class);</pre>
             Old Log Levels:
             <ul>
               
-<li>DEBUG</li>
+<li>
+<span class="code">DEBUG</span>
+</li>
               
-<li>INFO</li>
+<li>
+<span class="code">INFO</span>
+</li>
               
-<li>WARN</li>
+<li>
+<span class="code">WARN</span>
+</li>
               
-<li>ERROR</li>
+<li>
+<span class="code">ERROR</span>
+</li>
               
-<li>FATAL_ERROR</li>
+<li>
+<span class="code">FATAL_ERROR</span>
+</li>
               
-<li>NONE</li>
+<li>
+<span class="code">NONE</span>
+</li>
             
 </ul>
           
@@ -1457,33 +1469,47 @@ LoggerFactory.getLogger(Foo.class);</pre>
             Mapping to New Levels through SLF4J/Log4j2:
             <ul>
               
-<li>DEBUG</li>
+<li>
+<span class="code">DEBUG</span>
+</li>
               
-<li>INFO</li>
+<li>
+<span class="code">INFO</span>
+</li>
               
-<li>WARN</li>
+<li>
+<span class="code">WARN</span>
+</li>
               
-<li>ERROR</li>
+<li>
+<span class="code">ERROR</span>
+</li>
               
-<li>ERROR</li>
+<li>
+<span class="code">ERROR</span>
+</li>
               
-<li>NONE</li>
+<li>
+<span class="code">OFF</span>
+</li>
             
 </ul>
             
-<div>
-              
-<em><b>Note:</b></em>
-              Since 'FATAL_ERROR' is not supported by SLF4J API,
-              it is treated as 'ERROR' instead for existing code not to break.
+<div class="clear"></div>
+<div class="note">
+              Since <span class="code">FATAL_ERROR</span> is not supported by SLF4J API,
+              it is treated as <span class="code">ERROR</span> instead for existing code not to break.
+              There is also the <span class="code">FATAL</span> log level option.
             </div>
+<div class="clear"></div>
             
-<div>
+<div class="clear"></div>
+<div class="note">
               
-<em><b>Note:</b></em>
-              'TRACE' level, which is less specific than 'DEBUG', is supported additionally since 3.2.
+<span class="code">TRACE</span> level, which is less specific than <span class="code">DEBUG</span>, is supported additionally since 3.2.
               Look up SLF4J or Apache Log4J 2 documentations for details.
             </div>
+<div class="clear"></div>
           
 </td>
         
@@ -1539,12 +1565,12 @@ LoggerFactory.getLogger(Foo.class);</pre>
 
 <pre class="source">
 2017-03-01 12:19:20,314 INFO o.a.j.JMeter: Version 3.2.20170301
-2017-03-01 12:19:45,314 INFO o.a.j.g.a.Load: Loading file: c:\mytestfiles\BSH.jmx 
-2017-03-01 12:19:52,328 INFO o.a.j.e.StandardJMeterEngine: Running the test! 
-2017-03-01 12:19:52,384 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group BSH. Ramp up = 1. 
-2017-03-01 12:19:52,485 INFO o.a.j.e.StandardJMeterEngine: Continue on error 
-2017-03-01 12:19:52,589 INFO o.a.j.t.JMeterThread: Thread BSH1-1 started 
-2017-03-01 12:19:52,590 INFO o.a.j.t.JMeterThread: Thread BSH1-1 is done 
+2017-03-01 12:19:45,314 INFO o.a.j.g.a.Load: Loading file: c:\mytestfiles\BSH.jmx
+2017-03-01 12:19:52,328 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2017-03-01 12:19:52,384 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group BSH. Ramp up = 1.
+2017-03-01 12:19:52,485 INFO o.a.j.e.StandardJMeterEngine: Continue on error
+2017-03-01 12:19:52,589 INFO o.a.j.t.JMeterThread: Thread BSH1-1 started
+2017-03-01 12:19:52,590 INFO o.a.j.t.JMeterThread: Thread BSH1-1 is done
 2017-03-01 12:19:52,691 INFO o.a.j.e.StandardJMeterEngine: Test has ended
 </pre>
 
@@ -1557,7 +1583,7 @@ LoggerFactory.getLogger(Foo.class);</pre>
 <h2 id="options">1.4.8 Full list of command-line options<a class="sectionlink" href="#options" title="Link to here">&para;</a>
 </h2>
 
-<p>Invoking JMeter as "<span class="code">jmeter -?</span>" will print a list of all the command-line options. 
+<p>Invoking JMeter as "<span class="code">jmeter -?</span>" will print a list of all the command-line options.
 These are shown below.</p>
 
 <pre class="source">
@@ -1624,7 +1650,7 @@ These are shown below.</p>
 </pre>
 
 <p>
-Note: the JMeter log file name is formatted as a SimpleDateFormat (applied to the current date) 
+Note: the JMeter log file name is formatted as a SimpleDateFormat (applied to the current date)
 if it contains paired single-quotes, .e.g. '<span class="code">jmeter_'yyyyMMddHHmmss'.log</span>'
 </p>
 
@@ -1868,7 +1894,7 @@ See also the comments in the <span class="code">jmeter.properties</span>, <span 
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2019
+            2020
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

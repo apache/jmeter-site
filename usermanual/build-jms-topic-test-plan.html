@@ -201,11 +201,11 @@ JMS requires some optional jars to be downloaded. Please refer to <a href="get-s
 </div>
 <div class="clear"></div>
 
-<p>In this section, you will learn how to create a 
+<p>In this section, you will learn how to create a
 <a href="build-test-plan.html">Test Plan</a> to test JMS Providers. You will
 create five subscribers and one publisher. You will create 2 thread groups and set
-each one to 10 iterations. The total messages is (6 threads) x (1 message) x 
-(repeat 10 times) = 60 messages. To construct the Test Plan, you will use the 
+each one to 10 iterations. The total messages is (6 threads) x (1 message) x
+(repeat 10 times) = 60 messages. To construct the Test Plan, you will use the
 following elements:
 <a href="test_plan.html#thread_group">Thread Group</a>,
 <a href="../usermanual/component_reference.html#JMS_Publisher">JMS Publisher</a>,
@@ -219,8 +219,8 @@ Topic messaging is generally used in cases where a message is published by a pro
 consumed by multiple subscribers.  Queue messaging is generally used for transactions
 where the sender expects a response.  Messaging systems are quite different from
 normal HTTP requests. In HTTP, a single user sends a request and gets a response.
-Messaging system can work in synchronous and asynchronous mode.  A JMS sampler needs 
-the JMS implementation jar files; for example, from Apache ActiveMQ.  
+Messaging system can work in synchronous and asynchronous mode.  A JMS sampler needs
+the JMS implementation jar files; for example, from Apache ActiveMQ.
 See <a href="get-started.html#libraries_activemq">here</a> for the list of jars provided by ActiveMQ.</p>
 
 
@@ -231,7 +231,7 @@ See <a href="get-started.html#libraries_activemq">here</a> for the list of jars 
 
 <p>The first step is add a <a href="test_plan.html#thread_group">Thread Group</a>
  element.  The Thread Group tells JMeter the number of users you want to simulate,
- how often the users should send requests, and how many requests they should 
+ how often the users should send requests, and how many requests they should
 send.</p>
 
 
@@ -328,14 +328,14 @@ of the JMS provider for the information. For ActiveMQ, the default is "<span cla
 
 <li>Enter the name of the message topic. For ActiveMQ Dynamic Topics (create topics dynamically), example value is "<span class="code">dynamicTopics/MyStaticTopic1</span>"
 <div class="clear"></div>
-<div class="note">Note: Setup at startup mean that JMeter starting to listen on the Destination at beginning of test without name change possibility. 
-Setup on Each sample mean that JMeter (re)starting to listen before run each JMS Subscriber sample, 
+<div class="note">Note: Setup at startup mean that JMeter starting to listen on the Destination at beginning of test without name change possibility.
+Setup on Each sample mean that JMeter (re)starting to listen before run each JMS Subscriber sample,
 this last option permit to have Destination name with some JMeter variables
 </div>
 <div class="clear"></div>
 </li>
 
-<li>If the JMS provider requires authentication, check "<span class="code">required</span>" and enter the 
+<li>If the JMS provider requires authentication, check "<span class="code">required</span>" and enter the
 username and password. For example, Orion JMS requires authentication, while ActiveMQ
 and MQSeries does not</li>
 
@@ -345,7 +345,7 @@ didn't aggregate the messages, JMeter wouldn't be able to keep up.</li>
 
 <li>If you want to read the response, check the box</li>
 
-<li>There are two client implementations for subscribers. If the JMS provider 
+<li>There are two client implementations for subscribers. If the JMS provider
 exhibits zombie threads with one client, try the other.</li>
 
 </ol>
@@ -362,7 +362,7 @@ Figure 11.2. JMS Subscriber</figcaption>
 
 
 <p>Next add the sampler <a href="../usermanual/component_reference.html#JMS_Publisher">JMS Publisher</a>
-to the Publisher element 
+to the Publisher element
 (<span class="menuchoice"><span class="guimenuitem">Add</span>&nbsp;&rarr;&nbsp;<span class="guimenuitem">Sampler</span>&nbsp;&rarr;&nbsp;<span class="guimenuitem">JMS Publisher</span></span>).
 Then, select the JMS Publisher element in the tree and edit the following properties:
 </p>
@@ -381,16 +381,16 @@ Then, select the JMS Publisher element in the tree and edit the following proper
 <li>Enter the name of the connection factory. Please refer to the documentation
 of the JMS provider for the information. For ActiveMQ, the default is "<span class="code">ConnectionFactory</span>"</li>
 
-<li>Enter the name of the message topic. For ActiveMQ Dynamic Topics (create topics dynamically), example value is "<span class="code">dynamicTopics/MyStaticTopic1</span>". 
+<li>Enter the name of the message topic. For ActiveMQ Dynamic Topics (create topics dynamically), example value is "<span class="code">dynamicTopics/MyStaticTopic1</span>".
 <div class="clear"></div>
-<div class="note">Note: Setup at startup mean that JMeter starting connection with the Destination at beginning of test without name change possibility. 
-Setup on Each sample mean that JMeter (re)starting the connection before run each JMS Publisher sample, 
+<div class="note">Note: Setup at startup mean that JMeter starting connection with the Destination at beginning of test without name change possibility.
+Setup on Each sample mean that JMeter (re)starting the connection before run each JMS Publisher sample,
 this last option permit to have Destination name with some JMeter variables
 </div>
 <div class="clear"></div>
 </li>
 
-<li>If the JMS provider requires authentication, check "<span class="code">required</span>" and enter the 
+<li>If the JMS provider requires authentication, check "<span class="code">required</span>" and enter the
 username and password. For example, Orion JMS requires authentication, while ActiveMQ
 and MQSeries does not</li>
 
@@ -472,7 +472,7 @@ Figure 11.4. Graph Results Listener</figcaption>
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2019
+            2020
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

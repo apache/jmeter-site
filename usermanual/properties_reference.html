@@ -496,7 +496,7 @@ These properties are only taken into account after restarting JMeter as they are
 
 <div class="clear"></div>
 <div class="note">SSL (Java) System properties are now in <span class="code">system.properties</span>
-<br> 
+<br>
 JMeter no longer converts <span class="code">javax.<em>xxx</em></span> property entries in
 <span class="code">jmeter.properties</span> into System properties. These must now be
 defined in the <span class="code">system.properties</span> file or on the command-line. The
@@ -587,7 +587,7 @@ Reset HTTP State when starting a new Thread Group iteration.
 In summary<span class="code">true</span> means next iteration is associated to a new user.
 <span class="code">false</span> means next iteration is associated to same user.
 <span class="code">true</span> involves:
- <ul> 
+ <ul>
     
 <li>Closing opened connection</li>
     
@@ -699,7 +699,7 @@ Defaults to: <span class="code">true</span>
 <div class="clear"></div>
     
 <div class="clear"></div>
-<div class="note">When you change Look and Feel (LAF) from JMeter GUI through menu Options &gt; Look and Feel, 
+<div class="note">When you change Look and Feel (LAF) from JMeter GUI through menu Options &gt; Look and Feel,
     you should restart JMeter to ensure change is fully effective.</div>
 <div class="clear"></div>
  
@@ -816,7 +816,7 @@ Defaults to: <span class="code">true</span>
 <div class="property">
 <div class="name req-true">jmeter.icons</div>
 <div class="description req-true">
-    Icon definitions. Alternate set: 
+    Icon definitions. Alternate set:
     <pre class="source">jmeter.icons=org/apache/jmeter/images/icon_1.properties</pre>
     Historical icon set (deprecated):
     <pre class="source">jmeter.icons=org/apache/jmeter/images/icon_old.properties</pre>
@@ -957,7 +957,7 @@ gui.quick_9=ViewResultsFullVisualizer
     Backup file names are built after the jmx file being saved. For example,
     saving <span class="code">test-plan.jmx</span> will create a <span class="code">test-plan-000012.jmx</span> in the backup
     directory provided that the last created backup file is <span class="code">test-plan-000011.jmx</span>.<br>
-    Default value is <span class="code">true</span> indicating that auto backups are enabled.<br> 
+    Default value is <span class="code">true</span> indicating that auto backups are enabled.<br>
     Defaults to: <span class="code">true</span>
 
 </div>
@@ -1087,8 +1087,10 @@ JMETER-SERVER</pre>
 <div class="description req-true">
     Parameter that controls the RMI port used by the <span class="code">RemoteSampleListenerImpl</span> (The Controller)<br>
     Default value is <span class="code">0</span>, which means port is randomly assigned.
+    If this is non-zero, it will be used as the base for local port numbers for the client engine.
+    At the moment JMeter will open up to three ports beginning with the port defined in this property.
     <div class="clear"></div>
-<div class="note">You may need to open a port in the firewall on the Controller machine.</div>
+<div class="note">You may need to open corresponding ports in the firewall on the Controller machine.</div>
 <div class="clear"></div>
     Defaults to: <span class="code">0</span>
 
@@ -1568,7 +1570,7 @@ JMETER-SERVER</pre>
 <div class="name req-true">httpclient4.retrycount</div>
 <div class="description req-true">
     Number of retries to attempt.
-    Retry will be done on Idempotent Http Methods by default. 
+    Retry will be done on Idempotent Http Methods by default.
     If you want to retry for all methods, see property <span class="code">httpclient4.request_sent_retry_enabled</span>
     
 <br>
@@ -1611,7 +1613,7 @@ JMETER-SERVER</pre>
     Check connection if the elapsed time (in milliseconds) since the last use of the connection
     exceeds this value. Ensure this value is always lower by at least 150 ms than <span class="code">httpclient4.time_to_live</span>
 <br>
-    Defaults to: <span class="code">1700</span>
+    Defaults to: <span class="code">4900</span>
 
 </div>
 <div class="required req-true">
@@ -1625,7 +1627,7 @@ JMETER-SERVER</pre>
     
 <abbr title="time to live">TTL</abbr> (in milliseconds) represents an absolute value.
     No matter what, the connection will not be re-used beyond its TTL.<br>
-    Defaults to: <span class="code">2000</span>
+    Defaults to: <span class="code">60000</span>
 
 </div>
 <div class="required req-true">
@@ -2931,7 +2933,7 @@ JMETER-SERVER</pre>
         
 <dd>Same as <span class="code">DiskStore</span> but strips response data from SampleResult</dd>
         
-<dt>Class extending <a href="../api/org/apache/jmeter/samplers/AbstractSampleSender.html"><span class="code">AbstractSampleSender</span></a> (<span class="code">org.example.load.MySampleSender</span> for example)</dt>
+<dt>Class extending <a href="../api/org/apache/jmeter/samplers/AbstractSampleSender.html">AbstractSampleSender</a> (<span class="code">org.example.load.MySampleSender</span> for example)</dt>
         
 <dd>A custom implementation of your choice</dd>
     
@@ -3453,10 +3455,10 @@ JMETER-SERVER</pre>
 <div class="property">
 <div class="name req-true">backend_metrics_large_window</div>
 <div class="description req-true">
-    Backend metrics sliding window size  for <span class="code">Percentiles</span>, <span class="code">Min</span> 
+    Backend metrics sliding window size  for <span class="code">Percentiles</span>, <span class="code">Min</span>
     and <span class="code">Max</span>. when <span class="code">backend_metrics_window_mode=timed</span>
 <br>
-    Setting this value too high can lead to OOM Backend metrics sliding window size 
+    Setting this value too high can lead to OOM Backend metrics sliding window size
     Defaults to: <span class="code">5000</span>
 
 </div>
@@ -5457,9 +5459,9 @@ JMETER-SERVER</pre>
 <div class="property">
 <div class="name req-true">think_time_creator.impl</div>
 <div class="description req-true">
-    Default implementation that create the Timer structure to add to Test Plan. 
-    Implementation of interface <a href="../api/org/apache/jmeter/gui/action/thinktime/ThinkTimeCreator.html"><span class="code">org.apache.jmeter.gui.action.thinktime.ThinkTimeCreator</span></a>
-    Defaults to: <a href="../api/org/apache/jmeter/thinktime/DefaultThinkTimeCreator.html"><span class="code">org.apache.jmeter.thinktime.DefaultThinkTimeCreator</span></a>
+    Default implementation that create the Timer structure to add to Test Plan.
+    Implementation of interface <a href="../api/org/apache/jmeter/gui/action/thinktime/ThinkTimeCreator.html">org.apache.jmeter.gui.action.thinktime.ThinkTimeCreator</a>
+    Defaults to: <a href="../api/org/apache/jmeter/thinktime/DefaultThinkTimeCreator.html">org.apache.jmeter.thinktime.DefaultThinkTimeCreator</a>
 
 </div>
 <div class="required req-true">
@@ -5471,7 +5473,7 @@ JMETER-SERVER</pre>
 <div class="name req-true">think_time_creator.default_timer_implementation</div>
 <div class="description req-true">
     Default Timer GUI class added to Test Plan by DefaultThinkTimeCreator
-    Defaults to: <a href="../api/org/apache/jmeter/timers/gui/UniformRandomTimerGui.html"><span class="code">org.apache.jmeter.timers.gui.UniformRandomTimerGui</span></a>
+    Defaults to: <a href="../api/org/apache/jmeter/timers/gui/UniformRandomTimerGui.html">org.apache.jmeter.timers.gui.UniformRandomTimerGui</a>
 
 </div>
 <div class="required req-true">
@@ -5549,10 +5551,10 @@ JMETER-SERVER</pre>
 <div class="property">
 <div class="name req-true">naming_policy.impl</div>
 <div class="description req-true">
-    Implementation of interface <a href="../api/org/apache/jmeter/gui/action/TreeNodeNamingPolicy.html"><span class="code">org.apache.jmeter.gui.action.TreeNodeNamingPolicy</span></a>
-    Default implementation that create the Timer structure to add to Test Plan. 
+    Implementation of interface <a href="../api/org/apache/jmeter/gui/action/TreeNodeNamingPolicy.html">org.apache.jmeter.gui.action.TreeNodeNamingPolicy</a>
+    Default implementation that create the Timer structure to add to Test Plan.
     Implementation of interface org.apache.jmeter.gui.action.thinktime.ThinkTimeCreator
-    Defaults to: <a href="../api/org/apache/jmeter/gui/action/impl/DefaultTreeNodeNamingPolicy.html"><span class="code">org.apache.jmeter.gui.action.impl.DefaultTreeNodeNamingPolicy</span></a>
+    Defaults to: <a href="../api/org/apache/jmeter/gui/action/impl/DefaultTreeNodeNamingPolicy.html">org.apache.jmeter.gui.action.impl.DefaultTreeNodeNamingPolicy</a>
 
 </div>
 <div class="required req-true">
@@ -5617,7 +5619,7 @@ JMETER-SERVER</pre>
 <div class="name req-true">groovy.utilities</div>
 <div class="description req-true">
     Path to Groovy file containing utility functions to make available to <span class="code"><a href="../usermanual/functions.html#__groovy">__groovy</a></span> function.<br>
-    Defaults to <span class="code">bin/utility.groovy</span> 
+    Defaults to <span class="code">bin/utility.groovy</span>
     
 </div>
 <div class="required req-true">
@@ -5748,7 +5750,7 @@ JMETER-SERVER</pre>
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2019
+            2020
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache
