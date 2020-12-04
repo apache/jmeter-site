@@ -154,10 +154,12 @@ implements <a href="../../../../org/apache/jmeter/testelement/TestElement.html" 
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
 <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
-<th class="colOne" scope="col">Constructor and Description</th>
+<th class="colFirst" scope="col">Modifier</th>
+<th class="colLast" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../org/apache/jmeter/testelement/AbstractTestElement.html#AbstractTestElement--">AbstractTestElement</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jmeter/testelement/AbstractTestElement.html#AbstractTestElement--">AbstractTestElement</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -239,7 +241,9 @@ implements <a href="../../../../org/apache/jmeter/testelement/TestElement.html" 
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jmeter/testelement/AbstractTestElement.html#getComment--">getComment</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jmeter/testelement/AbstractTestElement.html#getComment--">getComment</a></span>()</code>
+<div class="block">Returns comment associated with this element.</div>
+</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
@@ -333,7 +337,9 @@ implements <a href="../../../../org/apache/jmeter/testelement/TestElement.html" 
 </tr>
 <tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jmeter/testelement/AbstractTestElement.html#getThreadName--">getThreadName</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jmeter/testelement/AbstractTestElement.html#getThreadName--">getThreadName</a></span>()</code>
+<div class="block">Returns the threadName.</div>
+</td>
 </tr>
 <tr id="i27" class="rowColor">
 <td class="colFirst"><code>int</code></td>
@@ -403,7 +409,9 @@ implements <a href="../../../../org/apache/jmeter/testelement/TestElement.html" 
 </tr>
 <tr id="i38" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jmeter/testelement/AbstractTestElement.html#setName-java.lang.String-">setName</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jmeter/testelement/AbstractTestElement.html#setName-java.lang.String-">setName</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Returns name of this element.</div>
+</td>
 </tr>
 <tr id="i39" class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -482,7 +490,9 @@ implements <a href="../../../../org/apache/jmeter/testelement/TestElement.html" 
 </tr>
 <tr id="i51" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jmeter/testelement/AbstractTestElement.html#setThreadName-java.lang.String-">setThreadName</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inthreadName)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jmeter/testelement/AbstractTestElement.html#setThreadName-java.lang.String-">setThreadName</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inthreadName)</code>
+<div class="block">Configures thread name.</div>
+</td>
 </tr>
 <tr id="i52" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -540,7 +550,7 @@ implements <a href="../../../../org/apache/jmeter/testelement/TestElement.html" 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AbstractTestElement</h4>
-<pre>public&nbsp;AbstractTestElement()</pre>
+<pre>protected&nbsp;AbstractTestElement()</pre>
 </li>
 </ul>
 </li>
@@ -659,6 +669,8 @@ implements <a href="../../../../org/apache/jmeter/testelement/TestElement.html" 
 <li class="blockList">
 <h4>setName</h4>
 <pre>public&nbsp;void&nbsp;setName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/apache/jmeter/testelement/TestElement.html#setName-java.lang.String-">TestElement</a></code></span></div>
+<div class="block">Returns name of this element.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../org/apache/jmeter/testelement/TestElement.html#setName-java.lang.String-">setName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/jmeter/testelement/TestElement.html" title="interface in org.apache.jmeter.testelement">TestElement</a></code></dd>
@@ -708,6 +720,8 @@ implements <a href="../../../../org/apache/jmeter/testelement/TestElement.html" 
 <li class="blockList">
 <h4>getComment</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getComment()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/apache/jmeter/testelement/TestElement.html#getComment--">TestElement</a></code></span></div>
+<div class="block">Returns comment associated with this element.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../org/apache/jmeter/testelement/TestElement.html#getComment--">getComment</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/jmeter/testelement/TestElement.html" title="interface in org.apache.jmeter.testelement">TestElement</a></code></dd>
@@ -1378,6 +1392,8 @@ implements <a href="../../../../org/apache/jmeter/testelement/TestElement.html" 
 <li class="blockList">
 <h4>getThreadName</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getThreadName()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/apache/jmeter/testelement/TestElement.html#getThreadName--">TestElement</a></code></span></div>
+<div class="block">Returns the threadName.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../org/apache/jmeter/testelement/TestElement.html#getThreadName--">getThreadName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/jmeter/testelement/TestElement.html" title="interface in org.apache.jmeter.testelement">TestElement</a></code></dd>
@@ -1393,6 +1409,8 @@ implements <a href="../../../../org/apache/jmeter/testelement/TestElement.html" 
 <li class="blockList">
 <h4>setThreadName</h4>
 <pre>public&nbsp;void&nbsp;setThreadName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inthreadName)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/apache/jmeter/testelement/TestElement.html#setThreadName-java.lang.String-">TestElement</a></code></span></div>
+<div class="block">Configures thread name.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../org/apache/jmeter/testelement/TestElement.html#setThreadName-java.lang.String-">setThreadName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/jmeter/testelement/TestElement.html" title="interface in org.apache.jmeter.testelement">TestElement</a></code></dd>

@@ -218,7 +218,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/RowSorter
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;<a href="../../../../org/apache/jorphan/gui/ObjectTableSorter.Row.html" title="class in org.apache.jorphan.gui">ObjectTableSorter.Row</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/gui/ObjectTableSorter.html#getFallbackComparator--">getFallbackComparator</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/gui/ObjectTableSorter.html#getFallbackComparator--">getFallbackComparator</a></span>()</code>
+<div class="block">Returns Comparator if all sorted columns matches.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/apache/jorphan/gui/ObjectTableModel.html" title="class in org.apache.jorphan.gui">ObjectTableModel</a></code></td>
@@ -230,7 +232,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/RowSorter
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;<a href="../../../../org/apache/jorphan/gui/ObjectTableSorter.Row.html" title="class in org.apache.jorphan.gui">ObjectTableSorter.Row</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/gui/ObjectTableSorter.html#getPrimaryComparator--">getPrimaryComparator</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/gui/ObjectTableSorter.html#getPrimaryComparator--">getPrimaryComparator</a></span>()</code>
+<div class="block">Returns Comparator used prior to sorted columns.</div>
+</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/RowSorter.SortKey.html?is-external=true" title="class or interface in javax.swing">RowSorter.SortKey</a>&gt;</code></td>
@@ -238,7 +242,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/RowSorter
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;?&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/gui/ObjectTableSorter.html#getValueComparator-int-">getValueComparator</a></span>(int&nbsp;column)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/gui/ObjectTableSorter.html#getValueComparator-int-">getValueComparator</a></span>(int&nbsp;column)</code>
+<div class="block">Returns Comparator used on column.</div>
+</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>int</code></td>
@@ -395,6 +401,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/RowSorter
 <li class="blockList">
 <h4>getPrimaryComparator</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;<a href="../../../../org/apache/jorphan/gui/ObjectTableSorter.Row.html" title="class in org.apache.jorphan.gui">ObjectTableSorter.Row</a>&gt;&nbsp;getPrimaryComparator()</pre>
+<div class="block">Returns Comparator used prior to sorted columns.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Comparator used prior to sorted columns.</dd>
@@ -408,6 +415,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/RowSorter
 <li class="blockList">
 <h4>getValueComparator</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;?&gt;&nbsp;getValueComparator(int&nbsp;column)</pre>
+<div class="block">Returns Comparator used on column.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>column</code> - to be compared</dd>
@@ -423,6 +431,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/RowSorter
 <li class="blockList">
 <h4>getFallbackComparator</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;<a href="../../../../org/apache/jorphan/gui/ObjectTableSorter.Row.html" title="class in org.apache.jorphan.gui">ObjectTableSorter.Row</a>&gt;&nbsp;getFallbackComparator()</pre>
+<div class="block">Returns Comparator if all sorted columns matches. Defaults to model index comparison.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Comparator if all sorted columns matches. Defaults to model index comparison.</dd>

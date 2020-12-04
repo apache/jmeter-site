@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10};
+var methods = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -155,6 +155,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <div class="block">Gets <a href="../../../../../../org/apache/jmeter/protocol/http/proxy/SamplerCreator.html" title="interface in org.apache.jmeter.protocol.http.proxy"><code>SamplerCreator</code></a> for content type, if none is found returns <a href="../../../../../../org/apache/jmeter/protocol/http/proxy/DefaultSamplerCreator.html" title="class in org.apache.jmeter.protocol.http.proxy"><code>DefaultSamplerCreator</code></a></div>
 </td>
 </tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/apache/jmeter/protocol/http/proxy/SamplerCreatorFactory.html#setCounter-int-">setCounter</a></span>(int&nbsp;value)</code>
+<div class="block">Set the counter for all available <a href="../../../../../../org/apache/jmeter/protocol/http/proxy/SamplerCreator.html" title="interface in org.apache.jmeter.protocol.http.proxy"><code>SamplerCreator</code></a>s.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -194,6 +200,22 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="setCounter-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCounter</h4>
+<pre>public&nbsp;void&nbsp;setCounter(int&nbsp;value)</pre>
+<div class="block">Set the counter for all available <a href="../../../../../../org/apache/jmeter/protocol/http/proxy/SamplerCreator.html" title="interface in org.apache.jmeter.protocol.http.proxy"><code>SamplerCreator</code></a>s.
+ <p>
+ <em>The only implementation that is currently available, increments the counter before it is used!</em></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>value</code> - to initialize the creators</dd>
+</dl>
+</li>
+</ul>
 <a name="getSamplerCreator-org.apache.jmeter.protocol.http.proxy.HttpRequestHdr-java.util.Map-java.util.Map-">
 <!--   -->
 </a>

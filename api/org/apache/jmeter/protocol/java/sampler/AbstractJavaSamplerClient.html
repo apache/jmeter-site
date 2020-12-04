@@ -18,8 +18,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":42,"i2":10,"i3":10,"i4":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -176,7 +176,7 @@ implements <a href="../../../../../../org/apache/jmeter/protocol/java/sampler/Ja
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -188,26 +188,18 @@ implements <a href="../../../../../../org/apache/jmeter/protocol/java/sampler/Ja
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>protected <a href="../../../../../../org/apache/log/Logger.html" title="class in org.apache.log">Logger</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/apache/jmeter/protocol/java/sampler/AbstractJavaSamplerClient.html#getLogger--">getLogger</a></span>()</code>
-<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
-<div class="block"><span class="deprecationComment">Will be removed in 3.3, use <a href="../../../../../../org/apache/jmeter/protocol/java/sampler/AbstractJavaSamplerClient.html#getNewLogger--"><code>getNewLogger()</code></a></span></div>
-</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
 <td class="colFirst"><code>protected org.slf4j.Logger</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/apache/jmeter/protocol/java/sampler/AbstractJavaSamplerClient.html#getNewLogger--">getNewLogger</a></span>()</code>
 <div class="block">Get a Logger instance which can be used by subclasses to log information.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/apache/jmeter/protocol/java/sampler/AbstractJavaSamplerClient.html#setupTest-org.apache.jmeter.protocol.java.sampler.JavaSamplerContext-">setupTest</a></span>(<a href="../../../../../../org/apache/jmeter/protocol/java/sampler/JavaSamplerContext.html" title="class in org.apache.jmeter.protocol.java.sampler">JavaSamplerContext</a>&nbsp;context)</code>
 <div class="block">Do any initialization required by this client.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/apache/jmeter/protocol/java/sampler/AbstractJavaSamplerClient.html#teardownTest-org.apache.jmeter.protocol.java.sampler.JavaSamplerContext-">teardownTest</a></span>(<a href="../../../../../../org/apache/jmeter/protocol/java/sampler/JavaSamplerContext.html" title="class in org.apache.jmeter.protocol.java.sampler">JavaSamplerContext</a>&nbsp;context)</code>
 <div class="block">Do any clean-up required by this test at the end of a test run.</div>
@@ -319,24 +311,6 @@ implements <a href="../../../../../../org/apache/jmeter/protocol/java/sampler/Ja
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a specification of the parameters used by this test which should
          be listed in the GUI, or null if no parameters should be listed.</dd>
-</dl>
-</li>
-</ul>
-<a name="getLogger--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getLogger</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-protected&nbsp;<a href="../../../../../../org/apache/log/Logger.html" title="class in org.apache.log">Logger</a>&nbsp;getLogger()</pre>
-<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Will be removed in 3.3, use <a href="../../../../../../org/apache/jmeter/protocol/java/sampler/AbstractJavaSamplerClient.html#getNewLogger--"><code>getNewLogger()</code></a></span></div>
-<div class="block">Get a Logger instance which can be used by subclasses to log information.
- This is the same Logger which is used by the base JavaSampler classes
- (jmeter.protocol.java).</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>a Logger instance which can be used for logging</dd>
 </dl>
 </li>
 </ul>

@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":9,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -196,16 +196,6 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/Act
 </td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/gui/action/ActionRouter.html#postActionPerformed-java.lang.Class-java.awt.event.ActionEvent-">postActionPerformed</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../../org/apache/jmeter/gui/action/Command.html" title="interface in org.apache.jmeter.gui.action">Command</a>&gt;&nbsp;action,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionEvent.html?is-external=true" title="class or interface in java.awt.event">ActionEvent</a>&nbsp;e)</code>&nbsp;</td>
-</tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/gui/action/ActionRouter.html#preActionPerformed-java.lang.Class-java.awt.event.ActionEvent-">preActionPerformed</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../../org/apache/jmeter/gui/action/Command.html" title="interface in org.apache.jmeter.gui.action">Command</a>&gt;&nbsp;action,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionEvent.html?is-external=true" title="class or interface in java.awt.event">ActionEvent</a>&nbsp;e)</code>&nbsp;</td>
-</tr>
-<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/gui/action/ActionRouter.html#removePostActionListener-java.lang.Class-java.awt.event.ActionListener-">removePostActionListener</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;action,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html?is-external=true" title="class or interface in java.awt.event">ActionListener</a>&nbsp;listener)</code>
@@ -213,7 +203,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/Act
  command being executed after the command has executed.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/gui/action/ActionRouter.html#removePreActionListener-java.lang.Class-java.awt.event.ActionListener-">removePreActionListener</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;action,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html?is-external=true" title="class or interface in java.awt.event">ActionListener</a>&nbsp;listener)</code>
@@ -401,36 +391,6 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/Act
             notifications for. Class must extend
             org.apache.jmeter.gui.action.Command.</dd>
 <dd><code>listener</code> - The <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html?is-external=true" title="class or interface in java.awt.event"><code>ActionListener</code></a> that should be deregistered</dd>
-</dl>
-</li>
-</ul>
-<a name="preActionPerformed-java.lang.Class-java.awt.event.ActionEvent-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>preActionPerformed</h4>
-<pre>protected&nbsp;void&nbsp;preActionPerformed(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../../org/apache/jmeter/gui/action/Command.html" title="interface in org.apache.jmeter.gui.action">Command</a>&gt;&nbsp;action,
-                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionEvent.html?is-external=true" title="class or interface in java.awt.event">ActionEvent</a>&nbsp;e)</pre>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>action</code> - <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang"><code>Class</code></a></dd>
-<dd><code>e</code> - <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionEvent.html?is-external=true" title="class or interface in java.awt.event"><code>ActionEvent</code></a></dd>
-</dl>
-</li>
-</ul>
-<a name="postActionPerformed-java.lang.Class-java.awt.event.ActionEvent-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>postActionPerformed</h4>
-<pre>protected&nbsp;void&nbsp;postActionPerformed(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../../org/apache/jmeter/gui/action/Command.html" title="interface in org.apache.jmeter.gui.action">Command</a>&gt;&nbsp;action,
-                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionEvent.html?is-external=true" title="class or interface in java.awt.event">ActionEvent</a>&nbsp;e)</pre>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>action</code> - <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang"><code>Class</code></a></dd>
-<dd><code>e</code> - <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionEvent.html?is-external=true" title="class or interface in java.awt.event"><code>ActionEvent</code></a></dd>
 </dl>
 </li>
 </ul>

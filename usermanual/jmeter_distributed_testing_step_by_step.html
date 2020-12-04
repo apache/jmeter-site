@@ -220,7 +220,7 @@ This short tutorial explains how to use multiple systems to perform stress testi
 
 <p>
 Once you've made sure the systems are ready, it's time to setup remote testing. The tutorial assumes you already
-have JMeter installed on all the systems. The way JMeter works is one master controller initiates the test on multiple slave systems.
+have JMeter installed on all the systems. The way JMeter works is one controller node initiates the test on multiple worker nodes.
 </p>
 
 
@@ -230,8 +230,8 @@ have JMeter installed on all the systems. The way JMeter works is one master con
 
 
 <figure>
-<a href="../images/screenshots/distributed-jmeter.svg"><img src="../images/screenshots/distributed-jmeter.svg" width="610" height="462" alt="One master controls multiple slaves"></a>
-<figcaption>One master controls multiple slaves</figcaption>
+<a href="../images/screenshots/distributed-jmeter.svg"><img src="../images/screenshots/distributed-jmeter.svg" width="610" height="462" alt="One controller node with multiple worker nodes"></a>
+<figcaption>One controller node with multiple worker nodes</figcaption>
 </figure>
 
 
@@ -247,10 +247,10 @@ Before we dive into the step-by-step instructions, it's a good idea to define th
 
 <dl>
   
-<dt>Master</dt>
+<dt>Controller Node</dt>
 <dd>the system running JMeter GUI, which controls the test</dd>
   
-<dt>Slave</dt>
+<dt>Worker Node</dt>
 <dd>the system running <span class="code">jmeter-server</span>, which takes commands from
       the GUI and send requests to the target system(s)</dd>
   
@@ -276,11 +276,11 @@ Before we dive into the step-by-step instructions, it's a good idea to define th
 
 <ol>
   
-<li>On the slave systems, go to <span class="code">jmeter/bin</span> directory and execute
+<li>On the worker nodes, go to <span class="code">jmeter/bin</span> directory and execute
      <span class="code">jmeter-server.bat</span> (<span class="code">jmeter-server</span> on unix).
   </li>
   
-<li>On master system acting as the console, open windows explorer and go to
+<li>On controller node acting as the console, open windows explorer and go to
       <span class="code">jmeter/bin</span> directory</li>
   
 <li>Open <span class="code">jmeter.properties</span> in a text editor</li>
@@ -317,7 +317,7 @@ Before we dive into the step-by-step instructions, it's a good idea to define th
 
 <p>
 At this point, you are ready to start load testing. If you want to double check
-the slave systems are working, open <span class="code">jmeter.log</span> in your editor. You should see the following in the log.
+the worker nodes are working, open <span class="code">jmeter.log</span> in your editor. You should see the following in the log.
 </p>
 
 
@@ -354,8 +354,8 @@ initiate the test: a single system and all systems.
 
 
 <figure>
-<a href="../images/screenshots/example-remote-start.png"><img src="../images/screenshots/example-remote-start.png" width="490" height="196" alt="Start a single slave"></a>
-<figcaption>Start a single slave</figcaption>
+<a href="../images/screenshots/example-remote-start.png"><img src="../images/screenshots/example-remote-start.png" width="490" height="196" alt="Start a single worker node"></a>
+<figcaption>Start a single worker node</figcaption>
 </figure>
 
 
@@ -378,8 +378,8 @@ initiate the test: a single system and all systems.
 
 
 <figure>
-<a href="../images/screenshots/example-remote-start-all.png"><img src="../images/screenshots/example-remote-start-all.png" width="410" height="155" alt="Start all slaves"></a>
-<figcaption>Start all slaves</figcaption>
+<a href="../images/screenshots/example-remote-start-all.png"><img src="../images/screenshots/example-remote-start-all.png" width="410" height="155" alt="Start all worker nodes"></a>
+<figcaption>Start all worker nodes</figcaption>
 </figure>
 
 

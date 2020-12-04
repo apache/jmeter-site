@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":9,"i7":10,"i8":9,"i9":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":9,"i7":10,"i8":9,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -163,10 +163,12 @@ implements <a href="../../../../../../org/apache/jmeter/protocol/http/proxy/Samp
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
 <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
-<th class="colOne" scope="col">Constructor and Description</th>
+<th class="colFirst" scope="col">Modifier</th>
+<th class="colLast" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../org/apache/jmeter/protocol/http/proxy/AbstractSamplerCreator.html#AbstractSamplerCreator--">AbstractSamplerCreator</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/apache/jmeter/protocol/http/proxy/AbstractSamplerCreator.html#AbstractSamplerCreator--">AbstractSamplerCreator</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -240,6 +242,12 @@ implements <a href="../../../../../../org/apache/jmeter/protocol/http/proxy/Samp
                   <a href="../../../../../../org/apache/jmeter/samplers/SampleResult.html" title="class in org.apache.jmeter.samplers">SampleResult</a>&nbsp;result)</code>
 <div class="block">Post process sampler
  Called after sampling</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/apache/jmeter/protocol/http/proxy/AbstractSamplerCreator.html#setCounter-int-">setCounter</a></span>(int&nbsp;value)</code>
+<div class="block">Set the counter for this implementation.</div>
 </td>
 </tr>
 </table>
@@ -324,7 +332,7 @@ implements <a href="../../../../../../org/apache/jmeter/protocol/http/proxy/Samp
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AbstractSamplerCreator</h4>
-<pre>public&nbsp;AbstractSamplerCreator()</pre>
+<pre>protected&nbsp;AbstractSamplerCreator()</pre>
 </li>
 </ul>
 </li>
@@ -356,6 +364,24 @@ implements <a href="../../../../../../org/apache/jmeter/protocol/http/proxy/Samp
 <h4>incrementRequestNumber</h4>
 <pre>protected static&nbsp;void&nbsp;incrementRequestNumber()</pre>
 <div class="block">Increment request number</div>
+</li>
+</ul>
+<a name="setCounter-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCounter</h4>
+<pre>public&nbsp;void&nbsp;setCounter(int&nbsp;value)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../org/apache/jmeter/protocol/http/proxy/SamplerCreator.html#setCounter-int-">SamplerCreator</a></code></span></div>
+<div class="block">Set the counter for this implementation. The counter should be incremented
+ before creating a new sampler by the implementation.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../../org/apache/jmeter/protocol/http/proxy/SamplerCreator.html#setCounter-int-">setCounter</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/apache/jmeter/protocol/http/proxy/SamplerCreator.html" title="interface in org.apache.jmeter.protocol.http.proxy">SamplerCreator</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>value</code> - to be used</dd>
+</dl>
 </li>
 </ul>
 <a name="incrementRequestNumberAndGet--">

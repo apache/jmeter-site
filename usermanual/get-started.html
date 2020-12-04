@@ -637,7 +637,7 @@ There are a few environment variables, that can be used to customize the JVM set
 rem This is the content of bin\setenv.bat,
 rem it will be called by bin\jmeter.bat
 
-set JVM_ARGS="-Xms1024m -Xmx1024m -Dpropname=value"
+set JVM_ARGS=-Xms1024m -Xmx1024m -Dpropname=value
 </pre>
 
 
@@ -1026,7 +1026,17 @@ If the proxy host and port are provided, then JMeter sets the following System p
 </li>
 
 </ul>
+
+<p>
+The user and password used for a proxy can be given by the System properties <span class="code">http.proxyUser</span>
+and <span class="code">http.proxyUser</span>. They will get overridden by the above arguments or values set in the
+HTTP Samplers.
+</p>
+
+<p>
 If a nonproxy host list is provided, then JMeter sets the following System properties:
+</p>
+
 <ul>
 
 <li>

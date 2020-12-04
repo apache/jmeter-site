@@ -191,15 +191,21 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/exec/SystemCommand.html#getExecutionEnvironment--">getExecutionEnvironment</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/exec/SystemCommand.html#getExecutionEnvironment--">getExecutionEnvironment</a></span>()</code>
+<div class="block">Returns the executionEnvironment.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/exec/SystemCommand.html#getOutResult--">getOutResult</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/exec/SystemCommand.html#getOutResult--">getOutResult</a></span>()</code>
+<div class="block">Returns Out/Err stream contents</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/exec/SystemCommand.html#run-java.util.List-">run</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;arguments)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/apache/jorphan/exec/SystemCommand.html#run-java.util.List-">run</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;arguments)</code>
+<div class="block">Runs the command with given arguments and returns its return code.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>int</code></td>
@@ -339,6 +345,7 @@ public static final&nbsp;int POLL_INTERVAL</pre>
         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a>,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeoutException.html?is-external=true" title="class or interface in java.util.concurrent">TimeoutException</a></pre>
+<div class="block">Runs the command with given arguments and returns its return code.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>arguments</code> - List of strings, not null</dd>
@@ -383,6 +390,7 @@ public static final&nbsp;int POLL_INTERVAL</pre>
 <li class="blockList">
 <h4>getOutResult</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getOutResult()</pre>
+<div class="block">Returns Out/Err stream contents</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Out/Err stream contents</dd>
@@ -396,6 +404,7 @@ public static final&nbsp;int POLL_INTERVAL</pre>
 <li class="blockList">
 <h4>getExecutionEnvironment</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getExecutionEnvironment()</pre>
+<div class="block">Returns the executionEnvironment.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the executionEnvironment</dd>

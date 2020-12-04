@@ -300,7 +300,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;guiClass,
                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;testClass)
                         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InstantiationException.html?is-external=true" title="class or interface in java.lang">InstantiationException</a>,
-                               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang">IllegalAccessException</a></pre>
+                               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang">IllegalAccessException</a>,
+                               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang">NoSuchMethodException</a>,
+                               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect">InvocationTargetException</a></pre>
 <div class="block">Register a GUI class so that it can later be retrieved via
  <a href="../../../../org/apache/jmeter/gui/GUIFactory.html#getGUI-java.lang.Class-"><code>getGUI(Class)</code></a>. The key should match the fully-qualified class
  name for the class used as the parameter when retrieving the GUI.</div>
@@ -313,6 +315,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InstantiationException.html?is-external=true" title="class or interface in java.lang">InstantiationException</a></code> - if an instance of the GUI class can not be instantiated</dd>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang">IllegalAccessException</a></code> - if access rights do not permit an instance of the GUI class
              to be created</dd>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang">NoSuchMethodException</a></code> - when no constructor can be found on the given <code>guiClass</code></dd>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect">InvocationTargetException</a></code> - when the called constructor throws an exception</dd>
 </dl>
 </li>
 </ul>

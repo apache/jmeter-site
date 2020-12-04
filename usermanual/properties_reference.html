@@ -213,6 +213,10 @@
 <ul></ul>
 </li>
 <li>
+<a href="#darklaf_config">19.4.1 Darklaf configuration</a>
+<ul></ul>
+</li>
+<li>
 <a href="#toolbar_display">19.5 Toolbar display</a>
 <ul></ul>
 </li>
@@ -374,6 +378,10 @@
 </li>
 <li>
 <a href="#docgeneration">19.45 Documentation generation</a>
+<ul></ul>
+</li>
+<li>
+<a href="#securityprovider">19.46 Security Provider</a>
 <ul></ul>
 </li>
 </ul>
@@ -752,6 +760,46 @@ Defaults to: <span class="code">true</span>
 <div class="description req-true">
     Interval period in <span class="code">ms</span> to process the events of the listeners.<br>
     Defaults to: <span class="code">500</span>
+</div>
+<div class="required req-true">
+            No
+          </div>
+</div>
+
+</div>
+
+</div>
+<div class="section">
+<h1 id="darklaf_config">19.4.1 Darklaf configuration<a class="sectionlink" href="#darklaf_config" title="Link to here">&para;</a>
+</h1>
+
+<div class="properties">
+<h3>
+        Parameters
+        </h3>
+<div class="property title">
+<div class="name title">Attribute</div>
+<div class="description title">Description</div>
+<div class="required title">Required</div>
+</div>
+    
+<div class="property">
+<div class="name req-true">darklaf.decorations</div>
+<div class="description req-true">
+        Enables custom window chrome when using a Darklaf Look And Feel.
+        Defaults to: <span class="code">false</span>
+</div>
+<div class="required req-true">
+            No
+          </div>
+</div>
+    
+<div class="property">
+<div class="name req-true">darklaf.unifiedMenuBar</div>
+<div class="description req-true">
+        Enables the unified menubar on Windows when using a Darklaf Look and Feel.<br>
+        This property only has an effect if <span class="code">darklaf.native</span> is <span class="code">true</span>.
+        Defaults to: <span class="code">true</span>
 </div>
 <div class="required req-true">
             No
@@ -1444,6 +1492,26 @@ JMETER-SERVER</pre>
           </div>
 </div>
 
+<div class="property">
+<div class="name req-true">http.proxyUser</div>
+<div class="description req-true">
+    Set the user name to use with a proxy.
+</div>
+<div class="required req-true">
+            No
+          </div>
+</div>
+
+<div class="property">
+<div class="name req-true">http.proxyPass</div>
+<div class="description req-true">
+    Set the password to use with a proxy.
+</div>
+<div class="required req-true">
+            No
+          </div>
+</div>
+
 </div>
 
 </div>
@@ -1629,18 +1697,6 @@ JMETER-SERVER</pre>
     No matter what, the connection will not be re-used beyond its TTL.<br>
     Defaults to: <span class="code">60000</span>
 
-</div>
-<div class="required req-true">
-            No
-          </div>
-</div>
-
-<div class="property">
-<div class="name req-true">httpclient4.max_body_retain_size</div>
-<div class="description req-true">
-    Max size in bytes of <span class="code">PUT</span> body to retain in result sampler.
-    Bigger results will be clipped.<br>
-    Defaults to: <span class="code">327678</span> (bytes)
 </div>
 <div class="required req-true">
             No
@@ -2240,7 +2296,7 @@ JMETER-SERVER</pre>
 <div class="description req-true">
     Save the start time stamp instead of the end.<br>
     This also affects the timestamp stored in result files.<br>
-    Defaults to: <span class="code">true</span>
+    Defaults to: <span class="code">false</span>
 
 </div>
 <div class="required req-true">
@@ -2355,6 +2411,19 @@ JMETER-SERVER</pre>
 <div class="description req-true">
     Add numeric suffix to Sampler names.<br>
     defaults to: <span class="code">true</span>
+
+</div>
+<div class="required req-true">
+            No
+          </div>
+</div>
+
+<div class="property">
+<div class="name req-true">proxy.sampler_format</div>
+<div class="description req-true">
+    Default format string for new samplers when <span class="code">Use format string</span> is selected
+    as <span class="code">naming scheme</span>.<br>
+    Defaults to: <span class="code">#{counter,number,000} - #{path} (#{name})</span>
 
 </div>
 <div class="required req-true">
@@ -5258,7 +5327,7 @@ JMETER-SERVER</pre>
 <div class="name req-true">generate_report_ui.generation_timeout</div>
 <div class="description req-true">
     Timeout in milliseconds for Report generation when using Tools &gt; Generate HTML report.<br>
-    Defaults to: 120000
+    Defaults to: 300000
 </div>
 <div class="required req-true">
             No
@@ -5714,6 +5783,65 @@ JMETER-SERVER</pre>
     Path to XSL file used to generate Schematic View of Test Plan.<br>
     When empty, JMeter will use the embedded one in src/core/org/apache/jmeter/gui/action/schematic.xsl<br>
     No default value</div>
+<div class="required req-true">
+            No
+          </div>
+</div>
+
+</div>
+
+</div>
+<div class="section">
+<h1 id="securityprovider">19.46 Security Provider<a class="sectionlink" href="#securityprovider" title="Link to here">&para;</a>
+</h1>
+
+<div class="description">Advanced properties for documentation generation</div>
+
+<div class="properties">
+<h3>
+        Parameters
+        </h3>
+<div class="property title">
+<div class="name title">Attribute</div>
+<div class="description title">Description</div>
+<div class="required title">Required</div>
+</div>
+    
+<div class="property">
+<div class="name req-true">security.provider</div>
+<div class="description req-true">
+        The value must be in this format: &lt;ClassName&gt;[:&lt;Postion&gt;[:&lt;ConfigString&gt;]]</div>
+<div class="required req-true">
+            No
+          </div>
+</div>.
+        Examples:<br>
+        
+<dl>
+            
+<dt>org.bouncycastle.jce.provider.BouncyCastleProvider</dt>
+            
+<dd>Adds the <span class="code">BouncyCastleProvider</span> to the next position available.</dd>
+            
+<dt>org.bouncycastle.jce.provider.BouncyCastleProvider:1</dt>
+            
+<dd>Adds the <span class="code">BouncyCastleProvider</span>, at the first position.</dd>
+            
+<dt>org.bouncycastle.jsse.provider.BouncyCastleJsseProvider:2:BC</dt>
+            
+<dd>Adds the <span class="code">BouncyCastleJsseProvider</span>, at the second position. And configure it to use the
+                BC provider.</dd>
+        
+</dl>
+    
+<div class="property">
+<div class="name req-true">security.provider.&lt;n&gt;</div>
+<div class="description req-true">
+        Replace the <span class="code">&lt;n&gt;</span> with any number. The SecurityProviders will be added in the alphabetical
+        order of the property names. (First: <span class="code">security.provider</span> and then <span class="code">security.provider.2</span>, <span class="code">security.provider.3</span>,...)
+        See property <span class="code">security.provider</span>
+        
+</div>
 <div class="required req-true">
             No
           </div>

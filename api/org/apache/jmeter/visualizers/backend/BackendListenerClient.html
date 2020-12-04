@@ -18,8 +18,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":18,"i1":18,"i2":6,"i3":6,"i4":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -101,15 +101,16 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><a href="../../../../../org/apache/jmeter/visualizers/backend/AbstractBackendListenerClient.html" title="class in org.apache.jmeter.visualizers.backend">AbstractBackendListenerClient</a>, <a href="../../../../../org/apache/jmeter/visualizers/backend/graphite/GraphiteBackendListenerClient.html" title="class in org.apache.jmeter.visualizers.backend.graphite">GraphiteBackendListenerClient</a>, <a href="../../../../../org/apache/jmeter/visualizers/backend/influxdb/InfluxdbBackendListenerClient.html" title="class in org.apache.jmeter.visualizers.backend.influxdb">InfluxdbBackendListenerClient</a></dd>
+<dd><a href="../../../../../org/apache/jmeter/visualizers/backend/AbstractBackendListenerClient.html" title="class in org.apache.jmeter.visualizers.backend">AbstractBackendListenerClient</a>, <a href="../../../../../org/apache/jmeter/visualizers/backend/graphite/GraphiteBackendListenerClient.html" title="class in org.apache.jmeter.visualizers.backend.graphite">GraphiteBackendListenerClient</a>, <a href="../../../../../org/apache/jmeter/visualizers/backend/influxdb/InfluxdbBackendListenerClient.html" title="class in org.apache.jmeter.visualizers.backend.influxdb">InfluxdbBackendListenerClient</a>, <a href="../../../../../org/apache/jmeter/visualizers/backend/influxdb/InfluxDBRawBackendListenerClient.html" title="class in org.apache.jmeter.visualizers.backend.influxdb">InfluxDBRawBackendListenerClient</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">BackendListenerClient</span></pre>
-<div class="block">This interface defines the interactions between the BackendListener and external
- Java programs which can be executed by JMeter. Any Java class which wants to
- be executed using the BackendListener test element must implement this interface (either directly
- or preferably indirectly through AbstractBackendListenerClient).
+<div class="block">This interface defines the interactions between the <a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListener.html" title="class in org.apache.jmeter.visualizers.backend"><code>BackendListener</code></a>
+ and external Java programs which can be executed by JMeter. Any Java class
+ which wants to be executed using the <a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListener.html" title="class in org.apache.jmeter.visualizers.backend"><code>BackendListener</code></a> test element
+ must implement this interface (either directly or through
+ <a href="../../../../../org/apache/jmeter/visualizers/backend/AbstractBackendListenerClient.html" title="class in org.apache.jmeter.visualizers.backend"><code>AbstractBackendListenerClient</code></a>).
  <p>
  JMeter will create one instance of a BackendListenerClient implementation for
  each user/thread in the test. Additional instances may be created for
@@ -117,20 +118,24 @@ var activeTableTab = "activeTableTab";
  supported by the client).
  <p>
  When the test is started, setupTest() will be called on each thread's
- BackendListenerClient instance to initialize the client. Then handleSampleResult() will be
- called for each SampleResult notification. Finally, teardownTest() will be called
- to allow the client to do any necessary clean-up.
+ BackendListenerClient instance to initialize the client.
+ Then <a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerClient.html#handleSampleResults-java.util.List-org.apache.jmeter.visualizers.backend.BackendListenerContext-"><code>handleSampleResults(List, BackendListenerContext)</code></a> will be
+ called for each <a href="../../../../../org/apache/jmeter/samplers/SampleResult.html" title="class in org.apache.jmeter.samplers"><code>SampleResult</code></a> notification. Finally,
+ <a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerClient.html#teardownTest-org.apache.jmeter.visualizers.backend.BackendListenerContext-"><code>teardownTest(BackendListenerContext)</code></a>
+ will be called to allow the client to do any necessary clean-up.
  <p>
- The JMeter BackendListener GUI allows a list of parameters to be defined for the
- test. These are passed to the various test methods through the
+ The JMeter BackendListener GUI allows a list of parameters to be defined for
+ the test. These are passed to the various test methods through the
  <a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerContext.html" title="class in org.apache.jmeter.visualizers.backend"><code>BackendListenerContext</code></a>. A list of default parameters can be defined
- through the getDefaultParameters() method. These parameters and any default
- values associated with them will be shown in the GUI. Users can add other
- parameters as well.
+ through the <a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerClient.html#getDefaultParameters--"><code>getDefaultParameters()</code></a> method. These parameters and any
+ default values associated with them will be shown in the GUI. Users can add
+ other parameters as well.
  <p>
- When possible, Listeners should extend <a href="../../../../../org/apache/jmeter/visualizers/backend/AbstractBackendListenerClient.html" title="class in org.apache.jmeter.visualizers.backend"><code>AbstractBackendListenerClient</code></a> rather than implementing BackendListenerClient
- directly. This should protect your tests from future changes to the
- interface. While it may be necessary to make changes to the BackendListenerClient
+ Listeners should extend <a href="../../../../../org/apache/jmeter/visualizers/backend/AbstractBackendListenerClient.html" title="class in org.apache.jmeter.visualizers.backend"><code>AbstractBackendListenerClient</code></a>
+ rather than implementing <a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerClient.html" title="interface in org.apache.jmeter.visualizers.backend"><code>BackendListenerClient</code></a> directly to protect
+ your code from future changes to the interface.
+ <p>
+ While it may be necessary to make changes to the <a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerClient.html" title="interface in org.apache.jmeter.visualizers.backend"><code>BackendListenerClient</code></a>
  interface from time to time (therefore requiring changes to any
  implementations of this interface), we intend to make this abstract class
  provide reasonable default implementations of any new methods so that
@@ -155,13 +160,13 @@ var activeTableTab = "activeTableTab";
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/apache/jmeter/samplers/SampleResult.html" title="class in org.apache.jmeter.samplers">SampleResult</a></code></td>
+<td class="colFirst"><code>default <a href="../../../../../org/apache/jmeter/samplers/SampleResult.html" title="class in org.apache.jmeter.samplers">SampleResult</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerClient.html#createSampleResult-org.apache.jmeter.visualizers.backend.BackendListenerContext-org.apache.jmeter.samplers.SampleResult-">createSampleResult</a></span>(<a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerContext.html" title="class in org.apache.jmeter.visualizers.backend">BackendListenerContext</a>&nbsp;context,
                   <a href="../../../../../org/apache/jmeter/samplers/SampleResult.html" title="class in org.apache.jmeter.samplers">SampleResult</a>&nbsp;result)</code>
 <div class="block">Create a copy of SampleResult, this method is here to allow customizing
@@ -169,7 +174,7 @@ var activeTableTab = "activeTableTab";
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/apache/jmeter/config/Arguments.html" title="class in org.apache.jmeter.config">Arguments</a></code></td>
+<td class="colFirst"><code>default <a href="../../../../../org/apache/jmeter/config/Arguments.html" title="class in org.apache.jmeter.config">Arguments</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerClient.html#getDefaultParameters--">getDefaultParameters</a></span>()</code>
 <div class="block">Provide a list of parameters which this test supports.</div>
 </td>
@@ -181,7 +186,7 @@ var activeTableTab = "activeTableTab";
 <div class="block">Handle sampleResults, this can be done in many ways:
  
  Write to a file
- Write to a distant server
+ Write to a remote server
  ...
  </div>
 </td>
@@ -222,14 +227,12 @@ var activeTableTab = "activeTableTab";
 <pre>void&nbsp;setupTest(<a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerContext.html" title="class in org.apache.jmeter.visualizers.backend">BackendListenerContext</a>&nbsp;context)
         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
 <div class="block">Do any initialization required by this client. It is generally
- recommended to do any initialization such as getting parameter values in
- the setupTest method rather than the runTest method in order to add as
- little overhead as possible to the test.</div>
+ recommended to do any initialization such as getting parameter values
+ here rather than <a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerClient.html#handleSampleResults-java.util.List-org.apache.jmeter.visualizers.backend.BackendListenerContext-"><code>handleSampleResults(List, BackendListenerContext)</code></a>
+ in order to add as little overhead as possible to the test.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>context</code> - the context to run with. This provides access to
-            initialization parameters.
-            Context is readonly</dd>
+<dd><code>context</code> - provides access to initialization parameters.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code> - when setup fails</dd>
 </dl>
@@ -246,14 +249,13 @@ var activeTableTab = "activeTableTab";
 <div class="block">Handle sampleResults, this can be done in many ways:
  <ul>
  <li>Write to a file</li>
- <li>Write to a distant server</li>
+ <li>Write to a remote server</li>
  <li>...</li>
  </ul></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sampleResults</code> - List of <a href="../../../../../org/apache/jmeter/samplers/SampleResult.html" title="class in org.apache.jmeter.samplers"><code>SampleResult</code></a></dd>
-<dd><code>context</code> - the context to run with. This provides access to
-            initialization parameters.</dd>
+<dd><code>context</code> - provides access to initialization parameters.</dd>
 </dl>
 </li>
 </ul>
@@ -268,8 +270,7 @@ var activeTableTab = "activeTableTab";
 <div class="block">Do any clean-up required at the end of a test run.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>context</code> - the context to run with. This provides access to
-            initialization parameters.</dd>
+<dd><code>context</code> - provides access to initialization parameters.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code> - when tear down fails</dd>
 </dl>
@@ -281,7 +282,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>getDefaultParameters</h4>
-<pre><a href="../../../../../org/apache/jmeter/config/Arguments.html" title="class in org.apache.jmeter.config">Arguments</a>&nbsp;getDefaultParameters()</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/jmeter/config/Arguments.html" title="class in org.apache.jmeter.config">Arguments</a>&nbsp;getDefaultParameters()</pre>
 <div class="block">Provide a list of parameters which this test supports. Any parameter
  names and associated values returned by this method will appear in the
  GUI by default so the user doesn't have to remember the exact names. The
@@ -292,7 +293,7 @@ var activeTableTab = "activeTableTab";
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a specification of the parameters used by this test which should
-         be listed in the GUI, or null if no parameters should be listed.</dd>
+ be listed in the GUI, or null if no parameters should be listed.</dd>
 </dl>
 </li>
 </ul>
@@ -302,8 +303,8 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createSampleResult</h4>
-<pre><a href="../../../../../org/apache/jmeter/samplers/SampleResult.html" title="class in org.apache.jmeter.samplers">SampleResult</a>&nbsp;createSampleResult(<a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerContext.html" title="class in org.apache.jmeter.visualizers.backend">BackendListenerContext</a>&nbsp;context,
-                                <a href="../../../../../org/apache/jmeter/samplers/SampleResult.html" title="class in org.apache.jmeter.samplers">SampleResult</a>&nbsp;result)</pre>
+<pre>default&nbsp;<a href="../../../../../org/apache/jmeter/samplers/SampleResult.html" title="class in org.apache.jmeter.samplers">SampleResult</a>&nbsp;createSampleResult(<a href="../../../../../org/apache/jmeter/visualizers/backend/BackendListenerContext.html" title="class in org.apache.jmeter.visualizers.backend">BackendListenerContext</a>&nbsp;context,
+                                        <a href="../../../../../org/apache/jmeter/samplers/SampleResult.html" title="class in org.apache.jmeter.samplers">SampleResult</a>&nbsp;result)</pre>
 <div class="block">Create a copy of SampleResult, this method is here to allow customizing
  what is kept in the copy, for example copy could remove some useless fields.
  Note that if it returns null, the sample result is not put in the queue.

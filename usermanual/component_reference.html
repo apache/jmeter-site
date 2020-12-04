@@ -852,7 +852,7 @@ Latency is set to the time it takes to login.
 
         
 <p>
-<b>There are two different test elements used to define the samplers:</b>
+<b>There are three different test elements used to define the samplers:</b>
 </p>
         
 <dl>
@@ -882,6 +882,29 @@ Latency is set to the time it takes to login.
 </dd>
           
 </dl>
+        
+</dd>
+        
+<dt>GraphQL HTTP Request</dt>
+<dd>this is a GUI variation of the <b>HTTP Request</b> to provide more convenient UI elements
+        to view or edit GraphQL <b>Query</b>, <b>Variables</b> and <b>Operation Name</b>, while converting them into HTTP Arguments automatically under the hood
+        using the same sampler.
+        This hides or customizes the following UI elements as they are less convenient for or irrelevant to GraphQL over HTTP/HTTPS requests:
+        <ul>
+          
+<li>
+<b>Method</b>: Only POST and GET methods are available conforming the GraphQL over HTTP specification. POST method is selected by default.</li>
+          
+<li>
+<b>Parameters</b> and <b>Post Body</b> tabs: you may view or edit parameter content through Query, Variables and Operation Name UI elements instead.</li>
+          
+<li>
+<b>File Upload</b> tab: irrelevant to GraphQL queries.</li>
+          
+<li>
+<b>Embedded Resources from HTML Files</b> section in the Advanced tab: irrelevant in GraphQL JSON responses.</li>
+        
+</ul>
         
 </dd>
         
@@ -975,8 +998,16 @@ https.default.protocol=SSLv3
 </figure>
 </div>
 <figure>
-<a href="../images/screenshots/http-request-advanced-tab.png"><img src="../images/screenshots/http-request-advanced-tab.png" width="951" height="284" alt="HTTP Request Advanced config fields"></a>
+<a href="../images/screenshots/http-request-advanced-tab.png"><img src="../images/screenshots/http-request-advanced-tab.png" width="951" height="548" alt="HTTP Request Advanced config fields"></a>
 <figcaption>HTTP Request Advanced config fields</figcaption>
+</figure>
+<figure>
+<a href="../images/screenshots/graphql-http-request.png"><img src="../images/screenshots/graphql-http-request.png" width="950" height="618" alt="Screenshot of Control-Panel of GraphQL HTTP Request"></a>
+<figcaption>Screenshot of Control-Panel of GraphQL HTTP Request</figcaption>
+</figure>
+<figure>
+<a href="../images/screenshots/graphql-http-request-vars.png"><img src="../images/screenshots/graphql-http-request-vars.png" width="950" height="618" alt="Variables field for GraphQL HTTP Request"></a>
+<figcaption>Variables field for GraphQL HTTP Request</figcaption>
 </figure>
 <div class="properties">
 <h3 id="HTTP_Request_parms1">
@@ -1210,9 +1241,9 @@ so unsafe characters may need to be encoded to avoid errors such as <span class=
             
 <li>Non-ASCII characters</li>
             
-<li>Reserved characters:URLs use some characters for special use in defining their syntax. When these characters are not used in their special role inside a URL, they need to be encoded, example : '<span class="code">$</span>', '<span class="code">&amp;</span>', '<span class="code">+</span>', '<span class="code">,</span>' , '<span class="code">/</span>', '<span class="code">:</span>', '<span class="code">;</span>', '<span class="code">=</span>', '<span class="code">?</span>', '<span class="code">@</span>'</li>
+<li>Reserved characters:URLs use some characters for special use in defining their syntax. When these characters are not used in their special role inside a URL, they need to be encoded, example: '<span class="code">$</span>', '<span class="code">&amp;</span>', '<span class="code">+</span>', '<span class="code">,</span>' , '<span class="code">/</span>', '<span class="code">:</span>', '<span class="code">;</span>', '<span class="code">=</span>', '<span class="code">?</span>', '<span class="code">@</span>'</li>
             
-<li>Unsafe characters: Some characters present the possibility of being misunderstood within URLs for various reasons. These characters should also always be encoded, example : '<span class="code"> </span>', '<span class="code">&lt;</span>', '<span class="code">&gt;</span>', '<span class="code">#</span>', '<span class="code">%</span>', &hellip;</li>
+<li>Unsafe characters: Some characters present the possibility of being misunderstood within URLs for various reasons. These characters should also always be encoded, example: '<span class="code"> </span>', '<span class="code">&lt;</span>', '<span class="code">&gt;</span>', '<span class="code">#</span>', '<span class="code">%</span>', &hellip;</li>
         
 </ul>
         
@@ -1274,11 +1305,22 @@ and send HTTP/HTTPS requests for all images, Java applets, JavaScript files, CSS
 </div>
         
 <div class="property">
-<div class="name req-false">Embedded URLs must match:</div>
+<div class="name req-false">URLs must match:</div>
 <div class="description req-false">
         If present, this must be a regular expression that is used to match against any embedded URLs found.
-        So if you only want to download embedded resources from <span class="code">http://example.com/</span>, use the expression:
-        <span class="code">http://example\.com/.*</span>
+        So if you only want to download embedded resources from <span class="code">http://example.invalid/</span>, use the expression:
+        <span class="code">http://example\.invalid/.*</span>
+        
+</div>
+<div class="required req-false">No</div>
+</div>
+        
+<div class="property">
+<div class="name req-false">URLs must not match:</div>
+<div class="description req-false">
+        If present, this must be a regular expression that is used to filter out any embedded URLs found.
+        So if you don't want to download PNG or SVG files from any source, use the expression:
+        <span class="code">.*\.(?i:svg|png)</span>
         
 </div>
 <div class="required req-false">No</div>
@@ -1335,6 +1377,44 @@ and send HTTP/HTTPS requests for all images, Java applets, JavaScript files, CSS
 <div class="required req-false">No</div>
 </div>
 
+</div>
+<p>The following parameters are available only for <b>GraphQL HTTP Request</b>:</p>
+<div class="properties">
+<h3 id="HTTP_Request_parms2">
+        Parameters
+        <a class="sectionlink" href="#HTTP_Request_parms2" title="Link to here">&para;</a>
+</h3>
+<div class="property title">
+<div class="name title">Attribute</div>
+<div class="description title">Description</div>
+<div class="required title">Required</div>
+</div>
+        
+<div class="property">
+<div class="name req-true">Query</div>
+<div class="description req-true">
+          GraphQL query (or mutation) statement.
+        </div>
+<div class="required req-true">Yes</div>
+</div>
+        
+<div class="property">
+<div class="name req-false">Variables</div>
+<div class="description req-false">
+          GraphQL query (or mutation) variables in a valid JSON string.
+          <b>Note</b>: If the input string is not a valid JSON string, this will be ignored with an ERROR log.
+        </div>
+<div class="required req-false">No</div>
+</div>
+        
+<div class="property">
+<div class="name req-false">Operation Name</div>
+<div class="description req-false">
+          Optional GraphQL operation name when making a request for multi-operation documents.
+        </div>
+<div class="required req-false">No</div>
+</div>
+      
 </div>
 <div class="clear"></div>
 <div class="note">
@@ -1647,6 +1727,11 @@ the additional variables for rows four, five and six will be removed.
 <li>Edit - this should be a variable reference that evaluates to one of the above</li>
             
 </ul>
+            
+<div class="clear"></div>
+<div class="note">The types <span class="code">Commit</span>, <span class="code">Rollback</span>, <span class="code">Autocommit(false)</span> and <span class="code">Autocommit(true)</span>
+              are special, as they are ignoring the given SQL statements and are changing the state of the connection, only.</div>
+<div class="clear"></div>
         
 </div>
 <div class="required req-true">Yes</div>
@@ -3094,6 +3179,17 @@ The JSR223 Sampler allows JSR223 script code to be used to perform a sample or s
 <div class="note">
 If you don't want to generate a <a href="../api/org/apache/jmeter/samplers/SampleResult.html">SampleResult</a> when this sampler is run, call the following method:
 <pre class="source">SampleResult.setIgnore();</pre>
+This call will have the following impact:
+<ul>
+    
+<li>SampleResult will not be delivered to SampleListeners like View Results Tree, Summariser ...</li>
+    
+<li>SampleResult will not be evaluated in Assertions nor PostProcessors</li>
+    
+<li>SampleResult will be evaluated to computing last sample status (${JMeterThread.last_sample_ok}),
+    and ThreadGroup "Action to be taken after a Sampler error" (since JMeter 5.4)</li>
+
+</ul>
 
 </div>
 <div class="clear"></div>
@@ -4716,7 +4812,7 @@ Relative paths are resolved against the current directory.
 
 </div>
 <div class="clear"></div>
-<div class="note">You can pass mail related environment properties by adding to user.properties any of the properties described <a href="https://javaee.github.io/javamail/docs/api/com/sun/mail/pop3/package-summary.html">here</a>.</div>
+<div class="note">You can pass mail related environment properties by adding to <span class="code">user.properties</span> any of the properties described <a href="https://javaee.github.io/javamail/docs/api/com/sun/mail/pop3/package-summary.html">here</a>.</div>
 <div class="clear"></div>
 <p>
 Messages are stored as subsamples of the main sampler.
@@ -6061,7 +6157,7 @@ Please refer to the <a href="../usermanual/component_reference.html#Constant_Thr
         The best option (default one) is to check <span class="code">Interpret Condition as Variable Expression?</span>, then in the condition field you have 2 options:
         <ul>
             
-<li>Option 1 : Use a variable that contains <span class="code">true</span> or <span class="code">false</span>
+<li>Option 1: Use a variable that contains <span class="code">true</span> or <span class="code">false</span>
             
 <div class="clear"></div>
 <div class="note">If you want to test if last sample was successful, you can use <span class="code">${JMeterThread.last_sample_ok}</span>
@@ -6076,7 +6172,7 @@ Please refer to the <a href="../usermanual/component_reference.html#Constant_Thr
             
 </li>
             
-<li>Option 2 : Use a function (<span class="code">${__jexl3()}</span> is advised) to evaluate an expression that must return <span class="code">true</span> or <span class="code">false</span>
+<li>Option 2: Use a function (<span class="code">${__jexl3()}</span> is advised) to evaluate an expression that must return <span class="code">true</span> or <span class="code">false</span>
             
 <figure>
 <a href="../images/screenshots/if_controller_expression.png"><img src="../images/screenshots/if_controller_expression.png" width="815" height="260" alt="If Controller using expression"></a>
@@ -7781,7 +7877,7 @@ the graph as a PNG file.</div>
         
 <div class="property">
 <div class="name req-false">Title</div>
-<div class="description req-false">Define the graph's title on the head of chart. Empty value is the default value : "<span class="code">Aggregate Graph</span>".
+<div class="description req-false">Define the graph's title on the head of chart. Empty value is the default value: "<span class="code">Aggregate Graph</span>".
         The button <span class="code">Synchronize with name</span> define the title with the label of the listener. And define font settings for graph title</div>
 <div class="required req-false">No</div>
 </div>
@@ -7873,7 +7969,7 @@ If many samples exist for the same timestamp, the mean value is displayed.
         
 <div class="property">
 <div class="name req-false">Title</div>
-<div class="description req-false">Define the graph's title on the head of chart. Empty value is the default value : "<span class="code">Response Time Graph</span>".
+<div class="description req-false">Define the graph's title on the head of chart. Empty value is the default value: "<span class="code">Response Time Graph</span>".
         The button <span class="code">Synchronize with name</span> define the title with the label of the listener. And define font settings for graph title</div>
 <div class="required req-false">No</div>
 </div>
@@ -8552,6 +8648,10 @@ Generates a summary of the test run so far to the log file and/or
 standard output. Both running and differential totals are shown.
 Output is generated every <span class="code">n</span> seconds (default 30 seconds) on the appropriate
 time boundary, so that multiple test runs on the same time will be synchronised.
+<div class="clear"></div>
+<div class="note">Since a summary/differential line is written only if there are samples emitted, the interval
+for generation may not be respected if your test has no sample generated within the interval</div>
+<div class="clear"></div>
 See <span class="code">jmeter.properties</span> file for the summariser configuration items:
 <pre class="source">
 # Define the following property to automatically start a summariser with that name
@@ -8814,8 +8914,11 @@ By default, a Graphite implementation is provided.
 <a href="../images/screenshots/grafana_dashboard.png"><img src="../images/screenshots/grafana_dashboard.png" width="1265" height="581" alt="Grafana dashboard"></a>
 <figcaption>Grafana dashboard</figcaption>
 </figure>
-<p>Since JMeter 3.2, a new implementation has been added that allows writing directly in InfluxDB with a custom schema, it is called <span class="code">InfluxdbBackendListenerClient</span>. Since JMeter 5.2, <span class="code">InfluxdbBackendListenerClient</span> supports both InfluxDB v1 and v2.</p>
-<p>The following parameters apply to the <a href="../api/org/apache/jmeter/visualizers/backend/influxdb/InfluxdbBackendListenerClient.html">InfluxdbBackendListenerClient</a> implementation:</p>
+<p>
+        Since JMeter 3.2, an implementation that allows writing directly in InfluxDB with a custom schema.
+        It is called <span class="code">InfluxdbBackendListenerClient</span>. The following parameters apply to the
+        <a href="../api/org/apache/jmeter/visualizers/backend/influxdb/InfluxdbBackendListenerClient.html">InfluxdbBackendListenerClient</a> implementation:
+    </p>
 <div class="properties">
 <h3 id="Backend_Listener_parms3">
         Parameters
@@ -8902,6 +9005,61 @@ By default, a Graphite implementation is provided.
 <p>See also <a href="realtime-results.html">Real-time results</a> and <a href="http://docs.grafana.org/reference/annotations/#influxdb-annotations">Influxdb annotations in Grafana</a> for more details.
         There is also a <a href="realtime-results.html#influxdb_v2">subsection on configuring the listener for InfluxDB v2</a>.
     </p>
+<p>
+      Since JMeter 5.4, an implementation that writes all sample results to InfluxDB.
+      It is called <span class="code">InfluxDBRawBackendListenerClient</span>.
+      It is worth noting that this will use more resources than the
+      <span class="code">InfluxdbBackendListenerClient</span>, both by JMeter and InfluxDB
+      due to the increase in data and individual writes.
+      The following parameters apply to the
+      <a href="../api/org/apache/jmeter/visualizers/backend/influxdb/InfluxDBRawBackendListenerClient.html">InfluxDBRawBackendListenerClient</a>
+      implementation:
+    </p>
+<div class="properties">
+<h3 id="Backend_Listener_parms4">
+        Parameters
+        <a class="sectionlink" href="#Backend_Listener_parms4" title="Link to here">&para;</a>
+</h3>
+<div class="property title">
+<div class="name title">Attribute</div>
+<div class="description title">Description</div>
+<div class="required title">Required</div>
+</div>
+      
+<div class="property">
+<div class="name req-true">influxdbMetricsSender</div>
+<div class="description req-true">
+<span class="code">org.apache.jmeter.visualizers.backend.influxdb.HttpMetricsSender</span>
+</div>
+<div class="required req-true">Yes</div>
+</div>
+      
+<div class="property">
+<div class="name req-true">influxdbUrl</div>
+<div class="description req-true">
+        Influx URL (e.g. http://influxHost:8086/write?db=jmeter or, for the cloud, https://eu-central-1-1.aws.cloud2.influxdata.com/api/v2/write?org=org-id&amp;bucket=jmeter)
+      </div>
+<div class="required req-true">Yes</div>
+</div>
+      
+<div class="property">
+<div class="name req-false">influxdbToken</div>
+<div class="description req-false">
+        InfluxDB 2 <a href="https://v2.docs.influxdata.com/v2.0/security/">authentication token</a> (e.g. HE9yIdAPzWJDspH_tCc2UvdKZpX==)
+      </div>
+<div class="required req-false">No</div>
+</div>
+      
+<div class="property">
+<div class="name req-true">measurement</div>
+<div class="description req-true">
+        Measurement as per <a href="https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_reference/">Influx Line Protocol Reference</a>.
+        Defaults to "<span class="code">jmeter</span>."
+      </div>
+<div class="required req-true">Yes</div>
+</div>
+    
+</div>
 <div class="go-top">
 <a href="#">^</a>
 </div>
@@ -9013,7 +9171,7 @@ By default, a Graphite implementation is provided.
 </div>
 <div class="screenshot">
 <figure>
-<a href="../images/screenshots/csvdatasetconfig.png"><img src="../images/screenshots/csvdatasetconfig.png" width="433" height="281" alt="Screenshot for Control-Panel of CSV Data Set Config"></a>
+<a href="../images/screenshots/csvdatasetconfig.png"><img src="../images/screenshots/csvdatasetconfig.png" width="658" height="281" alt="Screenshot for Control-Panel of CSV Data Set Config"></a>
 <figcaption>Screenshot of Control-Panel of CSV Data Set Config</figcaption>
 </figure>
 </div>
@@ -9916,11 +10074,22 @@ and send HTTP/HTTPS requests for all images, Java applets, JavaScript files, CSS
 </div>
         
 <div class="property">
-<div class="name req-false">Embedded URLs must match:</div>
+<div class="name req-false">URLs must match:</div>
 <div class="description req-false">
         If present, this must be a regular expression that is used to match against any embedded URLs found.
-        So if you only want to download embedded resources from <span class="code">http://example.com/</span>, use the expression:
-        <span class="code">http://example\.com/.*</span>
+        So if you only want to download embedded resources from <span class="code">http://example.invalid/</span>, use the expression:
+        <span class="code">http://example\.invalid/.*</span>
+        
+</div>
+<div class="required req-false">No</div>
+</div>
+        
+<div class="property">
+<div class="name req-false">URLs must not match:</div>
+<div class="description req-false">
+        If present, this must be a regular expression that is used to filter out any embedded URLs found.
+        So if you don't want to download PNG or SVG files from any source, use the expression:
+        <span class="code">.*\.(?i:svg|png)</span>
         
 </div>
 <div class="required req-false">No</div>
@@ -11273,13 +11442,13 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
 <div class="description req-false">
             If <span class="code">true</span>, the driver will keep trying to connect to the same server in case that the socket cannot be established.<br>
             There is maximum amount of time to keep retrying, which is 15s by default.<br>This can be useful to avoid some exceptions being thrown when a server is down temporarily by blocking the operations.
-            <br>It can also be useful to smooth the transition to a new master (so that a new master is elected within the retry time).<br>
+            <br>It can also be useful to smooth the transition to a new primary node (so that a new primary node is elected within the retry time).<br>
             
 <div class="clear"></div>
 <div class="note">Note that when using this flag
               <ul>
                 
-<li>for a replica set, the driver will try to connect to the old master for that time, instead of failing over to the new one right away </li>
+<li>for a replica set, the driver will try to connect to the old primary node for that time, instead of failing over to the new one right away </li>
                 
 <li>this does not prevent exception from being thrown in read/write operations on the socket, which must be handled by application.</li>
               
@@ -11354,7 +11523,7 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
 </div>
         
 <div class="property">
-<div class="name req-false">Write Concern : Safe</div>
+<div class="name req-false">Write Concern: Safe</div>
 <div class="description req-false">
             If <span class="code">true</span> the driver will use a <span class="code">WriteConcern</span> of <span class="code">WriteConcern.SAFE</span> for all operations.<br>
             If <span class="code">w</span>, <span class="code">wtimeout</span>, <span class="code">fsync</span> or <span class="code">j</span> are specified, this setting is ignored.<br>
@@ -11364,7 +11533,7 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
 </div>
         
 <div class="property">
-<div class="name req-false">Write Concern : Fsync</div>
+<div class="name req-false">Write Concern: Fsync</div>
 <div class="description req-false">
             The <span class="code">fsync</span> value of the global <span class="code">WriteConcern</span>.<br>
             Default is <span class="code">false</span>.
@@ -11373,7 +11542,7 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
 </div>
         
 <div class="property">
-<div class="name req-false">Write Concern : Wait for Journal</div>
+<div class="name req-false">Write Concern: Wait for Journal</div>
 <div class="description req-false">
             The <span class="code">j</span> value of the global <span class="code">WriteConcern</span>.<br>
             Default is <span class="code">false</span>.
@@ -11382,7 +11551,7 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
 </div>
         
 <div class="property">
-<div class="name req-false">Write Concern : Wait for servers</div>
+<div class="name req-false">Write Concern: Wait for servers</div>
 <div class="description req-false">
             The <span class="code">w</span> value of the global <span class="code">WriteConcern</span>.<br>Default is <span class="code">0</span>.
         </div>
@@ -11390,7 +11559,7 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
 </div>
         
 <div class="property">
-<div class="name req-false">Write Concern : Wait timeout</div>
+<div class="name req-false">Write Concern: Wait timeout</div>
 <div class="description req-false">
             The <span class="code">wtimeout</span> value of the global <span class="code">WriteConcern</span>.<br>Default is <span class="code">0</span>.
         </div>
@@ -11398,7 +11567,7 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
 </div>
         
 <div class="property">
-<div class="name req-false">Write Concern : Continue on error</div>
+<div class="name req-false">Write Concern: Continue on error</div>
 <div class="description req-false">
             If batch inserts should continue after the first error
         </div>
@@ -12411,7 +12580,7 @@ The non-tolerant parser can be quite slow, as it may need to download the DTD et
 As a work-round for namespace limitations of the Xalan XPath parser (implementation on which JMeter is based) you need to:
 <ul>
 
-<li>provide a Properties file (if for example your file is named namespaces.properties) which contains mappings for the namespace prefixes:
+<li>provide a Properties file (if for example your file is named <span class="code">namespaces.properties</span>) which contains mappings for the namespace prefixes:
 <pre class="source">
 prefix1=http\://foo.apache.org
 prefix2=http\://toto.apache.org
@@ -12474,7 +12643,7 @@ Some sample expressions:
 <div class="property">
 <div class="name req-false">Namespaces aliases list</div>
 <div class="description req-false">List of namespaces aliases you want to use to parse the document, one line per declaration.
-    You must specify them as follow : <span class="code">prefix=namespace</span>. This implementation makes it easier to
+    You must specify them as follow: <span class="code">prefix=namespace</span>. This implementation makes it easier to
     use namespaces than with the old XPathExtractor version.</div>
 <div class="required req-false">No</div>
 </div>
@@ -15239,13 +15408,13 @@ extracting the node as text or attribute value and store the result into the giv
     <ul>
         
 <li>
-<span class="code">0</span> : means random (default value)</li>
+<span class="code">0</span>: means random (default value)</li>
         
 <li>
 <span class="code">-1</span> means extract all results, they will be named as <span class="code"><em>&lt;variable name&gt;</em>_N</span> (where <span class="code">N</span> goes from 1 to Number of results)</li>
         
 <li>
-<span class="code">X</span> : means extract the X<sup>th</sup> result. If this X<sup>th</sup> is greater than number of matches, then nothing is returned. Default value will be used</li>
+<span class="code">X</span>: means extract the X<sup>th</sup> result. If this X<sup>th</sup> is greater than number of matches, then nothing is returned. Default value will be used</li>
     
 </ul>
     
@@ -15263,7 +15432,7 @@ extracting the node as text or attribute value and store the result into the giv
 <div class="property">
 <div class="name req-false">Namespaces aliases list</div>
 <div class="description req-false">List of namespaces aliases you want to use to parse the document, one line per declaration.
-    You must specify them as follow : <span class="code">prefix=namespace</span>. This implementation makes it easier to
+    You must specify them as follow: <span class="code">prefix=namespace</span>. This implementation makes it easier to
     use namespaces than with the old XPathExtractor version.</div>
 <div class="required req-false">No</div>
 </div>
@@ -15271,7 +15440,7 @@ extracting the node as text or attribute value and store the result into the giv
 </div>
 <p>To allow for use in a <a href="../usermanual/component_reference.html#ForEach_Controller">ForEach Controller</a>, it works exactly the same as the above XPath Extractor</p>
 <p>XPath2 Extractor provides some interestings tools such as an improved syntax and much more functions than in it's first version.</p>
-<p>Here are some exemples : </p>
+<p>Here are some exemples: </p>
 <dl>
    
 <dt>
@@ -15453,13 +15622,13 @@ extracting the node as text or attribute value and store the result into the giv
     <ul>
         
 <li>
-<span class="code">0</span> : means random</li>
+<span class="code">0</span>: means random</li>
         
 <li>
 <span class="code">-1</span> means extract all results (default value), they will be named as <span class="code"><em>&lt;variable name&gt;</em>_N</span> (where <span class="code">N</span> goes from 1 to Number of results)</li>
         
 <li>
-<span class="code">X</span> : means extract the X<sup>th</sup> result. If this X<sup>th</sup> is greater than number of matches, then nothing is returned. Default value will be used</li>
+<span class="code">X</span>: means extract the X<sup>th</sup> result. If this X<sup>th</sup> is greater than number of matches, then nothing is returned. Default value will be used</li>
     
 </ul>
     
@@ -15547,7 +15716,7 @@ extracting the node as text or attribute value and store the result into the giv
 As a work-round for namespace limitations of the Xalan XPath parser (implementation on which JMeter is based) you need to:
 <ul>
 
-<li>provide a Properties file (if for example your file is named namespaces.properties) which contains mappings for the namespace prefixes:
+<li>provide a Properties file (if for example your file is named <span class="code">namespaces.properties</span>) which contains mappings for the namespace prefixes:
 <pre class="source">
 prefix1=http\://foo.apache.org
 prefix2=http\://toto.apache.org
@@ -15652,13 +15821,13 @@ prefix2=http\://toto.apache.org
     <ul>
         
 <li>
-<span class="code">0</span> : means random</li>
+<span class="code">0</span>: means random</li>
         
 <li>
 <span class="code">-1</span> means extract all results (default value), they will be named as <span class="code"><em>&lt;variable name&gt;</em>_N</span> (where <span class="code">N</span> goes from 1 to Number of results)</li>
         
 <li>
-<span class="code">X</span> : means extract the X<sup>th</sup> result. If this X<sup>th</sup> is greater than number of matches, then nothing is returned. Default value will be used</li>
+<span class="code">X</span>: means extract the X<sup>th</sup> result. If this X<sup>th</sup> is greater than number of matches, then nothing is returned. Default value will be used</li>
     
 </ul>
     
@@ -16089,13 +16258,13 @@ It will allow you to extract in a very easy way text content, see <a href="https
     <ul>
         
 <li>
-<span class="code">0</span> : means random (Default Value)</li>
+<span class="code">0</span>: means random (Default Value)</li>
         
 <li>
 <span class="code">-1</span> means extract all results, they will be named as <span class="code"><em>&lt;variable name&gt;</em>_N</span> (where <span class="code">N</span> goes from 1 to Number of results)</li>
         
 <li>
-<span class="code">X</span> : means extract the X<sup>th</sup> result. If this X<sup>th</sup> is greater than number of matches, then nothing is returned. Default value will be used</li>
+<span class="code">X</span>: means extract the X<sup>th</sup> result. If this X<sup>th</sup> is greater than number of matches, then nothing is returned. Default value will be used</li>
     
 </ul>
     
@@ -16444,7 +16613,7 @@ JMeter does not interrupt samplers which are waiting for a response, so the end 
 </div>
 <div class="screenshot">
 <figure>
-<a href="../images/screenshots/threadgroup.png"><img src="../images/screenshots/threadgroup.png" width="911" height="390" alt="Screenshot for Control-Panel of Thread Group"></a>
+<a href="../images/screenshots/threadgroup.png"><img src="../images/screenshots/threadgroup.png" width="911" height="662" alt="Screenshot for Control-Panel of Thread Group"></a>
 <figcaption>Screenshot of Control-Panel of Thread Group</figcaption>
 </figure>
 </div>
@@ -16459,32 +16628,35 @@ Since JMeter 3.0, you can run a selection of Thread Group by selecting them and 
 <br>Notice you have 3 options to run the selection of Thread Groups:
 <ul>
 
-<li>Start : Start the selected thread groups only</li>
+<li>Start: Start the selected thread groups only</li>
 
-<li>Start no pauses : Start the selected thread groups only but without running the timers</li>
+<li>Start no pauses: Start the selected thread groups only but without running the timers</li>
 
-<li>Validate : Start the selected thread groups only using validation mode. Per default this runs the Thread Group in validation mode (see below)</li>
+<li>Validate: Start the selected thread groups only using validation mode. Per default this runs the Thread Group in validation mode (see below)</li>
 
 </ul>
 
 
 <b>Validation Mode:</b>
 <br>
-This mode enables rapid validation of a Thread Group by running it with 1 thread, 1 iteration, no timers and no <span class="code">Startup delay</span> set to 0.
-Behaviour can be modified with some properties by setting in user.properties:
+This mode enables rapid validation of a Thread Group by running it with 1 thread, 1 iteration, no timers and no <span class="code">Startup delay</span> set to <span class="code">0</span>.
+Behaviour can be modified with some properties by setting in <span class="code">user.properties</span>:
 <ul>
 
 <li>
-<span class="code">testplan_validation.nb_threads_per_thread_group</span> : Number of threads to use to validate a Thread Group, by default 1</li>
+<span class="code">testplan_validation.nb_threads_per_thread_group</span>: Number of threads to use to validate a Thread Group, by default <span class="code">1</span>
+</li>
 
 <li>
-<span class="code">testplan_validation.ignore_timers</span> : Ignore timers when validating the thread group of plan, by default 1</li>
+<span class="code">testplan_validation.ignore_timers</span>: Ignore timers when validating the thread group of plan, by default <span class="code">1</span>
+</li>
 
 <li>
-<span class="code">testplan_validation.number_iterations</span> : Number of iterations to use to validate a Thread Group</li>
+<span class="code">testplan_validation.number_iterations</span>: Number of iterations to use to validate a Thread Group</li>
 
 <li>
-<span class="code">testplan_validation.tpc_force_100_pct</span> : Whether to force Throughput Controller in percentage mode to run as if percentage was 100%. Defaults to false</li>
+<span class="code">testplan_validation.tpc_force_100_pct</span>: Whether to force Throughput Controller in percentage mode to run as if percentage was 100%. Defaults to <span class="code">false</span>
+</li>
 
 </ul>
 
@@ -16767,9 +16939,9 @@ As a consequence:
 <li>The browser should display a dialogue asking if you want to accept the certificate or not. For example:
 <pre class="source">
 1) The server's name "<span class="code">www.example.com</span>" does not match the certificate's name
-   "<span class="code">JMeter Proxy (DO NOT TRUST)</span>". Somebody may be trying to eavesdrop on you.
-2) The certificate for "<span class="code">JMeter Proxy (DO NOT TRUST)</span>" is signed by the unknown Certificate Authority
-   "<span class="code">JMeter Proxy (DO NOT TRUST)</span>". It is not possible to verify that this is a valid certificate.
+   "<span class="code">_ JMeter Root CA for recording (INSTALL ONLY IF IT S YOURS)</span>". Somebody may be trying to eavesdrop on you.
+2) The certificate for "<span class="code">_ JMeter Root CA for recording (INSTALL ONLY IF IT S YOURS)</span>" is signed by the unknown Certificate Authority
+   "<span class="code">_ JMeter Root CA for recording (INSTALL ONLY IF IT S YOURS)</span>". It is not possible to verify that this is a valid certificate.
 </pre>
 You will need to accept the certificate in order to allow the JMeter Proxy to intercept the SSL traffic in order to
 record it.
@@ -16940,7 +17112,7 @@ Both Chrome and Internet Explorer use the same trust store for certificates.
 </div>
 <div class="screenshot">
 <figure>
-<a href="../images/screenshots/proxy_control.png"><img src="../images/screenshots/proxy_control.png" width="1052" height="694" alt="Screenshot for Control-Panel of HTTP(S) Test Script Recorder"></a>
+<a href="../images/screenshots/proxy_control.png"><img src="../images/screenshots/proxy_control.png" width="983" height="702" alt="Screenshot for Control-Panel of HTTP(S) Test Script Recorder"></a>
 <figcaption>Screenshot of Control-Panel of HTTP(S) Test Script Recorder</figcaption>
 </figure>
 </div>
@@ -17044,6 +17216,25 @@ Both Chrome and Internet Explorer use the same trust store for certificates.
 <div class="property">
 <div class="name req-false">Prefix/Transaction name</div>
 <div class="description req-false">Add a prefix to sampler name during recording (Prefix mode). Or replace sampler name by user chosen name (Transaction name)</div>
+<div class="required req-false">No</div>
+</div>
+        
+<div class="property">
+<div class="name req-false">Naming scheme</div>
+<div class="description req-false">Select the naming scheme for sampler names during recording. Default is <span class="code">Transaction name</span>
+</div>
+<div class="required req-false">No</div>
+</div>
+        
+<div class="property">
+<div class="name req-false">Naming format</div>
+<div class="description req-false">If <span class="code">Use format string</span> is selected as naming scheme, a freestyle format can be given. Placeholders for the transaction name, path and counter can be given by <span class="code">#{name}</span>, <span class="code">#{path}</span> and <span class="code">#{counter}</span>. A simple format could be "<span class="code">#{name}-#{counter}</span>", which would be equivalent to the numbered default naming scheme. For more complex formatting Java formatting for MessageFormat can be used, as in "<span class="code">#{counter,number,000}: #{name}-#{path}</span>", which would print the counter filled with up to three zeroes. Default is an empty string.</div>
+<div class="required req-false">No</div>
+</div>
+        
+<div class="property">
+<div class="name req-false">Counter start value</div>
+<div class="description req-false">Can be used to reset the counter to a given value. Note, that the next sample will first increment and then use the value. If the first sampler should start with <span class="code">1</span>, reset the counter to <span class="code">0</span>.</div>
 <div class="required req-false">No</div>
 </div>
         
@@ -17452,7 +17643,7 @@ Note that you can get more control over the responses by adding an HTTP Header M
 <div class="name req-false">X-SetHeaders</div>
 <div class="description req-false">Pipe separated list of headers, example:<br>
         
-<span class="code">headerA=valueA|headerB=valueB</span> would set <span class="code">headerA</span> to <span class="code">valueA</span> and <span class="code">headerB</span> to <span class="code">valueB</span>.
+<span class="code">headerA: valueA|headerB: valueB</span> would set <span class="code">headerA</span> to <span class="code">valueA</span> and <span class="code">headerB</span> to <span class="code">valueB</span>.
         </div>
 <div class="required req-false">No</div>
 </div>
@@ -17474,7 +17665,7 @@ You can also use the following query parameters:
     
 <div class="property">
 <div class="name req-false">redirect</div>
-<div class="description req-false">Generates a 302 (Temporary Redirect) with the provided location.
+<div class="description req-false">Generates a 302 (Temporary Redirect) with the provided location,
     e.g. <span class="code">?redirect=/path</span>
     
 </div>
@@ -17483,14 +17674,14 @@ You can also use the following query parameters:
     
 <div class="property">
 <div class="name req-false">status</div>
-<div class="description req-false">Overrides the default status return. e.g. <span class="code">?status=404 Not Found</span>
+<div class="description req-false">Overrides the default status return, e.g. <span class="code">?status=404 Not Found</span>
 </div>
 <div class="required req-false">No</div>
 </div>
     
 <div class="property">
 <div class="name req-false">v</div>
-<div class="description req-false">Verbose flag, writes some details to standard output. e.g. first line and redirect location if specified</div>
+<div class="description req-false">Verbose flag, writes some details to standard output, e.g. first line and redirect location if specified</div>
 <div class="required req-false">No</div>
 </div>
 

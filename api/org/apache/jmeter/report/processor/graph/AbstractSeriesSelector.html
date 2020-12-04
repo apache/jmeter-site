@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10};
+var methods = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -178,6 +178,11 @@ implements <a href="../../../../../../org/apache/jmeter/report/processor/graph/G
  which allows on graphs to only show transaction controllers</div>
 </td>
 </tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/apache/jmeter/report/processor/graph/AbstractSeriesSelector.html#withDefaultIfEmpty-java.lang.String-java.lang.String-">withDefaultIfEmpty</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultValue)</code>&nbsp;</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -243,7 +248,7 @@ implements <a href="../../../../../../org/apache/jmeter/report/processor/graph/G
 <a name="allowsControllersDiscrimination--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>allowsControllersDiscrimination</h4>
 <pre>public final&nbsp;boolean&nbsp;allowsControllersDiscrimination()</pre>
@@ -255,6 +260,23 @@ implements <a href="../../../../../../org/apache/jmeter/report/processor/graph/G
 <dd><code><a href="../../../../../../org/apache/jmeter/report/processor/graph/GraphSeriesSelector.html#allowsControllersDiscrimination--">allowsControllersDiscrimination</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/apache/jmeter/report/processor/graph/GraphSeriesSelector.html" title="interface in org.apache.jmeter.report.processor.graph">GraphSeriesSelector</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true, if this selector allows controllers discrimination; false otherwise</dd>
+</dl>
+</li>
+</ul>
+<a name="withDefaultIfEmpty-java.lang.String-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>withDefaultIfEmpty</h4>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;withDefaultIfEmpty(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+                                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultValue)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>value</code> - String value</dd>
+<dd><code>defaultValue</code> - Default value to use if value is empty or null</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>input or default value wrapped in a list</dd>
 </dl>
 </li>
 </ul>

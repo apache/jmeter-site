@@ -424,7 +424,7 @@ In this document we will present the configuration setup to graph and historize 
     </p>
     
 <p>
-    The <a href="http://graphite.readthedocs.io/en/latest/feeding-carbon.html#step-1-plan-a-naming-hierarchy">Graphite naming hierarchy</a>
+    The <a href="https://graphite.readthedocs.io/en/latest/feeding-carbon.html#step-1-plan-a-naming-hierarchy">Graphite naming hierarchy</a>
     uses dot (".") to separate elements. This could be confused with decimal percentile values.
     JMeter converts any such values, replacing dot (".") with underscore ("-").
     For example, "<span class="code">99.9</span>" becomes "<span class="code">99_9</span>"
@@ -458,17 +458,23 @@ In this document we will present the configuration setup to graph and historize 
 
 
 <div class="subsection">
-<h2 id="influxdb_db_configuration">15.3 InfluxDB database configuration<a class="sectionlink" href="#influxdb_db_configuration" title="Link to here">&para;</a>
+<h2 id="influxdb_db_configuration">15.3 InfluxDB configuration<a class="sectionlink" href="#influxdb_db_configuration" title="Link to here">&para;</a>
 </h2>
     
-<p>Connect to InfluxDB using <a href="https://docs.influxdata.com/influxdb/latest/introduction/getting_started/">InfluxDB&rsquo;s Command Line Interface (CLI).</a> and <a href="https://docs.influxdata.com/influxdb/latest/query_language/database_management/">create JMeter database</a>:
+<p>Do one of the following to store data sent by the Backend Listener:
     <ul>
         
-<li>jmeter : Used by InfluxDB to store the data sent by the Backend Listener</li>
+<li>For InfluxDB 2 setup, create a <span class="code">jmeter</span> <a href="https://v2.docs.influxdata.com/v2.0/organizations/buckets/create-bucket/" target="_blank">bucket</a>
+</li>
+        
+<li>For InfluxDB 1.x setup, create a <span class="code">jmeter</span> database using the <a href="https://docs.influxdata.com/influxdb/v1.8/introduction/get-started/" target="_blank">Influx CLI</a>
+</li>
     
 </ul>
-    You can do it too by using the HTTP API.
-    </p>
+    You can also use the HTTP API i.e.
+        <span class="code">curl -i -XPOST http://localhost:8086/query --data-urlencode "q=CREATE DATABASE jmeter"</span>
+    
+</p>
 
 
 <div class="subsection">
@@ -527,8 +533,8 @@ InfluxDB data can be easily viewed in a browser through <a href="http://grafana.
     
 <p>
     Installing grafana<br>
-    Read <a href="http://docs.grafana.org/" target="_blank">documentation</a> for more details.
-    Add the <a href="http://docs.grafana.org/features/datasources/influxdb/" target="_blank">datasource</a>
+    Read <a href="https://docs.grafana.org/" target="_blank">documentation</a> for more details.
+    Add the <a href="https://docs.grafana.org/features/datasources/influxdb/" target="_blank">datasource</a>
 <br>
     
 </p>
@@ -549,7 +555,6 @@ InfluxDB data can be easily viewed in a browser through <a href="http://grafana.
 </p>
 
 </div>
-
 
 
 </div>

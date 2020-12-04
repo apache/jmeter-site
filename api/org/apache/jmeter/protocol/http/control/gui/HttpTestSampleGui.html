@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -143,7 +143,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/AjpSamplerGui.html" title="class in org.apache.jmeter.protocol.http.control.gui">AjpSamplerGui</a></dd>
+<dd><a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/AjpSamplerGui.html" title="class in org.apache.jmeter.protocol.http.control.gui">AjpSamplerGui</a>, <a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/GraphQLHTTPSamplerGui.html" title="class in org.apache.jmeter.protocol.http.control.gui">GraphQLHTTPSamplerGui</a></dd>
 </dl>
 <hr>
 <br>
@@ -294,36 +294,49 @@ extends <a href="../../../../../../../org/apache/jmeter/samplers/gui/AbstractSam
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/HttpTestSampleGui.html#createSourceAddrPanel--">createSourceAddrPanel</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTabbedPane.html?is-external=true" title="class or interface in javax.swing">JTabbedPane</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/HttpTestSampleGui.html#createTabbedConfigPane--">createTabbedConfigPane</a></span>()</code>
+<div class="block">Create the parameters configuration tabstrip which includes the Basic tab (<a href="../../../../../../../org/apache/jmeter/protocol/http/config/gui/UrlConfigGui.html" title="class in org.apache.jmeter.protocol.http.config.gui"><code>UrlConfigGui</code></a>)
+ and the Advanced tab by default.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../../org/apache/jmeter/testelement/TestElement.html" title="interface in org.apache.jmeter.testelement">TestElement</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/HttpTestSampleGui.html#createTestElement--">createTestElement</a></span>()</code>
 <div class="block">JMeter test components are separated into a model and a GUI
  representation.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../../../org/apache/jmeter/protocol/http/config/gui/UrlConfigGui.html" title="class in org.apache.jmeter.protocol.http.config.gui">UrlConfigGui</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/HttpTestSampleGui.html#createUrlConfigGui--">createUrlConfigGui</a></span>()</code>
+<div class="block">Create a <a href="../../../../../../../org/apache/jmeter/protocol/http/config/gui/UrlConfigGui.html" title="class in org.apache.jmeter.protocol.http.config.gui"><code>UrlConfigGui</code></a> which is used as the Basic tab in the parameters configuration tabstrip.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JPanel.html?is-external=true" title="class or interface in javax.swing">JPanel</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/HttpTestSampleGui.html#getImplementationPanel--">getImplementationPanel</a></span>()</code>
 <div class="block">Create a panel containing the implementation details</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/HttpTestSampleGui.html#getLabelResource--">getLabelResource</a></span>()</code>
 <div class="block">Get the component's resource name, which getStaticLabel uses to derive
  the component's label in the local language.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/HttpTestSampleGui.html#getPreferredSize--">getPreferredSize</a></span>()</code></td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JPanel.html?is-external=true" title="class or interface in javax.swing">JPanel</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/HttpTestSampleGui.html#getProxyServerPanel--">getProxyServerPanel</a></span>()</code>
 <div class="block">Create a panel containing the proxy server details</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../org/apache/jmeter/protocol/http/control/gui/HttpTestSampleGui.html#modifyTestElement-org.apache.jmeter.testelement.TestElement-">modifyTestElement</a></span>(<a href="../../../../../../../org/apache/jmeter/testelement/TestElement.html" title="interface in org.apache.jmeter.testelement">TestElement</a>&nbsp;sampler)</code>
 <div class="block">Modifies a given TestElement to mirror the data in the gui components.</div>
@@ -535,6 +548,36 @@ extends <a href="../../../../../../../org/apache/jmeter/samplers/gui/AbstractSam
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the resource name</dd>
+</dl>
+</li>
+</ul>
+<a name="createTabbedConfigPane--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createTabbedConfigPane</h4>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTabbedPane.html?is-external=true" title="class or interface in javax.swing">JTabbedPane</a>&nbsp;createTabbedConfigPane()</pre>
+<div class="block">Create the parameters configuration tabstrip which includes the Basic tab (<a href="../../../../../../../org/apache/jmeter/protocol/http/config/gui/UrlConfigGui.html" title="class in org.apache.jmeter.protocol.http.config.gui"><code>UrlConfigGui</code></a>)
+ and the Advanced tab by default.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the parameters configuration tabstrip which includes the Basic tab (<a href="../../../../../../../org/apache/jmeter/protocol/http/config/gui/UrlConfigGui.html" title="class in org.apache.jmeter.protocol.http.config.gui"><code>UrlConfigGui</code></a>)
+         and the Advanced tab by default</dd>
+</dl>
+</li>
+</ul>
+<a name="createUrlConfigGui--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createUrlConfigGui</h4>
+<pre>protected&nbsp;<a href="../../../../../../../org/apache/jmeter/protocol/http/config/gui/UrlConfigGui.html" title="class in org.apache.jmeter.protocol.http.config.gui">UrlConfigGui</a>&nbsp;createUrlConfigGui()</pre>
+<div class="block">Create a <a href="../../../../../../../org/apache/jmeter/protocol/http/config/gui/UrlConfigGui.html" title="class in org.apache.jmeter.protocol.http.config.gui"><code>UrlConfigGui</code></a> which is used as the Basic tab in the parameters configuration tabstrip.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="../../../../../../../org/apache/jmeter/protocol/http/config/gui/UrlConfigGui.html" title="class in org.apache.jmeter.protocol.http.config.gui"><code>UrlConfigGui</code></a> which is used as the Basic tab</dd>
 </dl>
 </li>
 </ul>
