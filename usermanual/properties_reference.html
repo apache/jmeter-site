@@ -1133,8 +1133,8 @@ JMETER-SERVER</pre>
 <div class="property">
 <div class="name req-true">client.rmi.localport</div>
 <div class="description req-true">
-    Parameter that controls the RMI port used by the <span class="code">RemoteSampleListenerImpl</span> (The Controller)<br>
-    Default value is <span class="code">0</span>, which means port is randomly assigned.
+    Parameter that controls the RMI ports used by <span class="code">RemoteSampleListenerImpl</span> and <span class="code">RemoteThreadsListenerImpl</span> (The Controller)<br>
+    Default value is <span class="code">0</span>, which means ports are randomly assigned.
     If this is non-zero, it will be used as the base for local port numbers for the client engine.
     At the moment JMeter will open up to three ports beginning with the port defined in this property.
     <div class="clear"></div>
@@ -5878,7 +5878,7 @@ JMETER-SERVER</pre>
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2020
+            2021
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

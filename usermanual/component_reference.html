@@ -7643,7 +7643,7 @@ the Aggregate Report.
 </p>
 
 <p>
-Calculation of the <a href="glossary.html#Median">Median</a> and 90% Line (90<sup>th</sup> <a href="glossary.html#Percentile">percentile</a>) values requires additional memory.
+Calculation of the <a href="glossary.html#Median">Median</a> and 90&#8239;% Line (90<sup>th</sup> <a href="glossary.html#Percentile">percentile</a>) values requires additional memory.
 JMeter now combines samples with the same elapsed time, so far less memory is used.
 However, for samples that take more than a few seconds, the probability is that fewer samples will have identical times,
 in which case more memory will be needed.
@@ -7689,18 +7689,18 @@ This allows identical labels from different thread groups to be collated separat
 
 <li>
 <span class="code">Median</span> - The <a href="glossary.html#Median">median</a> is the time in the middle of a set of results.
-50% of the samples took no more than this time; the remainder took at least as long.</li>
+50&#8239;% of the samples took no more than this time; the remainder took at least as long.</li>
 
 <li>
-<span class="code">90% Line</span> - 90% of the samples took no more than this time.
+<span class="code">90% Line</span> - 90&#8239;% of the samples took no more than this time.
 The remaining samples took at least as long as this. (90<sup>th</sup> <a href="glossary.html#Percentile">percentile</a>)</li>
 
 <li>
-<span class="code">95% Line</span> - 95% of the samples took no more than this time.
+<span class="code">95% Line</span> - 95&#8239;% of the samples took no more than this time.
 The remaining samples took at least as long as this. (95<sup>th</sup> <a href="glossary.html#Percentile">percentile</a>)</li>
 
 <li>
-<span class="code">99% Line</span> - 99% of the samples took no more than this time.
+<span class="code">99% Line</span> - 99&#8239;% of the samples took no more than this time.
 The remaining samples took at least as long as this. (99<sup>th</sup> <a href="glossary.html#Percentile">percentile</a>)</li>
 
 <li>
@@ -13493,7 +13493,7 @@ Note that the throughput value should not be changed too often during a test
 <h4>Ramp-up and startup spike</h4>
 
 <p>You might used "ramp-up" or similar approaches to avoid a spike at the test start. For instance, if you configure <a href="../usermanual/component_reference.html#Thread_Group">Thread Group</a> to have
-    100 threads, and set <span class="code">Ramp-up Period</span> to 0 (or to a small number), then all the threads would start at the same time, and it would produce an unwanted spike of the load. On top of that, if you set <span class="code">Ramp-up Period</span> too high, it might result in "too few" threads being available at the very beginning to achieve
+    100 threads, and set <span class="code">Ramp-up Period</span> to <span class="code">0</span> (or to a small number), then all the threads would start at the same time, and it would produce an unwanted spike of the load. On top of that, if you set <span class="code">Ramp-up Period</span> too high, it might result in "<em>too few</em>" threads being available at the very beginning to achieve
 the required load.</p>
 
 <p>
@@ -16625,40 +16625,57 @@ Since JMeter 3.0, you can run a selection of Thread Group by selecting them and 
 </figure>
 
 
-<br>Notice you have 3 options to run the selection of Thread Groups:
-<ul>
+<br>Notice you have three options to run the selection of Thread Groups:
+<dl>
 
-<li>Start: Start the selected thread groups only</li>
+<dt>
+<span class="code">Start</span>
+</dt>
+<dd>Start the selected thread groups only</dd>
 
-<li>Start no pauses: Start the selected thread groups only but without running the timers</li>
+<dt>
+<span class="code">Start no pauses</span>
+</dt>
+<dd>Start the selected thread groups only but without running the timers</dd>
 
-<li>Validate: Start the selected thread groups only using validation mode. Per default this runs the Thread Group in validation mode (see below)</li>
+<dt>
+<span class="code">Validate</span>
+</dt>
+<dd>Start the selected thread groups only using validation mode. Per default this runs the Thread Group in validation mode (see below)</dd>
 
-</ul>
+</dl>
 
 
 <b>Validation Mode:</b>
 <br>
-This mode enables rapid validation of a Thread Group by running it with 1 thread, 1 iteration, no timers and no <span class="code">Startup delay</span> set to <span class="code">0</span>.
+This mode enables rapid validation of a Thread Group by running it with one thread, one iteration, no timers and no <span class="code">Startup delay</span> set to <span class="code">0</span>.
 Behaviour can be modified with some properties by setting in <span class="code">user.properties</span>:
-<ul>
+<dl>
 
-<li>
-<span class="code">testplan_validation.nb_threads_per_thread_group</span>: Number of threads to use to validate a Thread Group, by default <span class="code">1</span>
-</li>
+<dt>
+<span class="code">testplan_validation.nb_threads_per_thread_group</span>
+</dt>
+<dd>Number of threads to use to validate a Thread Group, by default <span class="code">1</span>
+</dd>
 
-<li>
-<span class="code">testplan_validation.ignore_timers</span>: Ignore timers when validating the thread group of plan, by default <span class="code">1</span>
-</li>
+<dt>
+<span class="code">testplan_validation.ignore_timers</span>
+</dt>
+<dd>Ignore timers when validating the thread group of plan, by default <span class="code">1</span>
+</dd>
 
-<li>
-<span class="code">testplan_validation.number_iterations</span>: Number of iterations to use to validate a Thread Group</li>
+<dt>
+<span class="code">testplan_validation.number_iterations</span>
+</dt>
+<dd>Number of iterations to use to validate a Thread Group</dd>
 
-<li>
-<span class="code">testplan_validation.tpc_force_100_pct</span>: Whether to force Throughput Controller in percentage mode to run as if percentage was 100%. Defaults to <span class="code">false</span>
-</li>
+<dt>
+<span class="code">testplan_validation.tpc_force_100_pct</span>
+</dt>
+<dd>Whether to force Throughput Controller in percentage mode to run as if percentage was 100&#8239;%. Defaults to <span class="code">false</span>
+</dd>
 
-</ul>
+</dl>
 
 </p>
 <div class="properties">
@@ -16716,7 +16733,16 @@ Behaviour can be modified with some properties by setting in <span class="code">
         
 <div class="property">
 <div class="name req-true">Ramp-up Period</div>
-<div class="description req-true">How long JMeter should take to get all the threads started.  If there are 10 threads and a ramp-up time of 100 seconds, then each thread will begin 10 seconds after the previous thread started, for a total time of 100 seconds to get the test fully up to speed.</div>
+<div class="description req-true">How long JMeter should take to get all the threads started.
+            If there are 10 threads and a ramp-up time of 100 seconds, then each thread will begin 10 seconds after
+            the previous thread started, for a total time of 100 seconds to get the test fully up to speed.
+            <div class="clear"></div>
+<div class="note">The first thread will always start directly, so if you configured <strong>one</strong> thread,
+                the ramp-up time is effectively <strong>zero</strong>. For the same reason, the tenth thread in
+                the above example will actually be started after 90 seconds and not 100 seconds.</div>
+<div class="clear"></div>
+        
+</div>
 <div class="required req-true">Yes</div>
 </div>
         
@@ -18001,7 +18027,7 @@ If Test Plan is stopped, tearDown will not run even if option is checked.
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2020
+            2021
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

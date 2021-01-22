@@ -201,7 +201,7 @@ Earlier changes are detailed in the <a href="changes_history.html">History of Pr
 
 
 
-<h1>Version 5.4</h1>
+<h1>Version 5.4.1</h1>
 
 <p>
 Summary
@@ -247,29 +247,13 @@ Summary
 <h3 class="ch_title">UX improvements</h3>
 
 
-<p>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62179">
-      Bug
-      62179</a>
-    -
-  <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64658">
-      Bug
-      64658</a>
-    -
-  The splash screen is now application-modal rather than system-modal, so it does not block other
-applications when JMeter is starting up.</p>
-
-
 
 
 <h2 class="ch_section" id="Incompatible changes">Incompatible changes</h2>
 
 <ul>
     
-<li>Remove LogKit logger functionality from some classes. This was intended to completely remove
-      <span class="code">LoggingManager</span> class (it has been deprecated since JMeter 3.2), but as jmeter-plugins
-      depended on it, <span class="code">LoggingManager</span> and our <span class="code">LogKit</span>-adapter will remain for
-      this version (but is still deprecated).</li>
+<li>Restart after LAF change has been reinstated, it had been removed in JMeter 5.3</li>
 
 </ul>
 
@@ -281,36 +265,6 @@ applications when JMeter is starting up.</p>
 <h3>HTTP Samplers and Test Script Recorder</h3>
 
 <ul>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=53848">
-      Bug
-      53848</a>
-    -
-  <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=63527">
-      Bug
-      63527</a>
-    -
-  Implement a new setting to allow the exclusion of embedded URLs</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64696">
-      Bug
-      64696</a>
-    -
-  <a href="https://github.com/apache/jmeter/pull/571">
-      Pull request #571</a>,
-  <a href="https://github.com/apache/jmeter/pull/595">
-      Pull request #595</a>
-    -
-  Freestyle format for names in (Default)SamplerCreater. Based on a patch by Vincent Daburon (vdaburon at gmail.com)</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64752">
-      Bug
-      64752</a>
-    -
-  Add GraphQL/HTTP Request Sampler. Contributed by woonsan.</li>
 
 </ul>
 
@@ -318,13 +272,6 @@ applications when JMeter is starting up.</p>
 <h3>Other samplers</h3>
 
 <ul>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64555">
-      Bug
-      64555</a>
-    -
-  Set JMSType header field through JMSProperties. Contributed by Daniel van den Ouden</li>
 
 </ul>
 
@@ -339,13 +286,6 @@ applications when JMeter is starting up.</p>
 <h3>Listeners</h3>
 
 <ul>
-    
-<li>
-<a href="https://github.com/apache/jmeter/pull/544">
-      Pull request #544</a>
-    -
-  Add BackendListener that sends "raw" results to InfluxDB. Contributed by Graham Russell
-      (graham at ham1.co.uk)</li>
 
 </ul>
 
@@ -374,21 +314,6 @@ applications when JMeter is starting up.</p>
 <h3>Report / Dashboard</h3>
 
 <ul>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64824">
-      Bug
-      64824</a>
-    -
-  Dashboard/HTML Report: Rename <span class="code">KO</span> to <span class="code">FAIL</span>
-</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64936">
-      Bug
-      64936</a>
-    -
-  Increase generate_report_ui.generation_timeout to 5 minutes to handle large performance test</li>
 
 </ul>
 
@@ -398,48 +323,19 @@ applications when JMeter is starting up.</p>
 <ul>
   
 <li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64446">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65028">
       Bug
-      64446</a>
+      65028</a>
     -
-  Better parse curl commands with backslash at line endings and support <span class="code">PUT</span> method with data arguments</li>
+  Add documentation for the property <span class="code">client.rmi.localport</span>
+</li>
   
 <li>
-<a href="https://github.com/apache/jmeter/pull/599">
-      Pull request #599</a>
-    -
-  Ensure all buttons added to the toolbar behave/look consistently. Contributed by Jannis Weis</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64581">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65012">
       Bug
-      64581</a>
+      65012</a>
     -
-  Allow <span class="code">SampleResult#setIgnore</span> to influence behaviour on Sampler Error</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64680">
-      Bug
-      64680</a>
-    -
-  Fall back to <span class="code">JMETER_HOME</span> on startup to detect JMeter's installation directory</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64787">
-      Bug
-      64787</a>
-    -
-  <a href="https://github.com/apache/jmeter/pull/630">
-      Pull request #630</a>
-    -
-  Add Korean translation. Contributed by Woonsan Ko (woonsan at apache.org)</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64776">
-      Bug
-      64776</a>
-    -
-  Add the ability to install additional SecurityProvider. Contributed by Timo (ASF.Software.Timo at Leefers.eu)</li>
+  Better handling of displaying long comments in the GUI</li>
 
 </ul>
 
@@ -448,118 +344,31 @@ applications when JMeter is starting up.</p>
 
 <ul>
     
-<li>Build system upgraded from Gradle to 6.7 (from 6.6)</li>
+<li>Updated SaxonHE to 9.9.1-8 (from 9.9.1-7)</li>
     
-<li>
-<a href="https://github.com/apache/jmeter/pull/594">
-      Pull request #594</a>
-    -
-  Updated neo4j-java-driver to 4.2.0 (from 1.7.5)</li>
+<li>Updated asm to 9.0 (from 7.3.1)</li>
     
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64454">
-      Bug
-      64454</a>
-    -
-  More precise error message, when no datasource value can be found in JDBC sampler</li>
+<li>Updated bouncycastle to 1.67 (from 1.66)</li>
     
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64440">
-      Bug
-      64440</a>
-    -
-  Log exeptions reported via <span class="code">JMeterUtils#reportToUser</span> even when in GUI mode</li>
+<li>Updated caffeine to 2.8.8 (from 2.8.0)</li>
     
-<li>
-<a href="https://github.com/apache/jmeter/pull/591">
-      Pull request #591</a>
-    -
-  Remove deprecated sudo flag from travis file. Deng Liming (liming.d.pro at gmail.com)</li>
+<li>Updated commons-codec to 1.15 (from 1.14)</li>
     
-<li>Updated Darklaf to 2.4.10 (from 2.1.1)</li>
+<li>Updated commons-io to 2.8.0 (from 2.7)</li>
     
-<li>Updated Groovy to 3.0.5 (from 3.0.3)</li>
+<li>Updated commons-net to 3.7.2 (from 3.7)</li>
     
-<li>
-<a href="https://github.com/apache/jmeter/pull/596">
-      Pull request #596</a>
-    -
-  Use neutral words in documentation</li>
+<li>Updated jackson to 2.10.5 (from 2.10.3)</li>
     
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=63809">
-      Bug
-      63809</a>
-    -
-  <a href="https://github.com/apache/jmeter/pull/557">
-      Pull request #557</a>
-    -
-  Updated commons-collections to 4.4 (from 3.2.2) while keeping the jars for the old commons-collections 3.x for compatibility</li>
+<li>Updated junit to 4.13.1 (from 4.13)</li>
     
-<li>
-<a href="https://github.com/apache/jmeter/pull/598">
-      Pull request #598</a>
-    -
-  Add another option for creating diffs to the building page. Contributed by jmetertea (github.com/jmetertea)</li>
+<li>Updated ph-commons to 9.5.1 (from 9.4.1)</li>
     
-<li>
-<a href="https://github.com/apache/jmeter/pull/609">
-      Pull request #609</a>
-    -
-  Make use of newer API for darklaf installation. Jannis Weis</li>
+<li>Updated ph-css to 6.2.3 (from 6.2.1)</li>
     
-<li>
-<a href="https://github.com/apache/jmeter/pull/612">
-      Pull request #612</a>
-    -
-  Correct typos in <span class="code">README.md</span>. Based on patches by Pooja Chandak (poojachandak002 at gmail.com)</li>
+<li>Updated groovy to 3.0.7 (from 3.0.5)</li>
     
-<li>
-<a href="https://github.com/apache/jmeter/pull/613">
-      Pull request #613</a>
-    -
-  Add documentation for Darklaf properties. Jannis Weis</li>
-    
-<li>Update SpotBugs to 4.1.2 (from 4.1.1), upgrade spotbugs-gradle-plugin to 4.5.0 (from 2.0.0)</li>
-    
-<li>Update org.sonarqube Gradle plugin to 3.0 (from 2.7.1)</li>
-    
-<li>Update Apache ActiveMQ to 5.16.0 (from 5.15.11)</li>
-    
-<li>Update Bouncycastle to 1.66 (from 1.64)</li>
-    
-<li>Update Apache commons-io to 2.7 (from 2.6)</li>
-    
-<li>Update Apache commons-lang3 to 3.11 (from 3.10)</li>
-    
-<li>Update Apache commons-net to 3.7 (from 3.6)</li>
-    
-<li>Update Apache commons-pool2 to 2.9.0 (from 2.8.0)</li>
-    
-<li>Update Apache commons-text to 1.9 (from 1.8)</li>
-    
-<li>Update equalsverifier to 3.4.2 (from 3.1.13)</li>
-    
-<li>Update junit5 to 5.6.2 (from 5.6.0)</li>
-    
-<li>Update Apache log4j2 to 2.13.3 (from 2.13.1)</li>
-    
-<li>Update rsyntaxtextarea to 3.1.1 (from 3.1.0)</li>
-    
-<li>Update JUnit5 to 5.7.0 (from 5.6.2)</li>
-    
-<li>Update Rhino to 1.7.13 (from 1.7.12)</li>
-    
-<li>Update XStream to 1.4.14 (from 1.4.14.1)</li>
-    
-<li>Update Apache commons-dbcp2 to 2.8.0 (from 2.7.0)</li>
-    
-<li>
-<a href="https://github.com/apache/jmeter/pull/635">
-      Pull request #635</a>
-    -
-  Correct some image ratios in the documentation. Patch provided
-      by Vincent Daburon (vdaburon at gmail.com)</li>
+<li>Updated xstream to 1.4.15 (from 1.4.14)</li>
 
 </ul>
 
@@ -574,18 +383,46 @@ applications when JMeter is starting up.</p>
 <ul>
   
 <li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64479">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64955">
       Bug
-      64479</a>
+      64955</a>
     -
-  Regression: HTTP(s) Script Recorder prevents proper shutdown in non-GUI mode</li>
+  Keystore password not reset on reload</li>
   
 <li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64653">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65002">
       Bug
-      64653</a>
+      65002</a>
     -
-  Exclude Javascript and JSON from parsing for charsets from forms by proxy</li>
+  HTTP(S) Test Script recorder creates an invalid Basic authentication URL. Contributed by Ubik Load Pack (https://ubikloadpack.com)</li>
+  
+<li>
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65004">
+      Bug
+      65004</a>
+    -
+  HTTP(S) Test Script recorder computes wrong HTTP Request breaking the application. Contributed by Ubik Load Pack (https://ubikloadpack.com)</li>
+  
+<li>
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64543">
+      Bug
+      64543</a>
+    -
+  On MacOSX, Darklaf- IntelliJ Theme throws NPE in javax.swing.ToolTipManager.initiateToolTip</li>
+  
+<li>
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65024">
+      Bug
+      65024</a>
+    -
+  Sending mime type with parameter throws IllegalArgumentException</li>
+  
+<li>
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65029">
+      Bug
+      65029</a>
+    -
+  Try harder to correctly guess the URL for applets, when download embedded URLs is enabled</li>
 
 </ul>
 
@@ -593,6 +430,19 @@ applications when JMeter is starting up.</p>
 <h3>Other Samplers</h3>
 
 <ul>
+  
+<li>
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65034">
+      Bug
+      65034</a>
+    -
+  Ignore <span class="code">SocketTimeoutException</span> on <span class="code">BinaryTCPClientImpl</span>, when no EOM Byte is set. Regression
+     introduced by commit c190641e4f0474a34a366a72364b0a8dd25bfc81 which fixed <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=52104">
+      Bug
+      52104</a>
+    -
+  . That bug was bout handling
+     the case of waiting for an EOM.</li>
 
 </ul>
 
@@ -600,13 +450,6 @@ applications when JMeter is starting up.</p>
 <h3>Controllers</h3>
 
 <ul>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64795">
-      Bug
-      64795</a>
-    -
-  Generate summary report may not output a summary line in the configured interval (<span class="code">summariser.interval</span>): Clarify documentation</li>
 
 </ul>
 
@@ -614,6 +457,20 @@ applications when JMeter is starting up.</p>
 <h3>Listeners</h3>
 
 <ul>
+  
+<li>
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64821">
+      Bug
+      64821</a>
+    -
+  When importing XML formatted jtl files, sub samplers will get renamed</li>
+  
+<li>
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65052">
+      Bug
+      65052</a>
+    -
+  XPath2 Tester and JSON JMESPath Tester are missing in <span class="code">view.results.tree.renderers_order</span> property</li>
 
 </ul>
 
@@ -621,20 +478,6 @@ applications when JMeter is starting up.</p>
 <h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
 
 <ul>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64638">
-      Bug
-      64638</a>
-    -
-  JSON JMESPath Assertion / JSON Assertion: Opening GUI shows a horizontal scrollbar that keeps sliding</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64915">
-      Bug
-      64915</a>
-    -
-  JMeter Cache Manager misbehaving when "Use Cache-Control/Expires header" is checked</li>
 
 </ul>
 
@@ -656,34 +499,6 @@ applications when JMeter is starting up.</p>
 <h3>Report / Dashboard</h3>
 
 <ul>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64547">
-      Bug
-      64547</a>
-    -
-  Report/Dashboard: Ensure graphs Response codes per second is not broken by empty response code in SampleResult. Contributed by Ubik Load Pack (https://ubikloadpack.com)</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64617">
-      Bug
-      64617</a>
-    -
-  HTML report: In graph Response Time Percentiles Over Time 90,95,99th percentile correspond in reality to 0.90, 0.95 and 0.99 percentiles</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64553">
-      Bug
-      64553</a>
-    -
-  When using Transaction Controller, send Bytes and Received Bytes are displayed as 0 in the influxdb(BackendListener)</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64624">
-      Bug
-      64624</a>
-    -
-  Use less aggressive escaping for JSON Strings in reports error messages</li>
 
 </ul>
 
@@ -691,14 +506,20 @@ applications when JMeter is starting up.</p>
 <h3>Documentation</h3>
 
 <ul>
-    
+  
 <li>
-<a href="https://github.com/apache/jmeter/pull/571">
-      Pull request #571</a>
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64960">
+      Bug
+      64960</a>
     -
-  Correct documented name of generated CA when using proxy script recorder. Part of a bigger PR. Vincent Daburon (vdaburon at gmail.com)</li>
-    
-<li>Change documentation of the special header functionality of the mirror server to reflect the implementation.</li>
+  Change scheduler reference in Thread Group documentation. Contributed by Ori Marko</li>
+  
+<li>
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65006">
+      Bug
+      65006</a>
+    -
+  Illustration for completed HTTP Request Defaults element (Figure 4.4) contains misleading info</li>
 
 </ul>
 
@@ -706,104 +527,62 @@ applications when JMeter is starting up.</p>
 <h3>General</h3>
 
 <ul>
-    
+  
 <li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64448">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64957">
       Bug
-      64448</a>
+      64957</a>
     -
-  User Defined Variable Duplication in Right Click Context Menu</li>
-    
+  When importing example test plan JMeter displays an NullPointerException</li>
+  
 <li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64499">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64961">
       Bug
-      64499</a>
+      64961</a>
     -
-  Exiting JMeter when <span class="code">jmeterengine.stopfail.system.exit=true</span> takes too much time if threads are not stopped</li>
-    
+  Darklaf: On Windows 7, NPE in BasicEditorPaneUI.cleanDisplayProperties with Darklaf Intellij</li>
+  
 <li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64510">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64963">
       Bug
-      64510</a>
+      64963</a>
     -
-  Darklaf- IntelliJ Theme throws NPE in DarkTreeUI on MacOS</li>
-    
+  Blank comment tooltip is visible</li>
+  
 <li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64543">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64969">
       Bug
-      64543</a>
+      64969</a>
     -
-  On MacOSX, Darklaf- IntelliJ Theme throws NPE in javax.swing.ToolTipManager.initiateToolTip</li>
-    
+  RemoteJMeterEngineImpl#rexit doesn't unexport RemoteJMeterEngineImpl on exit. Contributed by luo_isaiah at qq.com</li>
+  
 <li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64594">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64984">
       Bug
-      64594</a>
+      64984</a>
     -
-  Unable to enter variable values instead of numeric values in components using PowerTableModel (Impacts 3rd party plugins like Throughput Shaping Timer)</li>
-    
+  Darklaf LAF: Selecting a Test element does not work under certain screen resolutions on Windows. With the help of Jannis Weis</li>
+  
 <li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64475">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65008">
       Bug
-      64475</a>
+      65008</a>
     -
-  Menu Generate HTML Report: When report generation fails due to timeout, error message is not explicit. Contributed by Ubik Load Pack (https://ubikloadpack.com)</li>
-    
+  SampleResult.setIgnore() called from PostProcessor is not considered</li>
+  
 <li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64627">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64993">
       Bug
-      64627</a>
+      64993</a>
     -
-  Programmatic manipulation of the control flow via API methods of JMeterContext is not working as it used to before 5.0. Contributed by Till Neunast</li>
-    
+  Daklaf LAF: Menu navigation not working with keyboard shortcuts. With the help of Jannis Weis</li>
+  
 <li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64647">
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65013">
       Bug
-      64647</a>
+      65013</a>
     -
-  groovy-dateutil is missing in distribution</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64640">
-      Bug
-      64640</a>
-    -
-  Darklaf: NPE at com.github.weisj.darklaf.ui.DarkPopupFactory.getPopupType(DarkPopupFactory.java:96)</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64641">
-      Bug
-      64641</a>
-    -
-  Darklaf: NPE at com.github.weisj.darklaf.ui.tree.DarkTreeUI.isChildOfSelectionPath(DarkTreeUI.java:603) ~[darklaf-core-2.4.2-SNAPSHOT.jar:2.4.2-SNAPSHOT]</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64453">
-      Bug
-      64453</a>
-    -
-  Darklaf: Save Test Plan as New Folder failure</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64625">
-      Bug
-      64625</a>
-    -
-  Darklaf: trying to select a folder in Browse leads to an error popup and stacktrace</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64711">
-      Bug
-      64711</a>
-    -
-  Textarea Colors are not good in dark modes. Contributed by Jannis Weis</li>
-    
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64935">
-      Bug
-      64935</a>
-    -
-  A broken plugin class should not prevent JMeter from starting</li>
+  POST multipart/form-data cURL code with quoted arguments is not imported correctly</li>
 
 </ul>
 
@@ -817,11 +596,9 @@ applications when JMeter is starting up.</p>
 
 <ul>
   
-<li>Michael Weidmann (https://github.com/michaelweidmann)</li>
+<li>Ori Marko (orimarko at gmail.com)</li>
   
-<li>Deng Liming (liming.d.pro at gmail.com)</li>
-  
-<li>jmetertea (https://github.com/jmetertea)</li>
+<li>&#32599;&#23493;&#21331; (luo_isaiah at qq.com)</li>
   
 <li>
 <a href="https://ubikloadpack.com">Ubik Load Pack</a>
@@ -830,30 +607,12 @@ applications when JMeter is starting up.</p>
 <li>
 <a href="https://github.com/weisJ/darklaf">Jannis Weis</a>
 </li>
-  
-<li>
-<a href="https://github.com/topicus-pw-dvdouden">Daniel van den Ouden</a>
-</li>
-  
-<li>Till Neunast (https://github.com/tilln)</li>
-  
-<li>Pooja Chandak (poojachandak002 at gmail.com)</li>
-  
-<li>Vincent Daburon (vdaburon at gmail.com)</li>
-  
-<li>Woonsan Ko (woonsan at apache.org)</li>
-  
-<li>Timo (ASF.Software.Timo at Leefers.eu)</li>
-  
-<li>Graham Russell (graham at ham1.co.uk)</li>
 
 </ul>
 
 <p>We also thank bug reporters who helped us improve JMeter.</p>
 
 <ul>
-  
-<li>Hiroyoshi Mitsumori (mitsumori at mis.dev)</li>
 
 </ul>
 
@@ -1002,7 +761,7 @@ export JVM_ARGS="--modulepath $PWD/lib/modules"
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2020
+            2021
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

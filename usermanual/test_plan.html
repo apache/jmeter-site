@@ -269,20 +269,13 @@ Start with Ramp-up = number of threads and adjust up or down as needed.
 <p>By default, the thread group is configured to loop once through its elements.</p>
 
 
-<p>Thread Group also provides a <b>scheduler</b>.
+<p>Thread Group also allows to specify <b>Thread lifetime</b>.
     Click the checkbox at the bottom of the Thread Group panel to enable/disable extra fields
-     in which you can enter the duration of test, the startup delay, the start and end times of the run.
+     in which you can enter the duration of test and the startup delay
      You can configure <span class="code">Duration (seconds)</span> and <span class="code">Startup Delay (seconds)</span> to control
      the duration of each thread group and the after how much seconds it starts.
      When the test is started, JMeter will wait <span class="code">Startup Delay (seconds)</span> before starting the Threads
      of the Thread Group and run for the configured <span class="code">Duration (seconds)</span> time.
-     Note those 2 options override the <span class="code">Start time</span> and <span class="code">End time</span>.
-
-     <p>Alternatively (although not recommended as not very flexible) you can use the two other fields <span class="code">Start time</span> and <span class="code">End time</span>.
-     When the test is started, JMeter will wait if necessary until the start-time has been reached.
-     At the end of each cycle, JMeter checks if the end-time has been reached, and if so, the run is stopped,
-     otherwise the test is allowed to continue until the iteration limit is reached.</p>
-     
 </p>
 
 </div>
@@ -937,7 +930,7 @@ jmeter &hellip; -Jhost=www3.example.org -Jloops=13
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2020
+            2021
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache
