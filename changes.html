@@ -201,10 +201,13 @@ Earlier changes are detailed in the <a href="changes_history.html">History of Pr
 
 
 
-<h1>Version 5.4.1</h1>
+<h1>Version 5.4.2</h1>
 
 <p>
 Summary
+</p>
+
+<p>This version is a fix release against the vulnerability CVE-2021-44228: Apache Log4j2 JNDI features do not protect against attacker controlled LDAP and other JNDI related endpoints.
 </p>
 
 <ul>
@@ -250,12 +253,6 @@ Summary
 
 
 <h2 class="ch_section" id="Incompatible changes">Incompatible changes</h2>
-
-<ul>
-    
-<li>Restart after LAF change has been reinstated, it had been removed in JMeter 5.3</li>
-
-</ul>
 
 
 
@@ -321,21 +318,6 @@ Summary
 <h3>General</h3>
 
 <ul>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65028">
-      Bug
-      65028</a>
-    -
-  Add documentation for the property <span class="code">client.rmi.localport</span>
-</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65012">
-      Bug
-      65012</a>
-    -
-  Better handling of displaying long comments in the GUI</li>
 
 </ul>
 
@@ -344,31 +326,7 @@ Summary
 
 <ul>
     
-<li>Updated SaxonHE to 9.9.1-8 (from 9.9.1-7)</li>
-    
-<li>Updated asm to 9.0 (from 7.3.1)</li>
-    
-<li>Updated bouncycastle to 1.67 (from 1.66)</li>
-    
-<li>Updated caffeine to 2.8.8 (from 2.8.0)</li>
-    
-<li>Updated commons-codec to 1.15 (from 1.14)</li>
-    
-<li>Updated commons-io to 2.8.0 (from 2.7)</li>
-    
-<li>Updated commons-net to 3.7.2 (from 3.7)</li>
-    
-<li>Updated jackson to 2.10.5 (from 2.10.3)</li>
-    
-<li>Updated junit to 4.13.1 (from 4.13)</li>
-    
-<li>Updated ph-commons to 9.5.1 (from 9.4.1)</li>
-    
-<li>Updated ph-css to 6.2.3 (from 6.2.1)</li>
-    
-<li>Updated groovy to 3.0.7 (from 3.0.5)</li>
-    
-<li>Updated xstream to 1.4.15 (from 1.4.14)</li>
+<li>Updated Apache log4j2 to 2.16.0 (from 2.13.3).</li>
 
 </ul>
 
@@ -381,48 +339,6 @@ Summary
 <h3>HTTP Samplers and Test Script Recorder</h3>
 
 <ul>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64955">
-      Bug
-      64955</a>
-    -
-  Keystore password not reset on reload</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65002">
-      Bug
-      65002</a>
-    -
-  HTTP(S) Test Script recorder creates an invalid Basic authentication URL. Contributed by Ubik Load Pack (https://ubikloadpack.com)</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65004">
-      Bug
-      65004</a>
-    -
-  HTTP(S) Test Script recorder computes wrong HTTP Request breaking the application. Contributed by Ubik Load Pack (https://ubikloadpack.com)</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64543">
-      Bug
-      64543</a>
-    -
-  On MacOSX, Darklaf- IntelliJ Theme throws NPE in javax.swing.ToolTipManager.initiateToolTip</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65024">
-      Bug
-      65024</a>
-    -
-  Sending mime type with parameter throws IllegalArgumentException</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65029">
-      Bug
-      65029</a>
-    -
-  Try harder to correctly guess the URL for applets, when download embedded URLs is enabled</li>
 
 </ul>
 
@@ -430,19 +346,6 @@ Summary
 <h3>Other Samplers</h3>
 
 <ul>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65034">
-      Bug
-      65034</a>
-    -
-  Ignore <span class="code">SocketTimeoutException</span> on <span class="code">BinaryTCPClientImpl</span>, when no EOM Byte is set. Regression
-     introduced by commit c190641e4f0474a34a366a72364b0a8dd25bfc81 which fixed <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=52104">
-      Bug
-      52104</a>
-    -
-  . That bug was bout handling
-     the case of waiting for an EOM.</li>
 
 </ul>
 
@@ -457,20 +360,6 @@ Summary
 <h3>Listeners</h3>
 
 <ul>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64821">
-      Bug
-      64821</a>
-    -
-  When importing XML formatted jtl files, sub samplers will get renamed</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65052">
-      Bug
-      65052</a>
-    -
-  XPath2 Tester and JSON JMESPath Tester are missing in <span class="code">view.results.tree.renderers_order</span> property</li>
 
 </ul>
 
@@ -506,20 +395,6 @@ Summary
 <h3>Documentation</h3>
 
 <ul>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64960">
-      Bug
-      64960</a>
-    -
-  Change scheduler reference in Thread Group documentation. Contributed by Ori Marko</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65006">
-      Bug
-      65006</a>
-    -
-  Illustration for completed HTTP Request Defaults element (Figure 4.4) contains misleading info</li>
 
 </ul>
 
@@ -527,62 +402,6 @@ Summary
 <h3>General</h3>
 
 <ul>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64957">
-      Bug
-      64957</a>
-    -
-  When importing example test plan JMeter displays an NullPointerException</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64961">
-      Bug
-      64961</a>
-    -
-  Darklaf: On Windows 7, NPE in BasicEditorPaneUI.cleanDisplayProperties with Darklaf Intellij</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64963">
-      Bug
-      64963</a>
-    -
-  Blank comment tooltip is visible</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64969">
-      Bug
-      64969</a>
-    -
-  RemoteJMeterEngineImpl#rexit doesn't unexport RemoteJMeterEngineImpl on exit. Contributed by luo_isaiah at qq.com</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64984">
-      Bug
-      64984</a>
-    -
-  Darklaf LAF: Selecting a Test element does not work under certain screen resolutions on Windows. With the help of Jannis Weis</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65008">
-      Bug
-      65008</a>
-    -
-  SampleResult.setIgnore() called from PostProcessor is not considered</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64993">
-      Bug
-      64993</a>
-    -
-  Daklaf LAF: Menu navigation not working with keyboard shortcuts. With the help of Jannis Weis</li>
-  
-<li>
-<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65013">
-      Bug
-      65013</a>
-    -
-  POST multipart/form-data cURL code with quoted arguments is not imported correctly</li>
 
 </ul>
 
@@ -595,18 +414,6 @@ Summary
 </p>
 
 <ul>
-  
-<li>Ori Marko (orimarko at gmail.com)</li>
-  
-<li>&#32599;&#23493;&#21331; (luo_isaiah at qq.com)</li>
-  
-<li>
-<a href="https://ubikloadpack.com">Ubik Load Pack</a>
-</li>
-  
-<li>
-<a href="https://github.com/weisJ/darklaf">Jannis Weis</a>
-</li>
 
 </ul>
 
