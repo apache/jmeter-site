@@ -222,19 +222,19 @@
 </figure>
 </li>
                     
-<li>A Statistics table providing in one table a summary of all metrics per transaction including 3 configurable percentiles : <figure>
+<li>A Statistics table providing in one table a summary of all metrics per transaction including 3 configurable percentiles: <figure>
 <a href="../images/screenshots/dashboard/report_statistics.png"><img src="../images/screenshots/dashboard/report_statistics.png" width="1639" height="467" alt=""></a>
 <figcaption></figcaption>
 </figure>
 </li>
                     
-<li>An error table providing a summary of all errors and their proportion in the total requests : <figure>
+<li>An error table providing a summary of all errors and their proportion in the total requests: <figure>
 <a href="../images/screenshots/dashboard/report_errors.png"><img src="../images/screenshots/dashboard/report_errors.png" width="1344" height="455" alt=""></a>
 <figcaption></figcaption>
 </figure>
 </li>
                     
-<li>A Top 5 Errors by Sampler table providing for every Sampler (excluding Transaction Controller by default) the top 5 Errors : <figure>
+<li>A Top 5 Errors by Sampler table providing for every Sampler (excluding Transaction Controller by default) the top 5 Errors: <figure>
 <a href="../images/screenshots/dashboard/top_5_errors_by_sampler.png"><img src="../images/screenshots/dashboard/top_5_errors_by_sampler.png" width="1609" height="508" alt=""></a>
 <figcaption></figcaption>
 </figure>
@@ -243,37 +243,37 @@
 <li>Zoomable chart where you can check/uncheck every transaction to show/hide it for:
                         <ul>
                             
-<li>Response times Over Time (Includes Transaction Controller Sample Results) : <figure>
+<li>Response times Over Time (Includes Transaction Controller Sample Results): <figure>
 <a href="../images/screenshots/dashboard/report_response_times_over_time.png"><img src="../images/screenshots/dashboard/report_response_times_over_time.png" width="1398" height="566" alt=""></a>
 <figcaption></figcaption>
 </figure>
 </li>
                             
-<li>Response times Percentiles Over Time (successful responses only) : <figure>
+<li>Response times Percentiles Over Time (successful responses only): <figure>
 <a href="../images/screenshots/dashboard/response_time_percentiles_over_time.png"><img src="../images/screenshots/dashboard/response_time_percentiles_over_time.png" width="1640" height="539" alt=""></a>
 <figcaption></figcaption>
 </figure>
 </li>
                             
-<li>Active Threads Over Time : <figure>
+<li>Active Threads Over Time: <figure>
 <a href="../images/screenshots/dashboard/report_active_threads_over_time.png"><img src="../images/screenshots/dashboard/report_active_threads_over_time.png" width="1638" height="544" alt=""></a>
 <figcaption></figcaption>
 </figure>
 </li>
                             
-<li>Bytes throughput Over Time (Ignores Transaction Controller Sample Results)  : <figure>
+<li>Bytes throughput Over Time (Ignores Transaction Controller Sample Results): <figure>
 <a href="../images/screenshots/dashboard/report_bytes_throughput_over_time.png"><img src="../images/screenshots/dashboard/report_bytes_throughput_over_time.png" width="1373" height="543" alt=""></a>
 <figcaption></figcaption>
 </figure>
 </li>
                             
-<li>Latencies Over Time (Includes Transaction Controller Sample Results) : <figure>
+<li>Latencies Over Time (Includes Transaction Controller Sample Results): <figure>
 <a href="../images/screenshots/dashboard/report_latencies_over_time.png"><img src="../images/screenshots/dashboard/report_latencies_over_time.png" width="1373" height="547" alt=""></a>
 <figcaption></figcaption>
 </figure>
 </li>
                             
-<li>Connect Time Over Time (Includes Transaction Controller Sample Results) : <figure>
+<li>Connect Time Over Time (Includes Transaction Controller Sample Results): <figure>
 <a href="../images/screenshots/dashboard/report_connect_time_over_time.png"><img src="../images/screenshots/dashboard/report_connect_time_over_time.png" width="1635" height="520" alt=""></a>
 <figcaption></figcaption>
 </figure>
@@ -309,7 +309,7 @@
 </figure>
 </li>
                             
-<li>Response time Overview (Excludes Transaction Controller Sample Results) : <figure>
+<li>Response time Overview (Excludes Transaction Controller Sample Results): <figure>
 <a href="../images/screenshots/dashboard/response_time_overview.png"><img src="../images/screenshots/dashboard/response_time_overview.png" width="1645" height="562" alt=""></a>
 <figcaption></figcaption>
 </figure>
@@ -626,11 +626,11 @@ jmeter.save.saveservice.timestamp_format = ms
 <div class="note">Percentiles used by Summary table and Percentile graphs can be adjusted to different values by using the 3 properties:
                     <ul>
                         
-<li>aggregate_rpt_pct1 : Defaults to 90</li>
+<li>aggregate_rpt_pct1: Defaults to 90</li>
                         
-<li>aggregate_rpt_pct2 : Defaults to 95</li>
+<li>aggregate_rpt_pct2: Defaults to 95</li>
                         
-<li>aggregate_rpt_pct3 : Defaults to 99</li>
+<li>aggregate_rpt_pct3: Defaults to 99</li>
                     
 </ul>
                     
@@ -673,6 +673,22 @@ jmeter.save.saveservice.timestamp_format = ms
 </dd>
                         
 </dl>
+                    
+</div>
+<div class="clear"></div>
+                    
+<div class="clear"></div>
+<div class="note">
+                       
+<p>The calculated percentiles might differ from those from the Aggregate Report in the GUI.
+                       This is because the dashboard uses a different formula to estimate the percentiles.
+                       It will be most observable when the distribution of the timing values is spread
+                       too wide. That can happen if too few samples were taken. If you want the numbers
+                       to be more or less the same as those from the Aggregate Report, you will have to switch the used
+                       <a href="https://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/descriptive/rank/Percentile.EstimationType.html">estimator</a>
+                       from <span class="code">LEGACY</span> to <span class="code">R_3</span>, by specifying the JMeter property
+                       <span class="code">backend_metrics_percentile_estimator=R_3</span> (this time without any
+                       prefix).</p>
                     
 </div>
 <div class="clear"></div>
@@ -1672,7 +1688,7 @@ jmeter.reportgenerator.graph.custom_testGraph.property.set_Content_Message=Numbe
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2021
+            2022
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

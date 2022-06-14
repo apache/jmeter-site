@@ -203,6 +203,163 @@ Current changes are detailed in <a href="changes.html">Changes</a>.
 
 
 
+<h1>Version 5.4.3</h1>
+
+<p>
+Summary
+</p>
+
+<p>This version is a fix release against the vulnerability CVE-2021-45105: Apache Log4j2 versions 2.0-alpha1 through 2.16.0 (excluding 2.12.3) did not protect from uncontrolled recursion from self-referential lookups. This allows an attacker with control over Thread Context Map data to cause a denial of service when a crafted string is interpreted.
+</p>
+
+<ul>
+
+<li>
+<a href="#Non-functional changes">Non-functional changes</a>
+</li>
+
+<li>
+<a href="#Known problems and workarounds">Known problems and workarounds</a>
+</li>
+
+
+</ul>
+
+
+<h2 class="ch_section" id="Non-functional changes">Non-functional changes</h2>
+
+<ul>
+    
+<li>Updated Apache log4j2 to 2.17.0 (from 2.16.0).</li>
+
+</ul>
+
+ 
+
+
+<h2 class="ch_section" id="Known problems and workarounds">Known problems and workarounds</h2>
+
+<ul>
+
+<li>The Once Only controller behaves correctly under a Thread Group or Loop Controller,
+but otherwise its behaviour is not consistent (or clearly specified).</li>
+
+
+<li>
+The numbers that appear to the left of the green box are the number of active threads / total number of threads,
+the total number of threads only applies to a locally run test, otherwise it will show <span class="code">0</span> (see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=55510">
+      Bug
+      55510</a>).
+</li>
+
+
+<li>
+Note that under some windows systems you may have this WARNING:
+<pre class="source">
+java.util.prefs.WindowsPreferences
+WARNING: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0
+x80000002. Windows RegCreateKeyEx(&hellip;) returned error code 5.
+</pre>
+The fix is to run JMeter as Administrator, it will create the registry key for you, then you can restart JMeter as a normal user and you won't have the warning anymore.
+</li>
+
+
+<li>
+You may encounter the following error:
+<pre class="source">java.security.cert.CertificateException: Certificates does not conform to algorithm constraints</pre>
+ if you run a HTTPS request on a web site with a SSL certificate (itself or one of SSL certificates in its chain of trust) with a signature
+ algorithm using MD2 (like <span class="code">md2WithRSAEncryption</span>) or with a SSL certificate with a size lower than 1024 bits.
+This error is related to increased security in Java 8+.
+<br>
+To allow you to perform your HTTPS request, you can downgrade the security of your Java installation by editing
+the Java <span class="code">jdk.certpath.disabledAlgorithms</span> property. Remove the MD2 value or the constraint on size, depending on your case.
+<br>
+This property is in this file:
+<pre class="source">JAVA_HOME/jre/lib/security/java.security</pre>
+See  <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=56357">
+      Bug
+      56357</a> for details.
+</li>
+
+
+<li>
+Under Mac OSX Aggregate Graph will show wrong values due to mirroring effect on numbers.
+This is due to a known Java bug, see Bug <a href="https://bugs.openjdk.java.net/browse/JDK-8065373">JDK-8065373</a>
+The fix is to use JDK8_u45 or later.
+</li>
+
+
+<li>
+View Results Tree may fail to display some HTML code under HTML renderer, see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=54586">
+      Bug
+      54586</a>.
+This is due to a known Java bug which fails to parse "<span class="code">px</span>" units in row/col attributes.
+See Bug <a href="https://bugs.openjdk.java.net/browse/JDK-8031109">JDK-8031109</a>
+The fix is to use JDK9 b65 or later.
+</li>
+
+
+<li>
+JTable selection with keyboard (<span class="keycombo"><span class="keysym">SHIFT</span>&nbsp;+&nbsp;<span class="keysym">up/down</span></span>) is totally unusable with Java 7 on Mac OSX.
+This is due to a known Java bug <a href="https://bugs.openjdk.java.net/browse/JDK-8025126">JDK-8025126</a>
+The fix is to use JDK 8 b132 or later.
+</li>
+
+
+<li>
+Since Java 11 the JavaScript implementation <a href="https://openjdk.java.net/jeps/335">Nashorn has been deprecated</a>.
+Java will emit the following deprecation warnings, if you are using JavaScript based on Nashorn.
+<pre class="source">
+Warning: Nashorn engine is planned to be removed from a future JDK release
+</pre>
+To silence these warnings, add <span class="code">-Dnashorn.args=--no-deprecation-warning</span> to your Java arguments.
+That can be achieved by setting the enviroment variable <span class="code">JVM_ARGS</span>
+
+<pre class="source">
+export JVM_ARGS="-Dnashorn.args=--no-deprecation-warning"
+</pre>
+
+</li>
+
+
+<li>
+With Java 15 the JavaScript implementation <a href="https://openjdk.java.net/jeps/372">Nashorn has been removed</a>. To add back a JSR-223 compatible JavaScript engine you have two options:
+  <dl>
+    
+<dt>Use Mozilla Rhino</dt>
+    
+<dd>Copy <a href="https://github.com/mozilla/rhino/releases/download/Rhino1_7_13_Release/rhino-engine-1.7.13.jar">rhino-engine-1.7.13.jar</a> into <span class="code">$JMETER_HOME/lib/ext</span>.</dd>
+    
+<dt>Use OpenJDK Nashorn</dt>
+    
+<dd>
+      The OpenJDK Nashorn implementation comes as a module. To use it, you will have to download it and add it to the module path. A hacky way to download the version 15.0 and its dependencies and set the module path is outlined below:
+      <pre class="source">
+mkdir lib/modules
+pushd lib/modules
+wget https://repo1.maven.org/maven2/org/openjdk/nashorn/nashorn-core/15.0/nashorn-core-15.0.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm/9.0/asm-9.0.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-commons/9.0/asm-commons-9.0.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-util/9.0/asm-util-9.0.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-tree/9.0/asm-tree-9.0.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-analysis/9.0/asm-analysis-9.0.jar
+popd
+export JVM_ARGS="--modulepath $PWD/lib/modules"
+./bin/jmeter
+      </pre>
+    
+</dd>
+  
+</dl>
+
+</li>
+
+
+</ul>
+
+
+
+
 <h1>Version 5.4.2</h1>
 
 <p>
@@ -215,22 +372,6 @@ Summary
 <ul>
 
 <li>
-<a href="#New and Noteworthy">New and Noteworthy</a>
-</li>
-
-<li>
-<a href="#Incompatible changes">Incompatible changes</a>
-</li>
-
-<li>
-<a href="#Bug fixes">Bug fixes</a>
-</li>
-
-<li>
-<a href="#Improvements">Improvements</a>
-</li>
-
-<li>
 <a href="#Non-functional changes">Non-functional changes</a>
 </li>
 
@@ -238,88 +379,6 @@ Summary
 <a href="#Known problems and workarounds">Known problems and workarounds</a>
 </li>
 
-<li>
-<a href="#Thanks">Thanks</a>
-</li>
-
-
-</ul>
-
-
-<h2 class="ch_section" id="New and Noteworthy">New and Noteworthy</h2>
-
-
-<h3 class="ch_title">UX improvements</h3>
-
-
-
-
-<h2 class="ch_section" id="Incompatible changes">Incompatible changes</h2>
-
-
-
-<h2 class="ch_section" id="Improvements">Improvements</h2>
-
-
-<h3>HTTP Samplers and Test Script Recorder</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Other samplers</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Controllers</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Listeners</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Functions</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>I18N</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Report / Dashboard</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>General</h3>
-
-<ul>
 
 </ul>
 
@@ -332,102 +391,6 @@ Summary
 
 </ul>
 
- 
-
-
-<h2 class="ch_section" id="Bug fixes">Bug fixes</h2>
-
-
-<h3>HTTP Samplers and Test Script Recorder</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Other Samplers</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Controllers</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Listeners</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Functions</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>I18N</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Report / Dashboard</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Documentation</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>General</h3>
-
-<ul>
-
-</ul>
-
- 
-
-
-<h2 class="ch_section" id="Thanks">Thanks</h2>
-
-<p>We thank all contributors mentioned in bug and improvement sections above:
-</p>
-
-<ul>
-
-</ul>
-
-<p>We also thank bug reporters who helped us improve JMeter.</p>
-
-<ul>
-
-</ul>
-
-<p>
-Apologies if we have omitted anyone else.
-</p>
  
 
 
@@ -563,19 +526,7 @@ Summary
 <ul>
 
 <li>
-<a href="#New and Noteworthy">New and Noteworthy</a>
-</li>
-
-<li>
 <a href="#Incompatible changes">Incompatible changes</a>
-</li>
-
-<li>
-<a href="#Bug fixes">Bug fixes</a>
-</li>
-
-<li>
-<a href="#Improvements">Improvements</a>
 </li>
 
 <li>
@@ -594,14 +545,6 @@ Summary
 </ul>
 
 
-<h2 class="ch_section" id="New and Noteworthy">New and Noteworthy</h2>
-
-
-<h3 class="ch_title">UX improvements</h3>
-
-
-
-
 <h2 class="ch_section" id="Incompatible changes">Incompatible changes</h2>
 
 <ul>
@@ -613,62 +556,6 @@ Summary
 
 
 <h2 class="ch_section" id="Improvements">Improvements</h2>
-
-
-<h3>HTTP Samplers and Test Script Recorder</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Other samplers</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Controllers</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Listeners</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Functions</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>I18N</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Report / Dashboard</h3>
-
-<ul>
-
-</ul>
 
 
 <h3>General</h3>
@@ -800,13 +687,6 @@ Summary
 </ul>
 
 
-<h3>Controllers</h3>
-
-<ul>
-
-</ul>
-
-
 <h3>Listeners</h3>
 
 <ul>
@@ -824,34 +704,6 @@ Summary
       65052</a>
     -
   XPath2 Tester and JSON JMESPath Tester are missing in <span class="code">view.results.tree.renderers_order</span> property</li>
-
-</ul>
-
-
-<h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Functions</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>I18N</h3>
-
-<ul>
-
-</ul>
-
-
-<h3>Report / Dashboard</h3>
-
-<ul>
 
 </ul>
 
@@ -27297,7 +27149,7 @@ test engine code.</li>
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2021
+            2022
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

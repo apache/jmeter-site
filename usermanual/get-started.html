@@ -767,7 +767,7 @@ will override the HEAP settings in the script.
 # it will be sourced in by bin/jmeter
 
 # Use a bigger heap, but a smaller metaspace, than the default
-export HEAP="-Xms1G -Xmx1G -XMaxMetaspaceSize=192m"
+export HEAP="-Xms1G -Xmx1G -XX:MaxMetaspaceSize=192m"
 
 # Try to guess the locale from the OS. The space as value is on purpose!
 export JMETER_LANGUAGE=" "
@@ -1689,8 +1689,8 @@ JVM has not been able to exit, and the thread prints a message to say why.
 </p>
 
 <p>
-The property <span class="code">jmeter.exit.check.pause</span> can be used to override the default pause of 2000ms (2secs).
-If set to <span class="code">0</span>, then JMeter does not start the daemon thread.
+The property <span class="code">jmeter.exit.check.pause</span> can be used to configure the delay before printing non-daemon threads.
+If set to <span class="code">0</span> (default value), then JMeter does not print non-terminated threads at the end of the test.
 </p>
 
 </div>
@@ -1904,7 +1904,7 @@ See also the comments in the <span class="code">jmeter.properties</span>, <span 
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2021
+            2022
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

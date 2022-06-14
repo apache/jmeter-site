@@ -3594,7 +3594,7 @@ returns:
 <div class="property">
 <div class="name req-false">Format</div>
 <div class="description req-false">
-        The format to be passed to DateTimeFormatter.
+        The format to be passed to DateTimeFormatter (for input data parsing and output formating).
         See <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html">DateTimeFormatter</a>
         If omitted, the function uses milliseconds since epoch format.
         </div>
@@ -3604,16 +3604,23 @@ returns:
 <div class="property">
 <div class="name req-false">Date to shift</div>
 <div class="description req-false">
-        Indicate the date in the format set by the parameter 'Format' to shift
-        If omitted, the date is set to now
-        </div>
+        Indicate the date in the format set by the parameter <span class="code">Format</span> to shift.
+        If omitted, the date is set to <em>ZonedDateTime.now</em> with system zone <em>ZoneId.systemDefault()</em>.
+        <div class="clear"></div>
+<div class="note">If <span class="code">Format</span> is empty then this parameter must be long value (look at examples).</div>
+<div class="clear"></div>
+        
+</div>
 <div class="required req-false">No</div>
 </div>
         
 <div class="property">
 <div class="name req-false">value to shift</div>
 <div class="description req-false">
-        Indicate the specified amount of seconds, minutes, hours or days to shift according to a textual representation of a duration such as PnDTnHnMn.nS. See https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-
+        Indicate the specified amount of seconds, minutes, hours or days to shift according to a textual
+        representation of a duration such as <span class="code">PnDTnHnMn.nS</span>. See
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-">Duration#parse(CharSequence)</a>.
+        If ommitted, no shifting will be done.
         <ul>
         
 <li>
@@ -3640,9 +3647,10 @@ returns:
 <div class="property">
 <div class="name req-false">Locale to use for format</div>
 <div class="description req-false">
-        The string format of a locale. The language code must be lowercase. The country code must be uppercase. The separator must be an underscore. ex: en_EN
-        See http://www.oracle.com/technetwork/java/javase/javase7locales-334809.html
-        If omitted, by default the function use the ApacheJMeter locale one.
+        The string format of a locale. The language code must be lowercase. The country code must be uppercase.
+        The separator must be an underscore (<span class="code">_</span>). For example <span class="code">en_EN</span>
+        See <a href="http://www.oracle.com/technetwork/java/javase/javase7locales-334809.html">supported locales on Java 7</a>.
+        If omitted, by default the function uses the current locale from the JVM.
         </div>
 <div class="required req-false">No</div>
 </div>
@@ -3659,6 +3667,8 @@ returns:
 
 <pre class="source">${__timeShift(dd MMMM yyyy,21 f&eacute;vrier 2018,P2D,fr_FR,)}</pre> returns <span class="code">23 f&eacute;vrier 2018</span>
 
+<pre class="source">${__timeShift(,10000,PT10S,,)}</pre> returns <span class="code">20000</span> = 10sec input + 10sec shift
+<pre class="source">${__timeShift(,,PT10S,,)}</pre> returns <span class="code">1632158276770</span> = 1632158266770 ms (now) + 10sec shift
 </p>
 <div class="go-top">
 <a href="#">^</a>
@@ -4131,7 +4141,7 @@ They are mainly intended for use in file names etc.
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2021
+            2022
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache

@@ -317,17 +317,29 @@ will match any component that contains test in searchable elements of the compon
 
 
 <div class="subsection">
-<h2 id="hidpi">22.4 JMeter with a HiDPI screen on Linux or Windows<a class="sectionlink" href="#hidpi" title="Link to here">&para;</a>
+<h2 id="hidpi">22.4 JMeter and a HiDPI screen<a class="sectionlink" href="#hidpi" title="Link to here">&para;</a>
 </h2>
 
 <div class="description">
     
 <p>
-    The HiDPI mode isn't currently support by the Swing API in Java on Linux, MacOS or Windows. Therefore
-    JMeter can be very hard to read with a HiDPI screen (little icons and chars).
+    With <b>Java version 9 and up</b>, the HiDPI (High Dot Per Inch) screens are supported.
     </p>
     
-<p>You can improve the JMeter's display on HiDPI screen by changing some properties:</p>
+<p>
+    You can define the Java property <b>sun.java2d.uiScale</b> to change the scale of JMeter.
+    The value can be an integer or percentage value.
+    </p>
+    
+<p>For example, on Linux, with x2 factor (200%):</p>
+    
+<pre class="source">
+    $ export JVM_ARGS="-Dsun.java2d.uiScale=200%"
+    $ ./bin/jmeter</pre>
+    
+<p>
+    With <b>Java version 8</b>, the HiDPI (High Dot Per Inch) screens aren't supported in the Swing API.
+    You can improve the JMeter's display on HiDPI screen by changing some properties:</p>
     
 <dl>
       
@@ -649,7 +661,7 @@ will match any component that contains test in searchable elements of the compon
 <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2021
+            2022
             , Apache Software Foundation
           </div>
 <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache
