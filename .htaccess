@@ -16,7 +16,7 @@
 RewriteEngine On
 
 # Try to get Bing away from the old download location
-RewriteRule ^/download_jmeter(\.html)$ /download_jmeter.cgi [R]
+RewriteRule ^/download_jmeter(\.html)?$ /download_jmeter.cgi [R]
 
 # Redirect http to https
 # From Cordova PMC Member raphinesse
