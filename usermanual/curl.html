@@ -1,623 +1,658 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="en">
-<head>
-<META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
-<title>Apache JMeter
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+        <title>Apache JMeter
           -
           User's Manual: Curl</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Merriweather:400normal" rel="stylesheet" type="text/css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="../css/new-style.css">
-<link rel="apple-touch-icon-precomposed" href="../images/apple-touch-icon.png">
-<link rel="icon" href="../images/favicon.png">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="../images/mstile-144x144.png">
-<meta name="theme-color" content="#ffffff">
-</head>
-<body role="document">
-<a href="#content" class="hidden">Main content</a>
-<div class="header">
-<!--
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400normal" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/new-style.css">
+        <link rel="apple-touch-icon-precomposed" href="../images/apple-touch-icon.png">
+        <link rel="icon" href="../images/favicon.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="../images/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body role="document">
+        <a href="#content" class="hidden">Main content</a>
+        <div class="header">
+            <!--
             APACHE LOGO
           -->
-<div>
-<a href="https://www.apache.org"><img title="Apache Software Foundation" class="asf-logo logo" src="../images/asf-logo.svg" alt="Logo ASF"></a>
-</div>
-<!--
+            <div>
+                <a href="https://www.apache.org"><img title="Apache Software Foundation" class="asf-logo logo" src="../images/asf-logo.svg" alt="Logo ASF"></a>
+            </div>
+            <!--
               PROJECT LOGO
             -->
-<div>
-<a href="https://jmeter.apache.org/"><img class="logo" src="../images/logo.svg" alt="Apache JMeter"></a>
-</div>
-<div class="banner">
-<a href="https://www.apache.org/events/current-event.html"><img src="https://www.apache.org/events/current-event-234x60.png" alt="Current Apache event teaser"></a>
-<div class="clear"></div>
-</div>
-</div>
-<div class="nav">
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">About</div>
-<ul>
-<li>
-<a href="../index.html">Overview</a>
-</li>
-<li>
-<a href="https://www.apache.org/licenses/">License</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Download</div>
-<ul>
-<li>
-<a href="../download_jmeter.cgi">Download Releases</a>
-</li>
-<li>
-<a href="../changes.html">Release Notes</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Documentation</div>
-<ul>
-<li>
-<a href="../usermanual/get-started.html">Get Started</a>
-</li>
-<li>
-<a href="../usermanual/index.html">User Manual</a>
-</li>
-<li>
-<a href="../usermanual/best-practices.html">Best Practices</a>
-</li>
-<li>
-<a href="../usermanual/component_reference.html">Component Reference</a>
-</li>
-<li>
-<a href="../usermanual/functions.html">Functions Reference</a>
-</li>
-<li>
-<a href="../usermanual/properties_reference.html">Properties Reference</a>
-</li>
-<li>
-<a href="../changes_history.html">Change History</a>
-</li>
-<li>
-<a href="../api/index.html">Javadocs</a>
-</li>
-<li>
-<a href="https://cwiki.apache.org/confluence/display/JMETER/Home">JMeter Wiki</a>
-</li>
-<li>
-<a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterFAQ">FAQ (Wiki)</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Tutorials</div>
-<ul>
-<li>
-<a href="../usermanual/jmeter_distributed_testing_step_by_step.html">Distributed Testing</a>
-</li>
-<li>
-<a href="../usermanual/jmeter_proxy_step_by_step.html">Recording Tests</a>
-</li>
-<li>
-<a href="../usermanual/junitsampler_tutorial.html">JUnit Sampler</a>
-</li>
-<li>
-<a href="../usermanual/jmeter_accesslog_sampler_step_by_step.html">Access Log Sampler</a>
-</li>
-<li>
-<a href="../usermanual/jmeter_tutorial.html">Extending JMeter</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Community</div>
-<ul>
-<li>
-<a href="../issues.html">Issue Tracking</a>
-</li>
-<li>
-<a href="https://www.apache.org/security/">Security</a>
-</li>
-<li>
-<a href="../mail.html">Mailing Lists</a>
-</li>
-<li>
-<a href="../svnindex.html">Source Repositories</a>
-</li>
-<li>
-<a href="../building.html">Building and Contributing</a>
-</li>
-<li>
-<a href="https://projects.apache.org/project.html?jmeter">Project info at Apache</a>
-</li>
-<li>
-<a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterCommitters">Contributors</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Foundation</div>
-<ul>
-<li>
-<a href="https://www.apache.org/">The Apache Software Foundation (ASF)</a>
-</li>
-<li>
-<a href="https://www.apache.org/foundation/getinvolved.html">Get Involved in the ASF</a>
-</li>
-<li>
-<a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a>
-</li>
-<li>
-<a href="https://www.apache.org/foundation/thanks.html">Thanks</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="main" id="content">
-<div class="social-media">
-<ul class="social-media-links">
-<li class="twitter">
-<a href="https://twitter.com/ApacheJMeter" title="Follow us on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
-</li>
-<li class="github">
-<a href="https://github.com/apache/jmeter" title="Fork us on github"><i class="fa fa-github" aria-hidden="true"></i>github</a>
-</li>
-</ul>
-</div>
-<ul class="pagelinks">
-<li>
-<a href="glossary.html">&lt; Prev</a>
-</li>
-<li>
-<a href="../index.html">Index</a>
-</li>
-<li>
-<a href="history_future.html">Next &gt;</a>
-</li>
-</ul>
-<div class="section">
-<h1 id="hints">24. Curl<a class="sectionlink" href="#hints" title="Link to here">&para;</a>
-</h1>
-
-<p>This method is to create http requests from curl command. If you want to know more about curl, please click the <a href="https://curl.haxx.se/">
+            <div>
+                <a href="https://jmeter.apache.org/"><img class="logo" src="../images/logo.svg" alt="Apache JMeter"></a>
+            </div>
+            <div class="banner">
+                <a href="https://www.apache.org/events/current-event.html"><img src="https://www.apache.org/events/current-event-234x60.png" alt="Current Apache event teaser"></a>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="nav">
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">About</div>
+                    <ul>
+                        <li>
+                            <a href="../index.html">Overview</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/licenses/">License</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Download</div>
+                    <ul>
+                        <li>
+                            <a href="../download_jmeter.cgi">Download Releases</a>
+                        </li>
+                        <li>
+                            <a href="../changes.html">Release Notes</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Documentation</div>
+                    <ul>
+                        <li>
+                            <a href="../usermanual/get-started.html">Get Started</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/index.html">User Manual</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/best-practices.html">Best Practices</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/component_reference.html">Component Reference</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/functions.html">Functions Reference</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/properties_reference.html">Properties Reference</a>
+                        </li>
+                        <li>
+                            <a href="../changes_history.html">Change History</a>
+                        </li>
+                        <li>
+                            <a href="../api/index.html">Javadocs</a>
+                        </li>
+                        <li>
+                            <a href="https://cwiki.apache.org/confluence/display/JMETER/Home">JMeter Wiki</a>
+                        </li>
+                        <li>
+                            <a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterFAQ">FAQ (Wiki)</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Tutorials</div>
+                    <ul>
+                        <li>
+                            <a href="../usermanual/jmeter_distributed_testing_step_by_step.html">Distributed Testing</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/jmeter_proxy_step_by_step.html">Recording Tests</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/junitsampler_tutorial.html">JUnit Sampler</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/jmeter_accesslog_sampler_step_by_step.html">Access Log Sampler</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/jmeter_tutorial.html">Extending JMeter</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Community</div>
+                    <ul>
+                        <li>
+                            <a href="../issues.html">Issue Tracking</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/security/">Security</a>
+                        </li>
+                        <li>
+                            <a href="../mail.html">Mailing Lists</a>
+                        </li>
+                        <li>
+                            <a href="../svnindex.html">Source Repositories</a>
+                        </li>
+                        <li>
+                            <a href="../building.html">Building and Contributing</a>
+                        </li>
+                        <li>
+                            <a href="https://projects.apache.org/project.html?jmeter">Project info at Apache</a>
+                        </li>
+                        <li>
+                            <a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterCommitters">Contributors</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Foundation</div>
+                    <ul>
+                        <li>
+                            <a href="https://www.apache.org/">The Apache Software Foundation (ASF)</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/foundation/getinvolved.html">Get Involved in the ASF</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/foundation/thanks.html">Thanks</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main" id="content">
+            <div class="social-media">
+                <ul class="social-media-links">
+                    <li class="twitter">
+                        <a href="https://twitter.com/ApacheJMeter" title="Follow us on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
+                    </li>
+                    <li class="github">
+                        <a href="https://github.com/apache/jmeter" title="Fork us on github"><i class="fa fa-github" aria-hidden="true"></i>github</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="pagelinks">
+                <li>
+                    <a href="glossary.html">&lt; Prev</a>
+                </li>
+                <li>
+                    <a href="../index.html">Index</a>
+                </li>
+                <li>
+                    <a href="history_future.html">Next &gt;</a>
+                </li>
+            </ul>
+            <div class="section">
+                <h1 id="hints">
+                    24. Curl<a class="sectionlink" href="#hints" title="Link to here">&para;</a>
+                </h1>
+                
+                <p>
+                    This method is to create http requests from curl command. If you want to know more about curl, please click the <a href="https://curl.haxx.se/">
 Curl document</a>.
-</p>
 
-<div class="subsection">
-<h2 id="enter_command">24.1 How to enter (a) command(s)<a class="sectionlink" href="#enter_command" title="Link to here">&para;</a>
-</h2>
-
-<p>
+                </p>
+                
+                <div class="subsection">
+                    <h2 id="enter_command">
+                        24.1 How to enter (a) command(s)<a class="sectionlink" href="#enter_command" title="Link to here">&para;</a>
+                    </h2>
+                    
+                    <p>
 Create a Test Plan From a cURL Command
 </p>
-
-<ol>
-  
-<li>To create an import from a cURL, open the <span class="code">Tools</span> menu and click <span class="code">Import from cURL</span>.
-    <figure>
-<a href="../images/screenshots/curl/choose_curl.png"><img src="../images/screenshots/curl/choose_curl.png" width="768" height="339" alt="Figure 1 - The menu where curl is located"></a>
-<figcaption>Figure 1 - The menu where curl is located</figcaption>
-</figure>
-  
-</li>
+                    
+                    <ol>
+                          
+                        <li>
+                            To create an import from a cURL, open the <span class="code">Tools</span> menu and click <span class="code">Import from cURL</span>.
     
-<li>There are two ways to enter the curl command line. Firstly, we can enter it manually. Secondly, we can import a file containing the curl command line.
+                            <figure>
+                                <a href="../images/screenshots/curl/choose_curl.png"><img src="../images/screenshots/curl/choose_curl.png" width="768" height="339" alt="Figure 1 - The menu where curl is located"></a>
+                                <figcaption>Figure 1 - The menu where curl is located</figcaption>
+                            </figure>
+                              
+                        </li>
+                            
+                        <li>
+                            There are two ways to enter the curl command line. Firstly, we can enter it manually. Secondly, we can import a file containing the curl command line.
     This tool supports input of multiple curl command lines at the same time.
-    <figure>
-<a href="../images/screenshots/curl/enter_command.png"><img src="../images/screenshots/curl/enter_command.png" width="767" height="443" alt="Figure 2.1 - Enter curl command in text panel"></a>
-<figcaption>Figure 2.1 - Enter curl command in text panel</figcaption>
-</figure>
     
-<figure>
-<a href="../images/screenshots/curl/enter_command_from_file.png"><img src="../images/screenshots/curl/enter_command_from_file.png" width="767" height="449" alt="Figure 2.2 - Enter curl command from file"></a>
-<figcaption>Figure 2.2 - Enter curl command from file</figcaption>
-</figure>
-  
-</li>
-  
-<li>Then, click <span class="code">Create Test Plan</span> button and a new HTTP Sample will be added to the Test Plan.
-    <figure>
-<a href="../images/screenshots/curl/result.png"><img src="../images/screenshots/curl/result.png" width="767" height="464" alt="Figure 3 - result of Test Plan"></a>
-<figcaption>Figure 3 - result of Test Plan</figcaption>
-</figure>
-  
-</li>
-
-</ol>
-
-</div>
-
-
-<div class="subsection">
-<h2 id="curl_options">24.2 Curl options supported<a class="sectionlink" href="#curl_options" title="Link to here">&para;</a>
-</h2>
-
-
-<dl>
-  
-<dt>
-<span class="code">-H</span>, <span class="code">--header &lt;header&gt;</span>
-</dt>
-  
-<dd>Extra header to use when getting a web page.</dd>
-  
-<dt>
-<span class="code">-X</span>, <span class="code">--request &lt;command&gt;</span>
-</dt>
-  
-<dd>Specifies a custom request method to use when communicating with the HTTP server.</dd>
-  
-<dt>
-<span class="code">--compressed</span>
-</dt>
-  
-<dd>Request a compressed response using one of the algorithms curl supports, and return the uncompressed document.</dd>
-  
-<dt>
-<span class="code">-A</span>, <span class="code">--user-agent &lt;agent string&gt;</span>
-</dt>
-  
-<dd>Specify the User-Agent string to send to the HTTP server.</dd>
-  
-<dt>
-<span class="code">-b</span>, <span class="code">--cookie &lt;name=data&gt;</span>
-</dt>
-  
-<dd>Pass the data to the HTTP server as a cookie.</dd>
-  
-<dt>
-<span class="code">-d</span> and friends</dt>
-  
-<dd>
-<p>Sending data via POST request</p>
+                            <figure>
+                                <a href="../images/screenshots/curl/enter_command.png"><img src="../images/screenshots/curl/enter_command.png" width="767" height="443" alt="Figure 2.1 - Enter curl command in text panel"></a>
+                                <figcaption>Figure 2.1 - Enter curl command in text panel</figcaption>
+                            </figure>
+                                
+                            <figure>
+                                <a href="../images/screenshots/curl/enter_command_from_file.png"><img src="../images/screenshots/curl/enter_command_from_file.png" width="767" height="449" alt="Figure 2.2 - Enter curl command from file"></a>
+                                <figcaption>Figure 2.2 - Enter curl command from file</figcaption>
+                            </figure>
+                              
+                        </li>
+                          
+                        <li>
+                            Then, click <span class="code">Create Test Plan</span> button and a new HTTP Sample will be added to the Test Plan.
     
-<p>Sends the specified data in a POST request to the HTTP server. If this option is used more than
+                            <figure>
+                                <a href="../images/screenshots/curl/result.png"><img src="../images/screenshots/curl/result.png" width="767" height="464" alt="Figure 3 - result of Test Plan"></a>
+                                <figcaption>Figure 3 - result of Test Plan</figcaption>
+                            </figure>
+                              
+                        </li>
+                        
+                    </ol>
+                    
+                </div>
+                
+                <div class="subsection">
+                    <h2 id="curl_options">
+                        24.2 Curl options supported<a class="sectionlink" href="#curl_options" title="Link to here">&para;</a>
+                    </h2>
+                    
+                    <dl>
+                          
+                        <dt>
+                            <span class="code">-H</span>, <span class="code">--header &lt;header&gt;</span>
+                        </dt>
+                          
+                        <dd>Extra header to use when getting a web page.</dd>
+                          
+                        <dt>
+                            <span class="code">-X</span>, <span class="code">--request &lt;command&gt;</span>
+                        </dt>
+                          
+                        <dd>Specifies a custom request method to use when communicating with the HTTP server.</dd>
+                          
+                        <dt>
+                            <span class="code">--compressed</span>
+                        </dt>
+                          
+                        <dd>Request a compressed response using one of the algorithms curl supports, and return the uncompressed document.</dd>
+                          
+                        <dt>
+                            <span class="code">-A</span>, <span class="code">--user-agent &lt;agent string&gt;</span>
+                        </dt>
+                          
+                        <dd>Specify the User-Agent string to send to the HTTP server.</dd>
+                          
+                        <dt>
+                            <span class="code">-b</span>, <span class="code">--cookie &lt;name=data&gt;</span>
+                        </dt>
+                          
+                        <dd>Pass the data to the HTTP server as a cookie.</dd>
+                          
+                        <dt>
+                            <span class="code">-d</span> and friends
+                        </dt>
+                          
+                        <dd>
+                            <p>Sending data via POST request</p>
+                                
+                            <p>
+                                Sends the specified data in a POST request to the HTTP server. If this option is used more than
     once on the same command line, the data pieces specified will be merged together with a
     separating '<span class="code">&amp;</span>' character. Thus, using '<span class="code">-d name=daniel -d skill=lousy</span>' would generate a POST
-    chunk that looks like '<span class="code">name=daniel&amp;skill=lousy</span>'.</p>
-    
-<dl>
-      
-<dt>
-<span class="code">-d</span>, <span class="code">--data &lt;data&gt;</span>, <span class="code">--data-ascii &lt;data&gt;</span>
-</dt>
-      
-<dd>use <span class="code">@</span> to upload a file</dd>
-      
-<dt>
-<span class="code">--data-raw &lt;data&gt;</span>gt;</dt>
-      
-<dd></dd>
-      
-<dt>
-<span class="code">--data-raw &lt;data&gt;</span>
-</dt>
-      
-<dd>This posts data exactly as specified with no extra processing whatsoever.
-        If you start the data with the character <span class="code">@,</span> the rest should be a filename.</dd>
-      
-<dt>
-<span class="code">--data-raw &lt;data&gt;</span>ta&gt;</dt>
-      
-<dd>This posts data, similar to the other <span class="code">--data</span> options with the exception that this performs
-        URL-encoding.</dd>
-      
-<dt>
-<span class="code">--data-raw &lt;data&gt;</span>
-</dt>
-      
-<dd>This posts data similarly to <span class="code">--data</span> but without the special interpretation
-        of the <span class="code">@</span> character.</dd>
-    
-</dl>
-  
-</dd>
-  
-<dt>
-<span class="code">-F</span> and friends</dt>
-  
-<dd>
-    
-<p>This lets curl emulate a filled-in form in which a user has pressed the submit button.</p>
-    
-<dl>
-      
-<dt>
-<span class="code">-F</span>, <span class="code">--form &lt;name=content&gt;</span>
-</dt>
-      
-<dd>use <span class="code">@</span> to upload a file</dd>
-      
-<dt>
-<span class="code">--form-string &lt;name=content&gt;</span>
-</dt>
-      
-<dd></dd>
-    
-</dl>
-  
-</dd>
-  
-<dt>
-<span class="code">-u</span>, --user &lt;user:password &gt;</dt>
-  
-<dd>Specify user and password to use for server authentication.</dd>
-  
-<dt>
-<span class="code">--basic</span>, <span class="code">--digest</span>
-</dt>
-  
-<dd>Tells curl to use HTTP authentication.</dd>
-  
-<dt>
-<span class="code">--cacert</span> and friends</dt>
-  
-<dd>
-    
-<p>Tells curl to use the specified client certificate file when getting a file with HTTPS</p>
-    
-<dl>
-      
-<dt>
-<span class="code">--cacert &lt;CA certificate&gt;</span>
-</dt>
-      
-<dt>
-<span class="code">--capath  &lt;CA certificate directory&gt;</span>
-</dt>
-      
-<dt>
-<span class="code">--ciphers &lt;list of ciphers&gt;</span>
-</dt>
-      
-<dt>
-<span class="code">--cert-status</span>
-</dt>
-      
-<dt>
-<span class="code">--cert-type &lt;type&gt;</span>
-</dt>
-    
-</dl>
-  
-</dd>
-  
-<dt>
-<span class="code">-G</span>, <span class="code">--get</span>
-</dt>
-  
-<dd>put the post data in the URL and use get to replace post.</dd>
-  
-<dt>
-<span class="code">--no-keepalive</span>
-</dt>
-  
-<dd>Disables the use of keepalive messages on the TCP connection.</dd>
-  
-<dt>
-<span class="code">-e</span>, <span class="code">--referer &lt;URL&gt;</span>
-</dt>
-  
-<dd>Sends the <em>Referer Page</em> information to the HTTP server.</dd>
-  
-<dt>
-<span class="code">-L</span>, <span class="code">--location</span>
-</dt>
-  
-<dd>If the server reports that the requested page has moved to a different location
+    chunk that looks like '<span class="code">name=daniel&amp;skill=lousy</span>'.
+                            </p>
+                                
+                            <dl>
+                                      
+                                <dt>
+                                    <span class="code">-d</span>, <span class="code">--data &lt;data&gt;</span>, <span class="code">--data-ascii &lt;data&gt;</span>
+                                </dt>
+                                      
+                                <dd>
+                                    use <span class="code">@</span> to upload a file
+                                </dd>
+                                      
+                                <dt>
+                                    <span class="code">--data-raw &lt;data&gt;</span>gt;
+                                </dt>
+                                      
+                                <dd></dd>
+                                      
+                                <dt>
+                                    <span class="code">--data-raw &lt;data&gt;</span>
+                                </dt>
+                                      
+                                <dd>
+                                    This posts data exactly as specified with no extra processing whatsoever.
+        If you start the data with the character <span class="code">@,</span> the rest should be a filename.
+                                </dd>
+                                      
+                                <dt>
+                                    <span class="code">--data-raw &lt;data&gt;</span>ta&gt;
+                                </dt>
+                                      
+                                <dd>
+                                    This posts data, similar to the other <span class="code">--data</span> options with the exception that this performs
+        URL-encoding.
+                                </dd>
+                                      
+                                <dt>
+                                    <span class="code">--data-raw &lt;data&gt;</span>
+                                </dt>
+                                      
+                                <dd>
+                                    This posts data similarly to <span class="code">--data</span> but without the special interpretation
+        of the <span class="code">@</span> character.
+                                </dd>
+                                    
+                            </dl>
+                              
+                        </dd>
+                          
+                        <dt>
+                            <span class="code">-F</span> and friends
+                        </dt>
+                          
+                        <dd>
+                                
+                            <p>This lets curl emulate a filled-in form in which a user has pressed the submit button.</p>
+                                
+                            <dl>
+                                      
+                                <dt>
+                                    <span class="code">-F</span>, <span class="code">--form &lt;name=content&gt;</span>
+                                </dt>
+                                      
+                                <dd>
+                                    use <span class="code">@</span> to upload a file
+                                </dd>
+                                      
+                                <dt>
+                                    <span class="code">--form-string &lt;name=content&gt;</span>
+                                </dt>
+                                      
+                                <dd></dd>
+                                    
+                            </dl>
+                              
+                        </dd>
+                          
+                        <dt>
+                            <span class="code">-u</span>, --user &lt;user:password &gt;
+                        </dt>
+                          
+                        <dd>Specify user and password to use for server authentication.</dd>
+                          
+                        <dt>
+                            <span class="code">--basic</span>, <span class="code">--digest</span>
+                        </dt>
+                          
+                        <dd>Tells curl to use HTTP authentication.</dd>
+                          
+                        <dt>
+                            <span class="code">--cacert</span> and friends
+                        </dt>
+                          
+                        <dd>
+                                
+                            <p>Tells curl to use the specified client certificate file when getting a file with HTTPS</p>
+                                
+                            <dl>
+                                      
+                                <dt>
+                                    <span class="code">--cacert &lt;CA certificate&gt;</span>
+                                </dt>
+                                      
+                                <dt>
+                                    <span class="code">--capath  &lt;CA certificate directory&gt;</span>
+                                </dt>
+                                      
+                                <dt>
+                                    <span class="code">--ciphers &lt;list of ciphers&gt;</span>
+                                </dt>
+                                      
+                                <dt>
+                                    <span class="code">--cert-status</span>
+                                </dt>
+                                      
+                                <dt>
+                                    <span class="code">--cert-type &lt;type&gt;</span>
+                                </dt>
+                                    
+                            </dl>
+                              
+                        </dd>
+                          
+                        <dt>
+                            <span class="code">-G</span>, <span class="code">--get</span>
+                        </dt>
+                          
+                        <dd>put the post data in the URL and use get to replace post.</dd>
+                          
+                        <dt>
+                            <span class="code">--no-keepalive</span>
+                        </dt>
+                          
+                        <dd>Disables the use of keepalive messages on the TCP connection.</dd>
+                          
+                        <dt>
+                            <span class="code">-e</span>, <span class="code">--referer &lt;URL&gt;</span>
+                        </dt>
+                          
+                        <dd>
+                            Sends the <em>Referer Page</em> information to the HTTP server.
+                        </dd>
+                          
+                        <dt>
+                            <span class="code">-L</span>, <span class="code">--location</span>
+                        </dt>
+                          
+                        <dd>If the server reports that the requested page has moved to a different location
     this option will make curl redo the request on the new place.</dd>
-  
-<dt>
-<span class="code">-i</span>, <span class="code">--include</span>
-</dt>
-  
-<dd>Include the HTTP-header in the output.</dd>
-  
-<dt>
-<span class="code">--connect-timeout &lt;seconds&gt;</span>
-</dt>
-  
-<dd>Maximum time in seconds that the connection to the server may take.</dd>
-  
-<dt>
-<span class="code">--keepalive-time &lt;seconds&gt;</span>
-</dt>
-  
-<dd>This option sets the time a connection needs to remain idle before sending keepalive probes
+                          
+                        <dt>
+                            <span class="code">-i</span>, <span class="code">--include</span>
+                        </dt>
+                          
+                        <dd>Include the HTTP-header in the output.</dd>
+                          
+                        <dt>
+                            <span class="code">--connect-timeout &lt;seconds&gt;</span>
+                        </dt>
+                          
+                        <dd>Maximum time in seconds that the connection to the server may take.</dd>
+                          
+                        <dt>
+                            <span class="code">--keepalive-time &lt;seconds&gt;</span>
+                        </dt>
+                          
+                        <dd>This option sets the time a connection needs to remain idle before sending keepalive probes
     and the time between individual keepalive probes.</dd>
-  
-<dt>
-<span class="code">-m</span>, <span class="code">--max-time  &lt;seconds&gt;</span>
-</dt>
-  
-<dd>Maximum time in seconds that you allow the whole operation to take.</dd>
-  
-<dt>
-<span class="code">-x</span>, <span class="code">--proxy &lt;[protocol://][user:password@]proxyhost[:port]&gt;</span>
-</dt>
-  
-<dd>Use the specified HTTP proxy. If the port number is not specified,
-    it is assumed at port <span class="code">1080</span>.</dd>
-  
-<dt>
-<span class="code">-U</span>, <span class="code">--proxy-user  &lt;user:password&gt;</span>
-</dt>
-  
-<dd>Specify user and password to use for proxy authentication.</dd>
-  
-<dt>
-<span class="code">-k</span>, <span class="code">--insecure</span>
-</dt>
-  
-<dd>This option explicitly allows curl to perform <em>insecure</em> SSL connections and transfers.</dd>
-  
-<dt>
-<span class="code">--raw</span>
-</dt>
-  
-<dd>When used, it disables all internal HTTP decoding of content or transfer encodings and instead makes them passed on unaltered,raw.</dd>
-  
-<dt>
-<span class="code">-I</span>, <span class="code">--head</span>
-</dt>
-  
-<dd>Fetch the HTTP-header only. HTTP-servers feature the method <span class="code">HEAD</span> which this uses to get nothing but the header of a document.</dd>
-  
-<dt>
-<span class="code">--interface &lt;name&gt;</span>
-</dt>
-  
-<dd>Perform an operation using a specified interface. You can enter interface name, IP address or host name.</dd>
-  
-<dt>
-<span class="code">--proxy-ntlm</span>/<span class="code">--proxy-negotiate</span>
-</dt>
-  
-<dd>Tells curl to use HTTP BASIC/NTLM/Digest authentication when communicating with the given proxy.</dd>
-  
-<dt>
-<span class="code">--dns-servers &lt;addresses&gt;</span>
-</dt>
-  
-<dd>Resolve host name over DOH.</dd>
-  
-<dt>
-<span class="code">--resolve &lt;host:port:address&gt;</span>
-</dt>
-  
-<dd>Provide a custom address for a specific host and port pair.</dd>
-  
-<dt>
-<span class="code">--limit-rate &lt;speed&gt;</span>
-</dt>
-  
-<dd>Specify the maximum transfer rate you want curl to use.</dd>
-  
-<dt>
-<span class="code">--max-redirs &lt;num&gt;</span>
-</dt>
-  
-<dd>Set maximum number of redirections which may be followed.</dd>
-  
-<dt>
-<span class="code">--noproxy &lt;no-proxy-list&gt;</span>
-</dt>
-  
-<dd>Comma-separated list of hosts which do not use a proxy, if one is specified.</dd>
-
-</dl>
-
-
-</div>
-
-
-<div class="subsection">
-<h2 id="warning">24.3 Warning<a class="sectionlink" href="#warning" title="Link to here">&para;</a>
-</h2>
-
-<p>
+                          
+                        <dt>
+                            <span class="code">-m</span>, <span class="code">--max-time  &lt;seconds&gt;</span>
+                        </dt>
+                          
+                        <dd>Maximum time in seconds that you allow the whole operation to take.</dd>
+                          
+                        <dt>
+                            <span class="code">-x</span>, <span class="code">--proxy &lt;[protocol://][user:password@]proxyhost[:port]&gt;</span>
+                        </dt>
+                          
+                        <dd>
+                            Use the specified HTTP proxy. If the port number is not specified,
+    it is assumed at port <span class="code">1080</span>.
+                        </dd>
+                          
+                        <dt>
+                            <span class="code">-U</span>, <span class="code">--proxy-user  &lt;user:password&gt;</span>
+                        </dt>
+                          
+                        <dd>Specify user and password to use for proxy authentication.</dd>
+                          
+                        <dt>
+                            <span class="code">-k</span>, <span class="code">--insecure</span>
+                        </dt>
+                          
+                        <dd>
+                            This option explicitly allows curl to perform <em>insecure</em> SSL connections and transfers.
+                        </dd>
+                          
+                        <dt>
+                            <span class="code">--raw</span>
+                        </dt>
+                          
+                        <dd>When used, it disables all internal HTTP decoding of content or transfer encodings and instead makes them passed on unaltered,raw.</dd>
+                          
+                        <dt>
+                            <span class="code">-I</span>, <span class="code">--head</span>
+                        </dt>
+                          
+                        <dd>
+                            Fetch the HTTP-header only. HTTP-servers feature the method <span class="code">HEAD</span> which this uses to get nothing but the header of a document.
+                        </dd>
+                          
+                        <dt>
+                            <span class="code">--interface &lt;name&gt;</span>
+                        </dt>
+                          
+                        <dd>Perform an operation using a specified interface. You can enter interface name, IP address or host name.</dd>
+                          
+                        <dt>
+                            <span class="code">--proxy-ntlm</span>/<span class="code">--proxy-negotiate</span>
+                        </dt>
+                          
+                        <dd>Tells curl to use HTTP BASIC/NTLM/Digest authentication when communicating with the given proxy.</dd>
+                          
+                        <dt>
+                            <span class="code">--dns-servers &lt;addresses&gt;</span>
+                        </dt>
+                          
+                        <dd>Resolve host name over DOH.</dd>
+                          
+                        <dt>
+                            <span class="code">--resolve &lt;host:port:address&gt;</span>
+                        </dt>
+                          
+                        <dd>Provide a custom address for a specific host and port pair.</dd>
+                          
+                        <dt>
+                            <span class="code">--limit-rate &lt;speed&gt;</span>
+                        </dt>
+                          
+                        <dd>Specify the maximum transfer rate you want curl to use.</dd>
+                          
+                        <dt>
+                            <span class="code">--max-redirs &lt;num&gt;</span>
+                        </dt>
+                          
+                        <dd>Set maximum number of redirections which may be followed.</dd>
+                          
+                        <dt>
+                            <span class="code">--noproxy &lt;no-proxy-list&gt;</span>
+                        </dt>
+                          
+                        <dd>Comma-separated list of hosts which do not use a proxy, if one is specified.</dd>
+                        
+                    </dl>
+                    
+                </div>
+                
+                <div class="subsection">
+                    <h2 id="warning">
+                        24.3 Warning<a class="sectionlink" href="#warning" title="Link to here">&para;</a>
+                    </h2>
+                    
+                    <p>
 When the command you entered is ignored or contains warning content, we will display warning in the comment section of HTTP Request.
 </p>
-
-<figure>
-<a href="../images/screenshots/curl/http_request_warning.png"><img src="../images/screenshots/curl/http_request_warning.png" width="768" height="464" alt="Figure 1 -Warning"></a>
-<figcaption>Figure 1 -Warning</figcaption>
-</figure>
-
-
-</div>
-
-<div class="subsection">
-<h2 id="example">24.4 Examples<a class="sectionlink" href="#example" title="Link to here">&para;</a>
-</h2>
-
-<p>
-<b>Use cookie</b>
-<pre class="source">curl -X POST  "https://example.invalid" -b 'username=Tom;password=123456'</pre>
-</p>
-
-<p>
-<b>Use data</b>
-<pre class="source">curl -X POST  "https://example.invalid" --data 'fname=a&amp;lname=b'</pre>
-</p>
-
-<p>
-<b>Use form</b>
-<pre class="source">curl -X POST  "https://example.invalid" -F 'lname=a'  -F 'fname=b' -F 'c=@C:\Test\test.txt'</pre>
-</p>
-
-<p>
-<b>Use proxy</b>
-<pre class="source">curl 'https://example.invalid/' -x 'https://aa:bb@proxy.invalid:8042'</pre>
-</p>
-
-<p>
-<b>Use authorization</b>
-<pre class="source">curl "https://example.invalid" -u 'user:passwd' --basic</pre>
-</p>
-
-<p>
-<b>Use DNS</b>
-<pre class="source">curl "https://example.invalid" --dns-servers '0.0.0.0,1.1.1.1'</pre>
-</p>
-
-</div>
-
-</div>
-<ul class="pagelinks">
-<li>
-<a href="glossary.html">&lt; Prev</a>
-</li>
-<li>
-<a href="../index.html">Index</a>
-</li>
-<li>
-<a href="history_future.html">Next &gt;</a>
-</li>
-</ul>
-<div class="share-links">
-      Share this page:
-      <ul>
-<li class="fb">
-<a data-social-url="https://facebook.com/sharer/sharer.php?u=" title="Share on facebook"><i class="fa fa-facebook" aria-hidden="true"></i>share</a>
-</li>
-<li class="twitter">
-<a data-social-url="https://twitter.com/intent/tweet?url=" title="Tweet on twitter"><i class="fa fa-twitter" aria-hidden="true"></i>tweet</a>
-</li>
-</ul>
-</div>
-<a href="#top" id="topButton">Go to top</a>
-</div>
-<div class="footer">
-<div class="copyright">
+                    
+                    <figure>
+                        <a href="../images/screenshots/curl/http_request_warning.png"><img src="../images/screenshots/curl/http_request_warning.png" width="768" height="464" alt="Figure 1 -Warning"></a>
+                        <figcaption>Figure 1 -Warning</figcaption>
+                    </figure>
+                    
+                </div>
+                
+                <div class="subsection">
+                    <h2 id="example">
+                        24.4 Examples<a class="sectionlink" href="#example" title="Link to here">&para;</a>
+                    </h2>
+                    
+                    <p>
+                        <b>Use cookie</b>
+                        <pre class="source">curl -X POST  "https://example.invalid" -b 'username=Tom;password=123456'</pre>
+                    </p>
+                    
+                    <p>
+                        <b>Use data</b>
+                        <pre class="source">curl -X POST  "https://example.invalid" --data 'fname=a&amp;lname=b'</pre>
+                    </p>
+                    
+                    <p>
+                        <b>Use form</b>
+                        <pre class="source">curl -X POST  "https://example.invalid" -F 'lname=a'  -F 'fname=b' -F 'c=@C:\Test\test.txt'</pre>
+                    </p>
+                    
+                    <p>
+                        <b>Use proxy</b>
+                        <pre class="source">curl 'https://example.invalid/' -x 'https://aa:bb@proxy.invalid:8042'</pre>
+                    </p>
+                    
+                    <p>
+                        <b>Use authorization</b>
+                        <pre class="source">curl "https://example.invalid" -u 'user:passwd' --basic</pre>
+                    </p>
+                    
+                    <p>
+                        <b>Use DNS</b>
+                        <pre class="source">curl "https://example.invalid" --dns-servers '0.0.0.0,1.1.1.1'</pre>
+                    </p>
+                    
+                </div>
+                
+            </div>
+            <ul class="pagelinks">
+                <li>
+                    <a href="glossary.html">&lt; Prev</a>
+                </li>
+                <li>
+                    <a href="../index.html">Index</a>
+                </li>
+                <li>
+                    <a href="history_future.html">Next &gt;</a>
+                </li>
+            </ul>
+            <div class="share-links">
+                      Share this page:
+      
+                <ul>
+                    <li class="fb">
+                        <a data-social-url="https://facebook.com/sharer/sharer.php?u=" title="Share on facebook"><i class="fa fa-facebook" aria-hidden="true"></i>share</a>
+                    </li>
+                    <li class="twitter">
+                        <a data-social-url="https://twitter.com/intent/tweet?url=" title="Tweet on twitter"><i class="fa fa-twitter" aria-hidden="true"></i>tweet</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="#top" id="topButton">Go to top</a>
+        </div>
+        <div class="footer">
+            <div class="copyright">
             Copyright &copy;
             1999 &ndash;
             2022
             , Apache Software Foundation
           </div>
-<div class="trademarks">Apache, Apache JMeter, JMeter, the Apache
+            <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache
             feather, and the Apache JMeter logo are
             trademarks of the
             Apache Software Foundation.
           </div>
-</div>
-<script>(function(){
+        </div>
+        <script>(function(){
             "use strict";
             // enable 'go to top' button functionality
             document.addEventListener('scroll', function() {
@@ -640,5 +675,5 @@ When the command you entered is ignored or contains warning content, we will dis
                 }
             }
         })();</script>
-</body>
+    </body>
 </html>
