@@ -206,6 +206,699 @@ Current changes are detailed in <a href="changes.html">Changes</a>.
 
 
 
+<h1>Version 5.6</h1>
+
+<p>
+Summary
+</p>
+
+<ul>
+
+<li>
+<a href="#New and Noteworthy">New and Noteworthy</a>
+</li>
+
+<li>
+<a href="#Incompatible changes">Incompatible changes</a>
+</li>
+
+<li>
+<a href="#Bug fixes">Bug fixes</a>
+</li>
+
+<li>
+<a href="#Improvements">Improvements</a>
+</li>
+
+<li>
+<a href="#Non-functional changes">Non-functional changes</a>
+</li>
+
+<li>
+<a href="#Known problems and workarounds">Known problems and workarounds</a>
+</li>
+
+<li>
+<a href="#Thanks">Thanks</a>
+</li>
+
+
+</ul>
+
+
+<h2 class="ch_section" id="New and Noteworthy">New and Noteworthy</h2>
+
+
+<h2 class="ch_section" id="Improvements">Improvements</h2>
+
+
+<h3>Thread Groups</h3>
+
+<ul>
+
+<li>
+<a href="https://github.com/apache/jmeter/issues/5682">
+      Issue#5682</a>, <a href="https://github.com/apache/jmeter/pull/717">
+      PR#717</a> &ndash;  Open Model Thread Group: avoid skipping rows from CSV Data Set Config</li>
+  
+<li>Support custom thread group implementations in "Add think time" and "Save as test fragment" actions</li>
+  
+<li>Open Model Thread Group: interrupt pending HTTP requests and other <span class="code">Interruptible</span> test elements on test stop</li>
+
+</ul>
+
+
+<h3>HTTP Samplers and Test Script Recorder</h3>
+
+<ul>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5911">
+      PR#5911</a> &ndash;  Use Caffeine for caching HTTP headers instead of commons-collections4 LRUMap</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5947">
+      PR#5947</a> &ndash;  Fetch resources referenced in <span class="code">&lt;link "rel"="preload"...&gt;</span> elements</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5869">
+      PR#5869</a> &ndash;  Allow more templates to format sampler names in the recorder: <span class="code">#{url}</span>, <span class="code">#{method}</span>, <span class="code">#{scheme}</span>, <span class="code">#{host}</span>, <span class="code">#{port}</span>
+</li>
+
+</ul>
+
+
+<h3>Other samplers</h3>
+
+<ul>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5909">
+      PR#5909</a> &ndash;  Use Caffeine for caching compiled scripts in JSR223 samplers instead of commons-collections4 LRUMap</li>
+
+</ul>
+
+
+<h3>General</h3>
+
+<ul>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5792">
+      PR#5792</a> &ndash; Add KeyStroke for start_no_timers (Start no pauses: CRTL+SHIFT+n)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5899">
+      PR#5899</a> &ndash; Speed up CPU-bound tests by skipping <span class="code">recoverRunningVersion</span> for elements that are shared between threads (the ones that implement <span class="code">NoThreadClone</span>)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5914">
+      PR#5914</a> &ndash; Use <span class="code">Locale.ROOT</span> instead of default locale for <span class="code">toUpperCase</span>, and <span class="code">toLowerCase</span> to avoid surprises with dotless I in <span class="code">tr_TR</span> locale</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5885">
+      PR#5885</a> &ndash; Use Java's <span class="code">ServiceLoader</span> for loading plugins instead of classpath scanning. It enables faster startup</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5788">
+      PR#5788</a> &ndash; <span class="code">FunctionProperty</span> no longer caches the value.
+    Previously it cached the values based on iteration number only which triggered wrong results on concurrent executions.
+    The previous behavior can be temporary restored with <span class="code">function.cache.per.iteration</span> property.
+  </li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5920">
+      PR#5920</a> &ndash; Improve HTTP HeaderManager performance when it contains many headers: skip reinitialization on each iteration</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5920">
+      PR#5920</a> &ndash; Use AtomicInteger and AtomicLong instead of synchronized primitives for JMeterContextService#numberOfThreads</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5920">
+      PR#5920</a> &ndash; Cache bean properties in <span class="code">TestBeanHelper</span> and avoid synchronization, so test plans with <span class="code">TestBean</span>-based elements is faster</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5920">
+      PR#5920</a> &ndash; Improve computation when many threads actively produce samplers by using <span class="code">LongAdder</span> and similar concurrency classes to avoid synchronization in <span class="code">Calculator</span>
+</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5920">
+      PR#5920</a> &ndash; Reduce synchronization contention on <span class="code">AbstractTestElement</span> that are shared between threads (the ones that implement <span class="code">NoThreadClone</span>)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5934">
+      PR#5934</a> &ndash; Added caching for date formatters for <span class="code">__time</span> function</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/710">
+      PR#710</a>, <a href="https://github.com/apache/jmeter/issues/5666">
+      Issue#5666</a> &ndash; Added Shortcut key event for Reset search: <span class="code">ctrl + alt + F</span>, <span class="code">cmd + alt + F</span>
+</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5959">
+      PR#5959</a> &ndash; <span class="code">TestElement</span> has been migrated to Kotlin, so nullable types are annotated better</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5944">
+      PR#5944</a> &ndash; Add PI for declaring <span class="code">TestElement</span> schemas so element properties are easier to access in code (see <span class="code">TestElementSchema</span>, <span class="code">TestElement#getSchema()</span>, <span class="code">TestElement#getProps()</span>)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5944">
+      PR#5944</a> &ndash; Enable usage of <span class="code">${...}</span> expressions for checkbox controls (see context menus for checkboxes, however, the individual components should be adapted individually)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/678">
+      PR#678</a> &ndash; Experimental Kotlin and Java DSL for programmatic test plan generation (see <a href="usermanual/build-programmatic-test-plan.html#treebuilder_kotlin_dsl">Creating a plan with Kotlin DSL</a>)</li>
+
+</ul>
+
+
+<h2 class="ch_section" id="Non-functional changes">Non-functional changes</h2>
+
+<ul>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/725">
+      PR#725</a> &ndash; Add Chinese Simplified Translation for Open Model Thread Group</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5710">
+      PR#5710</a> &ndash; Add GitHub Issue templates</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5910">
+      PR#5910</a> &ndash; Use Caffeine for caching customizers in TestBeanGUI instead of commons-collections4 LRUMap</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5713">
+      PR#5713</a>, <a href="https://github.com/apache/jmeter/pull/5931">
+      PR#5931</a> &ndash; Update Spock to 2.3-groovy-3.0 (from 2.1-groovy-3.0)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/issues/5718">
+      Issue#5718</a> &ndash; Update Apache commons-text to 1.10.0 (from 1.9)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5731">
+      PR#5731</a> &ndash; Update docs for <span class="code">changeCase</span> function. <span class="code">UPPER</span> is the default</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5924">
+      PR#5924</a> &ndash; Update Apache commons-io to 2.12.0 (from 2.11.0)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5921">
+      PR#5921</a> &ndash; Update Jackson Core to 2.15.1 (from 2.13.3)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5921">
+      PR#5921</a> &ndash; Update Jackson Databind to 2.15.1 (from 2.13.3)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5725">
+      PR#5725</a> &ndash; Update Tika Parser to 1.28.5 (from 1.28.3)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5725">
+      PR#5725</a> &ndash; Update JSoup to 1.16.1 (from 1.15.1)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5725">
+      PR#5725</a> &ndash; Update Apache commons-net to 3.9.0 (from 3.8.0)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5725">
+      PR#5725</a> &ndash; Update XStream to 1.4.20 (from 1.4.19)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5763">
+      PR#5763</a>, <a href="https://github.com/apache/jmeter/pull/5814">
+      PR#5814</a> &ndash; Updated Gradle to 8.1.1 (from 7.2)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5854">
+      PR#5854</a> &ndash; Added Apache Httpclient5 5.1.3</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5833">
+      PR#5833</a> &ndash; Update Apache Freemarker to 2.3.32 (from 2.3.31)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5830">
+      PR#5830</a> &ndash; Update Apache Groovy to 3.0.17 (from 3.0.11)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5862">
+      PR#5862</a> &ndash; Update Apache Httpclient to 4.5.14 (from 4.5.13)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5880">
+      PR#5880</a> &ndash; Update Apache Xalan to 2.7.3 (from 2.7.2)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5854">
+      PR#5854</a> &ndash; Update Saxon-HE to 11.5 (from 11.5)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5840">
+      PR#5840</a>, <a href="https://github.com/apache/jmeter/pull/5930">
+      PR#5930</a> &ndash; Update accessors-smart to 2.4.11 (from 2.4.8)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5837">
+      PR#5837</a> &ndash; Update asm to 9.5 (from 9.3)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5840">
+      PR#5840</a>, <a href="https://github.com/apache/jmeter/pull/5930">
+      PR#5930</a> &ndash; Update json-smart to 2.4.11 (from 2.4.8)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5814">
+      PR#5814</a> &ndash; Update kotlin-stdlib to 1.8.21 (from 1.6.21)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5889">
+      PR#5889</a>, <a href="https://github.com/apache/jmeter/pull/5918">
+      PR#5918</a>, <a href="https://github.com/apache/jmeter/pull/5814">
+      PR#5814</a> &ndash; Update kotlinx-coroutines-core to 1.8.21 (from 1.6.21)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5889">
+      PR#5889</a>, <a href="https://github.com/apache/jmeter/pull/5918">
+      PR#5918</a>, <a href="https://github.com/apache/jmeter/pull/5814">
+      PR#5814</a> &ndash; Update kotlinx-coroutines-swing to 1.8.21 (from 1.6.21)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5907">
+      PR#5907</a> &ndash; Update lets-plot-batik to 3.2.0 (from 2.1.1)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5907">
+      PR#5907</a> &ndash; Update lets-plot-jvm to 4.3.0 (from 3.1.1)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5859">
+      PR#5859</a> &ndash; Update log4j-1.2-api to 2.20.0 (from 2.17.2)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5859">
+      PR#5859</a> &ndash; Update log4j-api to 2.20.0 (from 2.17.2)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5859">
+      PR#5859</a> &ndash; Update log4j-core to 2.20.0 (from 2.17.2)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5859">
+      PR#5859</a> &ndash; Update log4j-slf4j-impl to 2.20.0 (from 2.17.2)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5861">
+      PR#5861</a> &ndash; Update neo4j-java-driver to 4.4.11 (from 4.4.6)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5853">
+      PR#5853</a> &ndash; Update org.jetbrains:annotations to 24.0.1 (from 23.0.0)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5868">
+      PR#5868</a>, <a href="https://github.com/apache/jmeter/pull/5886">
+      PR#5886</a> &ndash; Update ph-commons to 10.2.4 (from 10.1.6)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5861">
+      PR#5861</a> &ndash; Update reactive-streams to 1.0.4 (from 1.0.3)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5847">
+      PR#5847</a> &ndash; Update rsyntaxtextarea to 3.3.3 (from 3.2.0)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5839">
+      PR#5839</a> &ndash; Update svgSalamander to 1.1.4 (from 1.1.2.4)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5852">
+      PR#5852</a> &ndash; Update xmlgraphics-commons to 2.8 (from 2.7)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5854">
+      PR#5854</a> &ndash; Update xmlresolver to 4.6.4 (from 4.2.0)</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/693">
+      PR#693</a> &ndash; Added randomized test GitHub Actions matrix for better coverage of locales and time zones</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5960">
+      PR#5960</a> &ndash; Add OpenJDK JMH for creating microbenchmarks in JMeter code</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/issues/5961">
+      Issue#5961</a> &ndash; Deprecate TestElement.threadName as it is not related to TestElement</li>
+
+</ul>
+
+ 
+
+
+<h2 class="ch_section" id="Bug fixes">Bug fixes</h2>
+
+
+<h3>HTTP Samplers and Test Script Recorder</h3>
+
+<ul>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5901">
+      PR#5901</a> &ndash; Fix NumberFormatException when counter is empty or not a digit on Proxy Settings panel</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5987">
+      PR#5987</a>, <a href="https://github.com/apache/jmeter/issues/4546">
+      Issue#4546</a> &ndash; Encode unicode characters in filenames when sending files in HTTP Sampler</li>
+
+</ul>
+
+
+<h3>Other Samplers</h3>
+
+<ul>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5736">
+      PR#5736</a>, <a href="https://github.com/apache/jmeter/issues/5733">
+      Issue#5733</a> &ndash; Allow <span class="code">SampleResult#setEndTime</span> be set in <span class="code">JSR223Sampler</span>
+</li>
+
+</ul>
+
+
+<h3>Listeners</h3>
+
+<ul>
+  
+<li>
+<a href="https://github.com/apache/jmeter/issues/5740">
+      Issue#5740</a>, <a href="https://github.com/apache/jmeter/pull/5741">
+      PR#5741</a> &ndash; Fix Aggregated Graph component to cope with empty names of samplers</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/issues/5807">
+      Issue#5807</a> &ndash; Fix an <span class="code">ArrayIndexOutOfBoundsException</span> on HTTP parameters line on special case when key and value are empty,
+    i.e.: "<span class="code">k1=v1&amp;=&amp;k2=v2</span>"</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/issues/5654">
+      Issue#5654</a>, <a href="https://github.com/apache/jmeter/pull/5785">
+      PR#5785</a> &ndash;  Fix <span class="code">InfluxDBRawBackendListenerClient</span> missing data. Allow InfluxDB to insert multiple entries with the
+    same <span class="code">timestamp</span> but with different <span class="code">threadName</span>. Contributed by Victor Peralta (vperaltac at github)</li>
+
+</ul>
+
+
+<h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
+
+<ul>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5717">
+      PR#5717</a> &ndash; Add jsonpath string to JSON Path Assertion error message so the error is easier to understand</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/723">
+      PR#723</a> &ndash; Use correct number format on JSON Path Assertion. Contributed by andreaslind01 (andreaslind01 at gmail.com)</li>
+
+</ul>
+
+
+<h3>Report / Dashboard</h3>
+
+<ul>
+  
+<li>
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=66140">
+      Bug
+      66140</a> &ndash; Guess the delimiter of the CSV source, when configured one seems wrong.
+    This is in line with the behaviour of CSVSaveService.</li>
+
+</ul>
+
+
+<h3>Documentation</h3>
+
+<ul>
+  
+<li>
+<a href="https://github.com/apache/jmeter/issues/5694">
+      Issue#5694</a> &ndash; Document changed formatter for <a href="./usermanual/functions.html#__time">__time()</a>. A warning will be logged,
+  if the code <span class="code">u</span> is found in the format string, as the meaning for that code has changed from <em>day-of-week</em>
+  to <em>year</em>.</li>
+
+</ul>
+
+
+<h3>General</h3>
+
+<ul>
+  
+<li>
+<a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=66157">
+      Bug
+      66157</a>, <a href="https://github.com/apache/jmeter/pull/719">
+      PR#719</a> &ndash; Correct theme for darklaf on rsyntaxtextarea</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/issues/5872">
+      Issue#5872</a>, <a href="https://github.com/apache/jmeter/pull/5874">
+      PR#5874</a> &ndash; Trim name in Argument objects.</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/693">
+      PR#693</a> &ndash; Avoid wrong results when <span class="code">Object.hashCode()</span> happen to collide. Use <span class="code">IdentityHashMap</span> instead of <span class="code">HashMap</span> when key is <span class="code">TestElement</span>
+</li>
+  
+<li>Refresh UI when dragging JMeter window from one monitor to another, so rich syntax text areas are properly editable after window movement</li>
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5984">
+      PR#5984</a> &ndash; <span class="code">AbstractTestElement#clone</span> might produce non-identical clones if element constructor adds a non-default property value</li>
+
+</ul>
+
+ 
+
+
+<h2 class="ch_section" id="Thanks">Thanks</h2>
+
+<p>We thank all contributors mentioned in bug and improvement sections above:
+</p>
+
+<ul>
+  
+<li>Alex Schwartz, <a href="https://github.com/alexsch01">@alexsch01</a>
+</li>
+  
+<li>Andreas Lind, <a href="https://github.com/andreaslind01">@andreaslind01</a>
+</li>
+  
+<li>Arnout Engelen, <a href="https://github.com/raboof">@raboof</a>
+</li>
+  
+<li>Clay Johnson, <a href="https://github.com/clayburn">@clayburn</a>
+</li>
+  
+<li>David Getzlaff, <a href="https://github.com/dgetzlaf">@dgetzlaf</a>
+</li>
+  
+<li>Kai Lehmann, <a href="https://github.com/lehmannk">@lehmannk</a>
+</li>
+  
+<li>kaola89, <a href="https://github.com/kaola89">@kaola89</a>
+</li>
+  
+<li>Matt Tansley, <a href="https://github.com/matthewt-assurity">@matthewt-assurity</a>
+</li>
+  
+<li>Mohamed Ibrahim, <a href="https://github.com/rollno748">@rollno748</a>
+</li>
+  
+<li>Ori Marko, <a href="https://github.com/orimarko">@orimarko</a>
+</li>
+  
+<li>PJ Fanning, <a href="https://github.com/pjfanning">@pjfanning</a>
+</li>
+  
+<li>Sandra Thieme, <a href="https://github.com/sandra-thieme">@sandra-thieme</a>
+</li>
+  
+<li>Stefan Seide, <a href="https://github.com/sseide">@sseide</a>
+</li>
+  
+<li>Victor Peralta, <a href="https://github.com/vperaltac">@vperaltac</a>
+</li>
+  
+<li>Vincent DABURON, <a href="https://github.com/vdaburon">@vdaburon</a>
+</li>
+
+</ul>
+
+<p>We also thank bug reporters who helped us improve JMeter.</p>
+
+<ul>
+
+</ul>
+
+<p>
+Apologies if we have omitted anyone else.
+</p>
+ 
+
+
+<h2 class="ch_section" id="Known problems and workarounds">Known problems and workarounds</h2>
+
+<ul>
+  
+<li>
+<a href="https://github.com/apache/jmeter/issues/6008">
+      Issue#6008</a>,  ThreadGroups are running endlessly in non-gui mode (fixed in 5.6.1, see <a href="https://github.com/apache/jmeter/pull/6011">
+      PR#6011</a>)</li>
+
+  
+<li>
+<a href="https://github.com/apache/jmeter/pull/5987">
+      PR#5987</a> &ndash; HTTP sampler sends filenames with percent-encoded UTF-8, however it is not aligned with the browsers. The workaround is to refrain non-ASCII filenames</li>
+
+  
+<li>
+<a href="https://github.com/apache/jmeter/issues/6004">
+      Issue#6004</a>, Java Request sampler cannot be enabled again after disabling in UI (fixed in 5.6.1, <a href="https://github.com/apache/jmeter/pull/6012">
+      PR#6012</a>)</li>
+
+
+<li>The Once Only controller behaves correctly under a Thread Group or Loop Controller,
+but otherwise its behaviour is not consistent (or clearly specified).</li>
+
+
+<li>
+The numbers that appear to the left of the green box are the number of active threads / total number of threads,
+the total number of threads only applies to a locally run test, otherwise it will show <span class="code">0</span> (see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=55510">
+      Bug
+      55510</a>).
+</li>
+
+
+<li>
+Note that under some windows systems you may have this WARNING:
+<pre class="source">
+java.util.prefs.WindowsPreferences
+WARNING: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0
+x80000002. Windows RegCreateKeyEx(&hellip;) returned error code 5.
+</pre>
+The fix is to run JMeter as Administrator, it will create the registry key for you, then you can restart JMeter as a normal user and you won't have the warning anymore.
+</li>
+
+
+<li>
+You may encounter the following error:
+<pre class="source">java.security.cert.CertificateException: Certificates does not conform to algorithm constraints</pre>
+ if you run a HTTPS request on a web site with a SSL certificate (itself or one of SSL certificates in its chain of trust) with a signature
+ algorithm using MD2 (like <span class="code">md2WithRSAEncryption</span>) or with a SSL certificate with a size lower than 1024 bits.
+This error is related to increased security in Java 8+.
+<br>
+To allow you to perform your HTTPS request, you can downgrade the security of your Java installation by editing
+the Java <span class="code">jdk.certpath.disabledAlgorithms</span> property. Remove the MD2 value or the constraint on size, depending on your case.
+<br>
+This property is in this file:
+<pre class="source">JAVA_HOME/jre/lib/security/java.security</pre>
+See  <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=56357">
+      Bug
+      56357</a> for details.
+</li>
+
+
+<li>
+Under Mac OSX Aggregate Graph will show wrong values due to mirroring effect on numbers.
+This is due to a known Java bug, see Bug <a href="https://bugs.openjdk.java.net/browse/JDK-8065373">JDK-8065373</a>
+The fix is to use JDK8_u45 or later.
+</li>
+
+
+<li>
+View Results Tree may fail to display some HTML code under HTML renderer, see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=54586">
+      Bug
+      54586</a>.
+This is due to a known Java bug which fails to parse "<span class="code">px</span>" units in row/col attributes.
+See Bug <a href="https://bugs.openjdk.java.net/browse/JDK-8031109">JDK-8031109</a>
+The fix is to use JDK9 b65 or later.
+</li>
+
+
+<li>
+JTable selection with keyboard (<span class="keycombo"><span class="keysym">SHIFT</span>&nbsp;+&nbsp;<span class="keysym">up/down</span></span>) is totally unusable with Java 7 on Mac OSX.
+This is due to a known Java bug <a href="https://bugs.openjdk.java.net/browse/JDK-8025126">JDK-8025126</a>
+The fix is to use JDK 8 b132 or later.
+</li>
+
+
+<li>
+Since Java 11 the JavaScript implementation <a href="https://openjdk.java.net/jeps/335">Nashorn has been deprecated</a>.
+Java will emit the following deprecation warnings, if you are using JavaScript based on Nashorn.
+<pre class="source">
+Warning: Nashorn engine is planned to be removed from a future JDK release
+</pre>
+To silence these warnings, add <span class="code">-Dnashorn.args=--no-deprecation-warning</span> to your Java arguments.
+That can be achieved by setting the enviroment variable <span class="code">JVM_ARGS</span>
+
+<pre class="source">
+export JVM_ARGS="-Dnashorn.args=--no-deprecation-warning"
+</pre>
+
+</li>
+
+
+<li>
+With Java 15 the JavaScript implementation <a href="https://openjdk.java.net/jeps/372">Nashorn has been removed</a>. To add back a JSR-223 compatible JavaScript engine you have two options:
+  <dl>
+    
+<dt>Use Mozilla Rhino</dt>
+    
+<dd>Copy <a href="https://github.com/mozilla/rhino/releases/download/Rhino1_7_14_Release/rhino-engine-1.7.14.jar">rhino-engine-1.7.14.jar</a> into <span class="code">$JMETER_HOME/lib/ext</span>.</dd>
+    
+<dt>Use OpenJDK Nashorn</dt>
+    
+<dd>
+      The OpenJDK Nashorn implementation comes as a module. To use it, you will have to download it and add it to the module path. A hacky way to download the version 15.0 (or later) and its dependencies and set the module path is outlined below:
+      <pre class="source">
+mkdir lib/modules
+pushd lib/modules
+wget https://repo1.maven.org/maven2/org/openjdk/nashorn/nashorn-core/15.3/nashorn-core-15.3.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm/9.5/asm-9.5.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-commons/9.5/asm-commons-9.5.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-util/9.5/asm-util-9.5.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-tree/9.5/asm-tree-9.5.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-analysis/9.5/asm-analysis-9.5.jar
+popd
+export JVM_ARGS="--module-path $PWD/lib/modules"
+./bin/jmeter
+      </pre>
+    
+</dd>
+  
+</dl>
+
+</li>
+
+
+</ul>
+
+
+
+
 <h1>Version 5.5</h1>
 
 <p>
