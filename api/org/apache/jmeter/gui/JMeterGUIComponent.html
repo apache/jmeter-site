@@ -118,67 +118,77 @@ extends <a href="ClearGui.html" title="interface in org.apache.jmeter.gui">Clear
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#canBeAdded()" class="member-name-link">canBeAdded</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#assignDefaultValues(org.apache.jmeter.testelement.TestElement)" class="member-name-link">assignDefaultValues</a><wbr>(org.apache.jmeter.testelement.TestElement&nbsp;element)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Configures default values for element after its creation.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#canBeAdded()" class="member-name-link">canBeAdded</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns whether a component of this type can be added to the test plan.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#configure(org.apache.jmeter.testelement.TestElement)" class="member-name-link">configure</a><wbr>(org.apache.jmeter.testelement.TestElement&nbsp;element)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#configure(org.apache.jmeter.testelement.TestElement)" class="member-name-link">configure</a><wbr>(org.apache.jmeter.testelement.TestElement&nbsp;element)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">The GUI must be able to extract the data from the TestElement and update
  all GUI fields to represent those data.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JPopupMenu.html" title="class or interface in javax.swing" class="external-link">JPopupMenu</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createPopupMenu()" class="member-name-link">createPopupMenu</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JPopupMenu.html" title="class or interface in javax.swing" class="external-link">JPopupMenu</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createPopupMenu()" class="member-name-link">createPopupMenu</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">When a user right-clicks on the component in the test tree, or selects
  the edit menu when the component is selected, the component will be asked
  to return a JPopupMenu that provides all the options available to the
  user from this component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>org.apache.jmeter.testelement.TestElement</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createTestElement()" class="member-name-link">createTestElement</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default org.apache.jmeter.testelement.TestElement</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#createTestElement()" class="member-name-link">createTestElement</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">JMeter test components are separated into a model and a GUI
  representation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDocAnchor()" class="member-name-link">getDocAnchor</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDocAnchor()" class="member-name-link">getDocAnchor</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Get the component's document anchor name.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLabelResource()" class="member-name-link">getLabelResource</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLabelResource()" class="member-name-link">getLabelResource</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Get the component's resource name, which getStaticLabel uses to derive
  the component's label in the local language.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getMenuCategories()" class="member-name-link">getMenuCategories</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getMenuCategories()" class="member-name-link">getMenuCategories</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">This is the list of add menu categories this gui component will be
  available under.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets the name of the JMeter GUI component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getStaticLabel()" class="member-name-link">getStaticLabel</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getStaticLabel()" class="member-name-link">getStaticLabel</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Get the component's label.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isEnabled()" class="member-name-link">isEnabled</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isEnabled()" class="member-name-link">isEnabled</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Test GUI elements can be disabled, in which case they do not become part
  of the test when run.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#modifyTestElement(org.apache.jmeter.testelement.TestElement)" class="member-name-link">modifyTestElement</a><wbr>(org.apache.jmeter.testelement.TestElement&nbsp;element)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default org.apache.jmeter.testelement.TestElement</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#makeTestElement()" class="member-name-link">makeTestElement</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Creates the test element represented by the GUI component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#modifyTestElement(org.apache.jmeter.testelement.TestElement)" class="member-name-link">modifyTestElement</a><wbr>(org.apache.jmeter.testelement.TestElement&nbsp;element)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">GUI components are responsible for populating TestElements they create
  with the data currently held in the GUI components.</div>
 </div>
@@ -268,9 +278,9 @@ extends <a href="ClearGui.html" title="interface in org.apache.jmeter.gui">Clear
  the component's label in the local language. The resource name is fixed,
  and does not vary with the selected language.
 
- Normally this method should be overridden in preference to overriding
+ <p>Normally this method should be overridden in preference to overriding
  getStaticLabel(). However where the resource name is not available or required,
- getStaticLabel() may be overridden instead.</div>
+ getStaticLabel() may be overridden instead.</p></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the resource name</dd>
@@ -292,15 +302,28 @@ extends <a href="ClearGui.html" title="interface in org.apache.jmeter.gui">Clear
 <li>
 <section class="detail" id="createTestElement()">
 <h3>createTestElement</h3>
-<div class="member-signature"><span class="return-type">org.apache.jmeter.testelement.TestElement</span>&nbsp;<span class="element-name">createTestElement</span>()</div>
+<div class="member-signature"><span class="annotations">@API(status=EXPERIMENTAL,
+     since="5.6.3")
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type">org.apache.jmeter.testelement.TestElement</span>&nbsp;<span class="element-name">createTestElement</span>()</div>
 <div class="block">JMeter test components are separated into a model and a GUI
  representation. The model holds the data and the GUI displays it. The GUI
  class is responsible for knowing how to create and initialize with data
  the model class that it knows how to display, and this method is called
  when new test elements are created.
 
+ <p>Since 5.6.3, the default implementation is as follows, and subclasses should override
+ <a href="#makeTestElement()"><code>makeTestElement()</code></a>
+ <pre>
+ public TestElement createTestElement() {
+     TestElement element = makeTestElement();
+     assignDefaultValues(element);
+     return el;
+ }
+ </pre>
+
  <p>
- The canonical implementation looks like this:
+ Before 5.6.3 the canonical implementation was as follows, however, it is recommended to
+ avoid overriding <a href="#createTestElement()"><code>createTestElement()</code></a> and override <a href="#makeTestElement()"><code>makeTestElement()</code></a> instead.
  <pre>
  public TestElement createTestElement() {
      TestElementXYZ el = new TestElementXYZ();
@@ -315,9 +338,40 @@ extends <a href="ClearGui.html" title="interface in org.apache.jmeter.gui">Clear
 </section>
 </li>
 <li>
+<section class="detail" id="makeTestElement()">
+<h3>makeTestElement</h3>
+<div class="member-signature"><span class="annotations">@API(status=EXPERIMENTAL,
+     since="5.6.3")
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type">org.apache.jmeter.testelement.TestElement</span>&nbsp;<span class="element-name">makeTestElement</span>()</div>
+<div class="block">Creates the test element represented by the GUI component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new <code>TestElement</code></dd>
+<dt>Since:</dt>
+<dd>5.6.3</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="assignDefaultValues(org.apache.jmeter.testelement.TestElement)">
+<h3>assignDefaultValues</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">assignDefaultValues</span><wbr><span class="parameters">(org.apache.jmeter.testelement.TestElement&nbsp;element)</span></div>
+<div class="block">Configures default values for element after its creation.
+ Plugin authors should call this once in their <a href="#createTestElement()"><code>createTestElement()</code></a> implementation.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>element</code> - test element to configure</dd>
+<dt>Since:</dt>
+<dd>5.6.3</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="modifyTestElement(org.apache.jmeter.testelement.TestElement)">
 <h3>modifyTestElement</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">modifyTestElement</span><wbr><span class="parameters">(org.apache.jmeter.testelement.TestElement&nbsp;element)</span></div>
+<div class="member-signature"><span class="annotations">@API(status=EXPERIMENTAL,
+     since="5.6.3")
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modifyTestElement</span><wbr><span class="parameters">(org.apache.jmeter.testelement.TestElement&nbsp;element)</span></div>
 <div class="block">GUI components are responsible for populating TestElements they create
  with the data currently held in the GUI components. This method should
  overwrite whatever data is currently in the TestElement as it is called
@@ -325,19 +379,26 @@ extends <a href="ClearGui.html" title="interface in org.apache.jmeter.gui">Clear
  information.
 
  <p>
+ If you override <a href="AbstractJMeterGuiComponent.html" title="class in org.apache.jmeter.gui"><code>AbstractJMeterGuiComponent</code></a>, you might want using <a href="AbstractJMeterGuiComponent.html#bindingGroup"><code>AbstractJMeterGuiComponent.bindingGroup</code></a>
+ instead of overriding <code>modifyTestElement</code>.
+
+ <p>
  The canonical implementation looks like this:
  <pre>
+ &#064;Override
  public void modifyTestElement(TestElement element) {
-     element.clear(); // many implementations use this
-     configureTestElement(element);
+     super.modifyTestElement(element); // clear the element and assign basic fields like name, gui class, test class
      // Using the element setters (preferred):
+     // If the field is empty, you probably want to remove the property instead of storing an empty string
+     // See <a href="https://github.com/apache/jmeter/pull/6199">Streamline binding of UI elements to TestElement properties</a>
+     // for more details
      TestElementXYZ xyz = (TestElementXYZ) element;
-     xyz.setState(guiState.getText());
-     xyz.setCode(guiCode.getText());
+     xyz.setState(StringUtils.defaultIfEmpty(guiState.getText(), null));
+     xyz.setCode(StringUtils.defaultIfEmpty(guiCode.getText(), null));
      ... other GUI fields ...
      // or directly (do not use unless there is no setter for the field):
-     element.setProperty(TestElementXYZ.STATE, guiState.getText())
-     element.setProperty(TestElementXYZ.CODE, guiCode.getText())
+     element.setProperty(TestElementXYZ.STATE, StringUtils.defaultIfEmpty(guiState.getText(), null))
+     element.setProperty(TestElementXYZ.CODE, StringUtils.defaultIfEmpty(guiCode.getText(), null))
      ... other GUI fields ...
  }
  </pre></div>
@@ -460,7 +521,7 @@ extends <a href="ClearGui.html" title="interface in org.apache.jmeter.gui">Clear
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small>Copyright &copy; 1998-2023 Apache Software Foundation. All Rights Reserved.</small></p>
+<p class="legal-copy"><small>Copyright &copy; 1998-2024 Apache Software Foundation. All Rights Reserved.</small></p>
 </footer>
 </div>
 </div>

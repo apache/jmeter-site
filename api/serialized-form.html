@@ -2271,7 +2271,7 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>functionalMode</h5>
 <pre>org.apache.jmeter.gui.JBooleanPropertyEditor functionalMode</pre>
-<div class="block">A checkbox allowing the user to specify whether or not JMeter should do
+<div class="block">A checkbox allowing the user to specify whether JMeter should do
  functional testing.</div>
 </li>
 <li class="block-list">
@@ -2354,12 +2354,12 @@ loadScripts(document, 'script');</script>
 <ul class="block-list">
 <li class="block-list">
 <h5>generateParentSample</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JCheckBox.html" title="class or interface in javax.swing" class="external-link">JCheckBox</a> generateParentSample</pre>
+<pre>org.apache.jmeter.gui.JBooleanPropertyEditor generateParentSample</pre>
 <div class="block">If selected, then generate parent sample, otherwise as per original controller</div>
 </li>
 <li class="block-list">
 <h5>includeTimers</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JCheckBox.html" title="class or interface in javax.swing" class="external-link">JCheckBox</a> includeTimers</pre>
+<pre>org.apache.jmeter.gui.JBooleanPropertyEditor includeTimers</pre>
 <div class="block">if selected, add duration of timers to total runtime</div>
 </li>
 </ul>
@@ -3144,6 +3144,12 @@ loadScripts(document, 'script');</script>
 <section class="detail">
 <h4>Serialized Fields</h4>
 <ul class="block-list">
+<li class="block-list">
+<h5>bindingGroup</h5>
+<pre>org.apache.jmeter.gui.BindingGroup bindingGroup</pre>
+<div class="block">Stores a collection of property editors, so GuiCompoenent can have default implementations that
+ update the UI fields based on <code>TestElement</code> properties and vice versa.</div>
+</li>
 <li class="block-list">
 <h5>commentField</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JTextArea.html" title="class or interface in javax.swing" class="external-link">JTextArea</a> commentField</pre>
@@ -5042,7 +5048,7 @@ loadScripts(document, 'script');</script>
 <ul class="block-list">
 <li class="block-list">
 <h5>concurrentDwn</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JCheckBox.html" title="class or interface in javax.swing" class="external-link">JCheckBox</a> concurrentDwn</pre>
+<pre>org.apache.jmeter.gui.JBooleanPropertyEditor concurrentDwn</pre>
 </li>
 <li class="block-list">
 <h5>concurrentPool</h5>
@@ -5090,7 +5096,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li class="block-list">
 <h5>retrieveEmbeddedResources</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JCheckBox.html" title="class or interface in javax.swing" class="external-link">JCheckBox</a> retrieveEmbeddedResources</pre>
+<pre>org.apache.jmeter.gui.JBooleanPropertyEditor retrieveEmbeddedResources</pre>
 </li>
 <li class="block-list">
 <h5>sourceIpAddr</h5>
@@ -5106,7 +5112,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li class="block-list">
 <h5>useMD5</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JCheckBox.html" title="class or interface in javax.swing" class="external-link">JCheckBox</a> useMD5</pre>
+<pre>org.apache.jmeter.gui.JBooleanPropertyEditor useMD5</pre>
 </li>
 </ul>
 </section>
@@ -5213,6 +5219,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>autoRedirects</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JCheckBox.html" title="class or interface in javax.swing" class="external-link">JCheckBox</a> autoRedirects</pre>
+</li>
+<li class="block-list">
+<h5>bindingGroup</h5>
+<pre>org.apache.jmeter.gui.BindingGroup bindingGroup</pre>
 </li>
 <li class="block-list">
 <h5>contentEncoding</h5>
@@ -5543,7 +5553,7 @@ loadScripts(document, 'script');</script>
 <ul class="block-list">
 <li class="block-list">
 <h5>concurrentDwn</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JCheckBox.html" title="class or interface in javax.swing" class="external-link">JCheckBox</a> concurrentDwn</pre>
+<pre>org.apache.jmeter.gui.JBooleanPropertyEditor concurrentDwn</pre>
 </li>
 <li class="block-list">
 <h5>concurrentPool</h5>
@@ -5595,7 +5605,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li class="block-list">
 <h5>retrieveEmbeddedResources</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JCheckBox.html" title="class or interface in javax.swing" class="external-link">JCheckBox</a> retrieveEmbeddedResources</pre>
+<pre>org.apache.jmeter.gui.JBooleanPropertyEditor retrieveEmbeddedResources</pre>
 </li>
 <li class="block-list">
 <h5>sourceIpAddr</h5>
@@ -5611,7 +5621,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li class="block-list">
 <h5>useMD5</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JCheckBox.html" title="class or interface in javax.swing" class="external-link">JCheckBox</a> useMD5</pre>
+<pre>org.apache.jmeter.gui.JBooleanPropertyEditor useMD5</pre>
 </li>
 </ul>
 </section>
@@ -11319,7 +11329,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li class="block-list">
 <h5>scheduler</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JCheckBox.html" title="class or interface in javax.swing" class="external-link">JCheckBox</a> scheduler</pre>
+<pre>org.apache.jmeter.gui.JBooleanPropertyEditor scheduler</pre>
 </li>
 <li class="block-list">
 <h5>showDelayedStart</h5>
@@ -11395,19 +11405,6 @@ loadScripts(document, 'script');</script>
 <dt>serialVersionUID:</dt>
 <dd>240L</dd>
 </dl>
-<ul class="block-list">
-<li>
-<section class="detail">
-<h4>Serialized Fields</h4>
-<ul class="block-list">
-<li class="block-list">
-<h5>delay</h5>
-<pre>long delay</pre>
-</li>
-</ul>
-</section>
-</li>
-</ul>
 </section>
 </li>
 <li>
@@ -11646,10 +11643,6 @@ loadScripts(document, 'script');</script>
 <h5>randomSeed</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a> randomSeed</pre>
 <div class="block">This enables to reproduce exactly the same sequence of delays by reusing the same seed.</div>
-</li>
-<li class="block-list">
-<h5>testStarted</h5>
-<pre>long testStarted</pre>
 </li>
 <li class="block-list">
 <h5>throughput</h5>
@@ -13667,8 +13660,16 @@ loadScripts(document, 'script');</script>
 <pre>org.apache.jorphan.gui.JEditableCheckBox.Configuration configuration</pre>
 </li>
 <li class="block-list">
+<h5>oldValue</h5>
+<pre>org.apache.jorphan.gui.JEditableCheckBox.Value oldValue</pre>
+</li>
+<li class="block-list">
 <h5>textFieldLabel</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JLabel.html" title="class or interface in javax.swing" class="external-link">JLabel</a> textFieldLabel</pre>
+</li>
+<li class="block-list">
+<h5>useExpressionAction</h5>
+<pre>useExpressionAction$1 useExpressionAction</pre>
 </li>
 </ul>
 </section>
@@ -14197,7 +14198,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small>Copyright &copy; 1998-2023 Apache Software Foundation. All Rights Reserved.</small></p>
+<p class="legal-copy"><small>Copyright &copy; 1998-2024 Apache Software Foundation. All Rights Reserved.</small></p>
 </footer>
 </div>
 </div>

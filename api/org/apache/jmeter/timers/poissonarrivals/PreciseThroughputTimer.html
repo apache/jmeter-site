@@ -80,12 +80,12 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></code>, <code><a href="../../gui/Searchable.html" title="interface in org.apache.jmeter.gui">Searchable</a></code>, <code><a href="../../testbeans/TestBean.html" title="interface in org.apache.jmeter.testbeans">TestBean</a></code>, <code>org.apache.jmeter.testelement.TestElement</code>, <code><a href="../../testelement/TestStateListener.html" title="interface in org.apache.jmeter.testelement">TestStateListener</a></code>, <code><a href="../Timer.html" title="interface in org.apache.jmeter.timers">Timer</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></code>, <code><a href="../../gui/Searchable.html" title="interface in org.apache.jmeter.gui">Searchable</a></code>, <code><a href="../../testbeans/TestBean.html" title="interface in org.apache.jmeter.testbeans">TestBean</a></code>, <code>org.apache.jmeter.testelement.TestElement</code>, <code><a href="../Timer.html" title="interface in org.apache.jmeter.timers">Timer</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">PreciseThroughputTimer</span>
 <span class="extends-implements">extends <a href="../../testelement/AbstractTestElement.html" title="class in org.apache.jmeter.testelement">AbstractTestElement</a>
-implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a>, <a href="../Timer.html" title="interface in org.apache.jmeter.timers">Timer</a>, <a href="../../testelement/TestStateListener.html" title="interface in org.apache.jmeter.testelement">TestStateListener</a>, <a href="../../testbeans/TestBean.html" title="interface in org.apache.jmeter.testbeans">TestBean</a></span></div>
+implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a>, <a href="../Timer.html" title="interface in org.apache.jmeter.timers">Timer</a>, <a href="../../testbeans/TestBean.html" title="interface in org.apache.jmeter.testbeans">TestBean</a></span></div>
 <div class="block">This timer generates Poisson arrivals with constant throughput.
  On top of that, it tries to maintain the exact amount of arrivals for a given timeframe (<code>throughputPeriod</code>).</div>
 <dl class="notes">
@@ -214,30 +214,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setThroughputPeriod(int)" class="member-name-link">setThroughputPeriod</a><wbr>(int&nbsp;throughputPeriod)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#testEnded()" class="member-name-link">testEnded</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">
- Called once for all threads after the end of a test.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#testEnded(java.lang.String)" class="member-name-link">testEnded</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">
- Called once for all threads after the end of a test.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#testStarted()" class="member-name-link">testStarted</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">
- Called just before the start of the test from the main engine thread.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#testStarted(java.lang.String)" class="member-name-link">testStarted</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;host)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">
- Called just before the start of the test from the main engine thread.</div>
-</div>
 </div>
 </div>
 </div>
@@ -287,128 +263,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <dd><code>clone</code>&nbsp;in interface&nbsp;<code>org.apache.jmeter.testelement.TestElement</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="../../testelement/AbstractTestElement.html#clone()">clone</a></code>&nbsp;in class&nbsp;<code><a href="../../testelement/AbstractTestElement.html" title="class in org.apache.jmeter.testelement">AbstractTestElement</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="testStarted()">
-<h3>testStarted</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">testStarted</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../testelement/TestStateListener.html#testStarted()">TestStateListener</a></code></span></div>
-<div class="block"><p>
- Called just before the start of the test from the main engine thread.
-
- This is before the test elements are cloned.
-
- Note that not all the test
- variables will have been set up at this point.
- </p>
-
- <p>
- <b>
- N.B. testStarted() and testEnded() are called from different threads.
- </b>
- </p></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../testelement/TestStateListener.html#testStarted()">testStarted</a></code>&nbsp;in interface&nbsp;<code><a href="../../testelement/TestStateListener.html" title="interface in org.apache.jmeter.testelement">TestStateListener</a></code></dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="../../engine/StandardJMeterEngine.html#run()"><code>StandardJMeterEngine.run()</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="testStarted(java.lang.String)">
-<h3>testStarted</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">testStarted</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;host)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../testelement/TestStateListener.html#testStarted(java.lang.String)">TestStateListener</a></code></span></div>
-<div class="block"><p>
- Called just before the start of the test from the main engine thread.
-
- This is before the test elements are cloned.
-
- Note that not all the test
- variables will have been set up at this point.
- </p>
-
- <p>
- <b>
- N.B. testStarted() and testEnded() are called from different threads.
- </b>
- </p></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../testelement/TestStateListener.html#testStarted(java.lang.String)">testStarted</a></code>&nbsp;in interface&nbsp;<code><a href="../../testelement/TestStateListener.html" title="interface in org.apache.jmeter.testelement">TestStateListener</a></code></dd>
-<dt>Parameters:</dt>
-<dd><code>host</code> - name of host</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="../../engine/StandardJMeterEngine.html#run()"><code>StandardJMeterEngine.run()</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="testEnded()">
-<h3>testEnded</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">testEnded</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../testelement/TestStateListener.html#testEnded()">TestStateListener</a></code></span></div>
-<div class="block"><p>
- Called once for all threads after the end of a test.
-
- This will use the same element instances as at the start of the test.
- </p>
-
- <p>
- <b>
- N.B. testStarted() and testEnded() are called from different threads.
- </b>
- </p></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../testelement/TestStateListener.html#testEnded()">testEnded</a></code>&nbsp;in interface&nbsp;<code><a href="../../testelement/TestStateListener.html" title="interface in org.apache.jmeter.testelement">TestStateListener</a></code></dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="../../engine/StandardJMeterEngine.html#stopTest()"><code>StandardJMeterEngine.stopTest()</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="testEnded(java.lang.String)">
-<h3>testEnded</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">testEnded</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../testelement/TestStateListener.html#testEnded(java.lang.String)">TestStateListener</a></code></span></div>
-<div class="block"><p>
- Called once for all threads after the end of a test.
-
- This will use the same element instances as at the start of the test.
- </p>
-
- <p>
- <b>
- N.B. testStarted() and testEnded() are called from different threads.
- </b>
- </p></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../testelement/TestStateListener.html#testEnded(java.lang.String)">testEnded</a></code>&nbsp;in interface&nbsp;<code><a href="../../testelement/TestStateListener.html" title="interface in org.apache.jmeter.testelement">TestStateListener</a></code></dd>
-<dt>Parameters:</dt>
-<dd><code>s</code> - name of host</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="../../engine/StandardJMeterEngine.html#stopTest()"><code>StandardJMeterEngine.stopTest()</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
@@ -564,7 +418,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small>Copyright &copy; 1998-2023 Apache Software Foundation. All Rights Reserved.</small></p>
+<p class="legal-copy"><small>Copyright &copy; 1998-2024 Apache Software Foundation. All Rights Reserved.</small></p>
 </footer>
 </div>
 </div>

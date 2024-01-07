@@ -1,227 +1,233 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="en">
-<head>
-<META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
-<title>Apache JMeter
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+        <title>Apache JMeter
           -
           User's Manual: Building a Test Plan Programmatically</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Merriweather:400normal" rel="stylesheet" type="text/css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="../css/new-style.css">
-<link rel="apple-touch-icon-precomposed" href="../images/apple-touch-icon.png">
-<link rel="icon" href="../images/favicon.png">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="../images/mstile-144x144.png">
-<meta name="theme-color" content="#ffffff">
-</head>
-<body role="document">
-<a href="#content" class="hidden">Main content</a>
-<div class="header">
-<!--
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400normal" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/new-style.css">
+        <link rel="apple-touch-icon-precomposed" href="../images/apple-touch-icon.png">
+        <link rel="icon" href="../images/favicon.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="../images/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body role="document">
+        <a href="#content" class="hidden">Main content</a>
+        <div class="header">
+            <!--
             APACHE LOGO
           -->
-<div>
-<a href="https://www.apache.org"><img title="Apache Software Foundation" class="asf-logo logo" src="../images/asf-logo.svg" alt="Logo ASF"></a>
-</div>
-<!--
+            <div>
+                <a href="https://www.apache.org"><img title="Apache Software Foundation" class="asf-logo logo" src="../images/asf-logo.svg" alt="Logo ASF"></a>
+            </div>
+            <!--
               PROJECT LOGO
             -->
-<div>
-<a href="https://jmeter.apache.org/"><img class="logo" src="../images/logo.svg" alt="Apache JMeter"></a>
-</div>
-<div class="banner">
-<a href="https://www.apache.org/events/current-event.html"><img src="https://www.apache.org/events/current-event-234x60.png" alt="Current Apache event teaser"></a>
-<div class="clear"></div>
-</div>
-</div>
-<div class="nav">
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">About</div>
-<ul>
-<li>
-<a href="../index.html">Overview</a>
-</li>
-<li>
-<a href="https://www.apache.org/licenses/">License</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Download</div>
-<ul>
-<li>
-<a href="../download_jmeter.cgi">Download Releases</a>
-</li>
-<li>
-<a href="../changes.html">Release Notes</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Documentation</div>
-<ul>
-<li>
-<a href="../usermanual/get-started.html">Get Started</a>
-</li>
-<li>
-<a href="../usermanual/index.html">User Manual</a>
-</li>
-<li>
-<a href="../usermanual/best-practices.html">Best Practices</a>
-</li>
-<li>
-<a href="../usermanual/component_reference.html">Component Reference</a>
-</li>
-<li>
-<a href="../usermanual/functions.html">Functions Reference</a>
-</li>
-<li>
-<a href="../usermanual/properties_reference.html">Properties Reference</a>
-</li>
-<li>
-<a href="../changes_history.html">Change History</a>
-</li>
-<li>
-<a href="../api/index.html">Javadocs</a>
-</li>
-<li>
-<a href="https://cwiki.apache.org/confluence/display/JMETER/Home">JMeter Wiki</a>
-</li>
-<li>
-<a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterFAQ">FAQ (Wiki)</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Tutorials</div>
-<ul>
-<li>
-<a href="../usermanual/jmeter_distributed_testing_step_by_step.html">Distributed Testing</a>
-</li>
-<li>
-<a href="../usermanual/jmeter_proxy_step_by_step.html">Recording Tests</a>
-</li>
-<li>
-<a href="../usermanual/junitsampler_tutorial.html">JUnit Sampler</a>
-</li>
-<li>
-<a href="../usermanual/jmeter_accesslog_sampler_step_by_step.html">Access Log Sampler</a>
-</li>
-<li>
-<a href="../usermanual/jmeter_tutorial.html">Extending JMeter</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Community</div>
-<ul>
-<li>
-<a href="../issues.html">Issue Tracking</a>
-</li>
-<li>
-<a href="../security.html">Security</a>
-</li>
-<li>
-<a href="../mail.html">Mailing Lists</a>
-</li>
-<li>
-<a href="../svnindex.html">Source Repositories</a>
-</li>
-<li>
-<a href="../building.html">Building and Contributing</a>
-</li>
-<li>
-<a href="https://projects.apache.org/project.html?jmeter">Project info at Apache</a>
-</li>
-<li>
-<a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterCommitters">Contributors</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Foundation</div>
-<ul>
-<li>
-<a href="https://www.apache.org/">The Apache Software Foundation (ASF)</a>
-</li>
-<li>
-<a href="https://www.apache.org/foundation/getinvolved.html">Get Involved in the ASF</a>
-</li>
-<li>
-<a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy Policy</a>
-</li>
-<li>
-<a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a>
-</li>
-<li>
-<a href="https://www.apache.org/foundation/thanks.html">Thanks</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="main" id="content">
-<div class="social-media">
-<ul class="social-media-links">
-<li class="twitter">
-<a href="https://twitter.com/ApacheJMeter" title="Follow us on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
-</li>
-<li class="github">
-<a href="https://github.com/apache/jmeter" title="Fork us on github"><i class="fa fa-github" aria-hidden="true"></i>github</a>
-</li>
-</ul>
-</div>
-<ul class="pagelinks">
-<li>
-<a href="build-jms-topic-test-plan.html">&lt; Prev</a>
-</li>
-<li>
-<a href="../index.html">Index</a>
-</li>
-<li>
-<a href="listeners.html">Next &gt;</a>
-</li>
-</ul>
-<div class="section">
-<h1 id="building">Building a Test Plan Programmatically<a class="sectionlink" href="#building" title="Link to here">&para;</a>
-</h1>
-      
-<div class="clear"></div>
-<div class="note">
+            <div>
+                <a href="https://jmeter.apache.org/"><img class="logo" src="../images/logo.svg" alt="Apache JMeter"></a>
+            </div>
+            <div class="banner">
+                <a href="https://www.apache.org/events/current-event.html"><img src="https://www.apache.org/events/current-event-234x60.png" alt="Current Apache event teaser"></a>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="nav">
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">About</div>
+                    <ul>
+                        <li>
+                            <a href="../index.html">Overview</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/licenses/">License</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Download</div>
+                    <ul>
+                        <li>
+                            <a href="../download_jmeter.cgi">Download Releases</a>
+                        </li>
+                        <li>
+                            <a href="../changes.html">Release Notes</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Documentation</div>
+                    <ul>
+                        <li>
+                            <a href="../usermanual/get-started.html">Get Started</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/index.html">User Manual</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/best-practices.html">Best Practices</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/component_reference.html">Component Reference</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/functions.html">Functions Reference</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/properties_reference.html">Properties Reference</a>
+                        </li>
+                        <li>
+                            <a href="../changes_history.html">Change History</a>
+                        </li>
+                        <li>
+                            <a href="../api/index.html">Javadocs</a>
+                        </li>
+                        <li>
+                            <a href="https://cwiki.apache.org/confluence/display/JMETER/Home">JMeter Wiki</a>
+                        </li>
+                        <li>
+                            <a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterFAQ">FAQ (Wiki)</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Tutorials</div>
+                    <ul>
+                        <li>
+                            <a href="../usermanual/jmeter_distributed_testing_step_by_step.html">Distributed Testing</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/jmeter_proxy_step_by_step.html">Recording Tests</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/junitsampler_tutorial.html">JUnit Sampler</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/jmeter_accesslog_sampler_step_by_step.html">Access Log Sampler</a>
+                        </li>
+                        <li>
+                            <a href="../usermanual/jmeter_tutorial.html">Extending JMeter</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Community</div>
+                    <ul>
+                        <li>
+                            <a href="../issues.html">Issue Tracking</a>
+                        </li>
+                        <li>
+                            <a href="../security.html">Security</a>
+                        </li>
+                        <li>
+                            <a href="../mail.html">Mailing Lists</a>
+                        </li>
+                        <li>
+                            <a href="../svnindex.html">Source Repositories</a>
+                        </li>
+                        <li>
+                            <a href="../building.html">Building and Contributing</a>
+                        </li>
+                        <li>
+                            <a href="https://projects.apache.org/project.html?jmeter">Project info at Apache</a>
+                        </li>
+                        <li>
+                            <a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterCommitters">Contributors</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Foundation</div>
+                    <ul>
+                        <li>
+                            <a href="https://www.apache.org/">The Apache Software Foundation (ASF)</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/foundation/getinvolved.html">Get Involved in the ASF</a>
+                        </li>
+                        <li>
+                            <a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/foundation/thanks.html">Thanks</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main" id="content">
+            <div class="social-media">
+                <ul class="social-media-links">
+                    <li class="twitter">
+                        <a href="https://twitter.com/ApacheJMeter" title="Follow us on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
+                    </li>
+                    <li class="github">
+                        <a href="https://github.com/apache/jmeter" title="Fork us on github"><i class="fa fa-github" aria-hidden="true"></i>github</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="pagelinks">
+                <li>
+                    <a href="build-jms-topic-test-plan.html">&lt; Prev</a>
+                </li>
+                <li>
+                    <a href="../index.html">Index</a>
+                </li>
+                <li>
+                    <a href="listeners.html">Next &gt;</a>
+                </li>
+            </ul>
+            <div class="section">
+                <h1 id="building">
+                    Building a Test Plan Programmatically<a class="sectionlink" href="#building" title="Link to here">&para;</a>
+                </h1>
+                      
+                <div class="clear"></div>
+                <div class="note">
         JMeter 5.6 brings experimental classes and methods to build test plans programmatically, so please feel free to provide your feedback.
       </div>
-<div class="clear"></div>
-      
-<p>In this section, you will learn how to create a <a href="build-test-plan.html">Test Plan</a> with JMeter APIs.</p>
-
-      
-<p>The Test Plan is a collection of elements arranged in a tree-like manner. However, in JMeter APIs, the elements do not form a tree.
+                <div class="clear"></div>
+                      
+                <p>
+                    In this section, you will learn how to create a <a href="build-test-plan.html">Test Plan</a> with JMeter APIs.
+                </p>
+                      
+                <p>
+                    The Test Plan is a collection of elements arranged in a tree-like manner. However, in JMeter APIs, the elements do not form a tree.
         Parent-child relationships are stored in a separate structure: <span class="code">ListedHashTree</span>.
-      </p>
-    
-</div>
-<div class="section">
-<h1 id="low_level_api">Creating a plan with low-level APIs<a class="sectionlink" href="#low_level_api" title="Link to here">&para;</a>
-</h1>
       
-<p>Let us create <span class="code">Test Plan =&gt; Thread Group =&gt; Debug Sampler</span> plan</p>
-
-      
-<p>
-        
-<pre class="source">
+                </p>
+                    
+            </div>
+            <div class="section">
+                <h1 id="low_level_api">
+                    Creating a plan with low-level APIs<a class="sectionlink" href="#low_level_api" title="Link to here">&para;</a>
+                </h1>
+                      
+                <p>
+                    Let us create <span class="code">Test Plan =&gt; Thread Group =&gt; Debug Sampler</span> plan
+                </p>
+                      
+                <p>
+                            
+                    <pre class="source">
 ListedHashTree root = new ListedHashTree(); // (1)
 TestPlan testPlan = new TestPlan();
 ListedHashTree testPlanSubtree = root.add(testPlan); // (2)
@@ -230,45 +236,52 @@ threadGroup.setName("Search Order Thread Group");
 ListedHashTree threadGroupSubtree = testPlanSubtree.add(threadGroup); // (3)
 DebugSampler debugSampler = new DebugSampler();
 threadGroupSubtree.add(debugSampler);</pre>
+                            
+                    <ul>
+                                  
+                        <li>
+                            Firstly, we create the tree at <span class="code">(1)</span>
+                        </li>
+                                  
+                        <li>
+                            Then we create elements, and add them to the tree in <span class="code">(2)</span>
+                        </li>
+                                  
+                        <li>
+                            Note how adding element returns the subtree, so we add <span class="code">threadGroup</span> under <span class="code">testPlan</span> in <span class="code">(2)</span>
+                        </li>
+                                
+                    </ul>
+                            
+                    <div class="clear"></div>
+                    <div class="note">
+                                  Don't confuse <span class="code">ListedHashTree</span> with <span class="code">HashTree</span>. <span class="code">HashTree</span> does not honour element order, so the generated elements might shuffle unexpectedly.
         
-<ul>
-          
-<li>Firstly, we create the tree at <span class="code">(1)</span>
-</li>
-          
-<li>Then we create elements, and add them to the tree in <span class="code">(2)</span>
-</li>
-          
-<li>Note how adding element returns the subtree, so we add <span class="code">threadGroup</span> under <span class="code">testPlan</span> in <span class="code">(2)</span>
-</li>
-        
-</ul>
-        
-<div class="clear"></div>
-<div class="note">
-          Don't confuse <span class="code">ListedHashTree</span> with <span class="code">HashTree</span>. <span class="code">HashTree</span> does not honour element order, so the generated elements might shuffle unexpectedly.
-        </div>
-<div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                          
+                </p>
+                    
+            </div>
+            <div class="section">
+                <h1 id="generating_code">
+                    Generating code from UI<a class="sectionlink" href="#generating_code" title="Link to here">&para;</a>
+                </h1>
+                      
+                <p>
+                    To aid with creating code, JMeter implements <span class="code">Copy Code</span> context action, so you could
+      generate code for any element in the plan. It would generate code for the element and its children.
+                </p>
+                      
+                <figure>
+                    <a href="../images/screenshots/copy_code/http_sampler_copy_code.png"><img src="../images/screenshots/copy_code/http_sampler_copy_code.png" width="380" height="258" alt="Copy Code context action"></a>
+                    <figcaption>Copy Code context action</figcaption>
+                </figure>
+                      
+                <p>
+                    Here's the generated code (Kotlin DSL):
       
-</p>
-    
-</div>
-<div class="section">
-<h1 id="generating_code">Generating code from UI<a class="sectionlink" href="#generating_code" title="Link to here">&para;</a>
-</h1>
-      
-<p>To aid with creating code, JMeter implements <span class="code">Copy Code</span> context action, so you could
-      generate code for any element in the plan. It would generate code for the element and its children.</p>
-
-      
-<figure>
-<a href="../images/screenshots/copy_code/http_sampler_copy_code.png"><img src="../images/screenshots/copy_code/http_sampler_copy_code.png" width="380" height="258" alt="Copy Code context action"></a>
-<figcaption>Copy Code context action</figcaption>
-</figure>
-
-      
-<p>Here's the generated code (Kotlin DSL):
-      <pre class="source">
+                    <pre class="source">
 org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy::class {
     props {
         it[arguments] = org.apache.jmeter.config.Arguments().apply {
@@ -349,21 +362,21 @@ org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy::class {
     }
 }
 </pre>
-      
-</p>
-    
-</div>
-<div class="section">
-<h1 id="treebuilder_kotlin_dsl">Creating a plan with Kotlin DSL<a class="sectionlink" href="#treebuilder_kotlin_dsl" title="Link to here">&para;</a>
-</h1>
-      
-<p>JMeter 5.6 introduces Kotlin DSL which might make it easier to create and maintain test plans as the structure of the code
+                          
+                </p>
+                    
+            </div>
+            <div class="section">
+                <h1 id="treebuilder_kotlin_dsl">
+                    Creating a plan with Kotlin DSL<a class="sectionlink" href="#treebuilder_kotlin_dsl" title="Link to here">&para;</a>
+                </h1>
+                      
+                <p>JMeter 5.6 introduces Kotlin DSL which might make it easier to create and maintain test plans as the structure of the code
         would resemble the structure of the generated test plan tree</p>
-
-      
-<p>
-        
-<pre class="source">
+                      
+                <p>
+                            
+                    <pre class="source">
 import org.apache.jmeter.sampler.DebugSampler
 import org.apache.jmeter.testelement.TestPlan
 import org.apache.jmeter.threads.ThreadGroup
@@ -378,39 +391,47 @@ val root = testTree { // (1)
     }
   }
 }</pre>
-        
-<ul>
-          
-<li>Firstly, we create a <span class="code">TreeBuilder</span> at <span class="code">(1)</span>
-</li>
-          
-<li>Then we add elements to the tree in <span class="code">(2)</span>, and populate its children</li>
-          
-<li>Note how adding element returns the subtree, so we add <span class="code">threadGroup</span> under <span class="code">testPlan</span> in <span class="code">(2)</span>
-</li>
-          
-<li>If no children needed, the element can be appended to the tree with a unary plus operator as in <span class="code">(3)</span>
-</li>
-          
-<li>By default, JMeter uses no-argument constructors to create elements, however, you can add <span class="code">TestElement</span> instances to the tree as well, see <span class="code">(4)</span>
-</li>
-        
-</ul>
-      
-</p>
-    
-</div>
-<div class="section">
-<h1 id="extending_treebuilder_kotlin_dsl">Extending Kotlin DSL<a class="sectionlink" href="#extending_treebuilder_kotlin_dsl" title="Link to here">&para;</a>
-</h1>
-      
-<p>As you use the DSL for test plan generation, you might want to factor out the common patterns.
-      For instance, imagine you want factor out <span class="code">Thread Group</span> creation so it always has a <span class="code">Summariser</span> element.</p>
-
-      
-<p>
-        
-<pre class="source">
+                            
+                    <ul>
+                                  
+                        <li>
+                            Firstly, we create a <span class="code">TreeBuilder</span> at <span class="code">(1)</span>
+                        </li>
+                                  
+                        <li>
+                            Then we add elements to the tree in <span class="code">(2)</span>, and populate its children
+                        </li>
+                                  
+                        <li>
+                            Note how adding element returns the subtree, so we add <span class="code">threadGroup</span> under <span class="code">testPlan</span> in <span class="code">(2)</span>
+                        </li>
+                                  
+                        <li>
+                            If no children needed, the element can be appended to the tree with a unary plus operator as in <span class="code">(3)</span>
+                        </li>
+                                  
+                        <li>
+                            By default, JMeter uses no-argument constructors to create elements, however, you can add <span class="code">TestElement</span> instances to the tree as well, see <span class="code">(4)</span>
+                        </li>
+                                
+                    </ul>
+                          
+                </p>
+                    
+            </div>
+            <div class="section">
+                <h1 id="extending_treebuilder_kotlin_dsl">
+                    Extending Kotlin DSL<a class="sectionlink" href="#extending_treebuilder_kotlin_dsl" title="Link to here">&para;</a>
+                </h1>
+                      
+                <p>
+                    As you use the DSL for test plan generation, you might want to factor out the common patterns.
+      For instance, imagine you want factor out <span class="code">Thread Group</span> creation so it always has a <span class="code">Summariser</span> element.
+                </p>
+                      
+                <p>
+                            
+                    <pre class="source">
 import kotlin.time.Duration.Companion.seconds
 import org.apache.jmeter.sampler.DebugSampler
 import org.apache.jmeter.testelement.TestPlan
@@ -440,33 +461,36 @@ fun buildTree() {
       }
     }
   }</pre>
-        
-<ul>
-          
-<li>Firstly, you can factor test element creation logic as an extension function for <span class="code">TreeBuilder</span> as in <span class="code">(1)</span>.
-          It uses regular DSL to add an element (see <span class="code">(2)</span>), and then it calls the lambda body in <span class="code">(3)</span> to fill thread group children.</li>
-          
-<li>You can use the extension by calling it when you need it in the test plan, see <span class="code">(4)</span>
-</li>
-          
-<li>Note how named parameters, and default values keep the code readable</li>
-        
-</ul>
-      
-</p>
-    
-</div>
-<div class="section">
-<h1 id="treebuilder_java_dsl">Creating a plan with Java DSL<a class="sectionlink" href="#treebuilder_java_dsl" title="Link to here">&para;</a>
-</h1>
-      
-<p>JMeter 5.6 introduces Java DSL which might make it easier to create and maintain test plans as the structure of the code
+                            
+                    <ul>
+                                  
+                        <li>
+                            Firstly, you can factor test element creation logic as an extension function for <span class="code">TreeBuilder</span> as in <span class="code">(1)</span>.
+          It uses regular DSL to add an element (see <span class="code">(2)</span>), and then it calls the lambda body in <span class="code">(3)</span> to fill thread group children.
+                        </li>
+                                  
+                        <li>
+                            You can use the extension by calling it when you need it in the test plan, see <span class="code">(4)</span>
+                        </li>
+                                  
+                        <li>Note how named parameters, and default values keep the code readable</li>
+                                
+                    </ul>
+                          
+                </p>
+                    
+            </div>
+            <div class="section">
+                <h1 id="treebuilder_java_dsl">
+                    Creating a plan with Java DSL<a class="sectionlink" href="#treebuilder_java_dsl" title="Link to here">&para;</a>
+                </h1>
+                      
+                <p>JMeter 5.6 introduces Java DSL which might make it easier to create and maintain test plans as the structure of the code
         would resemble the structure of the generated test plan tree</p>
-
-      
-<p>
-        
-<pre class="source">
+                      
+                <p>
+                            
+                    <pre class="source">
 import org.apache.jmeter.sampler.DebugSampler
 import org.apache.jmeter.testelement.TestPlan
 import org.apache.jmeter.threads.ThreadGroup
@@ -481,67 +505,75 @@ ListedHashTree root = testTree(b -&gt; { // (1)
     });
   });
 });</pre>
-        
-<ul>
-          
-<li>Firstly, we create a <span class="code">TreeBuilder</span> at <span class="code">(1)</span>.
-            Note how this builder reference should be used to append all the elements</li>
-          
-<li>Then we add elements to the tree in <span class="code">(2)</span>, and populate its children.
-            The lambda parameters correspond to the added elements, so you can configure their properties</li>
-          
-<li>Note how adding element returns the subtree, so we add <span class="code">threadGroup</span> under <span class="code">testPlan</span> in <span class="code">(2)</span>
-</li>
-          
-<li>If no children needed, you could omit the lambda parameter as in <span class="code">(3)</span>
-</li>
-          
-<li>By default, JMeter uses no-argument constructors to create elements, however, you can add <span class="code">TestElement</span> instances to the tree as well, see <span class="code">(4)</span>
-</li>
-        
-</ul>
+                            
+                    <ul>
+                                  
+                        <li>
+                            Firstly, we create a <span class="code">TreeBuilder</span> at <span class="code">(1)</span>.
+            Note how this builder reference should be used to append all the elements
+                        </li>
+                                  
+                        <li>
+                            Then we add elements to the tree in <span class="code">(2)</span>, and populate its children.
+            The lambda parameters correspond to the added elements, so you can configure their properties
+                        </li>
+                                  
+                        <li>
+                            Note how adding element returns the subtree, so we add <span class="code">threadGroup</span> under <span class="code">testPlan</span> in <span class="code">(2)</span>
+                        </li>
+                                  
+                        <li>
+                            If no children needed, you could omit the lambda parameter as in <span class="code">(3)</span>
+                        </li>
+                                  
+                        <li>
+                            By default, JMeter uses no-argument constructors to create elements, however, you can add <span class="code">TestElement</span> instances to the tree as well, see <span class="code">(4)</span>
+                        </li>
+                                
+                    </ul>
+                          
+                </p>
+                    
+            </div>
+            <ul class="pagelinks">
+                <li>
+                    <a href="build-jms-topic-test-plan.html">&lt; Prev</a>
+                </li>
+                <li>
+                    <a href="../index.html">Index</a>
+                </li>
+                <li>
+                    <a href="listeners.html">Next &gt;</a>
+                </li>
+            </ul>
+            <div class="share-links">
+                      Share this page:
       
-</p>
-    
-</div>
-<ul class="pagelinks">
-<li>
-<a href="build-jms-topic-test-plan.html">&lt; Prev</a>
-</li>
-<li>
-<a href="../index.html">Index</a>
-</li>
-<li>
-<a href="listeners.html">Next &gt;</a>
-</li>
-</ul>
-<div class="share-links">
-      Share this page:
-      <ul>
-<li class="fb">
-<a data-social-url="https://facebook.com/sharer/sharer.php?u=" title="Share on facebook"><i class="fa fa-facebook" aria-hidden="true"></i>share</a>
-</li>
-<li class="twitter">
-<a data-social-url="https://twitter.com/intent/tweet?url=" title="Tweet on twitter"><i class="fa fa-twitter" aria-hidden="true"></i>tweet</a>
-</li>
-</ul>
-</div>
-<a href="#top" id="topButton">Go to top</a>
-</div>
-<div class="footer">
-<div class="copyright">
+                <ul>
+                    <li class="fb">
+                        <a data-social-url="https://facebook.com/sharer/sharer.php?u=" title="Share on facebook"><i class="fa fa-facebook" aria-hidden="true"></i>share</a>
+                    </li>
+                    <li class="twitter">
+                        <a data-social-url="https://twitter.com/intent/tweet?url=" title="Tweet on twitter"><i class="fa fa-twitter" aria-hidden="true"></i>tweet</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="#top" id="topButton">Go to top</a>
+        </div>
+        <div class="footer">
+            <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2023
+            2024
             , Apache Software Foundation
           </div>
-<div class="trademarks">Apache, Apache JMeter, JMeter, the Apache
+            <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache
             feather, and the Apache JMeter logo are
             trademarks of the
             Apache Software Foundation.
           </div>
-</div>
-<script>(function(){
+        </div>
+        <script>(function(){
             "use strict";
             // enable 'go to top' button functionality
             document.addEventListener('scroll', function() {
@@ -564,5 +596,5 @@ ListedHashTree root = testTree(b -&gt; { // (1)
                 }
             }
         })();</script>
-</body>
+    </body>
 </html>

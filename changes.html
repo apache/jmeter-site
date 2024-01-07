@@ -1,426 +1,616 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="en">
-<head>
-<META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
-<title>Apache JMeter
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+        <title>Apache JMeter
           -
           Changes</title>
-<meta name="author" value="JMeter developers">
-<meta name="email" value="dev AT jmeter.apache.org">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Merriweather:400normal" rel="stylesheet" type="text/css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="./css/new-style.css">
-<link rel="apple-touch-icon-precomposed" href="./images/apple-touch-icon.png">
-<link rel="icon" href="./images/favicon.png">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="./images/mstile-144x144.png">
-<meta name="theme-color" content="#ffffff">
-</head>
-<body role="document">
-<a href="#content" class="hidden">Main content</a>
-<div class="header">
-<!--
+        <meta name="author" value="JMeter developers">
+        <meta name="email" value="dev AT jmeter.apache.org">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400normal" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./css/new-style.css">
+        <link rel="apple-touch-icon-precomposed" href="./images/apple-touch-icon.png">
+        <link rel="icon" href="./images/favicon.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="./images/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body role="document">
+        <a href="#content" class="hidden">Main content</a>
+        <div class="header">
+            <!--
             APACHE LOGO
           -->
-<div>
-<a href="https://www.apache.org"><img title="Apache Software Foundation" class="asf-logo logo" src="./images/asf-logo.svg" alt="Logo ASF"></a>
-</div>
-<!--
+            <div>
+                <a href="https://www.apache.org"><img title="Apache Software Foundation" class="asf-logo logo" src="./images/asf-logo.svg" alt="Logo ASF"></a>
+            </div>
+            <!--
               PROJECT LOGO
             -->
-<div>
-<a href="https://jmeter.apache.org/"><img class="logo" src="./images/logo.svg" alt="Apache JMeter"></a>
-</div>
-<div class="banner">
-<a href="https://www.apache.org/events/current-event.html"><img src="https://www.apache.org/events/current-event-234x60.png" alt="Current Apache event teaser"></a>
-<div class="clear"></div>
-</div>
-</div>
-<div class="nav">
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">About</div>
-<ul>
-<li>
-<a href="./index.html">Overview</a>
-</li>
-<li>
-<a href="https://www.apache.org/licenses/">License</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Download</div>
-<ul>
-<li>
-<a href="./download_jmeter.cgi">Download Releases</a>
-</li>
-<li>
-<a href="./changes.html">Release Notes</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Documentation</div>
-<ul>
-<li>
-<a href="./usermanual/get-started.html">Get Started</a>
-</li>
-<li>
-<a href="./usermanual/index.html">User Manual</a>
-</li>
-<li>
-<a href="./usermanual/best-practices.html">Best Practices</a>
-</li>
-<li>
-<a href="./usermanual/component_reference.html">Component Reference</a>
-</li>
-<li>
-<a href="./usermanual/functions.html">Functions Reference</a>
-</li>
-<li>
-<a href="./usermanual/properties_reference.html">Properties Reference</a>
-</li>
-<li>
-<a href="./changes_history.html">Change History</a>
-</li>
-<li>
-<a href="./api/index.html">Javadocs</a>
-</li>
-<li>
-<a href="https://cwiki.apache.org/confluence/display/JMETER/Home">JMeter Wiki</a>
-</li>
-<li>
-<a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterFAQ">FAQ (Wiki)</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Tutorials</div>
-<ul>
-<li>
-<a href="./usermanual/jmeter_distributed_testing_step_by_step.html">Distributed Testing</a>
-</li>
-<li>
-<a href="./usermanual/jmeter_proxy_step_by_step.html">Recording Tests</a>
-</li>
-<li>
-<a href="./usermanual/junitsampler_tutorial.html">JUnit Sampler</a>
-</li>
-<li>
-<a href="./usermanual/jmeter_accesslog_sampler_step_by_step.html">Access Log Sampler</a>
-</li>
-<li>
-<a href="./usermanual/jmeter_tutorial.html">Extending JMeter</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Community</div>
-<ul>
-<li>
-<a href="./issues.html">Issue Tracking</a>
-</li>
-<li>
-<a href="./security.html">Security</a>
-</li>
-<li>
-<a href="./mail.html">Mailing Lists</a>
-</li>
-<li>
-<a href="./svnindex.html">Source Repositories</a>
-</li>
-<li>
-<a href="./building.html">Building and Contributing</a>
-</li>
-<li>
-<a href="https://projects.apache.org/project.html?jmeter">Project info at Apache</a>
-</li>
-<li>
-<a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterCommitters">Contributors</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="menu">
-<li onClick="return true">
-<div class="menu-title">Foundation</div>
-<ul>
-<li>
-<a href="https://www.apache.org/">The Apache Software Foundation (ASF)</a>
-</li>
-<li>
-<a href="https://www.apache.org/foundation/getinvolved.html">Get Involved in the ASF</a>
-</li>
-<li>
-<a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy Policy</a>
-</li>
-<li>
-<a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a>
-</li>
-<li>
-<a href="https://www.apache.org/foundation/thanks.html">Thanks</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="main" id="content">
-<div class="social-media">
-<ul class="social-media-links">
-<li class="twitter">
-<a href="https://twitter.com/ApacheJMeter" title="Follow us on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
-</li>
-<li class="github">
-<a href="https://github.com/apache/jmeter" title="Fork us on github"><i class="fa fa-github" aria-hidden="true"></i>github</a>
-</li>
-</ul>
-</div>
-<div class="section">
-<h1>Changes</h1>
+            <div>
+                <a href="https://jmeter.apache.org/"><img class="logo" src="./images/logo.svg" alt="Apache JMeter"></a>
+            </div>
+            <div class="banner">
+                <a href="https://www.apache.org/events/current-event.html"><img src="https://www.apache.org/events/current-event-234x60.png" alt="Current Apache event teaser"></a>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="nav">
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">About</div>
+                    <ul>
+                        <li>
+                            <a href="./index.html">Overview</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/licenses/">License</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Download</div>
+                    <ul>
+                        <li>
+                            <a href="./download_jmeter.cgi">Download Releases</a>
+                        </li>
+                        <li>
+                            <a href="./changes.html">Release Notes</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Documentation</div>
+                    <ul>
+                        <li>
+                            <a href="./usermanual/get-started.html">Get Started</a>
+                        </li>
+                        <li>
+                            <a href="./usermanual/index.html">User Manual</a>
+                        </li>
+                        <li>
+                            <a href="./usermanual/best-practices.html">Best Practices</a>
+                        </li>
+                        <li>
+                            <a href="./usermanual/component_reference.html">Component Reference</a>
+                        </li>
+                        <li>
+                            <a href="./usermanual/functions.html">Functions Reference</a>
+                        </li>
+                        <li>
+                            <a href="./usermanual/properties_reference.html">Properties Reference</a>
+                        </li>
+                        <li>
+                            <a href="./changes_history.html">Change History</a>
+                        </li>
+                        <li>
+                            <a href="./api/index.html">Javadocs</a>
+                        </li>
+                        <li>
+                            <a href="https://cwiki.apache.org/confluence/display/JMETER/Home">JMeter Wiki</a>
+                        </li>
+                        <li>
+                            <a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterFAQ">FAQ (Wiki)</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Tutorials</div>
+                    <ul>
+                        <li>
+                            <a href="./usermanual/jmeter_distributed_testing_step_by_step.html">Distributed Testing</a>
+                        </li>
+                        <li>
+                            <a href="./usermanual/jmeter_proxy_step_by_step.html">Recording Tests</a>
+                        </li>
+                        <li>
+                            <a href="./usermanual/junitsampler_tutorial.html">JUnit Sampler</a>
+                        </li>
+                        <li>
+                            <a href="./usermanual/jmeter_accesslog_sampler_step_by_step.html">Access Log Sampler</a>
+                        </li>
+                        <li>
+                            <a href="./usermanual/jmeter_tutorial.html">Extending JMeter</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Community</div>
+                    <ul>
+                        <li>
+                            <a href="./issues.html">Issue Tracking</a>
+                        </li>
+                        <li>
+                            <a href="./security.html">Security</a>
+                        </li>
+                        <li>
+                            <a href="./mail.html">Mailing Lists</a>
+                        </li>
+                        <li>
+                            <a href="./svnindex.html">Source Repositories</a>
+                        </li>
+                        <li>
+                            <a href="./building.html">Building and Contributing</a>
+                        </li>
+                        <li>
+                            <a href="https://projects.apache.org/project.html?jmeter">Project info at Apache</a>
+                        </li>
+                        <li>
+                            <a href="https://cwiki.apache.org/confluence/display/JMETER/JMeterCommitters">Contributors</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li onClick="return true">
+                    <div class="menu-title">Foundation</div>
+                    <ul>
+                        <li>
+                            <a href="https://www.apache.org/">The Apache Software Foundation (ASF)</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/foundation/getinvolved.html">Get Involved in the ASF</a>
+                        </li>
+                        <li>
+                            <a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a>
+                        </li>
+                        <li>
+                            <a href="https://www.apache.org/foundation/thanks.html">Thanks</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main" id="content">
+            <div class="social-media">
+                <ul class="social-media-links">
+                    <li class="twitter">
+                        <a href="https://twitter.com/ApacheJMeter" title="Follow us on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
+                    </li>
+                    <li class="github">
+                        <a href="https://github.com/apache/jmeter" title="Fork us on github"><i class="fa fa-github" aria-hidden="true"></i>github</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="section">
+                <h1>Changes</h1>
+                
+                <style type="text/css"></style>
+                
+                <div class="clear"></div>
+                <div class="note">
+                    
+                    <b>This page details the changes made in the current version only.</b>
 
-<style type="text/css"></style>
+                    <br>
+                    Earlier changes are detailed in the <a href="changes_history.html">History of Previous Changes</a>.
 
-<div class="clear"></div>
-<div class="note">
+                </div>
+                <div class="clear"></div>
+                
+                <br>
+                
+                <div class="clear"></div>
+                <div class="note">
+                    JMeter 5.6.x requires Java 8 or later for execution (Java 17 or later recommended).
 
-<b>This page details the changes made in the current version only.</b>
+                    <br>
+                    
+                    <b>The next major release would require Java 17 or later.</b>
 
-<br>
-Earlier changes are detailed in the <a href="changes_history.html">History of Previous Changes</a>.
-</div>
-<div class="clear"></div>
-
-
-<br>
-
-<div class="clear"></div>
-<div class="note">
-JMeter 5.6.x requires Java 8 or later for execution (Java 17 or later recommended).
-<br>
-
-<b>The next major release would require Java 11 or later.</b>
-
-</div>
-<div class="clear"></div>
-
-
-
-
-<h1>Version 5.6.2 </h1>
-
-<p>
+                </div>
+                <div class="clear"></div>
+                
+                <h1>Version 5.6.3 </h1>
+                
+                <p>
 Summary
 </p>
+                
+                <ul>
+                    
+                    <li>
+                        <a href="#Bug fixes">Bug fixes</a>
+                    </li>
+                    
+                </ul>
+                  
+                <h2 class="ch_section" id="Improvements">Improvements</h2>
+                  
+                <h3>General</h3>
+                  
+                <ul>
+                        
+                    <li>
+                        <a href="https://github.com/apache/jmeter/pull/6199">
+      PR#6199</a> &ndash; Enable use of <span class="code">${...}</span> expressions for <span class="code">TransactionController</span> "generate parent sample", and "include timers" checkboxes
+                    </li>
+                        
+                    <li>
+                        <a href="https://github.com/apache/jmeter/pull/6199">
+      PR#6199</a> &ndash; Enable use of <span class="code">${...}</span> expressions for <span class="code">ThreadGroupGui</span> "scheduler" checkbox
+                    </li>
+                        
+                    <li>
+                        <a href="https://github.com/apache/jmeter/pull/6199">
+      PR#6199</a> &ndash; Enable use of <span class="code">${...}</span> expressions for <span class="code">HTTP Request</span> "retrieve embedded resources", "download resources concurrently", and "store as MD5" checkboxes
+                    </li>
+                      
+                </ul>
+                 
 
-<ul>
 
-<li>
-<a href="#Bug fixes">Bug fixes</a>
-</li>
+                <h2 class="ch_section" id="Bug fixes">Bug fixes</h2>
+                
+                <h3>General</h3>
+                
+                <ul>
+                      
+                    <li>
+                        <a href="https://github.com/apache/jmeter/issues/6043">
+      Issue#6043</a>, <a href="https://github.com/apache/jmeter/pull/6044">
+      PR#6044</a> &ndash; JMeter 5.6 shows 0 as a min response time in summary report
+                    </li>
+                      
+                    <li>
+                        Restored binary API compatibility with pre-5.6.2: restore public methods to non-static as they were before 5.6.2 <span class="code">JavaSamplerContext.getJMeterVariables</span>,
+    <span class="code">JavaSamplerContext.getJMeterProperties</span>, <span class="code">BoundaryExtractor.extractAll</span>,
+    <span class="code">AuthManager.setupCredentials</span>, <span class="code">HttpRequestHdr.getMultipartConfig</span>, (regression since 5.6.2)
+                    </li>
+                      
+                    <li>
+                        <a href="https://github.com/apache/jmeter/issues/6165">
+      Issue#6165</a>, <a href="https://github.com/apache/jmeter/pull/6192">
+      PR#6192</a> &ndash; The Constant Throughput Timer is throwing a NullPointerException when using variables (vars.get) in "Target Throughput"-field
+                    </li>
+                      
+                    <li>
+                        <a href="https://github.com/apache/jmeter/issues/6162">
+      Issue#6162</a> &ndash; The Constant Timer is throwing a NullPointerException when using variables (vars.get) in "delay"-field
+                    </li>
+                      
+                    <li>
+                        <a href="https://github.com/apache/jmeter/pull/6193">
+      PR#6193</a> &ndash; Log errors happening while JMeter starts the test (previously, errors from TestStateListener.testStarted were not logged)
+                    </li>
+                      
+                    <li>
+                        <a href="https://github.com/apache/jmeter/pull/6216">
+      PR#6216</a> &ndash; Pass JDBCSampler.maxRows to Statement.setMaxRows so the driver does not fetch extra rows from the database
+                    </li>
+                    
+                </ul>
+                
+                <h2 class="ch_section" id="Non-functional changes">Non-functional changes</h2>
+                
+                <ul>
+                      
+                    <li>
+                        <a href="https://github.com/apache/jmeter/pull/6166">
+      PR#6166</a> &ndash; Use Gradle to 8.5 for building JMeter
+                    </li>
+                      
+                    <li>Require Java 17 for building JMeter </li>
+                      
+                    <li>
+                        <a href="https://github.com/apache/jmeter/pull/6199">
+      PR#6199</a> &ndash; Improved API for programmatic test plan creation, see default implementations of <span class="code">createTestElement</span>, <span class="code">modifyTestElement</span>,
+    and new <span class="code">makeTestElement</span> and <span class="code">assignDefaultValues</span> methods in <span class="code">JMeterGUIComponent</span>.
+    <span class="code">AbstractJMeterGuiComponent.configureTestElement</span> is now discouraged
+                    </li>
+                      
+                    <li>
+                        <a href="https://github.com/apache/jmeter/pull/6212">
+      PR#6212</a> &ndash; Refactor: migrate existing Groovy tests to Kotlin, remove Groovy compiler from the build pipeline
+                    </li>
+                      
+                    <li>
+                        <a href="https://github.com/apache/jmeter/pull/6214">
+      PR#6214</a> &ndash; Refactor JUnit 3 and JUnit 4 tests to JUnit 5, remove JUnit 4 test dependency
+                    </li>
+                    
+                </ul>
+                  
+                <h2 class="ch_section" id="Dependency upgrades">Dependency upgrades</h2>
+                  
+                <ul>
+                        
+                    <li>Update com.fasterxml.jackson.core:jackson-annotations to 2.16.1 (was 2.15.2)</li>
+                        
+                    <li>Update com.fasterxml.jackson.core:jackson-core to 2.16.1 (was 2.15.2)</li>
+                        
+                    <li>Update com.fasterxml.jackson.core:jackson-databind to 2.16.1 (was 2.15.2)</li>
+                        
+                    <li>Update com.fifesoft:rsyntaxtextarea to 3.3.4 (was 3.3.3)</li>
+                        
+                    <li>Update com.google.errorprone:error_prone_annotations to 2.24.0 (was 2.20.0)</li>
+                        
+                    <li>Update commons-codec:commons-codec to 1.16.0 (was 1.15)</li>
+                        
+                    <li>Update commons-io:commons-io to 2.15.1 (was 2.12.0)</li>
+                        
+                    <li>Update commons-logging:commons-logging to 1.3.0 (was 1.2)</li>
+                        
+                    <li>Update commons-net:commons-net to 3.9.0 (was 3.10.0)</li>
+                        
+                    <li>Update io.burt:jmespath-core to 0.6.0 (was 0.5.1)</li>
+                        
+                    <li>Update io.burt:jmespath-jackson to 0.6.0 (was 0.5.1)</li>
+                        
+                    <li>Update net.minidev:accessors-smart to 2.5.0 (was 2.4.11)</li>
+                        
+                    <li>Update net.minidev:json-smart to 2.5.0 (was 2.4.11)</li>
+                        
+                    <li>Update net.sf.saxon:Saxon-HE to 11.6 (was 11.5)</li>
+                        
+                    <li>Update org.apache.commons:commons-lang3 to 3.14.0 (was 3.12.0)</li>
+                        
+                    <li>Update org.apache.commons:commons-pool2 to 2.12.0 (was 2.11.1)</li>
+                        
+                    <li>Update org.apache.commons:commons-text to 1.11.0 (was 1.10.0)</li>
+                        
+                    <li>Update org.apache.httpcomponents.client5:httpclient5 to 5.3 (was 5.2.1)</li>
+                        
+                    <li>Update org.apache.httpcomponents.core5:httpcore5-h2 to 5.2.4 (was 5.2)</li>
+                        
+                    <li>Update org.apache.httpcomponents.core5:httpcore5 to 5.2.4 (was 5.2)</li>
+                        
+                    <li>Update org.apache.logging.log4j:log4j-1.2-api to 2.22.1 (was 2.20.0)</li>
+                        
+                    <li>Update org.apache.logging.log4j:log4j-api to 2.22.1 (was 2.20.0)</li>
+                        
+                    <li>Update org.apache.logging.log4j:log4j-core to 2.22.1 (was 2.20.0)</li>
+                        
+                    <li>Update org.apache.logging.log4j:log4j-slf4j-impl to 2.22.1 (was 2.20.0)</li>
+                        
+                    <li>Update org.apache.xmlgraphics:xmlgraphics-commons to 2.9 (was 2.8)</li>
+                        
+                    <li>Update org.checkerframework:checker-qual to 3.42.0 (was 3.35.0)</li>
+                        
+                    <li>Update org.codehaus.groovy:groovy-datetime to 3.0.20 (was 3.0.17)</li>
+                        
+                    <li>Update org.codehaus.groovy:groovy-dateutil to 3.0.20 (was 3.0.17)</li>
+                        
+                    <li>Update org.codehaus.groovy:groovy-jmx to 3.0.20 (was 3.0.17)</li>
+                        
+                    <li>Update org.codehaus.groovy:groovy-json to 3.0.20 (was 3.0.17)</li>
+                        
+                    <li>Update org.codehaus.groovy:groovy-jsr223 to 3.0.20 (was 3.0.17)</li>
+                        
+                    <li>Update org.codehaus.groovy:groovy-sql to 3.0.20 (was 3.0.17)</li>
+                        
+                    <li>Update org.codehaus.groovy:groovy-templates to 3.0.20 (was 3.0.17)</li>
+                        
+                    <li>Update org.codehaus.groovy:groovy-xml to 3.0.20 (was 3.0.17)</li>
+                        
+                    <li>Update org.codehaus.groovy:groovy to 3.0.20 (was 3.0.17)</li>
+                        
+                    <li>Remove org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22</li>
+                        
+                    <li>Update org.jetbrains.kotlin:kotlin-stdlib-jdk7 to 1.9.10 (was 1.8.22)</li>
+                        
+                    <li>Update org.jetbrains.kotlin:kotlin-stdlib-jdk8 to 1.9.10 (was 1.8.22)</li>
+                        
+                    <li>Update org.jetbrains.kotlin:kotlin-stdlib to 1.9.22 (was 1.8.22)</li>
+                        
+                    <li>Update org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm to 1.7.3 (was 1.7.1)</li>
+                        
+                    <li>Update org.jetbrains.kotlinx:kotlinx-coroutines-swing to 1.7.3 (was 1.7.1)</li>
+                        
+                    <li>Update org.jetbrains.lets-plot:base-portable-jvm to 4.1.0 (was 3.2.0)</li>
+                        
+                    <li>Update org.jetbrains.lets-plot:lets-plot-common to 4.1.0 (was 3.2.0)</li>
+                        
+                    <li>Update org.jetbrains.lets-plot:lets-plot-kotlin-jvm to 4.5.0 (was 4.4.1)</li>
+                        
+                    <li>Update org.jetbrains.lets-plot:plot-common-portable-jvm to 4.1.0 (was 3.2.0)</li>
+                        
+                    <li>Update org.jetbrains:annotations to 24.1.0 (was 24.0.1)</li>
+                        
+                    <li>Update org.jsoup:jsoup to 1.17.1 (was 1.16.1)</li>
+                        
+                    <li>Update org.mongodb:mongo-java-driver to 2.14.3 (was 2.11.3)</li>
+                        
+                    <li>Update org.neo4j.driver:neo4j-java-driver to 4.4.13 (was 4.4.11)</li>
+                        
+                    <li>Update org.ow2.asm:asm to 9.6 (was 9.5)</li>
+                        
+                    <li>Update org.xmlresolver:xmlresolver to 5.2.1 (was 4.6.4)</li>
+                        
+                    <li>Update org.xmlresolver:xmlresolver:data to 5.2.1 (was 4.6.4)</li>
+                      
+                </ul>
+                 
 
-</ul>
 
- 
-
-
-<h2 class="ch_section" id="Bug fixes">Bug fixes</h2>
-
-
-<h3>General</h3>
-
-<ul>
-  
-<li>
-<a href="https://github.com/apache/jmeter/pull/6042">
-      PR#6042</a>, <a href="https://github.com/apache/jmeter/issues/6041">
-      Issue#6041</a> &ndash; Fix compatibility with Maven's pom.xml parser by adding explicit versions for
-    <span class="code">com.google.auto.service:auto-service-annotations</span> (regression since 5.6)</li>
-
-</ul>
-
- 
-
-
-<h2 class="ch_section" id="Thanks">Thanks</h2>
-
-<p>We thank all contributors mentioned in bug and improvement sections above:
+                <h2 class="ch_section" id="Thanks">Thanks</h2>
+                
+                <p>We thank all contributors mentioned in bug and improvement sections above:
 </p>
-
-<ul>
-
+                
+                <ul>
 </ul>
-
-<p>We also thank bug reporters who helped us improve JMeter.</p>
-
-<ul>
-
+                
+                <p>We also thank bug reporters who helped us improve JMeter.</p>
+                
+                <ul>
 </ul>
-
-<p>
+                
+                <p>
 Apologies if we have omitted anyone else.
 </p>
- 
+                 
 
 
-<h2 class="ch_section" id="Known problems and workarounds">Known problems and workarounds</h2>
-
-<ul>
-
-<li>The Once Only controller behaves correctly under a Thread Group or Loop Controller,
+                <h2 class="ch_section" id="Known problems and workarounds">Known problems and workarounds</h2>
+                
+                <ul>
+                    
+                    <li>The Once Only controller behaves correctly under a Thread Group or Loop Controller,
 but otherwise its behaviour is not consistent (or clearly specified).</li>
-
-
-<li>
-The numbers that appear to the left of the green box are the number of active threads / total number of threads,
+                    
+                    <li>
+                        The numbers that appear to the left of the green box are the number of active threads / total number of threads,
 the total number of threads only applies to a locally run test, otherwise it will show <span class="code">0</span> (see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=55510">
       Bug
       55510</a>).
-</li>
 
+                    </li>
+                    
+                    <li>
+                        Note that under some windows systems you may have this WARNING:
 
-<li>
-Note that under some windows systems you may have this WARNING:
-<pre class="source">
+                        <pre class="source">
 java.util.prefs.WindowsPreferences
 WARNING: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0
 x80000002. Windows RegCreateKeyEx(&hellip;) returned error code 5.
 </pre>
-The fix is to run JMeter as Administrator, it will create the registry key for you, then you can restart JMeter as a normal user and you won't have the warning anymore.
-</li>
+                        The fix is to run JMeter as Administrator, it will create the registry key for you, then you can restart JMeter as a normal user and you won't have the warning anymore.
 
+                    </li>
+                    
+                    <li>
+                        You may encounter the following error:
 
-<li>
-You may encounter the following error:
-<pre class="source">java.security.cert.CertificateException: Certificates does not conform to algorithm constraints</pre>
- if you run a HTTPS request on a web site with a SSL certificate (itself or one of SSL certificates in its chain of trust) with a signature
+                        <pre class="source">java.security.cert.CertificateException: Certificates does not conform to algorithm constraints</pre>
+                         if you run a HTTPS request on a web site with a SSL certificate (itself or one of SSL certificates in its chain of trust) with a signature
  algorithm using MD2 (like <span class="code">md2WithRSAEncryption</span>) or with a SSL certificate with a size lower than 1024 bits.
 This error is related to increased security in Java 8+.
-<br>
-To allow you to perform your HTTPS request, you can downgrade the security of your Java installation by editing
+
+                        <br>
+                        To allow you to perform your HTTPS request, you can downgrade the security of your Java installation by editing
 the Java <span class="code">jdk.certpath.disabledAlgorithms</span> property. Remove the MD2 value or the constraint on size, depending on your case.
-<br>
-This property is in this file:
-<pre class="source">JAVA_HOME/jre/lib/security/java.security</pre>
-See  <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=56357">
+
+                        <br>
+                        This property is in this file:
+
+                        <pre class="source">JAVA_HOME/jre/lib/security/java.security</pre>
+                        See  <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=56357">
       Bug
       56357</a> for details.
-</li>
 
-
-<li>
-Under Mac OSX Aggregate Graph will show wrong values due to mirroring effect on numbers.
+                    </li>
+                    
+                    <li>
+                        Under Mac OSX Aggregate Graph will show wrong values due to mirroring effect on numbers.
 This is due to a known Java bug, see Bug <a href="https://bugs.openjdk.java.net/browse/JDK-8065373">JDK-8065373</a>
 The fix is to use JDK8_u45 or later.
-</li>
 
-
-<li>
-View Results Tree may fail to display some HTML code under HTML renderer, see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=54586">
+                    </li>
+                    
+                    <li>
+                        View Results Tree may fail to display some HTML code under HTML renderer, see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=54586">
       Bug
       54586</a>.
 This is due to a known Java bug which fails to parse "<span class="code">px</span>" units in row/col attributes.
 See Bug <a href="https://bugs.openjdk.java.net/browse/JDK-8031109">JDK-8031109</a>
 The fix is to use JDK9 b65 or later.
-</li>
 
-
-<li>
-JTable selection with keyboard (<span class="keycombo"><span class="keysym">SHIFT</span>&nbsp;+&nbsp;<span class="keysym">up/down</span></span>) is totally unusable with Java 7 on Mac OSX.
+                    </li>
+                    
+                    <li>
+                        JTable selection with keyboard (<span class="keycombo"><span class="keysym">SHIFT</span>&nbsp;+&nbsp;<span class="keysym">up/down</span></span>) is totally unusable with Java 7 on Mac OSX.
 This is due to a known Java bug <a href="https://bugs.openjdk.java.net/browse/JDK-8025126">JDK-8025126</a>
 The fix is to use JDK 8 b132 or later.
-</li>
 
-
-<li>
-Since Java 11 the JavaScript implementation <a href="https://openjdk.java.net/jeps/335">Nashorn has been deprecated</a>.
+                    </li>
+                    
+                    <li>
+                        Since Java 11 the JavaScript implementation <a href="https://openjdk.java.net/jeps/335">Nashorn has been deprecated</a>.
 Java will emit the following deprecation warnings, if you are using JavaScript based on Nashorn.
-<pre class="source">
+
+                        <pre class="source">
 Warning: Nashorn engine is planned to be removed from a future JDK release
 </pre>
-To silence these warnings, add <span class="code">-Dnashorn.args=--no-deprecation-warning</span> to your Java arguments.
+                        To silence these warnings, add <span class="code">-Dnashorn.args=--no-deprecation-warning</span> to your Java arguments.
 That can be achieved by setting the enviroment variable <span class="code">JVM_ARGS</span>
 
-<pre class="source">
+                        <pre class="source">
 export JVM_ARGS="-Dnashorn.args=--no-deprecation-warning"
 </pre>
-
-</li>
-
-
-<li>
-With Java 15 the JavaScript implementation <a href="https://openjdk.java.net/jeps/372">Nashorn has been removed</a>. To add back a JSR-223 compatible JavaScript engine you have two options:
-  <dl>
-    
-<dt>Use Mozilla Rhino</dt>
-    
-<dd>Copy <a href="https://github.com/mozilla/rhino/releases/download/Rhino1_7_14_Release/rhino-engine-1.7.14.jar">rhino-engine-1.7.14.jar</a> into <span class="code">$JMETER_HOME/lib/ext</span>.</dd>
-    
-<dt>Use OpenJDK Nashorn</dt>
-    
-<dd>
-      The OpenJDK Nashorn implementation comes as a module. To use it, you will have to download it and add it to the module path. A hacky way to download the version 15.0 (or later) and its dependencies and set the module path is outlined below:
-      <pre class="source">
+                        
+                    </li>
+                    
+                    <li>
+                        With Java 15 the JavaScript implementation <a href="https://openjdk.java.net/jeps/372">Nashorn has been removed</a>. To add back a JSR-223 compatible JavaScript engine you have two options:
+  
+                        <dl>
+                                
+                            <dt>Use Mozilla Rhino</dt>
+                                
+                            <dd>
+                                Copy <a href="https://github.com/mozilla/rhino/releases/download/Rhino1_7_14_Release/rhino-engine-1.7.14.jar">rhino-engine-1.7.14.jar</a> into <span class="code">$JMETER_HOME/lib/ext</span>.
+                            </dd>
+                                
+                            <dt>Use OpenJDK Nashorn</dt>
+                                
+                            <dd>
+                                      The OpenJDK Nashorn implementation comes as a module. To use it, you will have to download it and add it to the module path. A hacky way to download the version 15.0 (or later) and its dependencies and set the module path is outlined below:
+      
+                                <pre class="source">
 mkdir lib/modules
 pushd lib/modules
-wget https://repo1.maven.org/maven2/org/openjdk/nashorn/nashorn-core/15.3/nashorn-core-15.3.jar
-wget https://repo1.maven.org/maven2/org/ow2/asm/asm/9.5/asm-9.5.jar
-wget https://repo1.maven.org/maven2/org/ow2/asm/asm-commons/9.5/asm-commons-9.5.jar
-wget https://repo1.maven.org/maven2/org/ow2/asm/asm-util/9.5/asm-util-9.5.jar
-wget https://repo1.maven.org/maven2/org/ow2/asm/asm-tree/9.5/asm-tree-9.5.jar
-wget https://repo1.maven.org/maven2/org/ow2/asm/asm-analysis/9.5/asm-analysis-9.5.jar
+wget https://repo1.maven.org/maven2/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm/9.6/asm-9.6.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-commons/9.6/asm-commons-9.6.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-util/9.6/asm-util-9.6.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-tree/9.6/asm-tree-9.6.jar
+wget https://repo1.maven.org/maven2/org/ow2/asm/asm-analysis/9.6/asm-analysis-9.6.jar
 popd
 export JVM_ARGS="--module-path $PWD/lib/modules"
 ./bin/jmeter
       </pre>
-    
-</dd>
-  
-</dl>
-
-</li>
-
-
-</ul>
-
-
-</div>
-<div class="share-links">
-      Share this page:
-      <ul>
-<li class="fb">
-<a data-social-url="https://facebook.com/sharer/sharer.php?u=" title="Share on facebook"><i class="fa fa-facebook" aria-hidden="true"></i>share</a>
-</li>
-<li class="twitter">
-<a data-social-url="https://twitter.com/intent/tweet?url=" title="Tweet on twitter"><i class="fa fa-twitter" aria-hidden="true"></i>tweet</a>
-</li>
-</ul>
-</div>
-<a href="#top" id="topButton">Go to top</a>
-</div>
-<div class="footer">
-<div class="copyright">
+                                    
+                            </dd>
+                              
+                        </dl>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </div>
+            <div class="share-links">
+                      Share this page:
+      
+                <ul>
+                    <li class="fb">
+                        <a data-social-url="https://facebook.com/sharer/sharer.php?u=" title="Share on facebook"><i class="fa fa-facebook" aria-hidden="true"></i>share</a>
+                    </li>
+                    <li class="twitter">
+                        <a data-social-url="https://twitter.com/intent/tweet?url=" title="Tweet on twitter"><i class="fa fa-twitter" aria-hidden="true"></i>tweet</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="#top" id="topButton">Go to top</a>
+        </div>
+        <div class="footer">
+            <div class="copyright">
             Copyright &copy;
             1999 &ndash;
-            2023
+            2024
             , Apache Software Foundation
           </div>
-<div class="trademarks">Apache, Apache JMeter, JMeter, the Apache
+            <div class="trademarks">Apache, Apache JMeter, JMeter, the Apache
             feather, and the Apache JMeter logo are
             trademarks of the
             Apache Software Foundation.
           </div>
-</div>
-<script>(function(){
+        </div>
+        <script>(function(){
             "use strict";
             // enable 'go to top' button functionality
             document.addEventListener('scroll', function() {
@@ -443,5 +633,5 @@ export JVM_ARGS="--module-path $PWD/lib/modules"
                 }
             }
         })();</script>
-</body>
+    </body>
 </html>

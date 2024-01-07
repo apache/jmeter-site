@@ -146,9 +146,15 @@ implements <a href="JMeterGUIComponent.html" title="interface in org.apache.jmet
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected <a href="NamePanel.html" title="class in org.apache.jmeter.gui">NamePanel</a></code></div>
-<div class="col-second even-row-color"><code><a href="#namePanel" class="member-name-link">namePanel</a></code></div>
+<div class="col-first even-row-color"><code>protected final org.apache.jmeter.gui.BindingGroup</code></div>
+<div class="col-second even-row-color"><code><a href="#bindingGroup" class="member-name-link">bindingGroup</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Stores a collection of property editors, so GuiCompoenent can have default implementations that
+ update the UI fields based on <code>TestElement</code> properties and vice versa.</div>
+</div>
+<div class="col-first odd-row-color"><code>protected <a href="NamePanel.html" title="class in org.apache.jmeter.gui">NamePanel</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#namePanel" class="member-name-link">namePanel</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">use <a href="#getName()"><code>getName()</code></a> or <a href="#createTitleLabel()"><code>createTitleLabel()</code></a> for better alignment of the fields</div>
 </div>
@@ -279,23 +285,29 @@ implements <a href="JMeterGUIComponent.html" title="interface in org.apache.jmet
 <div class="block">Create a standard title section for JMeter components.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setComment(java.lang.String)" class="member-name-link">setComment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;comment)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modifyTestElement(org.apache.jmeter.testelement.TestElement)" class="member-name-link">modifyTestElement</a><wbr>(org.apache.jmeter.testelement.TestElement&nbsp;element)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Provides a default implementation for setting the comment property.</div>
+<div class="block">GUI components are responsible for populating TestElements they create
+ with the data currently held in the GUI components.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setEnabled(boolean)" class="member-name-link">setEnabled</a><wbr>(boolean&nbsp;enabled)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setComment(java.lang.String)" class="member-name-link">setComment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;comment)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Provides a default implementation for the enabled property.</div>
+<div class="block">Provides a default implementation for setting the comment property.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setName(java.lang.String)" class="member-name-link">setName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setEnabled(boolean)" class="member-name-link">setEnabled</a><wbr>(boolean&nbsp;enabled)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Provides a default implementation for the enabled property.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setName(java.lang.String)" class="member-name-link">setName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Provides a default implementation for setting the name property.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Container.html" title="class or interface in java.awt" class="external-link">Container</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapTitlePanel(java.awt.Container)" class="member-name-link">wrapTitlePanel</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Container.html" title="class or interface in java.awt" class="external-link">Container</a>&nbsp;titlePanel)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Container.html" title="class or interface in java.awt" class="external-link">Container</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapTitlePanel(java.awt.Container)" class="member-name-link">wrapTitlePanel</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Container.html" title="class or interface in java.awt" class="external-link">Container</a>&nbsp;titlePanel)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -316,7 +328,7 @@ implements <a href="JMeterGUIComponent.html" title="interface in org.apache.jmet
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.apache.jmeter.gui.JMeterGUIComponent">Methods inherited from interface&nbsp;org.apache.jmeter.gui.<a href="JMeterGUIComponent.html" title="interface in org.apache.jmeter.gui">JMeterGUIComponent</a></h3>
-<code><a href="JMeterGUIComponent.html#canBeAdded()">canBeAdded</a>, <a href="JMeterGUIComponent.html#createPopupMenu()">createPopupMenu</a>, <a href="JMeterGUIComponent.html#createTestElement()">createTestElement</a>, <a href="JMeterGUIComponent.html#getLabelResource()">getLabelResource</a>, <a href="JMeterGUIComponent.html#getMenuCategories()">getMenuCategories</a>, <a href="JMeterGUIComponent.html#modifyTestElement(org.apache.jmeter.testelement.TestElement)">modifyTestElement</a></code></div>
+<code><a href="JMeterGUIComponent.html#assignDefaultValues(org.apache.jmeter.testelement.TestElement)">assignDefaultValues</a>, <a href="JMeterGUIComponent.html#canBeAdded()">canBeAdded</a>, <a href="JMeterGUIComponent.html#createPopupMenu()">createPopupMenu</a>, <a href="JMeterGUIComponent.html#createTestElement()">createTestElement</a>, <a href="JMeterGUIComponent.html#getLabelResource()">getLabelResource</a>, <a href="JMeterGUIComponent.html#getMenuCategories()">getMenuCategories</a>, <a href="JMeterGUIComponent.html#makeTestElement()">makeTestElement</a></code></div>
 </section>
 </li>
 </ul>
@@ -339,6 +351,16 @@ implements <a href="JMeterGUIComponent.html" title="interface in org.apache.jmet
 <div class="deprecation-comment">use <a href="#getName()"><code>getName()</code></a> or <a href="#createTitleLabel()"><code>createTitleLabel()</code></a> for better alignment of the fields</div>
 </div>
 <div class="block">A GUI panel containing the name of this component.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bindingGroup">
+<h3>bindingGroup</h3>
+<div class="member-signature"><span class="annotations">@API(status=EXPERIMENTAL,
+     since="5.6.3")
+</span><span class="modifiers">protected final</span>&nbsp;<span class="return-type">org.apache.jmeter.gui.BindingGroup</span>&nbsp;<span class="element-name">bindingGroup</span></div>
+<div class="block">Stores a collection of property editors, so GuiCompoenent can have default implementations that
+ update the UI fields based on <code>TestElement</code> properties and vice versa.</div>
 </section>
 </li>
 </ul>
@@ -527,15 +549,64 @@ implements <a href="JMeterGUIComponent.html" title="interface in org.apache.jmet
 </section>
 </li>
 <li>
+<section class="detail" id="modifyTestElement(org.apache.jmeter.testelement.TestElement)">
+<h3>modifyTestElement</h3>
+<div class="member-signature"><span class="annotations">@API(status=EXPERIMENTAL,
+     since="5.6.3")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modifyTestElement</span><wbr><span class="parameters">(org.apache.jmeter.testelement.TestElement&nbsp;element)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="JMeterGUIComponent.html#modifyTestElement(org.apache.jmeter.testelement.TestElement)">JMeterGUIComponent</a></code></span></div>
+<div class="block">GUI components are responsible for populating TestElements they create
+ with the data currently held in the GUI components. This method should
+ overwrite whatever data is currently in the TestElement as it is called
+ after a user has filled out the form elements in the gui with new
+ information.
+
+ <p>
+ If you override <a href="AbstractJMeterGuiComponent.html" title="class in org.apache.jmeter.gui"><code>AbstractJMeterGuiComponent</code></a>, you might want using <a href="#bindingGroup"><code>bindingGroup</code></a>
+ instead of overriding <code>modifyTestElement</code>.
+
+ <p>
+ The canonical implementation looks like this:
+ <pre>
+ &#064;Override
+ public void modifyTestElement(TestElement element) {
+     super.modifyTestElement(element); // clear the element and assign basic fields like name, gui class, test class
+     // Using the element setters (preferred):
+     // If the field is empty, you probably want to remove the property instead of storing an empty string
+     // See <a href="https://github.com/apache/jmeter/pull/6199">Streamline binding of UI elements to TestElement properties</a>
+     // for more details
+     TestElementXYZ xyz = (TestElementXYZ) element;
+     xyz.setState(StringUtils.defaultIfEmpty(guiState.getText(), null));
+     xyz.setCode(StringUtils.defaultIfEmpty(guiCode.getText(), null));
+     ... other GUI fields ...
+     // or directly (do not use unless there is no setter for the field):
+     element.setProperty(TestElementXYZ.STATE, StringUtils.defaultIfEmpty(guiState.getText(), null))
+     element.setProperty(TestElementXYZ.CODE, StringUtils.defaultIfEmpty(guiCode.getText(), null))
+     ... other GUI fields ...
+ }
+ </pre></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="JMeterGUIComponent.html#modifyTestElement(org.apache.jmeter.testelement.TestElement)">modifyTestElement</a></code>&nbsp;in interface&nbsp;<code><a href="JMeterGUIComponent.html" title="interface in org.apache.jmeter.gui">JMeterGUIComponent</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>element</code> - the TestElement to modify</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="configureTestElement(org.apache.jmeter.testelement.TestElement)">
 <h3>configureTestElement</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">configureTestElement</span><wbr><span class="parameters">(org.apache.jmeter.testelement.TestElement&nbsp;mc)</span></div>
+<div class="member-signature"><span class="annotations">@API(status=DEPRECATED,
+     since="5.6.3")
+</span><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">configureTestElement</span><wbr><span class="parameters">(org.apache.jmeter.testelement.TestElement&nbsp;mc)</span></div>
 <div class="block">This provides a convenience for extenders when they implement the
  <a href="JMeterGUIComponent.html#modifyTestElement(org.apache.jmeter.testelement.TestElement)"><code>JMeterGUIComponent.modifyTestElement(TestElement)</code></a> method. This
  method will set the name, gui class, and test class for the created Test
  Element. It should be called by every extending class when
  creating/modifying Test Elements, as that will best assure consistent
- behavior.</div>
+ behavior.
+ <p>Deprecation notice: most likely you do not need the method, and you should
+ override <a href="#modifyTestElement(org.apache.jmeter.testelement.TestElement)"><code>modifyTestElement(TestElement)</code></a> instead</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>mc</code> - the TestElement being created.</dd>
@@ -690,7 +761,7 @@ implements <a href="JMeterGUIComponent.html" title="interface in org.apache.jmet
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small>Copyright &copy; 1998-2023 Apache Software Foundation. All Rights Reserved.</small></p>
+<p class="legal-copy"><small>Copyright &copy; 1998-2024 Apache Software Foundation. All Rights Reserved.</small></p>
 </footer>
 </div>
 </div>

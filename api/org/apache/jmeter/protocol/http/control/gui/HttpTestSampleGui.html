@@ -135,7 +135,7 @@ loadScripts(document, 'script');</script>
 <h2>Field Summary</h2>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-org.apache.jmeter.gui.AbstractJMeterGuiComponent">Fields inherited from class&nbsp;org.apache.jmeter.gui.<a href="../../../../gui/AbstractJMeterGuiComponent.html" title="class in org.apache.jmeter.gui">AbstractJMeterGuiComponent</a></h3>
-<code><a href="../../../../gui/AbstractJMeterGuiComponent.html#namePanel">namePanel</a></code></div>
+<code><a href="../../../../gui/AbstractJMeterGuiComponent.html#bindingGroup">bindingGroup</a>, <a href="../../../../gui/AbstractJMeterGuiComponent.html#namePanel">namePanel</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-javax.swing.JComponent">Fields inherited from class&nbsp;javax.swing.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html" title="class or interface in javax.swing" class="external-link">JComponent</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#listenerList" title="class or interface in javax.swing" class="external-link">listenerList</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#TOOL_TIP_TEXT_KEY" title="class or interface in javax.swing" class="external-link">TOOL_TIP_TEXT_KEY</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#ui" title="class or interface in javax.swing" class="external-link">ui</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#UNDEFINED_CONDITION" title="class or interface in javax.swing" class="external-link">UNDEFINED_CONDITION</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#WHEN_ANCESTOR_OF_FOCUSED_COMPONENT" title="class or interface in javax.swing" class="external-link">WHEN_ANCESTOR_OF_FOCUSED_COMPONENT</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#WHEN_FOCUSED" title="class or interface in javax.swing" class="external-link">WHEN_FOCUSED</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#WHEN_IN_FOCUSED_WINDOW" title="class or interface in javax.swing" class="external-link">WHEN_IN_FOCUSED_WINDOW</a></code></div>
@@ -177,37 +177,36 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearGui()" class="member-name-link">clearGui</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#assignDefaultValues(org.apache.jmeter.testelement.TestElement)" class="member-name-link">assignDefaultValues</a><wbr>(org.apache.jmeter.testelement.TestElement&nbsp;element)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Configures default values for element after its creation.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearGui()" class="member-name-link">clearGui</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Provides a default implementation that resets the name field to the value of
  getStaticLabel(), reset comment and sets enabled to true.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configure(org.apache.jmeter.testelement.TestElement)" class="member-name-link">configure</a><wbr>(org.apache.jmeter.testelement.TestElement&nbsp;element)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configure(org.apache.jmeter.testelement.TestElement)" class="member-name-link">configure</a><wbr>(org.apache.jmeter.testelement.TestElement&nbsp;element)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">A newly created gui component can be initialized with the contents of a
  Test Element object by calling this method.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createEmbeddedRsrcPanel()" class="member-name-link">createEmbeddedRsrcPanel</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createOptionalTasksPanel()" class="member-name-link">createOptionalTasksPanel</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createEmbeddedRsrcPanel()" class="member-name-link">createEmbeddedRsrcPanel</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createSourceAddrPanel()" class="member-name-link">createSourceAddrPanel</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createOptionalTasksPanel()" class="member-name-link">createOptionalTasksPanel</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JTabbedPane.html" title="class or interface in javax.swing" class="external-link">JTabbedPane</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createTabbedConfigPane()" class="member-name-link">createTabbedConfigPane</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JPanel.html" title="class or interface in javax.swing" class="external-link">JPanel</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createSourceAddrPanel()" class="member-name-link">createSourceAddrPanel</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JTabbedPane.html" title="class or interface in javax.swing" class="external-link">JTabbedPane</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createTabbedConfigPane()" class="member-name-link">createTabbedConfigPane</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Create the parameters configuration tabstrip which includes the Basic tab (<a href="../../config/gui/UrlConfigGui.html" title="class in org.apache.jmeter.protocol.http.config.gui"><code>UrlConfigGui</code></a>)
  and the Advanced tab by default.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.apache.jmeter.testelement.TestElement</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createTestElement()" class="member-name-link">createTestElement</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">JMeter test components are separated into a model and a GUI
- representation.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../config/gui/UrlConfigGui.html" title="class in org.apache.jmeter.protocol.http.config.gui">UrlConfigGui</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createUrlConfigGui()" class="member-name-link">createUrlConfigGui</a>()</code></div>
@@ -233,9 +232,14 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Create a panel containing the proxy server details</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modifyTestElement(org.apache.jmeter.testelement.TestElement)" class="member-name-link">modifyTestElement</a><wbr>(org.apache.jmeter.testelement.TestElement&nbsp;sampler)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.apache.jmeter.testelement.TestElement</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeTestElement()" class="member-name-link">makeTestElement</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Creates the test element represented by the GUI component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modifyTestElement(org.apache.jmeter.testelement.TestElement)" class="member-name-link">modifyTestElement</a><wbr>(org.apache.jmeter.testelement.TestElement&nbsp;sampler)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Modifies a given TestElement to mirror the data in the gui components.</div>
 </div>
 </div>
@@ -264,7 +268,7 @@ loadScripts(document, 'script');</script>
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.apache.jmeter.gui.JMeterGUIComponent">Methods inherited from interface&nbsp;org.apache.jmeter.gui.<a href="../../../../gui/JMeterGUIComponent.html" title="interface in org.apache.jmeter.gui">JMeterGUIComponent</a></h3>
-<code><a href="../../../../gui/JMeterGUIComponent.html#canBeAdded()">canBeAdded</a></code></div>
+<code><a href="../../../../gui/JMeterGUIComponent.html#canBeAdded()">canBeAdded</a>, <a href="../../../../gui/JMeterGUIComponent.html#createTestElement()">createTestElement</a></code></div>
 </section>
 </li>
 </ul>
@@ -320,27 +324,26 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="createTestElement()">
-<h3>createTestElement</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.apache.jmeter.testelement.TestElement</span>&nbsp;<span class="element-name">createTestElement</span>()</div>
-<div class="block">JMeter test components are separated into a model and a GUI
- representation. The model holds the data and the GUI displays it. The GUI
- class is responsible for knowing how to create and initialize with data
- the model class that it knows how to display, and this method is called
- when new test elements are created.
-
- <p>
- The canonical implementation looks like this:
- <pre>
- public TestElement createTestElement() {
-     TestElementXYZ el = new TestElementXYZ();
-     modifyTestElement(el);
-     return el;
- }
- </pre></div>
+<section class="detail" id="makeTestElement()">
+<h3>makeTestElement</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.apache.jmeter.testelement.TestElement</span>&nbsp;<span class="element-name">makeTestElement</span>()</div>
+<div class="block">Creates the test element represented by the GUI component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the Test Element object that the GUI component represents.</dd>
+<dd>a new <code>TestElement</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="assignDefaultValues(org.apache.jmeter.testelement.TestElement)">
+<h3>assignDefaultValues</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">assignDefaultValues</span><wbr><span class="parameters">(org.apache.jmeter.testelement.TestElement&nbsp;element)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../../../gui/JMeterGUIComponent.html#assignDefaultValues(org.apache.jmeter.testelement.TestElement)">JMeterGUIComponent</a></code></span></div>
+<div class="block">Configures default values for element after its creation.
+ Plugin authors should call this once in their <a href="../../../../gui/JMeterGUIComponent.html#createTestElement()"><code>JMeterGUIComponent.createTestElement()</code></a> implementation.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>element</code> - test element to configure</dd>
 </dl>
 </section>
 </li>
@@ -357,23 +360,34 @@ loadScripts(document, 'script');</script>
  information.
 
  <p>
+ If you override <a href="../../../../gui/AbstractJMeterGuiComponent.html" title="class in org.apache.jmeter.gui"><code>AbstractJMeterGuiComponent</code></a>, you might want using <a href="../../../../gui/AbstractJMeterGuiComponent.html#bindingGroup"><code>AbstractJMeterGuiComponent.bindingGroup</code></a>
+ instead of overriding <code>modifyTestElement</code>.
+
+ <p>
  The canonical implementation looks like this:
  <pre>
+ &#064;Override
  public void modifyTestElement(TestElement element) {
-     element.clear(); // many implementations use this
-     configureTestElement(element);
+     super.modifyTestElement(element); // clear the element and assign basic fields like name, gui class, test class
      // Using the element setters (preferred):
+     // If the field is empty, you probably want to remove the property instead of storing an empty string
+     // See <a href="https://github.com/apache/jmeter/pull/6199">Streamline binding of UI elements to TestElement properties</a>
+     // for more details
      TestElementXYZ xyz = (TestElementXYZ) element;
-     xyz.setState(guiState.getText());
-     xyz.setCode(guiCode.getText());
+     xyz.setState(StringUtils.defaultIfEmpty(guiState.getText(), null));
+     xyz.setCode(StringUtils.defaultIfEmpty(guiCode.getText(), null));
      ... other GUI fields ...
      // or directly (do not use unless there is no setter for the field):
-     element.setProperty(TestElementXYZ.STATE, guiState.getText())
-     element.setProperty(TestElementXYZ.CODE, guiCode.getText())
+     element.setProperty(TestElementXYZ.STATE, StringUtils.defaultIfEmpty(guiState.getText(), null))
+     element.setProperty(TestElementXYZ.CODE, StringUtils.defaultIfEmpty(guiCode.getText(), null))
      ... other GUI fields ...
  }
  </pre></div>
 <dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../../gui/JMeterGUIComponent.html#modifyTestElement(org.apache.jmeter.testelement.TestElement)">modifyTestElement</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../gui/JMeterGUIComponent.html" title="interface in org.apache.jmeter.gui">JMeterGUIComponent</a></code></dd>
+<dt>Overrides:</dt>
+<dd><code><a href="../../../../gui/AbstractJMeterGuiComponent.html#modifyTestElement(org.apache.jmeter.testelement.TestElement)">modifyTestElement</a></code>&nbsp;in class&nbsp;<code><a href="../../../../gui/AbstractJMeterGuiComponent.html" title="class in org.apache.jmeter.gui">AbstractJMeterGuiComponent</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>sampler</code> - the TestElement to modify</dd>
 </dl>
@@ -387,9 +401,9 @@ loadScripts(document, 'script');</script>
  the component's label in the local language. The resource name is fixed,
  and does not vary with the selected language.
 
- Normally this method should be overridden in preference to overriding
+ <p>Normally this method should be overridden in preference to overriding
  getStaticLabel(). However where the resource name is not available or required,
- getStaticLabel() may be overridden instead.</div>
+ getStaticLabel() may be overridden instead.</p></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the resource name</dd>
@@ -463,6 +477,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="clearGui()">
 <h3>clearGui</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearGui</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="../../../../gui/AbstractJMeterGuiComponent.html#clearGui()">AbstractJMeterGuiComponent</a></code></span></div>
 <div class="block">Provides a default implementation that resets the name field to the value of
  getStaticLabel(), reset comment and sets enabled to true. Your GUI may need more things
  cleared, in which case you should override, clear the extra fields, and
@@ -495,7 +510,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small>Copyright &copy; 1998-2023 Apache Software Foundation. All Rights Reserved.</small></p>
+<p class="legal-copy"><small>Copyright &copy; 1998-2024 Apache Software Foundation. All Rights Reserved.</small></p>
 </footer>
 </div>
 </div>

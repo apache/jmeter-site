@@ -139,7 +139,7 @@ implements <a href="ImageVisualizer.html" title="interface in org.apache.jmeter.
 <code><a href="gui/AbstractVisualizer.html#collector">collector</a>, <a href="gui/AbstractVisualizer.html#isStats">isStats</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-org.apache.jmeter.gui.AbstractJMeterGuiComponent">Fields inherited from class&nbsp;org.apache.jmeter.gui.<a href="../gui/AbstractJMeterGuiComponent.html" title="class in org.apache.jmeter.gui">AbstractJMeterGuiComponent</a></h3>
-<code><a href="../gui/AbstractJMeterGuiComponent.html#namePanel">namePanel</a></code></div>
+<code><a href="../gui/AbstractJMeterGuiComponent.html#bindingGroup">bindingGroup</a>, <a href="../gui/AbstractJMeterGuiComponent.html#namePanel">namePanel</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-javax.swing.JComponent">Fields inherited from class&nbsp;javax.swing.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html" title="class or interface in javax.swing" class="external-link">JComponent</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#listenerList" title="class or interface in javax.swing" class="external-link">listenerList</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#TOOL_TIP_TEXT_KEY" title="class or interface in javax.swing" class="external-link">TOOL_TIP_TEXT_KEY</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#ui" title="class or interface in javax.swing" class="external-link">ui</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#UNDEFINED_CONDITION" title="class or interface in javax.swing" class="external-link">UNDEFINED_CONDITION</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#WHEN_ANCESTOR_OF_FOCUSED_COMPONENT" title="class or interface in javax.swing" class="external-link">WHEN_ANCESTOR_OF_FOCUSED_COMPONENT</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#WHEN_FOCUSED" title="class or interface in javax.swing" class="external-link">WHEN_FOCUSED</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html#WHEN_IN_FOCUSED_WINDOW" title="class or interface in javax.swing" class="external-link">WHEN_IN_FOCUSED_WINDOW</a></code></div>
@@ -241,7 +241,7 @@ implements <a href="ImageVisualizer.html" title="interface in org.apache.jmeter.
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.apache.jmeter.gui.JMeterGUIComponent">Methods inherited from interface&nbsp;org.apache.jmeter.gui.<a href="../gui/JMeterGUIComponent.html" title="interface in org.apache.jmeter.gui">JMeterGUIComponent</a></h3>
-<code><a href="../gui/JMeterGUIComponent.html#canBeAdded()">canBeAdded</a></code></div>
+<code><a href="../gui/JMeterGUIComponent.html#assignDefaultValues(org.apache.jmeter.testelement.TestElement)">assignDefaultValues</a>, <a href="../gui/JMeterGUIComponent.html#canBeAdded()">canBeAdded</a>, <a href="../gui/JMeterGUIComponent.html#makeTestElement()">makeTestElement</a></code></div>
 </section>
 </li>
 </ul>
@@ -319,9 +319,9 @@ implements <a href="ImageVisualizer.html" title="interface in org.apache.jmeter.
  the component's label in the local language. The resource name is fixed,
  and does not vary with the selected language.
 
- Normally this method should be overridden in preference to overriding
+ <p>Normally this method should be overridden in preference to overriding
  getStaticLabel(). However where the resource name is not available or required,
- getStaticLabel() may be overridden instead.</div>
+ getStaticLabel() may be overridden instead.</p></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../gui/JMeterGUIComponent.html#getLabelResource()">getLabelResource</a></code>&nbsp;in interface&nbsp;<code><a href="../gui/JMeterGUIComponent.html" title="interface in org.apache.jmeter.gui">JMeterGUIComponent</a></code></dd>
@@ -371,7 +371,7 @@ implements <a href="ImageVisualizer.html" title="interface in org.apache.jmeter.
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small>Copyright &copy; 1998-2023 Apache Software Foundation. All Rights Reserved.</small></p>
+<p class="legal-copy"><small>Copyright &copy; 1998-2024 Apache Software Foundation. All Rights Reserved.</small></p>
 </footer>
 </div>
 </div>
